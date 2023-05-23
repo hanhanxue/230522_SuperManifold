@@ -6,10 +6,9 @@ import Image from 'next/image'
 
 const Header = () => {
     return (
-        <header className={`sticky top-0`}>
-        <nav className={`bg-cinnabar`}>
-            <div className=""> {/* Containter Containter Containter*/}
-                <div className="text-xl  text-jet-stream  py-6 flex items-center ">
+
+            <header className={`fixed w-full bg-gradient-to-b from-cinnabar `}> {/* Containter Containter Containter*/}
+                <nav className="text-lg  text-jet-stream  py-6 flex items-center ">
                 
                     <div className="basis-1/4 px-6 ">
                         <Link href="/">
@@ -32,16 +31,18 @@ const Header = () => {
                         <ul className=" flex  justify-end">
                             <Link href="/"><li className="first:ml-0 ml-10">Products</li></Link>
                             <Link href="/"><li className="ml-10">Process</li></Link>
-                            <Link href="/about"><li className="ml-10">Info</li></Link>
+                            <Link href="/info"><li className="ml-10">Info</li></Link>
                         </ul>
                     </div>
     
-                </div>
-            </div>
-        </nav>
-    </header>
+                </nav>
+            </header>
+
 
     )
 }
 
 export default Header
+
+
+// sticky top-0

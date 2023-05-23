@@ -6,13 +6,22 @@ import Footer from '@/components/Footer'
 
 
 
-export default function Page() {
+export const metadata = {
+  title: 'Info ▼ Super Manifold',
+};
+
+
+
+
+
+export default function Info() {
     return (
       <>
         <Header />
-        <main>
+        <main className="">
+          <div className="h-16 bg-cinnabar"></div> {/*THIS IS PRETTY HACK!! Pushing down the page to compensate for fixed header*/}
 
-        <HeroText copy="We create electronic products for the people we love🅐" />
+        <HeroText copy="We make electronic products for the people we love🅐" />
 
         <CodePractice 
             listName="Code of Practice"
@@ -41,7 +50,7 @@ export default function Page() {
         />
 
 
-        <HeroText copy="Super Manifold is based in Montreal, Canada🅐" />
+        <HeroText copy="Super Manifold is based in Montreal, Canada🅐" fontSize='text-3xl'/>
 
 
         </main>

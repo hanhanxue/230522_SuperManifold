@@ -6,10 +6,10 @@ import localFont from 'next/font/local'
 
 const nmtl = localFont({
   src: [
-    {
-      path: '../../public/fonts/PPNeueMontreal-Thin.otf',
-      weight: '100'
-    },
+    // {
+    //   path: '../../public/fonts/PPNeueMontreal-Thin.otf',
+    //   weight: '100'
+    // },
     {
       path: '../../public/fonts/PPNeueMontreal-Book.otf',
       weight: '400'
@@ -21,17 +21,6 @@ const nmtl = localFont({
   ],
   variable: '--font-nmtl'
 })
-
-
-
-
-
-export const metadata: Metadata = {
-  title: 'Super Manifold',
-};
-
-
-
 
 
 

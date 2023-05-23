@@ -5,7 +5,7 @@ interface CodePracticeProps {
   
 const CodePractice: React.FC<CodePracticeProps> = ({ listName, listItems }) => {
     return (
-    <div className="bg-cinnabar text-jet-stream">
+    <div className="bg-cinnabar text-jet-stream text-base">
         <div className=""> {/* Containter Containter Containter*/}
 
 
@@ -16,7 +16,7 @@ const CodePractice: React.FC<CodePracticeProps> = ({ listName, listItems }) => {
              
             </div>
 
-            <ul className="text-4xl">
+            <ul className="text-2xl">
                 {listItems.map((item, index, array) => {
                     const paddedIndex = (index+1).toString().padStart(2, '0')
                     let isLastItem = index + 1 === array.length

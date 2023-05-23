@@ -1,10 +1,18 @@
 import Link from 'next/link';
+
+import Header from '@/components/Header';
  
 
-export default function Page() {
+export const metadata = {
+  title: 'Super Manifold',
+};
+
+
+
+export default function Home() {
   return (
     <>
-    <Link href="/about">About</Link>
+    <Header />
     <h1>Hello, Home page!</h1>
     </>
   )

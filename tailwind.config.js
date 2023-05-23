@@ -7,6 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // that is animation class
+      animation: {
+        fade: 'fadeInAnimation 2s ',
+      },
+
+      // that is actual animation
+      keyframes: {
+        fadeInAnimation: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      },
+
       screens: {
         'sm': '640px', // => @media (min-width: 640px) { ... }
         'md': '768px', // => @media (min-width: 768px) { ... }
@@ -14,11 +27,6 @@ module.exports = {
         'xl': '1920px', // => @media (min-width: 1280px) { ... }
         '2xl': '2440px', // => @media (min-width: 1280px) { ... }
       },
-      // backgroundImage: {
-      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      //   'gradient-conic':
-      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      // },
 
       fontFamily: {
         sans: ['var(--font-nmtl)']
@@ -26,26 +34,37 @@ module.exports = {
 
 
       fontSize: {
-        'xl': ['1.375rem', {
-          lineHeight: '1.75rem',
+        '4xl': [      '4.75rem', {
+          lineHeight: '5.5rem',
           letterSpacing: '0em',
           fontWeight: '400',
         }],
-        // '2xl': ['1.5rem', {
-        //   lineHeight: '2rem',
-        //   letterSpacing: '-0.01em',
-        //   fontWeight: '500',
-        // }],
-        // '3xl': ['1.875rem', {
-        //   lineHeight: '2.25rem',
-        //   letterSpacing: '-0.02em',
-        //   fontWeight: '700',
-        // }],
-        '4xl': ['2.5rem', {
-          lineHeight: '3rem',
+        '3xl': [      '3.5rem', {
+          lineHeight: '4.25rem',
           letterSpacing: '0em',
           fontWeight: '400',
         }],
+        '2xl': [      '2.625rem', {
+          lineHeight: '3.25rem',
+          letterSpacing: '0em',
+          fontWeight: '400',
+        }],
+        'xl': [       '2rem', {
+          lineHeight: '2.5rem',
+          letterSpacing: '0em',
+          fontWeight: '400',
+        }],
+        'lg': [       '1.5rem', {
+          lineHeight: '2rem',
+          letterSpacing: '0em',
+          fontWeight: '400',
+        }],
+        'base': [     '1.125rem', {
+          lineHeight: '1.5rem',
+          letterSpacing: '0em',
+          fontWeight: '400',
+        }],
+
       },
 
       colors: {
@@ -90,3 +109,11 @@ module.exports = {
   },
   plugins: [],
 }
+
+
+
+// backgroundImage: {
+//   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+//   'gradient-conic':
+//     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+// },
