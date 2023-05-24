@@ -23,7 +23,8 @@ const CodePractice: React.FC<CodePracticeProps> = ({ listName, listItems }) => {
                     return(
                         <div className={` py-5 flex 
                         items-center border-t ${isLastItem ? "border-b" : "" } border-jet-stream
-                        hover:bg-jet-stream  hover:text-cinnabar  transition duration-75`}
+                        transition-colors
+                        hover:bg-jet-stream  hover:text-cinnabar  hover:duration-75`}
                         key={index}
                         >
                             <div className="basis-1/6 px-6 ">{paddedIndex}</div>

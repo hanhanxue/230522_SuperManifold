@@ -9,14 +9,14 @@ module.exports = {
     extend: {
       // that is animation class
       animation: {
-        fade: 'fadeInAnimation 2s ',
+        fade: 'fadeInAnimation 1.618s cubic-bezier(.31,.61,.11,.93)',
       },
 
       // that is actual animation
       keyframes: {
         fadeInAnimation: {
           '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
+          '100%': { opacity: 1},
         },
       },
 
