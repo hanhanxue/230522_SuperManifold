@@ -1,9 +1,9 @@
-interface CodePracticeProps {
+interface ICodePracticeProps {
     listName: string
     listItems: string[]
   }
   
-const CodePractice: React.FC<CodePracticeProps> = ({ listName, listItems }) => {
+const CodePractice: React.FC<ICodePracticeProps> = ({ listName, listItems }) => {
     return (
     <div className="bg-cinnabar text-jet-stream text-base">
         <div className=""> {/* Containter Containter Containter*/}

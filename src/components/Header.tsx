@@ -4,11 +4,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import SuperManifoldLogo, { LogoTypes } from './SuperManifoldLogo';
+
+interface IHeaderProps {
+    primary?: string
+    bg?: string
+}
 
 
-
-
-const Header = () => {
+const Header: React.FC<IHeaderProps> = ( {primary='jet-stream', bg='cinnabar'}) => {
 
     const [isMinimal, setMinimal] = useState(false)
 
@@ -38,7 +42,7 @@ const Header = () => {
 
         // <header className={`fixed w-full bg-gradient-to-b from-cinnabar ${isMinimal ? '-translate-y-6 ' : ''}  transition-transform duration-1000`}> {/* Containter Containter Containter*/}
        <header className={`sticky top-0`}>
-       <nav className={`text-lg  text-black  flex items-center py-6`}>
+       <nav className={`text-lg  text-white  flex items-center py-6`}>
         
             <div className="basis-1/4 px-6">
                 <Link href="/" className="">
@@ -48,12 +52,7 @@ const Header = () => {
 
             <div className="basis-1/4 px-6">
                 <Link href="/" className="">
-                <Image 
-                    alt="Super Manifold Logo"
-                    src="logos/2305122_supermanifold_264x36_jet-stream.svg" 
-                    height={36} 
-                    width={264} 
-                />  
+                <SuperManifoldLogo fillColor = "#fff" variant={LogoTypes.Logo}/>
                 </Link>
             </div>
 

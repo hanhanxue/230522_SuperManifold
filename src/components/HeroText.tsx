@@ -1,9 +1,9 @@
-interface HeroTextProps {
+interface IHeroTextProps {
     copy: string
     fontSize?: string
 }
 
-const HeroText: React.FC<HeroTextProps> = ({copy, fontSize = 'text-4xl'}) => {
+const HeroText: React.FC<IHeroTextProps> = ({copy, fontSize = 'text-4xl'}) => {
     return (
     <div className="bg-cinnabar">
         <div className=""> {/* Containter Containter Containter*/}

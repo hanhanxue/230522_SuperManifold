@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -14,10 +15,22 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-    <Header />
+    <Header primary='white' bg='white' />
     <video autoPlay muted loop className={`-mt-24`}>         
     <source src="/videos/tape.mp4" type="video/mp4"/>       
     </video>
+    <div className='flex'>
+      {/* <Image 
+              src="/images/image1.jpg"
+
+              alt="Picture of the author"
+      />
+            <Image 
+              src="/images/image2.jpg"
+
+              alt="Picture of the author"
+      /> */}
+    </div>
     <Footer primary='black' bg='white' />
     </>
   )

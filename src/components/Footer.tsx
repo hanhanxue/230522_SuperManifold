@@ -1,21 +1,21 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import SuperManifoldLogo, {LogoTypes} from './SuperManifoldLogo'
 
 
-
-interface FooterProps {
+interface IFooterProps {
     primary?: string
     bg?: string
 }
 
-const Footer: React.FC<FooterProps> = ({primary='jet-stream', bg='cinnabar'}) => {
+const Footer: React.FC<IFooterProps> = ({primary='jet-stream', bg='cinnabar'}) => {
 
 
     let numrows = 24
     const rows = []
     for (let i = 1; i <= numrows; i++) {
         rows.push(
-            <div className={`  bg-${bg} `} style={  {marginTop: i, height: numrows - i} }  key={i} ></div>)
+            <div className={`  bg-white `} style={  {marginTop: i, height: numrows - i} }  key={i} ></div>)
     }
 
 
@@ -29,12 +29,7 @@ const Footer: React.FC<FooterProps> = ({primary='jet-stream', bg='cinnabar'}) =>
             
                 <div className="basis-1/4 px-6 ">
                 <Link href="/" className=" ">
-                    <Image 
-                        alt="Super Manifold Logo"
-                        src="logos/2305122_supermanifold_69x36_jet-stream.svg" 
-                        height={36} 
-                        width={69} 
-                    />  
+                <SuperManifoldLogo fillColor = '#000' variant={LogoTypes.Icon}/>
                     </Link>
                 </div>
 
@@ -60,7 +55,7 @@ const Footer: React.FC<FooterProps> = ({primary='jet-stream', bg='cinnabar'}) =>
 
 
 
-    <div className={`bg-${primary} flex flex-col  `} aria-hidden="true">
+    <div className={`bg-black flex flex-col  `} aria-hidden="true">
         {rows}
     </div>
 
