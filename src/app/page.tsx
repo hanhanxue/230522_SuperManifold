@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Metadata } from 'next';
  
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Super Manifold',
 };
 
@@ -13,7 +15,10 @@ export default function Home() {
   return (
     <>
     <Header />
-    <h1>Hello, Home page!</h1>
+    <video autoPlay muted loop className={`-mt-24`}>         
+    <source src="/videos/tape.mp4" type="video/mp4"/>       
+    </video>
+    <Footer primary='black' bg='white' />
     </>
   )
   

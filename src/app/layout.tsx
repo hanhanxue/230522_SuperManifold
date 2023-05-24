@@ -1,7 +1,7 @@
 
 import './globals.css'
 
-import { Metadata } from 'next';
+
 import localFont from 'next/font/local'
 
 const nmtl = localFont({
@@ -14,10 +14,10 @@ const nmtl = localFont({
       path: '../../public/fonts/PPNeueMontreal-Book.otf',
       weight: '400'
     },
-    {
-      path: '../../public/fonts/PPNeueMontreal-Medium.otf',
-      weight: '500'
-    },
+    // {
+    //   path: '../../public/fonts/PPNeueMontreal-Medium.otf',
+    //   weight: '500'
+    // },
   ],
   variable: '--font-nmtl'
 })

@@ -1,17 +1,31 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import FooterBase from './FooterBase'
 
 
-const Footer = () => {
+interface FooterProps {
+    primary?: string
+    bg?: string
+}
+
+const Footer: React.FC<FooterProps> = ({primary='jet-stream', bg='cinnabar'}) => {
+
+
+    let numrows = 24
+    const rows = []
+    for (let i = 1; i <= numrows; i++) {
+        rows.push(
+            <div className={`  bg-${bg} `} style={  {marginTop: i, height: numrows - i} }  key={i} ></div>)
+    }
+
+
     return (
 
     <>
 
-    <footer className={`bg-cinnabar`}>
+    <footer className={`bg-${bg}`}>
         <div className=""> {/* Containter Containter Containter*/}
-            <div className="text-lg  text-jet-stream  py-6 flex items-center ">
+            <div className={`text-lg  text-${primary}  py-6 flex items-center `}>
             
                 <div className="basis-1/4 px-6 ">
                 <Link href="/" className=" ">
@@ -43,7 +57,17 @@ const Footer = () => {
             </div>
         </div>
 
-        <FooterBase />
+
+
+
+    <div className={`bg-${primary} flex flex-col  `} aria-hidden="true">
+        {rows}
+    </div>
+
+
+
+
+
     </footer>
     
 

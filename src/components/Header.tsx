@@ -14,15 +14,16 @@ const Header = () => {
 
     useEffect(() => {
         const handler = () => {
+                const threshold = 64
                 // console.log(`pageY: ${window.pageYOffset}  body: ${document.body.scrollTop}  documentElement: ${document.documentElement.scrollTop}`)
                 setMinimal((isMinimal) => {
                     // if(!isMinimal && (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)) return true
-                    if(!isMinimal && (window.pageYOffset > 88)) return true
+                    if(!isMinimal && (window.pageYOffset > threshold)) return true
 
                     // if(isMinimal && document.body.scrollTop < 4 && document.documentElement.scrollTop < 4) return false
-                    if(isMinimal && window.pageYOffset < 50) return false
+                    if(isMinimal && window.pageYOffset < threshold - 24) return false
 
-                    console.log(isMinimal)
+                    // console.log(isMinimal)
                     return isMinimal
                 })
             }
@@ -33,12 +34,11 @@ const Header = () => {
     }, [])
 
 
-
-
     return (
 
-        <header className={`fixed w-full bg-gradient-to-b from-cinnabar ${isMinimal ? '-translate-y-6 ' : ''}  transition-transform duration-1000`}> {/* Containter Containter Containter*/}
-        <nav className={`text-lg  text-jet-stream  flex items-center py-6`}>
+        // <header className={`fixed w-full bg-gradient-to-b from-cinnabar ${isMinimal ? '-translate-y-6 ' : ''}  transition-transform duration-1000`}> {/* Containter Containter Containter*/}
+       <header className={`sticky top-0`}>
+       <nav className={`text-lg  text-black  flex items-center py-6`}>
         
             <div className="basis-1/4 px-6">
                 <Link href="/" className="">

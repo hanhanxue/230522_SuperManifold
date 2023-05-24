@@ -7,11 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+
+      //////////////// ANIMATIONS ////////////////// ANIMATIONS //////////////////
       // that is animation class
       animation: {
         fade: 'fadeInAnimation 1.618s cubic-bezier(.31,.61,.11,.93)',
       },
-
       // that is actual animation
       keyframes: {
         fadeInAnimation: {
@@ -20,6 +21,7 @@ module.exports = {
         },
       },
 
+      //////////////// BREAKPOINTS ////////////////// BREAKPOINTS //////////////////
       screens: {
         'sm': '640px', // => @media (min-width: 640px) { ... }
         'md': '768px', // => @media (min-width: 768px) { ... }
@@ -28,10 +30,10 @@ module.exports = {
         '2xl': '2440px', // => @media (min-width: 1280px) { ... }
       },
 
+      //////////////// TYPOGRAPHY ////////////////// TYPOGRAPHY //////////////////
       fontFamily: {
         sans: ['var(--font-nmtl)']
       },
-
 
       fontSize: {
         '4xl': [      '4.75rem', {
@@ -64,9 +66,9 @@ module.exports = {
           letterSpacing: '0em',
           fontWeight: '400',
         }],
-
       },
 
+      //////////////// COLORS ////////////////// COLORS //////////////////
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
@@ -99,11 +101,9 @@ module.exports = {
           950: '#1B0503'
         },
 
-        
-      }
+      },
 
-
-
+      //////////////// EXTEND ////////////////// EXTEND //////////////////
 
     },
   },
