@@ -12,12 +12,22 @@ module.exports = {
       // that is animation class
       animation: {
         fade: 'fadeInAnimation 1.618s cubic-bezier(.31,.61,.11,.93)',
+        marquee: 'marquee 75s linear infinite',
+        marquee2: 'marquee2 75s linear infinite',
       },
       // that is actual animation
       keyframes: {
         fadeInAnimation: {
           '0%': { opacity: 0 },
           '100%': { opacity: 1},
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
         },
       },
 

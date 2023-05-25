@@ -56,6 +56,12 @@ const Header: React.FC<IHeaderProps> = ( {primary='jet-stream', bg='cinnabar'}) 
                 </Link>
             </div>
 
+
+{/* 
+            <div className="basis-1/4 px-6 ">
+                <span className='text-base'>5 November 2023: UTC -5 / Eastern Standard Time</span>
+            </div> */}
+
             <div className="basis-2/4 px-6">
                 <ul className=" flex  justify-end">
                     <Link href="/" className=""><li className="first:ml-0 ml-10">Products</li></Link>

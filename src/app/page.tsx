@@ -19,18 +19,53 @@ export default function Home() {
     <video autoPlay muted loop className={`-mt-24`}>         
     <source src="/videos/tape.mp4" type="video/mp4"/>       
     </video>
-    <div className='flex'>
-      {/* <Image 
-              src="/images/image1.jpg"
 
-              alt="Picture of the author"
-      />
-            <Image 
-              src="/images/image2.jpg"
+      {/* 
+*/}
 
-              alt="Picture of the author"
-      /> */}
+<div className='shopify-section'>
+            <div className='nt_full'>
+                <div className='flex' style={{}}>
+                        <div>
+                          <Image 
+                                  src="/images/image1.jpg"
+                                          width={3600}
+                                          height={2160}
+                                  alt="Picture of the author"
+                          />
+                        </div>
+                        <div>
+                          <Image 
+                                  src="/images/image2.jpg"
+                                  width={3600}
+                                  height={2160}
+                                  alt="Picture of the author"
+                          /> 
+                        </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div className="overflow-x-hidden       relative flex ">
+    <div className="bg-black text-white py-2 animate-marquee whitespace-nowrap ">
+        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
     </div>
+
+    <div className="bg-black text-white py-2 animate-marquee2 whitespace-nowrap    absolute top-0  ">
+        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+    </div>
+</div>
+
     <Footer primary='black' bg='white' />
     </>
   )
