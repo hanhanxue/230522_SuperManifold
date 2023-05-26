@@ -39,13 +39,13 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-    <Header primary='white' bg='white' />
-    <video autoPlay muted loop className={`-mt-24`}>         
+    <Header colorConfig = { {text: 'text-white', bg: '' } } />
+
+    <video autoPlay muted loop className={``}>         
     <source src="/videos/tape.mp4" type="video/mp4"/>       
     </video>
 
-      {/* 
-*/}
+
 
 <div className='shopify-section'>
             <div className='nt_full'>
@@ -90,9 +90,9 @@ export default function Home() {
     </div>
 </div>
 
-    <Footer primary='black' bg='white' />
-
-
+<Footer colorConfig={{text: 'text-black', 
+bg: 'bg-white', 
+bg2: 'bg-black'}}/>
     {/* Force NextJS to proces */}
     <img src="/images/og.png" alt="" style={{ display: 'none'}} />
     </>

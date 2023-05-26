@@ -1,21 +1,31 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import SuperManifoldLogo, {LogoTypes} from './SuperManifoldLogo'
+
+import SuperManifoldLogo, {Logotypes} from './SuperManifoldLogo'
 
 
 interface IFooterProps {
-    primary?: string
-    bg?: string
+    colorConfig: {
+        text: string
+
+        bg: string
+        bg2: string
+    }
+
 }
 
-const Footer: React.FC<IFooterProps> = ({primary='jet-stream', bg='cinnabar'}) => {
+
+
+const Footer: React.FC<IFooterProps> = (  {colorConfig = {text: 'text-blue-700', 
+
+bg: 'bg-red-700', 
+bg2: 'bg-red-700'}  } ) => {
 
 
     let numrows = 24
     const rows = []
     for (let i = 1; i <= numrows; i++) {
         rows.push(
-            <div className={`  bg-white `} style={  {marginTop: i, height: numrows - i} }  key={i} ></div>)
+            <div className={`  ${colorConfig.bg} `} style={  {marginTop: i, height: numrows - i} }  key={i} ></div>)
     }
 
 
@@ -23,13 +33,13 @@ const Footer: React.FC<IFooterProps> = ({primary='jet-stream', bg='cinnabar'}) =
 
     <>
 
-    <footer className={`bg-${bg}`}>
+    <footer className={`${colorConfig.bg}`}>
         <div className=""> {/* Containter Containter Containter*/}
-            <div className={`text-lg  text-${primary}  py-6 flex items-center `}>
+            <div className={`text-lg  ${colorConfig.text}  py-6 flex items-center `}>
             
                 <div className="basis-1/4 px-6 ">
                 <Link href="/" className=" ">
-                <SuperManifoldLogo fillColor = '#000' variant={LogoTypes.Icon}/>
+                <SuperManifoldLogo variant={Logotypes.Symbol}/>
                     </Link>
                 </div>
 
@@ -55,7 +65,7 @@ const Footer: React.FC<IFooterProps> = ({primary='jet-stream', bg='cinnabar'}) =
 
 
 
-    <div className={`bg-black flex flex-col  `} aria-hidden="true">
+    <div className={`${colorConfig.bg2} flex flex-col  `} aria-hidden="true">
         {rows}
     </div>
 

@@ -15,8 +15,9 @@ export const metadata = {
 export default function Info() {
     return (
       <div className={`animate-fade`}>
-      <Header />
-      <div className="h-16 bg-cinnabar"></div> {/*THIS IS PRETTY HACK!! Pushing down the page to compensate for fixed header*/}
+
+      <Header colorConfig = {{text: 'text-jet-stream', bg: 'bg-cinnabar'  }} spacer = {true}/>
+     
       <HeroText copy="We craft electronic products for the future of work and play🅐" />
 
       <CodePractice 
@@ -47,7 +48,18 @@ export default function Info() {
 
       <HeroText copy="Super Manifold is based in Montreal, Canada🅐" fontSize='text-3xl'/>
 
-      <Footer />
+      <Footer colorConfig={{text: 'text-jet-stream', 
+
+bg: 'bg-cinnabar', 
+bg2: 'bg-jet-stream'}}/>
       </div>
     )
 }
+
+
+
+
+
+
+{/* <div className="h-16 bg-cinnabar"></div>  */}
+{/*THIS IS PRETTY HACK!! Pushing down the page to compensate for fixed header*/}
