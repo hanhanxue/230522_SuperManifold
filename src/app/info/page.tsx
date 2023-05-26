@@ -17,7 +17,7 @@ export default function Info() {
       <div className={`animate-fade`}>
       <Header />
       <div className="h-16 bg-cinnabar"></div> {/*THIS IS PRETTY HACK!! Pushing down the page to compensate for fixed header*/}
-      <HeroText copy="We make electronic products for professionals🅐" />
+      <HeroText copy="We craft electronic products for the future of work and play🅐" />
 
       <CodePractice 
           listName="Code of Practice"

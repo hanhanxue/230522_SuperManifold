@@ -28,7 +28,8 @@ const CodePractice: React.FC<ICodePracticeProps> = ({ listName, listItems }) => 
                         key={index}
                         >
                             <div className="basis-1/6 px-6 ">{paddedIndex}</div>
-                            <div className="basis-5/6 px-6 ">{item}</div>
+                            <div className="basis-4/6 px-6 ">{item}</div>
+                            <div className="basis-1/6 px-6 ml-auto"></div>
                         </div>
                     )
                 }

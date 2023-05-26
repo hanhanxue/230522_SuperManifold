@@ -7,7 +7,31 @@ import { Metadata } from 'next';
  
 
 export const metadata: Metadata = {
-  title: 'Super Manifold',
+  title: 'Super Manifold®',
+  description: 'Electronic Products for the Future of Work and Play',
+
+
+  openGraph: {
+    title: 'Super Manifold®',
+    description: 'Electronic Products for the Future of Work and Play',
+    url: 'https://www.supermanifold.com/',
+    siteName: 'Super Manifold®',
+    images: [
+      {
+        url: 'https://www.supermanifold.com/images/og.png',
+        width: 1200,
+        height: 630,
+      },
+      // {
+      //   url: 'https://nextjs.org/og-alt.png',
+      //   width: 1800,
+      //   height: 1600,
+      //   alt: 'My custom alt',
+      // },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 
@@ -67,6 +91,10 @@ export default function Home() {
 </div>
 
     <Footer primary='black' bg='white' />
+
+
+    {/* Force NextJS to proces */}
+    <img src="/images/og.png" alt="" style={{ display: 'none'}} />
     </>
   )
   
