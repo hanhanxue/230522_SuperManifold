@@ -11,7 +11,7 @@ module.exports = {
       //////////////// ANIMATIONS ////////////////// ANIMATIONS //////////////////
       // that is animation class
       animation: {
-        fade: 'fadeInAnimation 1.618s cubic-bezier(.31,.61,.11,.93)',
+        fade: 'fadeInAnimation 1.618s cubic-bezier(.31,.61,.11,.93) ',
         marquee: 'marquee 75s linear infinite',
         marquee2: 'marquee2 75s linear infinite',
       },

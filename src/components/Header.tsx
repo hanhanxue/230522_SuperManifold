@@ -73,7 +73,7 @@ const Header: React.FC<IHeaderProps> = ( {colorConfig = {text: 'text-blue-700', 
 
                 <div className="basis-1/4 px-6">
                     <Link href="/" className="">
-                    <SuperManifoldLogo variant={Logotypes.Lockup}/>
+                    <SuperManifoldLogo variant={Logotypes.Symbol}/>
                     </Link>
                 </div>
 

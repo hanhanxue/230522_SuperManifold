@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 
 
 export const metadata = {
-  title: 'Info ▼ Super Manifold',
+  title: 'Info ▼ Super Manifold®',
 };
 
 

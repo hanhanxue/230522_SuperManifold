@@ -42,7 +42,7 @@ export default function Home() {
     <Header colorConfig = { {text: 'text-white', bg: '' } } />
 
     <video autoPlay muted loop className={``}>         
-    <source src="/videos/tape.mp4" type="video/mp4"/>       
+    <source src="/videos/breadboard.mp4" type="video/mp4"/>       
     </video>
 
 
@@ -52,9 +52,9 @@ export default function Home() {
                 <div className='flex' style={{}}>
                         <div>
                           <Image 
-                                  src="/images/image1.jpg"
-                                          width={3600}
-                                          height={2160}
+                                  src="/images/230616_init2.png"
+                                          width={5120}
+                                          height={5120}
                                   alt="Picture of the author"
                           />
                         </div>
