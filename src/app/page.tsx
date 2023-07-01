@@ -4,6 +4,13 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Metadata } from 'next';
+
+
+
+
+
+
+
  
 
 export const metadata: Metadata = {
@@ -36,14 +43,24 @@ export const metadata: Metadata = {
 
 
 
+
+
+
+
+
+
 export default function Home() {
   return (
     <>
     <Header colorConfig = { {text: 'text-white', bg: '' } } />
 
+
+
+
     <video autoPlay muted loop className={``}>         
-    <source src="/videos/breadboard.mp4" type="video/mp4"/>       
+    <source src="/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>       
     </video>
+
 
 
 
@@ -52,19 +69,19 @@ export default function Home() {
                 <div className='flex' style={{}}>
                         <div>
                           <Image 
-                                  src="/images/230616_init2.png"
+                                  src="/images/supermanifold_TRRS.jpg"
                                           width={5120}
                                           height={5120}
                                   alt="Picture of the author"
                           />
                         </div>
                         <div>
-                          <Image 
-                                  src="/images/image2.jpg"
-                                  width={3600}
-                                  height={2160}
+                        <Image 
+                                  src="/images/supermanifold_TRRS.jpg"
+                                          width={5120}
+                                          height={5120}
                                   alt="Picture of the author"
-                          /> 
+                          />
                         </div>
                 </div>
             </div>

@@ -76,6 +76,16 @@ module.exports = {
           letterSpacing: '0em',
           fontWeight: '400',
         }],
+        'sm': [     '.875rem', {
+          lineHeight: '1.125rem',
+          letterSpacing: '0em',
+          fontWeight: '400',
+        }],
+        'xs': [     '.625rem', {
+          lineHeight: '1.8125rem',
+          letterSpacing: '0em',
+          fontWeight: '400',
+        }],
       },
 
       //////////////// COLORS ////////////////// COLORS //////////////////
