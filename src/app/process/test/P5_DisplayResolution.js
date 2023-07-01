@@ -1,6 +1,12 @@
 'use client'
 
-import Sketch from "react-p5"
+
+import dynamic from 'next/dynamic'
+// Will only import `react-p5` on client-side
+const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
+  ssr: false,
+})
+// import Sketch from "react-p5"
 
 const P5_DisplayResolution = (width) => {
 
