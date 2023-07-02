@@ -1,5 +1,6 @@
 'use client'
 
+import Button from '../../../components/Button'
 
 import dynamic from 'next/dynamic'
 // Will only import `react-p5` on client-side
@@ -12,29 +13,33 @@ const P5_DisplayResolution = (width) => {
 
     let surface
     let cnv
+    let p5Instance
 
-
+    
     const setup = (p5, canvasParentRef) => {
+        p5Instance = p5
         cnv = p5.createCanvas(1280, 720).parent(canvasParentRef)
+
+        cnv.class('rounded-2xl')
         // cnv.style('display', 'block')
         // cnv.style('border-radius', '16px')
         // canvasParentRef.style('border-radius', '16px')
-        cnv.class('rounded-2xl')
+        // cnv.class('rounded-2xl')
         // console.log(canvasParentRef)
-        cnv.mousePressed((event) => {
-            p5.background('#F6F6F6')
-            let width = p5.int(p5.random(600, 1280))
-            let height = p5.int(p5.random(500, 720))
-            surface = new Surface(p5, p5.width - width / 2, p5.height - height / 2, width, height, .5)
-            surface.display()
-        })
+
+        // cnv.mousePressed(e => {
+        //     RandomizeSurface(p5)
+        // })
         
         p5.background('#F6F6F6')
 
-
+        // console.log(canvasParentRef)
+        // console.log(cnv)
 
         surface = new Surface(p5, p5.width - 1280 / 2, p5.height - 720 / 2, 1280, 720, .5)
         surface.display()
+
+
 
     }
       
@@ -42,6 +47,26 @@ const P5_DisplayResolution = (width) => {
 
     }
 
+    const RandomizeSurface = (p5) => {
+        p5.background('#F6F6F6')
+        let width = p5.int(p5.random(600, 1280))
+        let height = p5.int(p5.random(500, 720))
+        surface = new Surface(p5, p5.width - width / 2, p5.height - height / 2, width, height, .5)
+        surface.display()
+    }
+
+        
+    const handleAddClick = () => {
+        if (p5Instance) {
+            RandomizeSurface(p5Instance)
+          }
+    }
+
+    const handleClearClick = () => {
+        if (p5Instance) {
+            p5Instance.background('#F6F6F6')
+          }
+    }
 
     function Surface(p5, x, y, srfWidth, srfHeight, scale) {
         this.x = x
@@ -75,12 +100,24 @@ const P5_DisplayResolution = (width) => {
 
             p5.pop()
         }
-
     }
 
 
     return (
-            <Sketch setup={setup} draw={draw} />
+        <>
+        {/* <div className='HIHIHI'> */}
+
+            <Sketch setup={setup} draw={draw} className={`flex justify-center mt-6`} />
+
+        {/* </div> */}
+
+            <div className='max-w-[80rem] mx-auto mt-6'>
+                <Button onClick={handleAddClick}>Generate</Button>
+                <Button onClick={handleClearClick}>Clear</Button>
+            </div>
+
+        </>
+
     )
 }
 

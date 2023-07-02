@@ -68,21 +68,21 @@ module.exports = {
         }],
         'lg': [       '1.5rem', {
           lineHeight: '2rem',
-          letterSpacing: '0em',
+          letterSpacing: '.01em',
           fontWeight: '400',
         }],
         'base': [     '1.125rem', {
           lineHeight: '1.5rem',
-          letterSpacing: '0em',
+          letterSpacing: '.02em',
           fontWeight: '400',
         }],
         'sm': [     '.875rem', {
           lineHeight: '1.125rem',
-          letterSpacing: '0em',
+          letterSpacing: '.02em',
           fontWeight: '400',
         }],
         'xs': [     '.625rem', {
-          lineHeight: '1.8125rem',
+          lineHeight: '.8125rem',
           letterSpacing: '0em',
           fontWeight: '400',
         }],
