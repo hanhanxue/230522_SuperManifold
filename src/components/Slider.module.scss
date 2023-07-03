@@ -1,0 +1,20 @@
+
+
+.test {
+    appearance: none;
+    height: 1em;
+    background: gray;
+    background-image: linear-gradient(purple, purple);
+    background-repeat: no-repeat;
+
+
+}
+
+.test::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: purple;
+    cursor: pointer;
+}
+

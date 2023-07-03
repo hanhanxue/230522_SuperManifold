@@ -1,6 +1,7 @@
 'use client'
 
 import Button from '../../../components/Button'
+import Slider from '../../../components/Slider'
 
 import dynamic from 'next/dynamic'
 // Will only import `react-p5` on client-side
@@ -15,7 +16,6 @@ const P5_DisplayResolution = (width) => {
     let cnv
     let p5Instance
 
-    
     const setup = (p5, canvasParentRef) => {
         p5Instance = p5
         cnv = p5.createCanvas(1280, 720).parent(canvasParentRef)
@@ -39,12 +39,16 @@ const P5_DisplayResolution = (width) => {
         surface = new Surface(p5, p5.width - 1280 / 2, p5.height - 720 / 2, 1280, 720, .5)
         surface.display()
 
-
+        // slider = p5.createSlider(0, 255, 100);
+        // slider.position(25 , 25);
+        // slider.style('width', '80px');
 
     }
       
     const draw = (p5) => {
-
+        // p5.background('#F6F6F6')
+        // surface.srfWidth = slider.value()
+        // surface.display()
     }
 
     const RandomizeSurface = (p5) => {
@@ -66,6 +70,17 @@ const P5_DisplayResolution = (width) => {
         if (p5Instance) {
             p5Instance.background('#F6F6F6')
           }
+    }
+
+    const handleSliderChange = (e, value) => {
+        // console.log(value)
+        if (p5Instance) {
+            p5Instance.background('#F6F6F6')
+            surface.srfWidth = p5Instance.map(value, 0, 100, 200, 1024)
+            surface.display()
+          }
+
+        
     }
 
     function Surface(p5, x, y, srfWidth, srfHeight, scale) {
@@ -114,6 +129,7 @@ const P5_DisplayResolution = (width) => {
             <div className='max-w-[80rem] mx-auto mt-6'>
                 <Button onClick={handleAddClick}>Generate</Button>
                 <Button onClick={handleClearClick}>Clear</Button>
+                <Slider onChange={handleSliderChange} />
             </div>
 
         </>

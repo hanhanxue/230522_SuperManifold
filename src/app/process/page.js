@@ -28,8 +28,10 @@ export default function Process() {
                         {/* Header */}
                         <div className='flex flex-col'>
                         {/* Header Title*/}
+
+
                         <div className='flex items-center'>
-                            <h1 className="text-base font-semibold mr-2">Screen Resolutions</h1>
+                            <h1 className="text-xl font-medium mr-2">Screen Resolutions</h1>
                                 {/* <span className="mr-2">🅐</span> */}
                             {/* <div className='bg-zinc-100 px-2 pt-[3px] pb-[2px] rounded-[5px] mr-1'>
                                 <p className="text-sm ">P5.js</p>
@@ -37,14 +39,17 @@ export default function Process() {
                             <div className='bg-zinc-100 px-2 pt-[3px] pb-[2px] rounded-[5px] mr-1'>
                                 <p className="text-sm ">Utility</p>
                             </div> */}
-                            <div className='bg-zinc-100 px-2 pt-[3px] pb-[2px] rounded-[5px] mr-1'>
-                                <p className="text-sm ">2023</p>
+                            <div className='bg-zinc-100 px-2 rounded-[5px] mr-2'>
+                                <p className="text-base ">Utility</p>
+                            </div>
+                            <div className='bg-zinc-100 px-2 rounded-[5px] mr-2'>
+                                <p className="text-base ">2023</p>
                             </div>
                         </div>
 
                         {/* Header Details*/}
                         <div className='flex items-center text-zinc-600 text-sm '>
-                            <h2 className="mr-4">Utility app using P5.js</h2>
+                            <h2 className="text-base mr-4">Utility app using P5.js</h2>
                         </div>
 
                         </div>

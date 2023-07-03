@@ -35,7 +35,7 @@ bg2: 'bg-red-700'}  } ) => {
 
     <footer className={`${colorConfig.bg}`}>
         <div className=""> {/* Containter Containter Containter*/}
-            <div className={`text-lg  ${colorConfig.text}  py-6 flex items-center `}>
+            <div className={`text-xl  ${colorConfig.text}  py-6 flex items-center `}>
             
                 <div className="basis-1/4 px-6 ">
                 <Link href="/" className=" ">

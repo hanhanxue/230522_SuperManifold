@@ -9,11 +9,9 @@ import { Metadata } from 'next';
 
 
 
-
-
- 
-
 export const metadata: Metadata = {
+  metadataBase: new URL('https://supermanifold.com'),
+
   title: 'Super Manifold®',
   description: 'Electronic Products for the Future of Work and Play',
 
@@ -29,12 +27,6 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
       },
-      // {
-      //   url: 'https://nextjs.org/og-alt.png',
-      //   width: 1800,
-      //   height: 1600,
-      //   alt: 'My custom alt',
-      // },
     ],
     locale: 'en_US',
     type: 'website',
@@ -52,7 +44,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-    <Header colorConfig = { {text: 'text-white', bg: '' } } />
+
+    <Header isFixed={true} />
 
 
 
@@ -64,28 +57,28 @@ export default function Home() {
 
 
 
-<div className='shopify-section'>
-            <div className='nt_full'>
-                <div className='flex' style={{}}>
-                        <div>
-                          <Image 
-                                  src="/images/supermanifold_TRRS.jpg"
-                                          width={5120}
-                                          height={5120}
-                                  alt="Picture of the author"
-                          />
-                        </div>
-                        <div>
-                        <Image 
-                                  src="/images/supermanifold_TRRS.jpg"
-                                          width={5120}
-                                          height={5120}
-                                  alt="Picture of the author"
-                          />
-                        </div>
-                </div>
+    <div className='shopify-section'>
+        <div className='nt_full'>
+            <div className='flex' style={{}}>
+                    <div>
+                      <Image 
+                              src="/images/supermanifold_TRRS.jpg"
+                                      width={5120}
+                                      height={5120}
+                              alt="Picture of the author"
+                      />
+                    </div>
+                    <div>
+                    <Image 
+                              src="/images/supermanifold_TRRS.jpg"
+                                      width={5120}
+                                      height={5120}
+                              alt="Picture of the author"
+                      />
+                    </div>
             </div>
         </div>
+    </div>
 
 
 
@@ -239,3 +232,11 @@ bg2: 'bg-black'}}/>
 //     </main>
 //   )
 // }
+
+
+      // {
+      //   url: 'https://nextjs.org/og-alt.png',
+      //   width: 1800,
+      //   height: 1600,
+      //   alt: 'My custom alt',
+      // },

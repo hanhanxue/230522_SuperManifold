@@ -8,81 +8,95 @@ import { useEffect, useState } from 'react'
 
 
 interface IHeaderProps {
-    colorConfig: {
+    colorConfig?: {
         text: string
         bg: string
     }
-    spacer?: boolean
+    isFixed?: boolean
 }
 
 
-const Header: React.FC<IHeaderProps> = ( {colorConfig = {text: 'text-blue-700', bg: 'bg-red-700' }, spacer = false}   ) => {
+const Header: React.FC<IHeaderProps> = ( {colorConfig = {text: 'text-blue-700', bg: 'bg-red-700' }, isFixed = false}   ) => {
 
-    const threshold = 128 // Y threshold
-    const buffer = 24 // buffer to avoid style change flashing
+const threshold = 25 // Y threshold
+const buffer = 24 // buffer to avoid style change flashing
 
-    const [isPastYThreshold, setIsPastYThreshold] = useState(false)
+const [isPastYThreshold, setIsPastYThreshold] = useState(false)
 
-    useEffect(() => {
-        const handler = () => {
+useEffect(() => {
+    const handler = () => {
 
-            setIsPastYThreshold((isPastYThreshold) => {
-                if(isPastYThreshold && window.pageYOffset < threshold) return false
-                if(!isPastYThreshold && window.pageYOffset > threshold + buffer) return true
-                return isPastYThreshold
-            })
-        }
+        setIsPastYThreshold((isPastYThreshold) => {
+            if(isPastYThreshold && window.scrollY < threshold) return false
+            if(!isPastYThreshold && window.scrollY > threshold + buffer) return true
+            return isPastYThreshold
+        })
+    }
 
-        window.addEventListener("scroll", handler)
-        return () => window.removeEventListener("scroll", handler)
-    }, [])
+    window.addEventListener("scroll", handler)
+    return () => window.removeEventListener("scroll", handler)
+}, [])
+
+
+
 
 
 
     return (
 
-<>
-<header className={`sticky`}>
+        <>
+
+        <header
+        className={`
+  
+        ${isFixed ? 'fixed w-full z-50 transition-colors duration-500' 
+                  : 'sticky top-0 w-full bg-white after:block after:border-b'}
+        ${isFixed && isPastYThreshold ? ' bg-white ' : ''}
+        `}>
 
 
-        <nav className={`text-lg  flex items-center py-6 ${colorConfig.text}`}>
+        {/* X Container */}
+        <div className='mx-8'>
+            {/* Y Container */}
+            <nav className={`flex items-center justify-between py-4`}>
             
-                <div className="basis-1/4 px-6">
+                <div className="text-2xl font-brand   ">
                     <Link href="/" className="">
-                        Super Manifold® 
+                        Super Manifold®
                     </Link>
                 </div>
 
-                {/* <div className="basis-1/4 px-6">
-                    <Link href="/" className="">
-                    <SuperManifoldLogo variant={Logotypes.Symbol}/>
-                    </Link>
-                </div> */}
-
-                <div className="basis-3/4 px-6">
+                <div className="text-xl  ">
                     <ul className=" flex  justify-end">
-                        <Link href="/" className=""><li className="first:ml-0 ml-10">Products</li></Link>
-                        <Link href="/" className=""><li className="ml-10">Process</li></Link>
-                        <Link href="/info" className=""><li className="ml-10">Info</li></Link>
+                        <Link href="/" className=""><li className="first:ml-0 ml-8">Products</li></Link>
+                        <Link href="/process" className=""><li className="ml-8">Process</li></Link>
+                        <Link href="/info" className=""><li className="ml-8">Info</li></Link>
                     </ul>
                 </div>
 
             </nav>
-
-
-    </header>
+        </div>
 
 
 
-    {spacer && <div className={`h-[5.25rem] ${colorConfig.bg}`}></div>}
-
-</>
+            </header>
+        </>
 
     )
 }
 
 export default Header
 
+
+
+
+
+
+
+
+
+
+        // backdrop-blur-xl
 
 
 

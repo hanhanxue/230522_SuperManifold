@@ -42,50 +42,56 @@ module.exports = {
 
       //////////////// TYPOGRAPHY ////////////////// TYPOGRAPHY //////////////////
       fontFamily: {
-        sans: ['var(--font-nmtl)']
+        primary: "Inter",
+        brand: "nmtl",
       },
 
       fontSize: {
-        '4xl': [      '4.75rem', {
-          lineHeight: '5.5rem',
-          letterSpacing: '0em',
-          fontWeight: '400',
-        }],
-        '3xl': [      '3.5rem', {
-          lineHeight: '4.25rem',
-          letterSpacing: '0em',
-          fontWeight: '400',
-        }],
-        '2xl': [      '2.625rem', {
-          lineHeight: '3.25rem',
-          letterSpacing: '0em',
-          fontWeight: '400',
-        }],
-        'xl': [       '2rem', {
-          lineHeight: '2.5rem',
-          letterSpacing: '0em',
-          fontWeight: '400',
-        }],
-        'lg': [       '1.5rem', {
+        // '4xl': [      '4.75rem', {
+        //   lineHeight: '5.5rem',
+        //   letterSpacing: '0em',
+        //   fontWeight: '400',
+        // }],
+        // '3xl': [      '3.5rem', {
+        //   lineHeight: '4.25rem',
+        //   letterSpacing: '0em',
+        //   fontWeight: '400',
+        // }],
+
+
+
+        '2xl': [      '1.5rem', {
           lineHeight: '2rem',
-          letterSpacing: '.01em',
+          letterSpacing: '0.025em',
           fontWeight: '400',
         }],
-        'base': [     '1.125rem', {
+        'xl': [       '1.125rem', {
           lineHeight: '1.5rem',
-          letterSpacing: '.02em',
-          fontWeight: '400',
-        }],
-        'sm': [     '.875rem', {
-          lineHeight: '1.125rem',
-          letterSpacing: '.02em',
-          fontWeight: '400',
-        }],
-        'xs': [     '.625rem', {
-          lineHeight: '.8125rem',
           letterSpacing: '0em',
           fontWeight: '400',
         }],
+        'lg': [       '0.875rem', {
+          lineHeight: '1.5rem',
+          letterSpacing: '0em',
+          fontWeight: '400',
+        }],
+
+
+        'base': [     '0.8125rem', {
+          lineHeight: '1.5rem',
+          letterSpacing: '0em',
+          fontWeight: '400',
+        }],
+
+
+        'sm': [     '.6875rem', {
+          lineHeight: '1rem',
+          letterSpacing: '0em',
+          fontWeight: '400',
+        }],
+
+
+
       },
 
       //////////////// COLORS ////////////////// COLORS //////////////////

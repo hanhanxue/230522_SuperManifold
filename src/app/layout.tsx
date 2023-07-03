@@ -1,29 +1,6 @@
 
 import './globals.css'
 
-import localFont from 'next/font/local'
-
-
-const nmtl = localFont({
-  src: [
-    // {
-    //   path: '../../public/fonts/PPNeueMontreal-Thin.otf',
-    //   weight: '100'
-    // },
-    {
-      path: '../../public/fonts/PPNeueMontreal-Book.otf',
-      weight: '400'
-    },
-    // {
-    //   path: '../../public/fonts/PPNeueMontreal-Medium.otf',
-    //   weight: '500'
-    // },
-  ],
-  variable: '--font-nmtl'
-})
-
-
-
 
 
 
@@ -33,11 +10,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${nmtl.variable}`}>
+    <html lang="en" className={`font-primary`}>
       <body>{children}</body>
     </html>
   );
 }
+
+
+
 
 
 
@@ -63,3 +43,26 @@ export default function RootLayout({
 //     </html>
 //   )
 // }
+
+
+// import localFont from 'next/font/local'
+// const nmtl = localFont({
+//   src: [
+//     // {
+//     //   path: '../../public/fonts/PPNeueMontreal-Thin.otf',
+//     //   weight: '100'
+//     // },
+//     {
+//       path: '../../public/fonts/PPNeueMontreal-Book.otf',
+//       weight: '400'
+//     },
+//     // {
+//     //   path: '../../public/fonts/PPNeueMontreal-Medium.otf',
+//     //   weight: '500'
+//     // },
+//   ],
+//   variable: '--nmtl'
+// })
+
+
+

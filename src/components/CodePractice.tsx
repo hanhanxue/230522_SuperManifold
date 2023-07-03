@@ -12,8 +12,7 @@ const CodePractice: React.FC<ICodePracticeProps> = ({ listName, listItems }) => 
 
             <div className="py-2 flex items-center">
                 <div className="basis-1/6 px-6"></div>
-                <div className="basis-5/6 px-6">{listName}</div>
-             
+                <div className="basis-5/6 px-6">{listName}</div>  
             </div>
 
             <ul className="text-2xl">
@@ -45,6 +44,17 @@ const CodePractice: React.FC<ICodePracticeProps> = ({ listName, listItems }) => 
     </div>
     )
 }
+
+export default CodePractice;
+
+
+
+
+
+
+
+
+
 // interface Props {
 //     listName: string;
 //   }
@@ -63,4 +73,3 @@ const CodePractice: React.FC<ICodePracticeProps> = ({ listName, listItems }) => 
 //     );
 //   };
   
-export default CodePractice;
