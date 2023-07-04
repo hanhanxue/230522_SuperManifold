@@ -3,6 +3,8 @@
 
 import Link from 'next/link'
 
+import styles from './Header.module.scss'
+
 import { useEffect, useState } from 'react'
 // import SuperManifoldLogo, { Logotypes } from './SuperManifoldLogo';
 
@@ -13,52 +15,69 @@ interface IHeaderProps {
         bg: string
     }
     isFixed?: boolean
+    hasBorder?: boolean
 }
 
 
-const Header: React.FC<IHeaderProps> = ( {colorConfig = {text: 'text-blue-700', bg: 'bg-red-700' }, isFixed = false}   ) => {
+const Header: React.FC<IHeaderProps> = ( {
+colorConfig = {text: 'text-blue-700', bg: 'bg-red-700' }, 
+isFixed = false,
+hasBorder = true,
+}   ) => {
 
-const threshold = 25 // Y threshold
-const buffer = 24 // buffer to avoid style change flashing
+// const threshold = 25 // Y threshold
+// const buffer = 24 // buffer to avoid style change flashing
 
-const [isPastYThreshold, setIsPastYThreshold] = useState(false)
+// const [isPastYThreshold, setIsPastYThreshold] = useState(false)
+
+// useEffect(() => {
+//     const handler = () => {
+
+//         setIsPastYThreshold((isPastYThreshold) => {
+//             if(isPastYThreshold && window.scrollY < threshold) return false
+//             if(!isPastYThreshold && window.scrollY > threshold + buffer) return true
+//             return isPastYThreshold
+//         })
+//     }
+
+//     window.addEventListener("scroll", handler)
+//     return () => window.removeEventListener("scroll", handler)
+// }, [])
+
+
+const [isScrolled, setIsScrolled] = useState(false);
 
 useEffect(() => {
-    const handler = () => {
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset;
+    setIsScrolled(scrollTop > 0);
+  };
 
-        setIsPastYThreshold((isPastYThreshold) => {
-            if(isPastYThreshold && window.scrollY < threshold) return false
-            if(!isPastYThreshold && window.scrollY > threshold + buffer) return true
-            return isPastYThreshold
-        })
-    }
-
-    window.addEventListener("scroll", handler)
-    return () => window.removeEventListener("scroll", handler)
-}, [])
-
-
-
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
 
 
 
     return (
 
         <>
-
-        <header
-        className={`
-  
-        ${isFixed ? 'fixed w-full z-50 transition-colors duration-500' 
-                  : 'sticky top-0 w-full bg-white after:block after:border-b'}
-        ${isFixed && isPastYThreshold ? ' bg-white ' : ''}
+        {/* SECTION */}
+        <header className={` 
+        ${styles.header} ${styles.headerSticky} 
+        // ${isScrolled ? styles.headerScrolled  : ''}
+        ${hasBorder ? styles.headerBordered  : ''}
         `}>
-
-
         {/* X Container */}
         <div className='mx-8'>
             {/* Y Container */}
             <nav className={`flex items-center justify-between py-4`}>
+
+
+
+                
             
                 <div className="text-2xl font-brand   ">
                     <Link href="/" className="">
@@ -93,7 +112,9 @@ export default Header
 
 
 
-
+// ${isFixed ? 'fixed w-full z-50 transition-colors duration-500' 
+// : 'sticky top-0 w-full bg-white/80 '}
+// ${isFixed && isPastYThreshold ? ' bg-white after:block after:border-b' : ''}
 
 
         // backdrop-blur-xl

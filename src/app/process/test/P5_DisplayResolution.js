@@ -122,7 +122,7 @@ const P5_DisplayResolution = (width) => {
         <>
         {/* <div className='HIHIHI'> */}
 
-            <Sketch setup={setup} draw={draw} className={`flex justify-center mt-6`} />
+            <Sketch setup={setup} draw={draw} className={`flex justify-center`} />
 
         {/* </div> */}
 

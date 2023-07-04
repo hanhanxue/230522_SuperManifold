@@ -5,6 +5,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 
+import styles from './Home.module.scss'
+
 
 
 
@@ -45,66 +47,37 @@ export default function Home() {
   return (
     <>
 
-    <Header isFixed={true} />
+    <Header hasBorder={false} />
+
+
+    <section className={`${styles.productGrid}`}>
+
+      <video autoPlay muted loop className={`${styles.product}  ${styles.gridColSpan2}`}>         
+        <source src="/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>         
+      </video>
+
+
+      <Image  className={`${styles.product}`}
+                src="/images/supermanifold_TRRS.jpg"
+                        width={5120}
+                        height={5120}
+                alt="Picture of the author"
+        />
+      <Image className={`${styles.product}`}
+              src="/images/supermanifold_TRRS.jpg"
+                      width={5120}
+                      height={5120}
+              alt="Picture of the author"
+      />
+
+
+    </section>
 
 
 
 
-    <video autoPlay muted loop className={``}>         
-    <source src="/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>       
-    </video>
 
 
-
-
-    <div className='shopify-section'>
-        <div className='nt_full'>
-            <div className='flex' style={{}}>
-                    <div>
-                      <Image 
-                              src="/images/supermanifold_TRRS.jpg"
-                                      width={5120}
-                                      height={5120}
-                              alt="Picture of the author"
-                      />
-                    </div>
-                    <div>
-                    <Image 
-                              src="/images/supermanifold_TRRS.jpg"
-                                      width={5120}
-                                      height={5120}
-                              alt="Picture of the author"
-                      />
-                    </div>
-            </div>
-        </div>
-    </div>
-
-
-
-        <div className="overflow-x-hidden       relative flex ">
-    <div className="bg-black text-white py-2 animate-marquee whitespace-nowrap ">
-        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
-        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
-        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
-        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
-        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
-    </div>
-
-    <div className="bg-black text-white py-2 animate-marquee2 whitespace-nowrap    absolute top-0  ">
-        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
-        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
-        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
-        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
-        <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
-    </div>
-</div>
-
-<Footer colorConfig={{text: 'text-black', 
-bg: 'bg-white', 
-bg2: 'bg-black'}}/>
-    {/* Force NextJS to proces */}
-    <img src="/images/og.png" alt="" style={{ display: 'none'}} />
     </>
   )
   
@@ -240,3 +213,38 @@ bg2: 'bg-black'}}/>
       //   height: 1600,
       //   alt: 'My custom alt',
       // },
+
+
+
+
+      
+
+  //     <div className="overflow-x-hidden       relative flex ">
+  //     <div className="bg-black text-white py-2 animate-marquee whitespace-nowrap ">
+  //         <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+  //         <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+  //         <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+  //         <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+  //         <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+  //     </div>
+  
+  //     <div className="bg-black text-white py-2 animate-marquee2 whitespace-nowrap    absolute top-0  ">
+  //         <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+  //         <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+  //         <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+  //         <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+  //         <span className="mx-12 text-3xl [word-spacing:96px]">EXPLORE ALL PRODUCTS</span>
+  //     </div>
+  // </div>
+  
+  
+  
+  
+  
+  
+  
+  // <Footer colorConfig={{text: 'text-black', 
+  // bg: 'bg-white', 
+  // bg2: 'bg-black'}}/>
+  //     {/* Force NextJS to proces */}
+  //     <img src="/images/og.png" alt="" style={{ display: 'none'}} />

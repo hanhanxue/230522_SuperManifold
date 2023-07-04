@@ -1,0 +1,34 @@
+
+
+
+.section {
+    position:sticky;
+    top: 64px;
+
+    background-color: white;
+}
+
+.YContainer {
+
+    width: 768px;
+    height: 120px;
+    margin: auto;
+
+
+    display: flex;
+    align-items: center;
+
+
+    transition: height .382s ; 
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
+
+    &Scrolled {
+        height: 96px;
+    }
+}
+
+
+.borderBottom {
+    border-bottom: 1px solid #e5e7eb
+}

@@ -1,0 +1,16 @@
+
+
+.button {
+padding: 4px 10px;
+// background-color: #F1F1F1;
+margin-right: .5rem;
+border-radius: 2px;
+border: 1px solid transparent;
+
+
+&:hover {
+    border: 1px solid #e5e7eb;
+    // margin:-1px;
+}
+    
+}
