@@ -83,7 +83,7 @@ export default function ProcessHeader() {
                                                 </div>
 
 
-<div className={`py-2 px-4 rounded-[6px] text-lg text-white bg-blue-500 `}>Share</div>
+<div className={`py-2 px-4 rounded-[6px] text-lg text-white bg-blue-500 font-medium`}>Share</div>
 
 
 

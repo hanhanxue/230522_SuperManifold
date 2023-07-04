@@ -16,7 +16,7 @@ export default function Info() {
     return (
       <div className={`animate-fade`}>
 
-      <Header colorConfig = {{text: 'text-jet-stream', bg: 'bg-cinnabar'  }} spacer = {true}/>
+<Header hasBorder={false} />
      
       <HeroText copy="We craft electronic products for the future of work and play🅐" />
 
