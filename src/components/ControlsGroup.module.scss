@@ -1,0 +1,22 @@
+
+.controlsGroup {
+
+
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 4px 4px;
+    border: solid 1px #c9c9c9;
+    border-radius: 8px;
+}
+
+
+.label {
+    padding: 0 8px;
+    color: #767676;
+}
+
+.controls {
+    display: flex;
+    gap: 4px;
+}

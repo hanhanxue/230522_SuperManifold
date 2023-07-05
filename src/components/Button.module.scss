@@ -1,11 +1,66 @@
 
 
+
+
 .button {
-padding: 4px 10px;
-// background-color: #F1F1F1;
-margin-right: .5rem;
-border-radius: 2px;
-border: 1px solid transparent;
+transition-property: box-shadow border;
+transition-duration: .15s;
+transition-timing-function: ease;
+
+display: flex;
+align-items: center;
+
+// background-color: red;
+
+    &.sm {
+        // background-color: red;
+        height: 24px;
+        padding: 8px;
+        border-radius: 4px;
+        
+    }
+
+    &.lg {
+        height: 40px;
+        padding: 16px;
+        border-radius: 6px;
+    }
+
+
+
+    &.noSize {
+        border: 8px solid blue;
+    }
+
+
+
+
+
+
+
+
+    &.ghost {
+        // background-color: red;
+        border: 1px solid transparent;
+        // border: 1px solid #e5e7eb;
+        &:hover {
+            border: 1px solid #e5e7eb;
+
+        }
+    }
+
+    &.outlined {
+
+        border: 1px solid #e5e7eb;
+
+        &:hover {
+            border: 1px solid black;
+        }
+    }
+
+    &.noKind {
+        background-color: red;
+    }
 
 
 &:hover {

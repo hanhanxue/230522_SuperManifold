@@ -6,6 +6,7 @@ import Image from 'next/image'
 
 
 import Badge from '../components/Badge'
+import Button from '../components/Button'
 import styles from './ProcessHeader.module.scss'
 
 export default function ProcessHeader() {
@@ -41,6 +42,9 @@ export default function ProcessHeader() {
     ${isScrolled ? styles.YContainerScrolled  : ''} `}>           
 
     <div className={`${styles.header} flex justify-between items-center`}>
+
+
+
         {/* Header LEFT SIDE*/} 
         <div className={`flex`}>
                   {/* Header Image*/}                  
@@ -73,7 +77,11 @@ export default function ProcessHeader() {
         </div>
         {/* ////////////////////////////////////////////////// Header RIGHT SIDE*/} 
         {/* Header RIGHT SIDE*/} 
-        <button className={`type-lg ${styles.testButton} `}><span>Share</span></button>
+        <Button kind='outlined' size='lg'>Share</Button>
+        {/* <button className={`type-lg ${styles.testButton} `}><span>Share</span></button> */}
+
+
+
     </div>
 
 

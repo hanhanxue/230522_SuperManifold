@@ -1,16 +1,29 @@
 'use client'
 
-import Button from '../../../components/Button'
-import Slider from '../../../components/Slider'
 
 import dynamic from 'next/dynamic'
+
+
 // Will only import `react-p5` on client-side
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
   ssr: false,
 })
 // import Sketch from "react-p5"
 
-const P5_DisplayResolution = (width) => {
+
+
+
+import Button from '../../../components/Button'
+import Slider from '../../../components/Slider'
+import ControlsGroup from '../../../components/ControlsGroup'
+
+
+import styles from './Viewer.module.scss'
+
+let p5Instance
+
+
+const Viewer = () => {
 
     let surface
     let cnv
@@ -24,7 +37,7 @@ const P5_DisplayResolution = (width) => {
         refColor =  p5.color(255, 0, 0)
         // console.log(refColor)
 
-        cnv = p5.createCanvas(1280, 720).parent(canvasParentRef)
+        cnv = p5.createCanvas(1440, 720).parent(canvasParentRef)
 
         cnv.class('rounded-2xl')
         p5.background('#F6F6F6')
@@ -136,26 +149,80 @@ const P5_DisplayResolution = (width) => {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <>
-        {/* <div className='HIHIHI'> */}
+    {/* SECTION */}
+    <section className={`${styles.section}`}>
+    {/* FRAME X */}
+    <div className={`${styles.frameX}`}>
+    {/* FRAME Y */}
+    <div className={`${styles.frameY}`}>      
 
-            <Sketch setup={setup} draw={draw} className={`flex justify-center`} />
 
-        {/* </div> */}
 
-            <div className='max-w-[80rem] mx-auto mt-6'>
-                <Button onClick={handleAddClick}>Generate</Button>
-                <Button onClick={handleClearClick}>Clear</Button>
-                <Slider onChange={handleSliderChange} />
-            </div>
+
+    <div className={`${styles.viewerframe}`}>
+
+    <Sketch setup={setup} draw={draw} className={`${styles.canvasframe}`} />
+
+
+        <div className={`${styles.sidePanelContainer}`}>
+
+            <Slider onChange={handleSliderChange} />
+        </div>
+
+<div className={`${styles.bottomPanelContainer}`}>
+
+
+
+
+        <ControlsGroup label='Global'>
+            <Button kind='ghost' size='sm' onClick={handleAddClick}>Generate</Button>
+            <Button kind='ghost' size='sm' onClick={handleClearClick}>Clear</Button>
+        </ControlsGroup>
+
+        <ControlsGroup label='Global'>
+            <Button kind='ghost' size='sm' onClick={handleAddClick}>Generate</Button>
+            <Button kind='ghost' size='sm' onClick={handleClearClick}>Clear</Button>
+        </ControlsGroup>
+
+
+</div>
+
+    </div>
+
+
+
+
+
+
+    </div>
+    </div>
+    </section>
+
+
 
         </>
 
     )
 }
 
-export default P5_DisplayResolution
+export default Viewer
 
 
 
