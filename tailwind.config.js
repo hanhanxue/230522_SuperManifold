@@ -60,35 +60,35 @@ module.exports = {
 
 
 
-        '2xl': [      '1.5rem', {
-          lineHeight: '2rem',
-          letterSpacing: '0.025em',
-          fontWeight: '400',
-        }],
-        'xl': [       '1.125rem', {
-          lineHeight: '1.5rem',
-          letterSpacing: '0em',
-          fontWeight: '400',
-        }],
-        'lg': [       '0.875rem', {
-          lineHeight: '1.5rem',
-          letterSpacing: '0em',
-          fontWeight: '400',
-        }],
+        // '2xl': [      '1.5rem', {
+        //   lineHeight: '2rem',
+        //   letterSpacing: '0.025em',
+        //   fontWeight: '400',
+        // }],
+        // 'xl': [       '1.125rem', {
+        //   lineHeight: '1.5rem',
+        //   letterSpacing: '0em',
+        //   fontWeight: '400',
+        // }],
+        // 'lg': [       '0.875rem', {
+        //   lineHeight: '1.5rem',
+        //   letterSpacing: '0em',
+        //   fontWeight: '400',
+        // }],
 
 
-        'base': [     '0.8125rem', {
-          lineHeight: '1.5rem',
-          letterSpacing: '0em',
-          fontWeight: '400',
-        }],
+        // 'base': [     '0.8125rem', {
+        //   lineHeight: '1.5rem',
+        //   letterSpacing: '0em',
+        //   fontWeight: '400',
+        // }],
 
 
-        'sm': [     '.6875rem', {
-          lineHeight: '1rem',
-          letterSpacing: '0em',
-          fontWeight: '400',
-        }],
+        // 'sm': [     '.6875rem', {
+        //   lineHeight: '1rem',
+        //   letterSpacing: '0em',
+        //   fontWeight: '400',
+        // }],
 
 
 

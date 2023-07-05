@@ -85,7 +85,7 @@ useEffect(() => {
                     </Link>
                 </div>
 
-                <div className="text-xl  ">
+                <div className="type-xl  ">
                     <ul className=" flex  justify-end">
                         <Link href="/" className=""><li className="first:ml-0 ml-8">Products</li></Link>
                         <Link href="/process" className=""><li className="ml-8">Process</li></Link>

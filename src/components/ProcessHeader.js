@@ -1,8 +1,11 @@
 'use client' // This is a client component 👈🏽
+
 import { useEffect, useState } from 'react'
 
 import Image from 'next/image'
 
+
+import Badge from '../components/Badge'
 import styles from './ProcessHeader.module.scss'
 
 export default function ProcessHeader() {
@@ -32,69 +35,46 @@ export default function ProcessHeader() {
     <section className={`${styles.section} 
     ${isScrolled ? styles.borderBottom  : ''}`}>
     {/* X Container */}
-    <div className='mx-8'>
+    <div className={`${styles.XContainer}`}>
     {/* Y Container */}
     <div className={`${styles.YContainer}
     ${isScrolled ? styles.YContainerScrolled  : ''} `}>           
 
+    <div className={`${styles.header} flex justify-between items-center`}>
+        {/* Header LEFT SIDE*/} 
+        <div className={`flex`}>
+                  {/* Header Image*/}                  
+                  <Image
+                    className="rounded-xl mr-2"
+                    src={`SuperManifold.svg`}
+                    width={48}
+                    height={48}
+                    alt="REPLACE"
+                  />
 
+                  {/* Header Text*/}
+                  <div className=''>
+                          {/* Header Title     TOP ROW*/}
+                          <div className='flex items-center'>
+                              <h1 className="type-xl font-medium mr-2">Screen Resolutions</h1>
+                              
+                              <div className='flex gap-1'>
+                                <Badge>Utility</Badge>
+                                <Badge>2023</Badge>
+                              </div>
+                          </div>
 
+                          {/* Header Details     BOTTOM ROW*/}
+                          <div className={` text-zinc-600 `}>
+                            <h2 className={`type-base`}>Utility app using P5.js</h2>
+                          </div>
 
-<div className={`flex w-[768px] justify-between items-center`}>
-
-
-
-
-                         <div className={`flex`}>
-        <Image
-        className="rounded-xl mr-2"
-        src={`SuperManifold.svg`}
-        width={48}
-        height={48}
-        alt="REPLACE"
-        />
-
-
-
-
-        {/* Header */}
-        <div className=''>
-            <div>
-        {/* Header Title*/}
-
-        <div className='flex items-center'>
-            <h1 className="text-xl font-medium mr-2">Screen Resolutions</h1>
-
-            <div className='bg-zinc-100 px-2 rounded-[5px] mr-2'>
-                <p className="text-base ">Utility</p>
-            </div>
-            <div className='bg-zinc-100 px-2 rounded-[5px] mr-2'>
-                <p className="text-base ">2023</p>
-            </div>
-                   </div>
-
-                   {/* Header Details*/}
-                 <div className='flex items-center text-zinc-600 text-sm '>
-                  <h2 className="text-base mr-4">Utility app using P5.js</h2>
                   </div>
-
-              </div>
         </div>
-                                                </div>
-
-
-<div className={`py-2 px-4 rounded-[6px] text-lg text-white bg-blue-500 font-medium`}>Share</div>
-
-
-
-
-
-
+        {/* ////////////////////////////////////////////////// Header RIGHT SIDE*/} 
+        {/* Header RIGHT SIDE*/} 
+        <button className={`type-lg ${styles.testButton} `}><span>Share</span></button>
     </div>
-
-
-
-
 
 
     </div>

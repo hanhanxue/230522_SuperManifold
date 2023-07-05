@@ -1,0 +1,26 @@
+
+// using @use vs @import https://www.youtube.com/watch?v=CR-a8upNjJ0
+
+// @use '../abstracts/colors' as c;
+// @use '../abstracts/fonts' as *;
+
+// @use "abstracts/breakpoints";
+// @use "abstracts/functions";
+// @use "abstracts/mixins";
+// @use "abstracts/variables";
+
+// @use './abstracts' as *;
+
+
+
+@use "base/base";
+@use "base/animations";
+@use "base/typography";
+@use "base/utilities";
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+

@@ -1,27 +1,27 @@
 
-
-
 .section {
     position:sticky;
     top: 64px;
 
-    background-color: white;
+    // background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(2rem);
+}
+
+.XContainer {
+    margin: 0 32px;
 }
 
 .YContainer {
 
-    width: 768px;
-    height: 120px;
-    margin: auto;
 
+    height: 120px;
 
     display: flex;
     align-items: center;
 
-
     transition: height .382s ; 
     transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-
 
     &Scrolled {
         height: 96px;
@@ -29,6 +29,36 @@
 }
 
 
+.header {
+    width: 1024px;
+    margin: auto;
+    padding: 0 32px;
+}
+
 .borderBottom {
     border-bottom: 1px solid #e5e7eb
 }
+
+.testButton {
+    padding: 0px 16px;
+    border-radius: 6px;
+
+    border: solid 1.33px rgba(0, 0, 0, 0.08);
+    // box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08) ;
+    // background-color: aqua;
+
+    height: 40px;
+    display: flex;
+    align-items: center;
+ 
+    transition-property: box-shadow border;
+    transition-duration: .15s;
+    transition-timing-function: ease;
+
+    &:hover {
+        border: solid 1.33px rgba(0, 0, 0, 0.61);
+        // box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.61) ;
+    }
+}
+
+// py-2 px-4 rounded-[6px] text-lg text-white bg-blue-500 font-medium

@@ -1,0 +1,81 @@
+@use '../abstracts' as *;
+
+
+
+@font-face {
+    font-family: nmtl;
+    src: url("../../../public/fonts/PPNeueMontreal-Book.otf") format("opentype");
+  }
+
+@font-face {
+    font-family: Inter;
+    src: url("../../../public/fonts/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
+  }
+
+
+// 100 Thin (Hairline)
+// 200 Extra Light (Ultra Light)
+// 300 Light
+
+// 400 Normal (Regular)
+
+// 500 Medium
+// 600 Semi Bold (Demi Bold)
+// 700 Bold
+
+// 800 Extra Bold (Ultra Bold)
+// 900 Black (Heavy)
+// 950 Extra Black (Ultra Black) 
+
+
+
+
+
+%type-placeholder {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-style: normal;
+}
+.type-2xl {
+  @extend %type-placeholder;
+
+  letter-spacing: 0em;
+  font-size: rem(24);
+  line-height: rem(32);
+}
+.type-xl {
+  @extend %type-placeholder;
+
+  letter-spacing: 0em;
+  font-size: rem(18);
+  line-height: rem(24);
+}
+
+
+
+
+
+
+.type-lg {
+  @extend %type-placeholder;
+
+  letter-spacing: 0em;
+  font-size: rem(14);
+  line-height: rem(24);
+}
+///////////////////////////////////////////////// THIS IS BASE 
+.type-base {
+  @extend %type-placeholder;
+
+  letter-spacing: 0em;
+  font-size: rem(13);
+  line-height: rem(24);
+}
+
+.type-sm {
+  @extend %type-placeholder;
+
+  letter-spacing: 0em;
+  font-size: rem(11);
+  line-height: rem(16);
+}
