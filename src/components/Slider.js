@@ -18,16 +18,27 @@ export default function Slider({onChange, children}) {
     
 
     return (
-        <input 
-        // max={10}
-        type='range' 
-        value={value} 
-        onChange={e => {
-            setValue(e.target.valueAsNumber)
-            onChange(e, e.target.valueAsNumber)
-        }} className={styles.test}
-        style={getBackgroundSize()}
-        />
+
+
+        <div className={`${styles.sliderFrame}`}>
+
+            <label className={`type-sm ${styles.label}`}>{children}</label>
+
+            <input 
+            // max={10}
+            type='range' 
+            value={value} 
+
+            style={getBackgroundSize()}
+
+            onChange={e => {
+                setValue(e.target.valueAsNumber)
+                onChange(e, e.target.valueAsNumber)
+            }} className={styles.slider}
+            />
+
+        </div>
+
     );
   }
 

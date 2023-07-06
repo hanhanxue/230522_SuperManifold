@@ -90,7 +90,7 @@ export const changeSceneScale = (e, value) => {
 
     p5I.background(bgColor)
 
-    refSrf.displayRef()
+    // refSrf.displayRef()
     mainSrf.display()
 
 }

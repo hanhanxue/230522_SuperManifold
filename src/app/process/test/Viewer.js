@@ -1,8 +1,8 @@
-// 'use client'
+'use client'
 
 
 // import dynamic from 'next/dynamic'
-
+import { useState } from 'react'
 
 // // Will only import `react-p5` on client-side
 // const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
@@ -12,12 +12,13 @@
 
 
 
-
 import Button from '../../../components/Button'
 import Slider from '../../../components/Slider'
+import Toggle from '../../../components/Toggle'
+
 import ControlsGroup from '../../../components/ControlsGroup'
-import P5Sketch from './P5Sketch'
-import {randomSrf,changeSceneScale} from './P5Sketch'
+import P5Sketch, {randomSrf, changeSceneScale} from './P5Sketch'
+// import {randomSrf,changeSceneScale} from './P5Sketch'
 
 
 import styles from './Viewer.module.scss'
@@ -26,10 +27,14 @@ import styles from './Viewer.module.scss'
 
 
 
-
-
 const Viewer = () => {
 
+    const [sidePanelVisible, setSidePanelVisible] = useState(true)
+
+    const handleSidePanelVisilibity = () => {
+        // setSidePanelVisible(!sidePanelVisible)
+        setSidePanelVisible((current) => !current)
+    }
 
 
     return (
@@ -44,27 +49,14 @@ const Viewer = () => {
 
 
 
-    <div className={`${styles.viewerframe}`}>
+    <div className={`${styles.viewerFrame}`}>
 
 
     <P5Sketch />
 
-
+    {sidePanelVisible &&
         <div className={`${styles.sidePanelContainer}`}>
-
-
-
-
         <div className={`${styles.sidePanel}`}>
-
-
-
-
-
-
-
-
-
 
 
                 <div className={`${styles.block}`}>
@@ -74,7 +66,7 @@ const Viewer = () => {
 
 
                             <button className={`type-sm ${styles.sideButton}`}><span>
-                            <svg class="svg" width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M5 5V0h1v5h5v1H6v5H5V6H0V5h5z" fill-rule="nonzero" fill-opacity="1" fill="#000" stroke="none"></path></svg>
+                            <svg className="svg" width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M5 5V0h1v5h5v1H6v5H5V6H0V5h5z" fillRule="nonzero" fillOpacity="1" fill="#000" stroke="none"></path></svg>
                          
                                 
                                 </span></button>
@@ -134,7 +126,7 @@ const Viewer = () => {
 
 
                             <button className={`type-sm ${styles.sideButton}`}><span>
-                            <svg class="svg" width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M5 5V0h1v5h5v1H6v5H5V6H0V5h5z" fill-rule="nonzero" fill-opacity="1" fill="#000" stroke="none"></path></svg>
+                            <svg className="svg" width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M5 5V0h1v5h5v1H6v5H5V6H0V5h5z" fillRule="nonzero" fillOpacity="1" fill="#000" stroke="none"></path></svg>
                          
                                 
                                 </span></button>
@@ -191,7 +183,7 @@ const Viewer = () => {
 
 
                             <button className={`type-sm ${styles.sideButton}`}><span>
-                            <svg class="svg" width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M5 5V0h1v5h5v1H6v5H5V6H0V5h5z" fill-rule="nonzero" fill-opacity="1" fill="#000" stroke="none"></path></svg>
+                            <svg className="svg" width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M5 5V0h1v5h5v1H6v5H5V6H0V5h5z" fillRule="nonzero" fillOpacity="1" fill="#000" stroke="none"></path></svg>
                          
                                 
                                 </span></button>
@@ -240,13 +232,20 @@ const Viewer = () => {
                 </div>
 
                 </div>
-            {/* <Slider  onChange={changeSceneScale}/> */}
-
-
-
+      
+       
+       
+       
+       
         </div>
+}
+
+
+
+
 
     </div>
+  
 
     <div className={`${styles.bottomPanelContainer}`}>
 
@@ -256,6 +255,8 @@ const Viewer = () => {
 <ControlsGroup label='Global'>
     <Button kind='ghost' size='sm' onClick={randomSrf}>Generate</Button>
     <Button kind='ghost' size='sm' onClick={changeSceneScale}>Clear</Button>
+    <Toggle toggled={sidePanelVisible} onChange={handleSidePanelVisilibity}>Side Panel</Toggle>
+    <Slider onChange={changeSceneScale}>Scale</Slider>
 </ControlsGroup>
 
 <ControlsGroup label='Global'>

@@ -5,20 +5,33 @@
     // background-color: black;
 }
 
-.viewerframe {
+.frameX {
+    margin: 0 32px;
+}
+
+
+
+
+.viewerFrame {
     // display: flex;
     // justify-content: center;
-    width: 1440px;
+    // margin: 0 32px;
     margin: auto;
+    max-width: 1440px;
+    // margin: auto;
     position: relative;
 }
 
 
 
 
+
+
+
+
 .sidePanelContainer {
     position:absolute;
-    width: 248px;
+    width: 240px;
     height: 100%;
     // background-color: black;
     top:0px;
@@ -43,7 +56,8 @@
         flex-direction: column;
 
         .block {
-            margin: 8px 0;
+            // margin: 8px 0;
+            padding: 8px 0;
             &:not(:last-child) {
                 border-bottom: 1px solid #e5e7eb;
             }
@@ -52,7 +66,7 @@
                 display: flex;
                 align-items: center;
 
-                padding: 0 12px;
+                padding: 0 8px;
                 height: 32px;
 
                 gap: 4px;
@@ -85,7 +99,7 @@
 .bottomPanelContainer {
     margin: 16px auto 0;
 
-    width: 1024px;
+    max-width: 1024px;
     height: 32px;
     // background-color: black;
 
