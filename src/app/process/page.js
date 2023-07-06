@@ -20,7 +20,26 @@ export default function Process() {
             <P5_DisplayResolutions />
              
 
-
+<div className='container mx-auto mt-64'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
+<div className='container mx-auto'>SUP Andras SUP Andras SUP Andras SUP Andras</div>
 
 
                             

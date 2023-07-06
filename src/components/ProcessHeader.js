@@ -60,7 +60,7 @@ export default function ProcessHeader() {
                   <div className=''>
                           {/* Header Title     TOP ROW*/}
                           <div className='flex items-center'>
-                              <h1 className="type-xl font-medium mr-2">Screen Resolutions</h1>
+                              <h1 className="type-xl font-medium mr-2">Display Resolution</h1>
                               
                               <div className='flex gap-1'>
                                 <Badge>Utility</Badge>
