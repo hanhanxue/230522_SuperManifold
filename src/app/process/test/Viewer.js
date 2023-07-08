@@ -15,6 +15,7 @@ import { useState } from 'react'
 import Button from '../../../components/Button'
 import Slider from '../../../components/Slider'
 import Toggle from '../../../components/Toggle'
+import Dropdown, {Option} from '../../../components/Dropdown'
 
 import ControlsGroup from '../../../components/ControlsGroup'
 import P5Sketch, {randomSrf, changeSceneScale} from './P5Sketch'
@@ -73,18 +74,15 @@ const Viewer = () => {
                         </div>
 
                         <div className={`${styles.row}`}>
-                        <div className={`${styles.combobox}`}>
-                        <div className={`type-sm ${styles.comboboxLabel}`}><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.5" y="3.5" width="15" height="9" rx="1.5" stroke="#9B9B9B"/>
-</svg>
-</div>
-                        <div className={`type-sm ${styles.comboboxText}`}>HD</div>
-                        <div className={`type-sm ${styles.comboboxCaret}`}>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5 7L8 10L11 7" stroke="black"/>
-</svg>
-</div>
-                        </div>
+                        <Dropdown>HD
+    {/* <Option value="nHD" />
+    <Option value="VGA" />
+    <Option value="SVGA" />
+    <Option value="XGA" />
+    <Option value="WXGA" />
+    <Option value="WXGA 2" />
+    <Option value="HD" /> */}
+</Dropdown>
                         </div>
 
 
@@ -150,15 +148,7 @@ const Viewer = () => {
 
 
                     <div className={`${styles.row}`}>
-                        <div className={`${styles.input}`}>
-                        <div className={`type-sm ${styles.inputLabel}`}>W</div>
-                        <div className={`type-sm ${styles.inputText}`}>1920</div>
-                        </div>
 
-                        <div className={`${styles.input}`}>
-                        <div className={`type-sm ${styles.inputLabel}`}>H</div>
-                        <div className={`type-sm ${styles.inputText}`}>1080</div>
-                        </div>
 
 
 

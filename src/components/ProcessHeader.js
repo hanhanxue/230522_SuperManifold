@@ -50,7 +50,7 @@ export default function ProcessHeader() {
                   {/* Header Image*/}                  
                   <Image
                     className="rounded-xl mr-2"
-                    src={`SuperManifold.svg`}
+                    src={`DisplayComposer.svg`}
                     width={48}
                     height={48}
                     alt="REPLACE"
@@ -60,7 +60,7 @@ export default function ProcessHeader() {
                   <div className=''>
                           {/* Header Title     TOP ROW*/}
                           <div className='flex items-center'>
-                              <h1 className="type-xl font-medium mr-2">Display Resolution</h1>
+                              <h1 className="type-xl font-medium mr-2">Display Composer</h1>
                               
                               <div className='flex gap-1'>
                                 <Badge>Utility</Badge>
@@ -70,7 +70,7 @@ export default function ProcessHeader() {
 
                           {/* Header Details     BOTTOM ROW*/}
                           <div className={` text-zinc-600 `}>
-                            <h2 className={`type-base`}>Utility app using P5.js</h2>
+                            <h2 className={`type-base`}>Right canvas for your next project.</h2>
                           </div>
 
                   </div>
