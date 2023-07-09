@@ -32,12 +32,12 @@
         background: black;
         content: "";
         display: inline-block;
-        height: 11px;
-        left: 50%;
         position: absolute;
-        top: -5px;
+        left: 50%;
         transform: translate(-50%);
+        height: 11px;
         width: 1px;
+        top: -5px;
     }
 }
 

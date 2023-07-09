@@ -37,12 +37,21 @@ const init = (p5, canvasParentRef) => {
     bgColor = p5I.color('#F6F6F6')
 
     cnv = p5I.createCanvas(1440, 720).parent(canvasParentRef)
+    // cnv.style('display', 'inline')
+    // cnv.style('position', 'absolute')
+    // cnv.style('left', '50%')
+    // cnv.style('transform', 'translate(-50%)')
+    // cnv.style('height', '720px')
+    // cnv.style('display', 'inline')
 
     canvasCenterX = p5I.width / 2
     canvasCenterY = p5I.height / 2
 
     p5I.background(bgColor)
 }
+
+
+
 
 const setup = (p5, canvasParentRef) => {
     init(p5, canvasParentRef)
