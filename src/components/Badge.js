@@ -9,7 +9,7 @@ export default function Badge({children}) {
     return (
 
     <div className={`${styles.badge} `}>
-        <span className={`type-sm`}>{children}</span>
+        <span className={`type-sm font-medium`}>{children}</span>
     </div>
     );
   }

@@ -36,6 +36,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
 .type-2xl {
   @extend %type-placeholder;
 
@@ -43,12 +44,14 @@
   font-size: rem(24);
   line-height: rem(32);
 }
+
 .type-xl {
   @extend %type-placeholder;
 
   letter-spacing: 0em;
   font-size: rem(18);
   line-height: rem(24);
+  letter-spacing: -.02em;
 }
 
 
@@ -62,6 +65,7 @@
   letter-spacing: 0em;
   font-size: rem(14);
   line-height: rem(24);
+
 }
 ///////////////////////////////////////////////// THIS IS BASE 
 .type-base {
@@ -70,6 +74,7 @@
   letter-spacing: 0em;
   font-size: rem(13);
   line-height: rem(24);
+
 }
 
 .type-sm {

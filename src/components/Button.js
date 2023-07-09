@@ -41,6 +41,9 @@ const Button = ({onClick, kind, size, children}) => {
 
   export default Button
 
+
+
+  
   // px-4 
   // bg-zinc-100 mr-4 py-3 rounded-xl 
   // hover:bg-zinc-200 

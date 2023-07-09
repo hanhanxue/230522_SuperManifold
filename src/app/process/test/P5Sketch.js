@@ -69,10 +69,10 @@ const createSrf = (width, height) => {
     return srf
 }
 
-export const randomSrf = () => {
+export const randomSrf = (w, h) => {
 
-    let width = p5I.random(500, 1000)
-    let height = p5I.random(500, 1000)
+    let width = w
+    let height = h
     refSrf = new Surface(p5I,
         p5I.width - width / 2, 
     p5I.height - height / 2, 

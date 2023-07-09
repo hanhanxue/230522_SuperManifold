@@ -15,7 +15,8 @@ import { useState } from 'react'
 import Button from '../../../components/Button'
 import Slider from '../../../components/Slider'
 import Toggle from '../../../components/Toggle'
-import Dropdown, {Option} from '../../../components/Dropdown'
+import Dropdown from '../../../components/Dropdown'
+import DropdownA, {Option} from '../../../components/DropdownA'
 
 import ControlsGroup from '../../../components/ControlsGroup'
 import P5Sketch, {randomSrf, changeSceneScale} from './P5Sketch'
@@ -36,6 +37,14 @@ const Viewer = () => {
         // setSidePanelVisible(!sidePanelVisible)
         setSidePanelVisible((current) => !current)
     }
+
+    const [optionValue, setOptionValue] = useState("");
+    const handleSelect = (e) => {
+      console.log(e.target.value);
+      setOptionValue(e.target.value);
+    };
+
+
 
 
     return (
@@ -74,7 +83,7 @@ const Viewer = () => {
                         </div>
 
                         <div className={`${styles.row}`}>
-                        <Dropdown>HD
+                        <Dropdown  onOptionClicked={(w, h)=>randomSrf(w, h)}>
     {/* <Option value="nHD" />
     <Option value="VGA" />
     <Option value="SVGA" />
@@ -150,7 +159,17 @@ const Viewer = () => {
                     <div className={`${styles.row}`}>
 
 
-
+<DropdownA
+        formLabel="Choose a service"
+        buttonText="Send form"
+        onChange={handleSelect}
+        action="/"
+>
+<Option value="Click to see options" />
+    <Option value="Option 1" />
+    <Option value="Option 2" />
+    <Option value="Option 3" />
+</DropdownA>
 
                         </div>
 

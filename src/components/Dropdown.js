@@ -1,33 +1,90 @@
 
 import styles from './Dropdown.module.scss'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
-const Dropdown = ({children}) => {
+const Dropdown = ({children, onOptionClicked}) => {
 
     const options = ["nHD", "VGA", "SVGA"];
     const displayOptions = {
-        nHD: '640 x 360',
-        VGA: '640 x 480',
-        SVGA: '800 x 600',
-        XGA: '1024 x 768',
-        WXGA: '1280 x 720',
-
+        nHD: {
+            width: 640,
+            height: 360
+        },
+        VGA:  {
+            width: 640,
+            height: 480
+        },
+        SVGA:  {
+            width: 800,
+            height: 600
+        },
+        XGA:  {
+            width: 1024,
+            height: 768
+        },
+        WXGA:  {
+            width: 1280,
+            height: 720
+        },
     }
+    // const displayOptionsArray = [
+    //     {
+    //         standard: 'nHD',
+    //         width: 640,
+    //         height: 360
+    //     },
+    //     {
+    //         standard: 'VGA',
+    //         width: 640,
+    //         height: 480
+    //     },
+    //     {
+    //         standard: 'SVGA',
+    //         width: 800,
+    //         height: 600
+    //     },
+    //     {
+    //         standard: 'XGA',
+    //         width: 1024,
+    //         height: 768
+    //     },
+    //     {
+    //         standard: 'WXGA',
+    //         width: 1280,
+    //         height: 720
+    //     },
+    // ]
 
     const [isOpen, setIsOpen] = useState(false)
     const toggle = () => {setIsOpen(current => !current)}
     const [selectedOption, setSelectedOption] = useState(null);
+    const dropdownRef = useRef(null);
 
-    const onOptionClicked = value => () => {
+    const onOptionClickedInternal = value => () => {
+        onOptionClicked(displayOptions[value].width, displayOptions[value].height);
         setSelectedOption(value);
         setIsOpen(false);
-        console.log(selectedOption);
+        // console.log(selectedOption);
     };
+
+    const handleClickOutside = event => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+          setIsOpen(false);
+        }
+      };
+    
+      useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+    
+        return () => {
+          document.removeEventListener('mousedown', handleClickOutside);
+        };
+      }, []);
 
     return (
         <>
 
-        <div className={`${styles.dropdownContainer}`}>
+        <div className={`${styles.dropdownContainer}`} ref={dropdownRef}>
 
             <div className={`${styles.dropdownHeader}`} onClick={toggle}>
 
@@ -39,7 +96,7 @@ const Dropdown = ({children}) => {
 
                 </span>
                 
-                <span className={`type-sm`}> {children} </span>
+                <span className={`type-sm`}> {selectedOption || "Custom"}</span>
                 </div>
 
 
@@ -59,19 +116,37 @@ const Dropdown = ({children}) => {
 {isOpen && (
             <div className={`${styles.dropdownListContainer}`}>
             <ul className={`${styles.dropdownList}`}>
+
+
+             {/* Map objects    */}
             {Object.keys(displayOptions).map((key, value) => (
-  <li className={`type-sm ${styles.listItem}`} onClick={onOptionClicked(key)} key={Math.random()}>
+  <li className={`type-sm ${styles.listItem}`} onClick={onOptionClickedInternal(key)} key={Math.random()}>
     <div className={`${styles.left}`}>
     <span className={`type-sm ${styles.listItemCheck}`}></span>
     <span className={`type-sm ${styles.listItemKey}`}>{key}</span>
     </div>
 
     <div className={`${styles.right}`}>
-    <span className={`type-sm ${styles.listItemValue}`}>{displayOptions[key]}</span>
+    <span className={`type-sm ${styles.listItemValue}`}>{`${displayOptions[key].width} x ${displayOptions[key].height}`}</span>
     </div>
 
   </li>
 ))}
+
+
+            {/* {displayOptionsArray.map((option) => (
+  <li className={`type-sm ${styles.listItem}`} onClick={onOptionClickedInternal(option.standard)} key={Math.random()}>
+    <div className={`${styles.left}`}>
+    <span className={`type-sm ${styles.listItemCheck}`}></span>
+    <span className={`type-sm ${styles.listItemKey}`}>{option.standard}</span>
+    </div>
+
+    <div className={`${styles.right}`}>
+    <span className={`type-sm ${styles.listItemValue}`}>{`${option.width} x ${option.height}`}</span>
+    </div>
+
+  </li>
+))} */}
 
 
             </ul>
