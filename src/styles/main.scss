@@ -14,13 +14,9 @@
 
 
 @use "base/base";
-@use "base/animations";
+// @use "base/animations";
 @use "base/typography";
-@use "base/utilities";
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+// @use "base/utilities";
+@use "base/normalize";
+@use "base/reset"
 

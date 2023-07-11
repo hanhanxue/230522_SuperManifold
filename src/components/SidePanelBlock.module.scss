@@ -1,0 +1,11 @@
+
+
+.block {
+    // margin: 8px 0;
+    padding: 8px 0;
+    &:not(:last-child) {
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+
+}

@@ -1,0 +1,23 @@
+@use '../styles/abstracts/' as *;
+
+.buttonFrame {
+    height: 24px;
+    width: 24px;
+
+    @include flexCenterXY;
+
+    // background-color: red;
+
+    border-radius: 4px;
+
+}
+
+// // Hide default HTML checkbox
+// .buttonCheckbox {
+//     // display: none;
+//     // visibility: hidden;
+
+//     opacity: 0;
+//     width: 0;
+//     height: 0;
+//   }

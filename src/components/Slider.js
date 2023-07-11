@@ -22,7 +22,7 @@ export default function Slider({onChange, children}) {
 
         <div className={`${styles.sliderFrame}`}>
 
-            <label className={`type-sm ${styles.label}`}>{children}</label>
+            <label className={`text-sm ${styles.label}`}>{children}</label>
 
             <input 
             // max={10}

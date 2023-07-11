@@ -1,0 +1,44 @@
+@use '../../../styles/abstracts/' as *;
+
+
+.bottomPanelFrame {
+    margin: rem(16) auto 0;
+
+    // max-width: 1024px;
+    // height: 32px;
+    
+    
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+   
+}
+
+
+ 
+    // padding: 0 32px;
+    // .controls {
+        //     display: flex;
+        //     gap: 4px;
+        // }
+        
+        // background-color: black;
+    // .label {
+    //     padding: 0 8px;
+    //     color: #767676;
+    // }
+
+    // .controlsGroup {
+
+
+    //     display: flex;
+    //     gap: 4px;
+    //     align-items: center;
+    //     padding: 4px 4px;
+    //     border: solid 1px #c9c9c9;
+    //     border-radius: 8px;
+    // }
+
+
+    // background-color: rgba(255, 255, 255, 0.9);
+    // backdrop-filter: blur(2rem);

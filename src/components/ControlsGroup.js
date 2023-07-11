@@ -7,7 +7,7 @@ const ControlsGroup = ({label, children}) => {
     return (
         <>
         <div className={`${styles.controlsGroup}`}>
-            {label && <span className={`type-sm ${styles.label}`}>{label}</span>}
+            {label && <span className={`text-sm ${styles.label}`}>{label}</span>}
             <div className={`${styles.controls}`}>
                 {children}
             </div>

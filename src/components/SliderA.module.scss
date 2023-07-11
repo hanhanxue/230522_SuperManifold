@@ -1,0 +1,82 @@
+
+
+
+.sliderFrame {
+    height: 24px;
+    display: flex;
+
+    align-items: center;
+    gap: 4px;
+
+    padding: 0 8px;
+}
+
+
+.slider {
+    position: relative;
+
+    width: 100px;
+    height: 24px;
+    margin: 0 4px;
+    // background-color: red;
+    
+    // appearance: none;
+    // width: 100px;
+    // height: 1px;
+    // border-radius: 10px;
+    // // height: 1em;
+    // background: rgb(83, 83, 83);
+    // // border: 1px solid black;
+    // // background-image: linear-gradient(purple, purple);
+    // // background-repeat: no-repeat;
+
+    // &::before {
+    //     background: black;
+    //     content: "";
+    //     display: inline-block;
+    //     position: absolute;
+    //     left: 50%;
+    //     transform: translate(-50%);
+    //     height: 11px;
+    //     width: 1px;
+    //     top: -5px;
+    // }
+}
+
+.track {
+    background: black;
+    height: 1px;
+    position: absolute;
+    transform: translateY(-50%);
+    top:50%;
+
+    width: 100%;
+
+        &::before {
+        background: black;
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        height: 11px;
+        width: 1px;
+        top: -5px;
+    }
+}
+
+.thumb {
+    position: absolute;
+    transform: translateY(-50%);
+    top:50%;
+    height: 16px;
+    width: 8px;
+    // padding: 0 4px;
+    border-radius: 2px;
+
+    transform: translate(-50%, -50%);
+    // left: 50%;
+
+    background-color: black;
+}
+

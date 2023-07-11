@@ -15,7 +15,7 @@ export default function ProcessHeader() {
 
     useEffect(() => {
       const handleScroll = () => {
-        const scrollTop = window.pageYOffset;
+        const scrollTop = window.scrollY;
         setIsScrolled(scrollTop > 0);
       };
     
@@ -32,65 +32,66 @@ export default function ProcessHeader() {
     <>
 
 
-    {/* SECTION */}
+   
     <section className={`${styles.section} 
-    ${isScrolled ? styles.borderBottom  : ''}`}>
-    {/* X Container */}
-    <div className={`${styles.XContainer}`}>
-    {/* Y Container */}
-    <div className={`${styles.YContainer}
-    ${isScrolled ? styles.YContainerScrolled  : ''} `}>           
+    ${isScrolled ? styles.borderBottom  : ''}`}> {/* SECTION */}
+    <div className={`${styles.xFrame}`}> {/* X Frame */}
+    <div className={`${styles.yFrame}
+    ${isScrolled ? styles.yFrameScrolled  : ''} `}> {/* Y Frame */}           
 
-    <div className={`${styles.header} flex justify-between items-center`}>
+    <div className={`${styles.header}`}>
 
 
 
         {/* Header LEFT SIDE*/} 
-        <div className={`flex`}>
-                  {/* Header Image*/}                  
+        <div className={`${styles.left}`}>
+                  {/* Header Icon Frame*/}   
+                  <span className={`${styles.iconFrame}`}>
                   <Image
-                    className="rounded-xl mr-2"
                     src={`DisplayComposer.svg`}
                     width={48}
                     height={48}
                     alt="REPLACE"
                   />
+                  </span>               
 
-                  {/* Header Text*/}
-                  <div className=''>
-                          {/* Header Title     TOP ROW*/}
-                          <div className='flex items-center'>
-                              <h1 className="type-xl font-medium mr-2">Display Composer</h1>
-                              
-                              <div className='flex gap-1'>
+
+                  {/* Header Titles Frame*/}
+                  <div className={`${styles.titles}`}>
+                          {/* TOP ROW */}
+                          <div className={`${styles.titlesTop}`}>
+                              <h1 className={`text-xl font-medium ${styles.title}`}>Display Composer</h1>
+          
+                              <div className={`${styles.badgesFrame}`}>
                                 <Badge>Utility</Badge>
                                 <Badge>2023</Badge>
                               </div>
                           </div>
 
-                          {/* Header Details     BOTTOM ROW*/}
-                          <div className={` text-zinc-600 `}>
-                            <h2 className={`type-base`}>Right canvas for your next project.</h2>
+                          {/* BOTTOM ROW */}
+                          <div className={`${styles.titlesBottom}`}>
+                            <h2 className={`text-base ${styles.subtitle}`}>Right canvas for your next project.</h2>
                           </div>
 
                   </div>
         </div>
-        {/* ////////////////////////////////////////////////// Header RIGHT SIDE*/} 
+
+
+ 
         {/* Header RIGHT SIDE*/} 
-        <Button kind='outlined' size='lg'>Share</Button>
-        {/* <button className={`type-lg ${styles.testButton} `}><span>Share</span></button> */}
+        <div className={`${styles.right}`}>
+          <Button kind='outlined' size='lg'>Share</Button>
+        </div>
 
+    
 
 
     </div>
 
 
-    </div>
-    {/* Y Container */}
-    </div>
-    {/* X Container */}
-    </section>
-    {/* SECTION */}
+    </div> {/* Y Frame */}
+    </div> {/* X Frame */}
+    </section> {/* SECTION */}
      
      
      </>
@@ -103,3 +104,4 @@ export default function ProcessHeader() {
 
 
 // "w-[48rem] h-16 mx-auto flex items-center"
+    // {/* <button className={`text-lg ${styles.testButton} `}><span>Share</span></button> */}

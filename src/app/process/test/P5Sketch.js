@@ -38,11 +38,14 @@ const init = (p5, canvasParentRef) => {
 
     cnv = p5I.createCanvas(1440, 720).parent(canvasParentRef)
     // cnv.style('display', 'inline')
-    // cnv.style('position', 'absolute')
-    // cnv.style('left', '50%')
-    // cnv.style('transform', 'translate(-50%)')
     // cnv.style('height', '720px')
-    // cnv.style('display', 'inline')
+
+    cnv.style('display', 'block')
+
+    cnv.style('position', 'absolute')
+    cnv.style('top', '50%')
+    cnv.style('left', '50%')
+    cnv.style('transform', 'translate(-50%, -50%)')
 
     canvasCenterX = p5I.width / 2
     canvasCenterY = p5I.height / 2

@@ -1,0 +1,27 @@
+@use '../styles/abstracts/' as *;
+
+
+
+.row {
+   @include flexCenterX;
+
+    padding: 0 8px;
+    height: 32px;
+
+    gap: 4px;
+}
+
+
+.onIcon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: red;
+}
+
+.offIcon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: blue;
+}

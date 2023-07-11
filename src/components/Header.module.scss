@@ -1,4 +1,4 @@
-
+@use '../styles/abstracts/' as *;
 
 .header {
     background-color: rgba(255, 255, 255, 0.9);
@@ -10,8 +10,7 @@
         position: sticky;
         top: 0;
         width: 100%;
-        // background-color: rgba(255, 255, 255, 0.5);
-
+     
     }
 
     &Bordered {
@@ -23,9 +22,32 @@
         //     display: block;
         //     border-bottom: 1px solid #e5e7eb;
         //     z-index: 999;
+        //     // backdrop-filter: blur(2rem);
         // }
     }
 
-
 }
 
+.xFrame {
+    @include xFrame;
+}
+
+.yFrame {
+    @include flexCenterX;
+    justify-content: space-between;
+
+    padding: rem(16) 0;
+}
+
+.rightLinks {
+    display: flex;
+    // justify-content: end;
+    li {
+        &:not(first-child) {
+            margin-left: rem(32);
+        }
+    }
+}
+
+
+   // background-color: rgba(255, 255, 255, 0.5);

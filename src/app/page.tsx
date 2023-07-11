@@ -1,10 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 
+
+
+
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import HomeGrid from '../components/HomeGrid'
 import styles from './Home.module.scss'
 
 
@@ -15,12 +19,12 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://supermanifold.com'),
 
   title: 'Super Manifold®',
-  description: 'Electronic Products for the Future of Work and Play',
+  description: 'Crafting spatial experiences for the digital realm.',
 
 
   openGraph: {
     title: 'Super Manifold®',
-    description: 'Electronic Products for the Future of Work and Play',
+    description: 'Crafting spatial experiences for the digital realm.',
     url: 'https://www.supermanifold.com/',
     siteName: 'Super Manifold®',
     images: [
@@ -38,41 +42,13 @@ export const metadata: Metadata = {
 
 
 
-
-
-
-
-
 export default function Home() {
   return (
     <>
 
     <Header hasBorder={false} />
-
-
-    <section className={`${styles.productGrid}`}>
-
-      <video autoPlay muted loop className={`${styles.product}  ${styles.gridColSpan2}`}>         
-        <source src="/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>         
-      </video>
-
-
-      <Image  className={`${styles.product}`}
-                src="/images/supermanifold_TRRS.jpg"
-                        width={5120}
-                        height={5120}
-                alt="Picture of the author"
-        />
-      <Image className={`${styles.product}`}
-              src="/images/supermanifold_TRRS.jpg"
-                      width={5120}
-                      height={5120}
-              alt="Picture of the author"
-      />
-
-
-    </section>
-
+    
+    <HomeGrid />
 
 
 

@@ -1,0 +1,73 @@
+
+// To use: @include [mixin]
+@use './functions' as *;
+
+
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin flexCenterX {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flexCenterXY {
+    @include flexCenterX;
+    justify-content: center;
+}
+
+@mixin xFrame {
+    margin: 0 rem(32);
+}
+
+
+
+
+
+
+
+// MEDIA QUERY MANAGER
+// 0 - 600px:       Phone
+// 600 - 900px:     Tablet Portrait
+// 900 - 1200px:    Tablet Landscape
+// 1200 - 1800px:   Base
+// 1800px+:         Big Desktop
+
+// $breakpoint argument choices:
+// phone
+// tablet-portrait
+// tablet-landscape
+// big-desktop
+
+// @mixin respond-phone {
+//     @media (max-width: 600px) {@content};
+// }
+
+// 1em = 16px
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == point {
+        @media (max-width: 37.5em) {@content};     //600px
+    }
+    @if $breakpoint == tablet-portrait {
+        @media (max-width: 56.25em) {@content};    //900px
+    }
+    @if $breakpoint == tablet-landscape {
+        @media (max-width: 75em) {@content};    //1200px
+    }
+
+
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) {@content};       //1800px
+    }
+}
+
+
+
+
+

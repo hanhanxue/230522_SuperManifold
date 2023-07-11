@@ -1,14 +1,28 @@
+@use '../styles/abstracts/' as *;
+
+.section {
+
+}
+
+.xFrame {
+
+}
+
+.yFrame {
+
+}
+
 .productGrid {
     display: grid;
-    gap: 1rem;
+    gap: rem(16);
     grid-template-columns: repeat(2, 1fr);
 
-    padding: 1rem;
-    // padding-block: 1rem;
+    padding: rem(16);
+    // padding-block: rem(16);
     // margin-inline: auto;
 
     .product {
-        border-radius: 1rem;
+        border-radius: rem(16);
         // overflow: hidden;
     }
 

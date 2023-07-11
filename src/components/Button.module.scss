@@ -15,7 +15,7 @@ align-items: center;
     &.sm {
         // background-color: red;
         height: 24px;
-        padding: 8px;
+        padding: 8px 12px;
         border-radius: 4px;
         
     }
@@ -55,7 +55,7 @@ align-items: center;
         // border: 1px solid #e5e7eb;
 
         // box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-
+        // background-color: red;
         border: 1px solid #e5e7eb;
         box-shadow: 0 0 1px 0 #e5e7eb inset, 0 0 1px 0 #e5e7eb;
 
@@ -70,14 +70,28 @@ align-items: center;
         }
     }
 
+    &.danger {
+        // color: rgb(218, 30, 40);
+        // border: 1px solid rgb(218, 30, 40);
+        // box-shadow: 0 0 1px 0 rgb(218, 30, 40) inset, 0 0 1px 0 rgb(218, 30, 40);
+
+        color: white;
+        background-color: rgb(218, 30, 40);
+
+        &:hover {
+            background-color: darken($color: rgb(218, 30, 40), $amount: 5%);
+            // filter: brightness(85%);
+        }
+    }
+
     &.noKind {
         background-color: red;
     }
 
 
-&:hover {
-    border: 1px solid #e5e7eb;
-    // margin:-1px;
-}
+// &:hover {
+//     border: 1px solid #e5e7eb;
+//     // margin:-1px;
+// }
     
 }

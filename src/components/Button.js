@@ -9,12 +9,12 @@ const Button = ({onClick, kind, size, children}) => {
   const styleSize = () => {
     switch (size) {
       case 'sm':
-        return `type-sm ${styles.sm} `
+        return `text-sm ${styles.sm} `
         case 'lg':
-          return `type-lg ${styles.lg} `
+          return `text-lg ${styles.lg} `
 
     default:
-      return `type-sm ${styles.noSize} `
+      return `text-sm ${styles.noSize} `
     }
   }
 
@@ -24,6 +24,8 @@ const Button = ({onClick, kind, size, children}) => {
         return `${styles.ghost} `
         case 'outlined':
           return `${styles.outlined} `
+          case 'danger':
+            return `${styles.danger} `
 
     default:
       return `${styles.noKind} `

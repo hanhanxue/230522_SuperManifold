@@ -3,10 +3,10 @@
 
 import Link from 'next/link'
 
-import styles from './Header.module.scss'
 
 import { useEffect, useState } from 'react'
-// import SuperManifoldLogo, { Logotypes } from './SuperManifoldLogo';
+
+import styles from './Header.module.scss'
 
 
 interface IHeaderProps {
@@ -20,36 +20,16 @@ interface IHeaderProps {
 
 
 const Header: React.FC<IHeaderProps> = ( {
-colorConfig = {text: 'text-blue-700', bg: 'bg-red-700' }, 
-isFixed = false,
-hasBorder = true,
-}   ) => {
-
-// const threshold = 25 // Y threshold
-// const buffer = 24 // buffer to avoid style change flashing
-
-// const [isPastYThreshold, setIsPastYThreshold] = useState(false)
-
-// useEffect(() => {
-//     const handler = () => {
-
-//         setIsPastYThreshold((isPastYThreshold) => {
-//             if(isPastYThreshold && window.scrollY < threshold) return false
-//             if(!isPastYThreshold && window.scrollY > threshold + buffer) return true
-//             return isPastYThreshold
-//         })
-//     }
-
-//     window.addEventListener("scroll", handler)
-//     return () => window.removeEventListener("scroll", handler)
-// }, [])
+    hasBorder = true,
+}) => {
 
 
 const [isScrolled, setIsScrolled] = useState(false);
 
+
 useEffect(() => {
   const handleScroll = () => {
-    const scrollTop = window.pageYOffset;
+    const scrollTop = window.scrollY;
     setIsScrolled(scrollTop > 0);
   };
 
@@ -64,41 +44,32 @@ useEffect(() => {
     return (
 
         <>
-        {/* SECTION */}
-        <header className={` 
-        ${styles.header} ${styles.headerSticky} 
-        // ${isScrolled ? styles.headerScrolled  : ''}
+
+        <header className={`${styles.header} ${styles.headerSticky} 
+        ${isScrolled ? styles.headerScrolled  : ''}
         ${hasBorder ? styles.headerBordered  : ''}
-        `}>
-        {/* X Container */}
-        <div className='mx-8'>
-            {/* Y Container */}
-            <nav className={`flex items-center justify-between py-4`}>
+        `}> {/* SECTION */}
+        <div className={`${styles.xFrame}`}> {/* X Frame */}
+        <nav className={`${styles.yFrame}`}> {/* Y Frame */}
 
-
-
-                
-            
-                <div className="text-2xl font-brand   ">
-                    <Link href="/" className="">
+                <div className={`text-2xl font-brand`}>
+                    <Link href="/" className={``}>
                         Super Manifold®
                     </Link>
                 </div>
 
-                <div className="type-xl  ">
-                    <ul className=" flex  justify-end">
-                        <Link href="/" className=""><li className="first:ml-0 ml-8">Products</li></Link>
-                        <Link href="/process" className=""><li className="ml-8">Process</li></Link>
-                        <Link href="/info" className=""><li className="ml-8">Info</li></Link>
+                <div className={``}>
+                    <ul className={`text-xl ${styles.rightLinks}`}>
+                        <li><Link href="/" className="">Products</Link></li>
+                        <li><Link href="/process" className="">Process</Link></li>
+                        <li><Link href="/info" className="">Info</Link></li>
                     </ul>
                 </div>
 
-            </nav>
-        </div>
 
-
-
-            </header>
+        </nav> {/* Y Frame */}
+        </div> {/* X Frame */}
+        </header> {/* SECTION */}
         </>
 
     )
@@ -144,3 +115,27 @@ export default Header
 //    before:from-white/30 before:from-0%
 //    before:via-white/10  before:via-50%
 
+// import SuperManifoldLogo, { Logotypes } from './SuperManifoldLogo';
+
+
+// const threshold = 25 // Y threshold
+// const buffer = 24 // buffer to avoid style change flashing
+
+// const [isPastYThreshold, setIsPastYThreshold] = useState(false)
+
+// useEffect(() => {
+//     const handler = () => {
+
+//         setIsPastYThreshold((isPastYThreshold) => {
+//             if(isPastYThreshold && window.scrollY < threshold) return false
+//             if(!isPastYThreshold && window.scrollY > threshold + buffer) return true
+//             return isPastYThreshold
+//         })
+//     }
+
+//     window.addEventListener("scroll", handler)
+//     return () => window.removeEventListener("scroll", handler)
+// }, [])
+
+// colorConfig = {text: 'text-blue-700', bg: 'bg-red-700' }, 
+// isFixed = false,

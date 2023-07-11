@@ -1,18 +1,17 @@
 
+@use '../../../styles/abstracts/' as *;
 
 
 .section {
     // background-color: black;
 }
 
-.frameX {
-    margin: 0 32px;
+.xFrame {
+    @include xFrame;
 }
 
 
-
-
-.viewerFrame {
+.canvasFrame {
     // display: flex;
     // justify-content: center;
     // margin: 0 32px;
@@ -20,6 +19,8 @@
     max-width: 1440px;
     // margin: auto;
     position: relative;
+
+    // display: block;
 }
 
 
@@ -29,171 +30,131 @@
 
 
 
-.sidePanelContainer {
-    position:absolute;
-    width: 240px;
-    height: 100%;
-    // background-color: black;
-    top:0px;
-    right: 8px;
+// .sidePanelContainer {
+//     position:absolute;
+//     width: 240px;
+//     height: 100%;
+//     // background-color: black;
+//     top:0px;
+//     right: 8px;
 
-    padding: 8px 0;
+//     padding: 8px 0;
 
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
+//     display: flex;
+//     flex-direction: column;
+//     // justify-content: center;
 
-    // display: flex;
-    // align-items: center;
+//     // display: flex;
+//     // align-items: center;
 
-    // background-color: rgba(255, 255, 255, 0.9);
-    // backdrop-filter: blur(2rem);
-    .sidePanel {
-        border-radius: 8px;
-        background-color: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(2rem);
-        display: flex;
-        flex-direction: column;
+//     // background-color: rgba(255, 255, 255, 0.9);
+//     // backdrop-filter: blur(2rem);
+//     .sidePanel {
+//         border-radius: 8px;
+//         background-color: rgba(255, 255, 255, 0.9);
+//         backdrop-filter: blur(2rem);
+//         display: flex;
+//         flex-direction: column;
 
-        .block {
-            // margin: 8px 0;
-            padding: 8px 0;
-            &:not(:last-child) {
-                border-bottom: 1px solid #e5e7eb;
-            }
+//         .block {
+//             // margin: 8px 0;
+//             padding: 8px 0;
+//             &:not(:last-child) {
+//                 border-bottom: 1px solid #e5e7eb;
+//             }
 
-            .row {
-                display: flex;
-                align-items: center;
+//             .row {
+//                 display: flex;
+//                 align-items: center;
 
-                padding: 0 8px;
-                height: 32px;
+//                 padding: 0 8px;
+//                 height: 32px;
 
-                gap: 4px;
-            }
+//                 gap: 4px;
+//             }
 
-        }
+//         }
 
-    }
+//     }
 
-}
+// }
 
-.blockLabel {
-    width: 196px;
-    padding: 0 4px;
-    display: flex;
-    align-items: center;
-}
+// .blockLabel {
+//     width: 196px;
+//     padding: 0 4px;
+//     display: flex;
+//     align-items: center;
+// }
 
-.sideButton {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // background-color: red;
-    border-radius: 4px;
-}
-
-
-.bottomPanelContainer {
-    margin: 16px auto 0;
-
-    max-width: 1024px;
-    height: 32px;
-    // background-color: black;
-
-    padding: 0 32px;
-
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-
-    .controls {
-        display: flex;
-        gap: 4px;
-    }
-
-    .label {
-        padding: 0 8px;
-        color: #767676;
-    }
-
-    .controlsGroup {
+// .sideButton {
+//     width: 24px;
+//     height: 24px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     // background-color: red;
+//     border-radius: 4px;
+// }
 
 
-        display: flex;
-        gap: 4px;
-        align-items: center;
-        padding: 4px 4px;
-        border: solid 1px #c9c9c9;
-        border-radius: 8px;
-    }
+
+// .input {
+//     // background-color: red;
+//     width: 96px;
+//     height: 24px;
+//     display: flex;
+//     align-items: center;
+
+//     .inputLabel {
+//         width: 24px;
+//         height: 24px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         color: #c9c9c9;
+//     }
+
+//     .inputText {
+//         padding: 0 4px;
+//     }
+
+// }
 
 
-    // background-color: rgba(255, 255, 255, 0.9);
-    // backdrop-filter: blur(2rem);
+// .combobox {
+//     // background-color: red;
+//     width: 96px;
+//     height: 24px;
+//     display: flex;
+//     align-items: center;
 
-}
+//     .comboboxLabel {
+//         width: 24px;
+//         height: 24px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//     }
 
+//     .comboboxCaret {
+//         width: 24px;
+//         height: 24px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
 
-.input {
-    // background-color: red;
-    width: 96px;
-    height: 24px;
-    display: flex;
-    align-items: center;
+//         // color: red;
 
-    .inputLabel {
-        width: 24px;
-        height: 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #c9c9c9;
-    }
+//     }
 
-    .inputText {
-        padding: 0 4px;
-    }
+//     .comboboxText {
+//         padding: 0 4px;
+//         width: 46px;
 
-}
+//     }
+// }
 
-
-.combobox {
-    // background-color: red;
-    width: 96px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-
-    .comboboxLabel {
-        width: 24px;
-        height: 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .comboboxCaret {
-        width: 24px;
-        height: 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        // color: red;
-
-    }
-
-    .comboboxText {
-        padding: 0 4px;
-        width: 46px;
-
-    }
-}
-
-.info {
-    color: #c9c9c9;
-    padding: 0 4px;
-}
+// .info {
+//     color: #c9c9c9;
+//     padding: 0 4px;
+// }

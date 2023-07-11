@@ -8,7 +8,7 @@ import styles from './Toggle.module.scss'
 // THE toggle COMPONENT WILL HAVE STYLING
 // BUT NOT SPECIFY BEHAVIOR
 
-const toggle = ({toggled = false, onClick, onChange, kind, size, children}) => {
+const Toggle = ({toggled = false, onClick, onChange, kind, size, children}) => {
 
 
     return (
@@ -16,25 +16,22 @@ const toggle = ({toggled = false, onClick, onChange, kind, size, children}) => {
 
         <div className={`${styles.switchFrame}`}>
 
-        <label className={`type-sm`}>{children}</label>
+        <label className={`text-sm`}>{children}</label>
 
 
         <label className={`${styles.switch}`}>
+            <input 
+            type="checkbox" 
+            checked={toggled}
+            name="name" 
+            id="id" 
 
-        <input 
-        type="checkbox" 
-        checked={toggled}
-        name="name" 
-        id="id" 
+            className={`${styles.switchCheckbox}`} 
 
-        className={`${styles.switchCheckbox}`} 
-
-        onClick={onClick} 
-        onChange={onChange} 
-         />
-         
-        <span className={`${styles.switchSlider}`} />
-
+            onClick={onClick} 
+            onChange={onChange} 
+            />
+            <span className={`${styles.switchSlider}`} />
         </label>
         </div>
 
@@ -46,7 +43,7 @@ const toggle = ({toggled = false, onClick, onChange, kind, size, children}) => {
     );
   }
 
-  export default toggle
+  export default Toggle
 
 
 

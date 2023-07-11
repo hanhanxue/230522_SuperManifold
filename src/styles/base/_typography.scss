@@ -1,16 +1,16 @@
 @use '../abstracts' as *;
 
 
+@font-face {
+  font-family: Inter;
+  src: url("../../../public/fonts/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
+}
 
 @font-face {
     font-family: nmtl;
     src: url("../../../public/fonts/PPNeueMontreal-Book.otf") format("opentype");
   }
 
-@font-face {
-    font-family: Inter;
-    src: url("../../../public/fonts/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
-  }
 
 
 // 100 Thin (Hairline)
@@ -28,27 +28,33 @@
 // 950 Extra Black (Ultra Black) 
 
 
+.font-medium {
+  font-weight: 500;
+}
 
+.font-brand {
+  font-family: 'nmtl';
+  font-weight: 400;
+  font-style: normal;
+}
 
-
-%type-placeholder {
+.font-primary {
   font-family: 'Inter';
   font-weight: 400;
   font-style: normal;
 }
 
-.type-2xl {
-  @extend %type-placeholder;
 
-  letter-spacing: 0em;
+
+
+
+.text-2xl {
   font-size: rem(24);
   line-height: rem(32);
+  letter-spacing: 0em;
 }
 
-.type-xl {
-  @extend %type-placeholder;
-
-  letter-spacing: 0em;
+.text-xl {
   font-size: rem(18);
   line-height: rem(24);
   letter-spacing: -.02em;
@@ -59,28 +65,24 @@
 
 
 
-.type-lg {
-  @extend %type-placeholder;
-
-  letter-spacing: 0em;
+.text-lg {
   font-size: rem(14);
   line-height: rem(24);
+  letter-spacing: 0em;
 
 }
-///////////////////////////////////////////////// THIS IS BASE 
-.type-base {
-  @extend %type-placeholder;
 
-  letter-spacing: 0em;
+
+///////////////////////////////////////////////// THIS IS BASE 
+.text-base {
   font-size: rem(13);
   line-height: rem(24);
+  letter-spacing: 0em;
 
 }
 
-.type-sm {
-  @extend %type-placeholder;
-
-  letter-spacing: 0em;
+.text-sm {
   font-size: rem(11);
   line-height: rem(16);
+  letter-spacing: 0em;
 }
