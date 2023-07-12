@@ -28,7 +28,7 @@ const Toggle = ({toggled = false, onClick, onChange, kind, size, children}) => {
 
             className={`${styles.switchCheckbox}`} 
 
-            onClick={onClick} 
+            // onClick={onClick} 
             onChange={onChange} 
             />
             <span className={`${styles.switchSlider}`} />

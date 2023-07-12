@@ -7,7 +7,8 @@
 // background-color: red;
 height: 24px;
 width: 96px;
-z-index: 50;
+// z-index: 50;
+position: relative;
 }
 
 .dropdownHeader {
@@ -22,14 +23,15 @@ z-index: 50;
     align-items: center;
 
     justify-content: space-between;
+    
 }
 
 
 
 
-.caret {
-    // justify-items: end;
-}
+// .caret {
+//     // justify-items: end;
+// }
 
 
 .left {
@@ -44,7 +46,8 @@ z-index: 50;
         margin-top: 4px;
     background-color: black;
     border-radius: 8px;
-    // z-index: 99999;
+    position: absolute;
+    z-index: 99999;
 
 }
 

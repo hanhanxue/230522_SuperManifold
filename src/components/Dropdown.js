@@ -2,85 +2,36 @@
 import styles from './Dropdown.module.scss'
 import { useState, useEffect, useRef } from 'react'
 
-const Dropdown = ({children, onOptionClicked}) => {
+const Dropdown = ({children, onOptionClick, options}) => {
 
-    const options = ["nHD", "VGA", "SVGA"];
-    const displayOptions = {
-        nHD: {
-            width: 640,
-            height: 360
-        },
-        VGA:  {
-            width: 640,
-            height: 480
-        },
-        SVGA:  {
-            width: 800,
-            height: 600
-        },
-        XGA:  {
-            width: 1024,
-            height: 768
-        },
-        WXGA:  {
-            width: 1280,
-            height: 720
-        },
-    }
-    // const displayOptionsArray = [
-    //     {
-    //         standard: 'nHD',
-    //         width: 640,
-    //         height: 360
-    //     },
-    //     {
-    //         standard: 'VGA',
-    //         width: 640,
-    //         height: 480
-    //     },
-    //     {
-    //         standard: 'SVGA',
-    //         width: 800,
-    //         height: 600
-    //     },
-    //     {
-    //         standard: 'XGA',
-    //         width: 1024,
-    //         height: 768
-    //     },
-    //     {
-    //         standard: 'WXGA',
-    //         width: 1280,
-    //         height: 720
-    //     },
-    // ]
 
     const [isOpen, setIsOpen] = useState(false)
     const toggle = () => {setIsOpen(current => !current)}
     const [selectedOption, setSelectedOption] = useState(null);
     const dropdownRef = useRef(null);
 
-    const onOptionClickedInternal = value => () => {
-        onOptionClicked(displayOptions[value].width, displayOptions[value].height);
-        setSelectedOption(value);
+    const onOptionClickInternal = key => () => {
+        onOptionClick(key, options[key]);
+        setSelectedOption(key);
         setIsOpen(false);
         // console.log(selectedOption);
     };
 
-    const handleClickOutside = event => {
+
+  
+    useEffect(() => {
+      const handleClickOutside = event => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
           setIsOpen(false);
         }
-      };
-    
-      useEffect(() => {
-        document.addEventListener('mousedown', handleClickOutside);
-    
-        return () => {
-          document.removeEventListener('mousedown', handleClickOutside);
-        };
-      }, []);
+      }
 
+      document.addEventListener('mousedown', handleClickOutside);
+  
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      }
+    }, [])
 
 
 
@@ -118,31 +69,31 @@ const Dropdown = ({children, onOptionClicked}) => {
 
             
 
-{isOpen && (
-            <div className={`${styles.dropdownListContainer}`}>
-            <ul className={`${styles.dropdownList}`}>
+                    {isOpen && (
+                    <div className={`${styles.dropdownListContainer}`}>
+                    <ul className={`${styles.dropdownList}`}>
 
 
-             {/* Map objects    */}
-            {Object.keys(displayOptions).map((key, value) => (
-  <li className={`text-sm ${styles.listItem}`} onClick={onOptionClickedInternal(key)} key={Math.random()}>
-    <div className={`${styles.left}`}>
-    <span className={`text-sm ${styles.listItemCheck}`}></span>
-    <span className={`text-sm ${styles.listItemKey}`}>{key}</span>
-    </div>
+                          {/* Map objects    */}
+                          {Object.keys(options).map((key, value) => (
+                          <li className={`text-sm ${styles.listItem}`} onClick={onOptionClickInternal(key)} key={Math.random()}>
+                            <div className={`${styles.left}`}>
+                            <span className={`text-sm ${styles.listItemCheck}`}></span>
+                            <span className={`text-sm ${styles.listItemKey}`}>{key}</span>
+                            </div>
 
-    <div className={`${styles.right}`}>
-    <span className={`text-sm ${styles.listItemValue}`}>{`${displayOptions[key].width} x ${displayOptions[key].height}`}</span>
-    </div>
+                            <div className={`${styles.right}`}>
+                            <span className={`text-sm ${styles.listItemValue}`}>{`${options[key].width} x ${options[key].height}`}</span>
+                            </div>
 
-  </li>
-))}
+                          </li>
+                        ))}
 
 
 
-            </ul>
-            </div>
-            )}
+                    </ul>
+                    </div>
+                    )}
 
         </div>
 
@@ -157,8 +108,67 @@ export default Dropdown
 
 
 
-            {/* {displayOptionsArray.map((option) => (
-  <li className={`text-sm ${styles.listItem}`} onClick={onOptionClickedInternal(option.standard)} key={Math.random()}>
+// const options = {
+//   nHD: {
+//       width: 640,
+//       height: 360
+//   },
+//   VGA:  {
+//       width: 640,
+//       height: 480
+//   },
+//   SVGA:  {
+//       width: 800,
+//       height: 600
+//   },
+//   XGA:  {
+//       width: 1024,
+//       height: 768
+//   },
+//   WXGA:  {
+//       width: 1280,
+//       height: 720
+//   },
+// }
+
+
+// const optionsArray = [
+//     {
+//         standard: 'nHD',
+//         width: 640,
+//         height: 360
+//     },
+//     {
+//         standard: 'VGA',
+//         width: 640,
+//         height: 480
+//     },
+//     {
+//         standard: 'SVGA',
+//         width: 800,
+//         height: 600
+//     },
+//     {
+//         standard: 'XGA',
+//         width: 1024,
+//         height: 768
+//     },
+//     {
+//         standard: 'WXGA',
+//         width: 1280,
+//         height: 720
+//     },
+// ]
+
+
+
+
+
+
+
+
+            {/* {optionsArray.map((option) => (
+  <li className={`text-sm ${styles.listItem}`} onClick={onOptionClickInternal(option.standard)} key={Math.random()}>
     <div className={`${styles.left}`}>
     <span className={`text-sm ${styles.listItemCheck}`}></span>
     <span className={`text-sm ${styles.listItemKey}`}>{option.standard}</span>

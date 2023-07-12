@@ -1,8 +1,8 @@
 'use client'
 
+const _ =require('lodash')
 
-
-import {useRef,  useState } from 'react'
+import {useRef,  useState , useEffect} from 'react'
 
 import styles from './SliderA.module.scss'
 // THE BUTTON COMPONENT WILL HAVE STYLING
@@ -10,49 +10,62 @@ import styles from './SliderA.module.scss'
 
 
 
-const SliderA = ({onChange, children}) => {
+const SliderA = ({startValue = 50, onChange, children}) => {
 
-
-    const [mouseDown, setMouseDown] = useState(false)
-    const [value, setValue] = useState(50)
+    const sliderRef = useRef(null);
+    const [grabbed, setGrabbed] = useState(false)
+    const [value, setValue] = useState(startValue)
 
     const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
 
+    function pauseEvent(e){
+        if(e.preventDefault) e.preventDefault();
+        // if(e.stopPropagation) e.stopPropagation();
+        // e.cancelBubble=true;
+        // e.returnValue=false;
+        // return false;
+    }
+
+    useEffect(() => {
+        if (!grabbed) return
+
+        const handleMouseUp = (e) => {
+            setGrabbed(false)
+            // console.log(e)
+        }
+
+        const handleMouseMove = (e) => {
+            // console.log(`${sliderRef.current.offsetLeft} and ${e.clientX}`)
+            // pauseEvent(e)
+            const offsetX = e.clientX - sliderRef.current.offsetLeft
+            const newValue = clamp(offsetX, 0, 100)
+            setValue(newValue)
+
+        }
+    
+        const throttle_handleMouseMove = _.throttle(handleMouseMove, 15)
+    
+
+        document.addEventListener('mouseup', handleMouseUp);
+        document.addEventListener('mousemove', throttle_handleMouseMove);
+        return () => {
+          document.removeEventListener('mouseup', handleMouseUp);
+          document.removeEventListener('mousemove', throttle_handleMouseMove);
+        };
+      }, [grabbed]);
+
+
+
     const handleMouseDown = (e) => {
-        // setValue(e.nativeEvent.offsetX)
+        pauseEvent(e)
         const sliderRect = e.currentTarget.getBoundingClientRect()
         const offsetX = e.clientX - sliderRect.left
-        // const trackWidth = sliderRect.width;
-        // const newValue = (offsetX / trackWidth) * 100;
+        // console.log(sliderRect.left)
+        // console.log(`${e.clientX} and ${e.offsetX}`)
 
         const newValue = clamp(offsetX, 0, 100)
         setValue(newValue);
-        setMouseDown(true);
-    }
-    const handleMouseUp = (e) => {
-        setMouseDown(false);
-        // console.log(e)
-        // setValue(e.nativeEvent.offsetX)
-    }
-    const handleMouseMove = (e) => {
-        // console.log(e)
-        if (mouseDown) {
-            const sliderRect = e.currentTarget.getBoundingClientRect()
-            const offsetX = e.clientX - sliderRect.left
-            // const trackWidth = sliderRect.width;
-            // const newValue = (offsetX / trackWidth) * 100;
-
-            const newValue = clamp(offsetX, 0, 100)
-            setValue(newValue);
-            console.log(newValue)
-          }
-    }
-    const handleMouseOver = (e) => {
-        // console.log(e.nativeEvent.offsetX)
-    }
-    const handleMouseLeave = (e) => {
-        setMouseDown(false);
-        // console.log(e.nativeEvent.offsetX)
+        setGrabbed(true)
     }
 
     return (
@@ -62,24 +75,18 @@ const SliderA = ({onChange, children}) => {
 
             <label className={`text-sm ${styles.label}`}>{children}</label>
             <span className={`text-sm ${styles.min}`}>0</span>
+
+
                 <div 
                 className={`${styles.slider}`}
                 onMouseDown={handleMouseDown}
-                onMouseUp={handleMouseUp}
-
-                onMouseOver={handleMouseOver}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
+                ref={sliderRef}
                 >
 
-<div className={`${styles.thumb}`} 
-                    style={{left: `${value}%`}}></div>
+                        <div className={`${styles.thumb}`} style={{left: `${value}%`}}></div>
 
-                    <div className={`${styles.track}`} ></div>
-                    <div className={`${styles.filledTrack}`}></div>
-
-
-
+                        <div className={`${styles.track}`} ></div>
+                        <div className={`${styles.filledTrack}`}></div>
 
                 </div>
 

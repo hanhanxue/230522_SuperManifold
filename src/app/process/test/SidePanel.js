@@ -16,8 +16,46 @@ import TextInput from '../../../components/TextInput'
 import styles from './SidePanel.module.scss'
 
 
+import {createSrf} from './P5Sketch'
+
 
 const SidePanel = ({}) => {
+
+
+    const displayOptions = {
+        nHD: {
+            width: 640,
+            height: 360
+        },
+        VGA:  {
+            width: 640,
+            height: 480
+        },
+        SVGA:  {
+            width: 800,
+            height: 600
+        },
+        XGA:  {
+            width: 1024,
+            height: 768
+        },
+        WXGA:  {
+            width: 1280,
+            height: 720
+        },
+      }
+      
+
+
+      const handleDisplayOptionClick = (key, value) => {
+        // console.log(value.width, value.height)
+        createSrf(value.width, value.height)
+      }
+
+      const handleReferenceOptionClick = (key, value) => {
+        console.log(value)
+      }
+
 
 
 
@@ -30,7 +68,7 @@ const SidePanel = ({}) => {
 
         <SidePanelBlock>
             <SidePanelBlockRow><RowLabel>Display</RowLabel><IconButton /></SidePanelBlockRow>
-            <SidePanelBlockRow><Dropdown /></SidePanelBlockRow>
+            <SidePanelBlockRow><Dropdown options={displayOptions} onOptionClick={handleDisplayOptionClick}/></SidePanelBlockRow>
 
 
             <SidePanelBlockRow>
@@ -46,7 +84,7 @@ const SidePanel = ({}) => {
 
         <SidePanelBlock>
             <SidePanelBlockRow><RowLabel>Reference</RowLabel><IconButton /></SidePanelBlockRow>
-            <SidePanelBlockRow><Dropdown /></SidePanelBlockRow>
+            <SidePanelBlockRow><Dropdown options={displayOptions} onOptionClick={handleReferenceOptionClick}/></SidePanelBlockRow>
 
 
             <SidePanelBlockRow>

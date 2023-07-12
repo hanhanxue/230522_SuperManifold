@@ -10,7 +10,7 @@ import styles from './BottomPanel.module.scss'
 
 
 
-const BottomPanel = ({}) => {
+const BottomPanel = ({panelVisibility, onPanelVisibility}) => {
 
 
 
@@ -22,7 +22,7 @@ const BottomPanel = ({}) => {
         <ControlsGroup label='Global'>
             {/* <Button kind='ghost' size='sm' >Generate</Button> */}
             {/* <Button kind='ghost' size='sm' >Clear</Button> */}
-            <Toggle >Side Panel</Toggle>
+            <Toggle toggled={panelVisibility} onChange={onPanelVisibility}>Side Panel</Toggle>
             {/* <Slider >Scale</Slider> */}
             <SliderA>Scale A</SliderA>
             <Button kind='danger' size='sm' >Reset</Button>

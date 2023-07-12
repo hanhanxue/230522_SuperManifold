@@ -69,7 +69,7 @@ const draw = (p5) => {
 
 
 
-const createSrf = (width, height) => {
+export const createSrf = (width, height) => {
     let srf = new Surface(p5I,
         p5I.width - width / 2, 
     p5I.height - height / 2, 

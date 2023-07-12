@@ -57,7 +57,7 @@ const Viewer = () => {
     </div>
   
 
-    <BottomPanel />
+    <BottomPanel panelVisibility={sidePanelVisible} onPanelVisibility={handleSidePanelVisilibity}/>
 
 
 
