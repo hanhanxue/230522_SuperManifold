@@ -1,3 +1,4 @@
+@use '../styles/abstracts/' as *;
 
 
 .dropdownContainer {
@@ -42,7 +43,7 @@ position: relative;
 
 
 .dropdownListContainer {
-    width: 160px;
+    width: 176px;
         margin-top: 4px;
     background-color: black;
     border-radius: 8px;
@@ -71,7 +72,23 @@ padding: 8px 0;
 }
 
 .listItemCheck {
+
     width: 24px;
     height: 24px;
     display: inline-block;
+
+    @include flexCenterXY;
+
+}
+
+.listSeperator {
+    padding: 8px 0;
+    &::after {
+        content: " ";
+        display: block;
+        // display:inline; // DEFAULT 
+        // position: absolute;
+        height: 1px;
+        background: rgb(36, 36, 36);
+    }
 }

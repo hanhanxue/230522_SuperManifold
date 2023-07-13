@@ -63,14 +63,14 @@ export default function ProcessHeader() {
                               <h1 className={`text-xl font-medium ${styles.title}`}>Display Composer</h1>
           
                               <div className={`${styles.badgesFrame}`}>
-                                <Badge>Utility</Badge>
-                                <Badge>2023</Badge>
+                                {/* <Badge>Utility</Badge> */}
+                                <Badge>P5JS</Badge>
                               </div>
                           </div>
 
                           {/* BOTTOM ROW */}
                           <div className={`${styles.titlesBottom}`}>
-                            <h2 className={`text-base ${styles.subtitle}`}>Right canvas for your next project.</h2>
+                            <h2 className={`text-base ${styles.subtitle}`}>April 2nd 2021 (2 years ago)</h2>
                           </div>
 
                   </div>

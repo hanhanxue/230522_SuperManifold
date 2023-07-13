@@ -17,7 +17,7 @@ const IconButton = ({toggled = false, onClick, onChange, kind, size, children}) 
         <>
 
         <div className={`${styles.buttonFrame}`}
-        
+        onClick={onClick}
         
         >
 

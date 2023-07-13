@@ -75,19 +75,44 @@ const Dropdown = ({children, onOptionClick, options}) => {
 
 
                           {/* Map objects    */}
-                          {Object.keys(options).map((key, value) => (
-                          <li className={`text-sm ${styles.listItem}`} onClick={onOptionClickInternal(key)} key={Math.random()}>
-                            <div className={`${styles.left}`}>
-                            <span className={`text-sm ${styles.listItemCheck}`}></span>
-                            <span className={`text-sm ${styles.listItemKey}`}>{key}</span>
-                            </div>
+                          {Object.keys(options).map((key, value) => {
+                            
+                            if(options[key] === 'seperator') {
+                              return <li className={`${styles.listSeperator}`} key={Math.random()} />
+                            } else {
 
-                            <div className={`${styles.right}`}>
-                            <span className={`text-sm ${styles.listItemValue}`}>{`${options[key].width} x ${options[key].height}`}</span>
-                            </div>
+                              return (
+                                <li className={`text-sm ${styles.listItem}`} 
+                                onClick={onOptionClickInternal(key)} 
+                                key={Math.random()}>
+      
+      
+                                  <div className={`${styles.left}`}>
+      
+                                        <span className={`text-sm ${styles.listItemCheck}`}>
+            
+                                        {(key === selectedOption) ? 
+                                        <svg className="svg" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.207 5.207L7 11.414 3.292 7.707l1.415-1.414L7 8.586l4.793-4.793 1.414 1.414z" fillRule="nonzero" fillOpacity="1" fill="#fff" stroke="none"></path>
+                                        </svg> : ''}
+            
+            
+                                        </span>
+            
+                                        <span className={`text-sm ${styles.listItemKey}`}>{key}</span>
+                                  </div>
+      
+                                  <div className={`${styles.right}`}>
+                                        <span className={`text-sm ${styles.listItemValue}`}>{`${options[key].width} x ${options[key].height}`}</span>
+                                  </div>
+      
+                                </li>
+                              )
+                            }
 
-                          </li>
-                        ))}
+
+
+                                }
+                        )}
 
 
 

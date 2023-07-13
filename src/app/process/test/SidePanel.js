@@ -1,4 +1,6 @@
 
+//SidePanel.js
+
 import SidePanelBlock from '../../../components/SidePanelBlock'
 import SidePanelBlockRow from '../../../components/SidePanelBlockRow'
 
@@ -16,47 +18,130 @@ import TextInput from '../../../components/TextInput'
 import styles from './SidePanel.module.scss'
 
 
-import {createSrf} from './P5Sketch'
+import {createSrf, createDisplaySrf, hideDisplaySrf, showDisplaySrf} from './P5Sketch'
+import {displayOptions} from './displayResolutions'
+
+import { useState , useEffect, useRef} from 'react'
+
+
 
 
 const SidePanel = ({}) => {
 
+    const notInitialRender = useRef(false)
 
-    const displayOptions = {
-        nHD: {
-            width: 640,
-            height: 360
-        },
-        VGA:  {
-            width: 640,
-            height: 480
-        },
-        SVGA:  {
-            width: 800,
-            height: 600
-        },
-        XGA:  {
-            width: 1024,
-            height: 768
-        },
-        WXGA:  {
-            width: 1280,
-            height: 720
-        },
-      }
-      
+    const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
+
+    const displays = displayOptions
+
+    const [displaySrf, setDisplaySrf] = useState({
+        standard: 'HD',
+        width: 1920,
+        height: 1080,
+        aspect: '16:9',
+        visibility: true,
+    })
+
+    const [referenceSrf, setReferenceSrf] = useState({
+        standard: 'HD',
+        width: 1920,
+        height: 1080,
+        aspect: '16:9',
+        visibility: true,
+    })
+
+    // DISPLAY SRF CONTROLS
+    // Single event handler for multiple fields https://react.dev/learn/updating-objects-in-state
+    // const handleDisplaySrfChange = () => {
+    // }
+
+    const handleDisplaySrfVisibility = () => {
+        // console.log(current)
+        setDisplaySrf({
+            ...displaySrf,
+            visibility: !displaySrf.visibility,
+        })
+        // console.log(displaySrf.visibility)
+
+    }
+
+    const handleDisplaySrfOptionClick = (key, value) => {
+        setDisplaySrf({
+            ...displaySrf,
+            width: value.width,
+            height: value.height,
+        })
+        createDisplaySrf(value.width, value.height)
+    }
+
+    const handleDisplaySrfHeightChange = (value) => {
+        setDisplaySrf({
+            ...displaySrf,
+            height: value
+        })
+    }
+
+    const handleDisplaySrfHeightSubmit = (value) => {
+        value = clamp(value, 360, 6000)
+        setDisplaySrf({
+            ...displaySrf,
+            height: value
+        })
+        // createDisplaySrf(displaySrf.width, value)
+        // console.log(value)
+        createDisplaySrf(displaySrf.width, value)
+    }
 
 
-      const handleDisplayOptionClick = (key, value) => {
-        // console.log(value.width, value.height)
-        createSrf(value.width, value.height)
-      }
-
-      const handleReferenceOptionClick = (key, value) => {
-        console.log(value)
-      }
 
 
+    const handleDisplaySrfWidthChange = (value) => {
+        setDisplaySrf({
+            ...displaySrf,
+            width: value
+        })
+    }
+
+    const handleDisplaySrfWidthSubmit = (value) => {
+        value = clamp(value, 640, 8000)
+        setDisplaySrf({
+            ...displaySrf,
+            width: value
+        })
+        // console.log(displaySrf.width, displaySrf.height)
+        createDisplaySrf(value, displaySrf.height)
+    }
+
+    
+    // REFERENCE SRF CONTROLS
+    // REFERENCE SRF CONTROLS
+    // REFERENCE SRF CONTROLS
+    const handleReferenceSrfOptionClick = (key, value) => {
+        // console.log(value)
+    }
+
+
+
+
+
+
+
+    useEffect(() => {
+        // setTimeout(() => createDisplaySrf(displaySrf.width, displaySrf.height),
+        //     1000)
+        // displaySrf.visibility? showDisplaySrf() : hideDisplaySrf()
+
+        if (notInitialRender.current) {
+            displaySrf.visibility? showDisplaySrf() : hideDisplaySrf()
+          } else {
+            notInitialRender.current = true        
+          }
+    }, [displaySrf.visibility])
+
+    // useEffect(() => {
+    //     setTimeout(() => createDisplaySrf(displaySrf.width, displaySrf.height),
+    //         1000)
+    // }, [displaySrf])
 
 
     return (
@@ -67,13 +152,13 @@ const SidePanel = ({}) => {
 <div className={`${styles.sidePanel}`}>
 
         <SidePanelBlock>
-            <SidePanelBlockRow><RowLabel>Display</RowLabel><IconButton /></SidePanelBlockRow>
-            <SidePanelBlockRow><Dropdown options={displayOptions} onOptionClick={handleDisplayOptionClick}/></SidePanelBlockRow>
+            <SidePanelBlockRow><RowLabel>Display</RowLabel><IconButton toggled={displaySrf.visibility} onClick={handleDisplaySrfVisibility}/></SidePanelBlockRow>
+            <SidePanelBlockRow><Dropdown options={displays} onOptionClick={handleDisplaySrfOptionClick}/></SidePanelBlockRow>
 
 
             <SidePanelBlockRow>
-                <TextInput value='1920' textLabel='W' />
-                <TextInput value='1080' textLabel='H' />
+                <TextInput value={displaySrf.width} onSubmit={handleDisplaySrfWidthSubmit} onChange={handleDisplaySrfWidthChange} textLabel='W' />
+                <TextInput value={displaySrf.height} onSubmit={handleDisplaySrfHeightSubmit} onChange={handleDisplaySrfHeightChange} textLabel='H' />
             </SidePanelBlockRow>
 
             <SidePanelBlockRow>
@@ -84,7 +169,7 @@ const SidePanel = ({}) => {
 
         <SidePanelBlock>
             <SidePanelBlockRow><RowLabel>Reference</RowLabel><IconButton /></SidePanelBlockRow>
-            <SidePanelBlockRow><Dropdown options={displayOptions} onOptionClick={handleReferenceOptionClick}/></SidePanelBlockRow>
+            <SidePanelBlockRow><Dropdown options={displays} onOptionClick={handleReferenceSrfOptionClick}/></SidePanelBlockRow>
 
 
             <SidePanelBlockRow>

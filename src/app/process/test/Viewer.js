@@ -32,6 +32,7 @@ import SidePanel from './SidePanel'
 
 const Viewer = () => {
 
+    
     const [sidePanelVisible, setSidePanelVisible] = useState(true)
 
 

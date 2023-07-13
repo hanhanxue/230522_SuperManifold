@@ -54,12 +54,15 @@
             border-radius: rem(8);
             overflow: hidden;
         }
-
+        .subtitle {
+            color: rgb(59, 59, 59);
+        }
         .titlesTop {
             @include flexCenterX;
             .title {
                 margin-right: rem(8);
             }
+
             .badgesFrame {
                 @include flexCenterX;
                 gap: rem(4);
