@@ -64,13 +64,13 @@ export default function ProcessHeader() {
           
                               <div className={`${styles.badgesFrame}`}>
                                 {/* <Badge>Utility</Badge> */}
-                                <Badge>P5JS</Badge>
+                                <Badge>2023</Badge>
                               </div>
                           </div>
 
                           {/* BOTTOM ROW */}
                           <div className={`${styles.titlesBottom}`}>
-                            <h2 className={`text-base ${styles.subtitle}`}>April 2nd 2021 (2 years ago)</h2>
+                            <h2 className={`text-base ${styles.subtitle}`}>Using P5 · Published 2 years ago</h2>
                           </div>
 
                   </div>

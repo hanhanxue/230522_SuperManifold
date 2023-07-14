@@ -26,6 +26,8 @@ const Button = ({onClick, kind, size, children}) => {
           return `${styles.outlined} `
           case 'danger':
             return `${styles.danger} `
+            case 'contained':
+              return `${styles.contained} `
 
     default:
       return `${styles.noKind} `

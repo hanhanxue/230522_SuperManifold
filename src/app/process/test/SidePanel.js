@@ -18,7 +18,7 @@ import TextInput from '../../../components/TextInput'
 import styles from './SidePanel.module.scss'
 
 
-import {createSrf, createDisplaySrf, hideDisplaySrf, showDisplaySrf} from './P5Sketch'
+import {createSrf, createDisplaySrf, createReferenceSrf, hideDisplaySrf, showDisplaySrf, drawSrfs} from './P5Sketch'
 import {displayOptions} from './displayResolutions'
 
 import { useState , useEffect, useRef} from 'react'
@@ -26,7 +26,7 @@ import { useState , useEffect, useRef} from 'react'
 
 
 
-const SidePanel = ({}) => {
+const SidePanel = ({visible}) => {
 
     const notInitialRender = useRef(false)
 
@@ -36,9 +36,9 @@ const SidePanel = ({}) => {
 
     const [displaySrf, setDisplaySrf] = useState({
         standard: 'HD',
-        width: 1920,
-        height: 1080,
-        aspect: '16:9',
+        width: 4096,
+        height: 1716,
+        aspect: '2.39:1',
         visibility: true,
     })
 
@@ -50,19 +50,18 @@ const SidePanel = ({}) => {
         visibility: true,
     })
 
+    const [toUpdate, setToUpdate] = useState(true)
+
     // DISPLAY SRF CONTROLS
     // Single event handler for multiple fields https://react.dev/learn/updating-objects-in-state
     // const handleDisplaySrfChange = () => {
     // }
 
     const handleDisplaySrfVisibility = () => {
-        // console.log(current)
         setDisplaySrf({
             ...displaySrf,
             visibility: !displaySrf.visibility,
         })
-        // console.log(displaySrf.visibility)
-
     }
 
     const handleDisplaySrfOptionClick = (key, value) => {
@@ -71,114 +70,151 @@ const SidePanel = ({}) => {
             width: value.width,
             height: value.height,
         })
-        createDisplaySrf(value.width, value.height)
     }
-
-    const handleDisplaySrfHeightChange = (value) => {
-        setDisplaySrf({
-            ...displaySrf,
-            height: value
-        })
-    }
-
-    const handleDisplaySrfHeightSubmit = (value) => {
-        value = clamp(value, 360, 6000)
-        setDisplaySrf({
-            ...displaySrf,
-            height: value
-        })
-        // createDisplaySrf(displaySrf.width, value)
-        // console.log(value)
-        createDisplaySrf(displaySrf.width, value)
-    }
-
-
-
 
     const handleDisplaySrfWidthChange = (value) => {
         setDisplaySrf({
             ...displaySrf,
             width: value
         })
+        setToUpdate(false)
+     
+    }
+    const handleDisplaySrfHeightChange = (value) => {
+        setDisplaySrf({
+            ...displaySrf,
+            height: value
+        })
+        setToUpdate(false)
+     
     }
 
+    // SUBMIT // SUBMIT // SUBMIT
     const handleDisplaySrfWidthSubmit = (value) => {
-        value = clamp(value, 640, 8000)
         setDisplaySrf({
             ...displaySrf,
             width: value
         })
-        // console.log(displaySrf.width, displaySrf.height)
-        createDisplaySrf(value, displaySrf.height)
+        setToUpdate(true)
+
+    }
+    const handleDisplaySrfHeightSubmit = (value) => {
+        setDisplaySrf({
+            ...displaySrf,
+            height: value
+        })
+        setToUpdate(true)
     }
 
-    
+
     // REFERENCE SRF CONTROLS
     // REFERENCE SRF CONTROLS
     // REFERENCE SRF CONTROLS
+
+    const handleReferenceSrfVisibility = () => {
+        // console.log(current)
+        setReferenceSrf({
+            ...referenceSrf,
+            visibility: !referenceSrf.visibility,
+        })
+        // console.log(referenceSrf.visibility)
+    }
     const handleReferenceSrfOptionClick = (key, value) => {
-        // console.log(value)
+        setReferenceSrf({
+            ...referenceSrf,
+            width: value.width,
+            height: value.height,
+        })
     }
 
+    const handleReferenceSrfWidthChange = (value) => {
+        setReferenceSrf({
+            ...referenceSrf,
+            width: value,
+        })
+        setToUpdate(false)
+     
+    }
+    const handleReferenceSrfHeightChange = (value) => {
+        setReferenceSrf({
+            ...referenceSrf,
+            height: value,
+        })
+        setToUpdate(false)
+     
+    }
 
+    // SUBMIT // SUBMIT // SUBMIT
+    const handleReferenceSrfWidthSubmit = (value) => {
+        setReferenceSrf({
+            ...referenceSrf,
+            width: value,
+        })
+        setToUpdate(true)
 
+    }
+    const handleReferenceSrfHeightSubmit = (value) => {
+        setReferenceSrf({
+            ...referenceSrf,
+            height: value,
+        })
+        setToUpdate(true)
+    }
 
 
 
 
     useEffect(() => {
-        // setTimeout(() => createDisplaySrf(displaySrf.width, displaySrf.height),
-        //     1000)
-        // displaySrf.visibility? showDisplaySrf() : hideDisplaySrf()
 
-        if (notInitialRender.current) {
-            displaySrf.visibility? showDisplaySrf() : hideDisplaySrf()
-          } else {
-            notInitialRender.current = true        
+        if (!toUpdate) {
+            setToUpdate(true);
+            return;
           }
-    }, [displaySrf.visibility])
+      
+        const draw = async () => {
+            await createDisplaySrf(displaySrf.width, displaySrf.height, displaySrf.visibility)
+            await createReferenceSrf(referenceSrf.width, referenceSrf.height, referenceSrf.visibility)
+            drawSrfs()
+        }
+        draw()
 
-    // useEffect(() => {
-    //     setTimeout(() => createDisplaySrf(displaySrf.width, displaySrf.height),
-    //         1000)
-    // }, [displaySrf])
+    }, [displaySrf, referenceSrf])
 
 
     return (
 
         <>
 
-<div className={`${styles.sidePanelFrame}`}>
+<div className={`${styles.sidePanelFrame} ${visible ? styles.sidePanelVisible : styles.sidePanelHidden}`}>
 <div className={`${styles.sidePanel}`}>
 
         <SidePanelBlock>
             <SidePanelBlockRow><RowLabel>Display</RowLabel><IconButton toggled={displaySrf.visibility} onClick={handleDisplaySrfVisibility}/></SidePanelBlockRow>
             <SidePanelBlockRow><Dropdown options={displays} onOptionClick={handleDisplaySrfOptionClick}/></SidePanelBlockRow>
 
-
             <SidePanelBlockRow>
-                <TextInput value={displaySrf.width} onSubmit={handleDisplaySrfWidthSubmit} onChange={handleDisplaySrfWidthChange} textLabel='W' />
-                <TextInput value={displaySrf.height} onSubmit={handleDisplaySrfHeightSubmit} onChange={handleDisplaySrfHeightChange} textLabel='H' />
+                <TextInput textLabel='W' value={displaySrf.width} onChange={handleDisplaySrfWidthChange} onSubmit={handleDisplaySrfWidthSubmit} />
+                <TextInput textLabel='H' value={displaySrf.height} onChange={handleDisplaySrfHeightChange} onSubmit={handleDisplaySrfHeightSubmit} />
             </SidePanelBlockRow>
 
             <SidePanelBlockRow>
-                <RowInfo>Aspect Ratio 16 : 9</RowInfo>
+                <RowInfo>{`Aspect Ratio ${displaySrf.aspect}`}</RowInfo>
             </SidePanelBlockRow>
 
         </SidePanelBlock>
 
         <SidePanelBlock>
-            <SidePanelBlockRow><RowLabel>Reference</RowLabel><IconButton /></SidePanelBlockRow>
+            <SidePanelBlockRow><RowLabel>Reference</RowLabel><IconButton toggled={referenceSrf.visibility} onClick={handleReferenceSrfVisibility}/></SidePanelBlockRow>
             <SidePanelBlockRow><Dropdown options={displays} onOptionClick={handleReferenceSrfOptionClick}/></SidePanelBlockRow>
 
 
             <SidePanelBlockRow>
-                <TextInput value='1920' textLabel='W' />
-                <TextInput value='1080' textLabel='H' />
+                <TextInput textLabel='W' value={referenceSrf.width}  onChange={handleReferenceSrfWidthChange} onSubmit={handleReferenceSrfWidthSubmit} />
+                <TextInput textLabel='H' value={referenceSrf.height}  onChange={handleReferenceSrfHeightChange} onSubmit={handleReferenceSrfHeightSubmit} />
             </SidePanelBlockRow>
 
             <SidePanelBlockRow>
-                <RowInfo>Aspect Ratio 16 : 9</RowInfo>
+                <RowInfo>{`Aspect Ratio ${displaySrf.aspect}`}</RowInfo>
             </SidePanelBlockRow>
 
         </SidePanelBlock>

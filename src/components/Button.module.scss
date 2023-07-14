@@ -51,6 +51,15 @@ cursor: default;
 
         }
     }
+    &.contained {
+        background-color: black;
+        color: white;
+        &:hover {
+            background-color: darken($color: white, $amount: 75%);
+            // filter: brightness(85%);
+        }
+
+    }
 
     &.outlined {
 

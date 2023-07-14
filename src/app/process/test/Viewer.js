@@ -54,7 +54,8 @@ const Viewer = () => {
 
     <div className={`${styles.canvasFrame}`}>
         <P5Sketch />
-        {sidePanelVisible && <SidePanel/>}
+        {/* {sidePanelVisible && <SidePanel/>} */}
+        <SidePanel visible={sidePanelVisible} />
     </div>
   
 

@@ -3,26 +3,22 @@ import styles from './TextInput.module.scss'
 import { useId, useState, useRef } from 'react';
 
 
-const TextInput = ({value, textLabel, onChange, setValue, onSubmit}) => {
+const TextInput = ({value, textLabel, onChange, setValue, onSubmit, min=360, max=6000}) => {
     // const id = useId();
-
+    const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
     // Nullish coalescing is denoted by double question marks (??).
-    // const [input, setInput] = useState(value ?? '');
-
-
+    // const [input, setInput] = useState(Number(value) ?? min);
 
     const handleChange = (e) => {
-        // console.log(e.target.value)
+        onChange(e.target.value)
         // setInput(e.target.value)
-        onChange(Number(e.target.value))
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // console.log(value)
-        onSubmit(value)
-        // e.target.blur()
-        // console.log(e.target.querySelector('input'))
+
+        let clampedValue = clamp(value, min, max)
+        onSubmit(clampedValue)
         e.target.querySelector('input').blur()
     }
 
@@ -32,7 +28,6 @@ const TextInput = ({value, textLabel, onChange, setValue, onSubmit}) => {
         <>
         <div className={`${styles.textInputFrame}`}>
         <label className={`text-sm ${styles.textInputLabel}`}>{textLabel}</label>
-
         <form onSubmit={handleSubmit}>
 
                 <input 
@@ -44,12 +39,23 @@ const TextInput = ({value, textLabel, onChange, setValue, onSubmit}) => {
 
 
         </form>
-
-
         </div>
-
         </>
     )
 }
 
 export default TextInput
+
+
+
+
+// console.log(input)
+// onChange(Number(e.target.value))
+// console.log(e.target.value)
+// setInput(e.target.value)
+        // e.target.blur()
+// console.log(e.target.querySelector('input'))
+        // console.log(input)
+
+// let clampedValue = clamp(input, min, max)
+// setInput(Number(clampedValue))

@@ -40,7 +40,7 @@ const SliderA = ({startValue = 50, onChange, children}) => {
             const offsetX = e.clientX - sliderRef.current.offsetLeft
             const newValue = clamp(offsetX, 0, 100)
             setValue(newValue)
-
+            onChange(newValue)
         }
     
         const throttle_handleMouseMove = _.throttle(handleMouseMove, 15)
@@ -64,7 +64,8 @@ const SliderA = ({startValue = 50, onChange, children}) => {
         // console.log(`${e.clientX} and ${e.offsetX}`)
 
         const newValue = clamp(offsetX, 0, 100)
-        setValue(newValue);
+        setValue(newValue)
+        onChange(newValue)
         setGrabbed(true)
     }
 

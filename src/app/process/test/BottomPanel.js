@@ -25,7 +25,7 @@ const BottomPanel = ({panelVisibility, onPanelVisibility}) => {
             <Toggle toggled={panelVisibility} onChange={onPanelVisibility}>Side Panel</Toggle>
             {/* <Slider >Scale</Slider> */}
             <SliderA>Scale A</SliderA>
-            <Button kind='danger' size='sm' >Reset</Button>
+            <Button kind='contained' size='sm' >Reset</Button>
         </ControlsGroup>
 
 

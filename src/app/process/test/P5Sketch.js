@@ -15,29 +15,15 @@ const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
 import styles from './P5Sketch.module.scss'
 
 
-
-// let display = {
-//     standard: 'custom',
-//     width: 1920,
-//     heigh: 1080,
-// }
-// let reference = {
-//     standard: 'custom',
-//     width: 1920,
-//     heigh: 1080,
-// }
-
-
-
-let p5I
+let p
 let cnv
 
 let refColor
 let bgColor
 
-let sceneScale = .5
+let sceneScale = .25
 let sceneScaleMin = .25
-let sceneScaleMax = 1.5
+let sceneScaleMax = 1.0
 
 let canvasCenterX
 let canvasCenterY
@@ -46,16 +32,13 @@ let displaySrf
 let referenceSrf
 
 
-export const initSketch = () => {
-
-}
-
 const setup = (p5, canvasParentRef) => {
-    p5I = p5
-    refColor =  p5I.color('#2DFE29')
-    bgColor = p5I.color('#F6F6F6')
+    p = p5
 
-    cnv = p5I.createCanvas(1440, 720).parent(canvasParentRef)
+    refColor =  p.color('#F01C1C')
+    bgColor = p.color('#F6F6F6')
+
+    cnv = p.createCanvas(1440, 720).parent(canvasParentRef)
 
     cnv.style('display', 'block') // remove tiny gap at the bottom
 
@@ -64,67 +47,108 @@ const setup = (p5, canvasParentRef) => {
     cnv.style('left', '50%')
     cnv.style('transform', 'translate(-50%, -50%)')
 
-    canvasCenterX = p5I.width / 2
-    canvasCenterY = p5I.height / 2
+    canvasCenterX = p.width / 2
+    canvasCenterY = p.height / 2
 
-    p5I.background(bgColor)
+    p.background(bgColor)
+    // p.background(refColor)
 
-    // createSrf(1920, 1080)
 }
   
-const draw = (p5) => {
+const draw = (p5) => {}
 
+export const drawSrfs = async () => {
+    await waitForP5Initialization()
+
+    p.background(bgColor)
+    p.push()
+
+    // Translate to center
+    p.translate(canvasCenterX, canvasCenterY)
+    p.scale(sceneScale)
+
+    if(displaySrf.visibility) {
+            // Styling
+            p.noStroke()
+            // p.noFill()
+            p.fill(0)
+    
+            // Drop shadow, need to happen BEFORE the shape draw
+            p.drawingContext.shadowOffsetX = 0;
+            p.drawingContext.shadowOffsetY = 16;
+            p.drawingContext.shadowBlur = 64
+            p.drawingContext.shadowColor = p.color(32, 80)
+    
+            // RECT
+            p.rect(displaySrf.minX, displaySrf.minY, displaySrf.srfWidth, displaySrf.srfHeight, displaySrf.srfRadius)
+    }
+
+    if(referenceSrf.visibility) {
+    // Drawing reference Srf
+        // Styling
+        p.stroke(refColor)
+        p.noFill()
+
+
+
+        p.strokeWeight(1)
+        p.line(referenceSrf.minX, -p.height / sceneScale, referenceSrf.minX, p.height / sceneScale)
+        p.line(referenceSrf.minX + referenceSrf.srfWidth, -p.height / sceneScale, referenceSrf.minX + referenceSrf.srfWidth, p.height / sceneScale)
+        p.line(-p.width / sceneScale, referenceSrf.minY, p.width / sceneScale, referenceSrf.minY)
+        p.line(-p.width / sceneScale, referenceSrf.minY + referenceSrf.srfHeight, p.width / sceneScale, referenceSrf.minY + referenceSrf.srfHeight)
+    
+            // RECT
+            p.strokeWeight(1.5)
+            p.rect(referenceSrf.minX, referenceSrf.minY, referenceSrf.srfWidth, referenceSrf.srfHeight, 0)
+            // p.rect(referenceSrf.minX, referenceSrf.minY, referenceSrf.srfWidth, referenceSrf.srfHeight, 0)
+    }
+    
+    p.pop()
 }
 
 
+const waitForP5Initialization = () => {
+    return new Promise((resolve) => {
+      const checkInitialization = () => {
+        if (p) {
+          resolve()
+        } else {
+          setTimeout(checkInitialization, 100)
+        }
+      }
+      checkInitialization()
+    })
+  }
 
-export const createDisplaySrf = (width, height) => {
 
-    // setTimeout(() => {
+// export const createDisplaySrf = (width, height) => {
+//     displaySrf = createSrf(width, height)
+// }
 
-    //   }, "1000");
-      displaySrf = new Surface(
-        p5I,
-        p5I.width - width / 2,   
-        p5I.height - height / 2, 
-        width, 
-        height, 
-        1
+export const createDisplaySrf = async (width, height, visibility) => {
+    displaySrf = await createSrf(width, height, visibility)
+    // console.log(displaySrf)
+  }
+
+export const createReferenceSrf = async (width, height, visibility) => {
+    referenceSrf = await createSrf(width, height, visibility)
+}
+
+const createSrf = async(width, height, visibility) => {
+    await waitForP5Initialization()
+    let srf = new Surface(p, 
+        p.width - width / 2, p.height - height / 2, 
+        width, height, 
+        1,
+        visibility,
     )
-    p5I.background(bgColor)
-    displaySrf.display()
-    return displaySrf
 
+    return srf
 }
 
-export const hideDisplaySrf = () => {
-    p5I.background(bgColor)
-}
-
-export const showDisplaySrf = () => {
-displaySrf.display()
-}
-
-// export const changeSceneScale = (e, value) => {
-//     sceneScale = p5I.map(value, 0, 100, sceneScaleMin, sceneScaleMax)
-
-//     p5I.background(bgColor)
-
-//     mainSrf.display()
-
-// }
 
 
-
-// calculate aspect ratio
-// function gcd (a, b) {
-//     return (b == 0) ? a : gcd (b, a%b);
-// }
-
-
-
-
-function Surface(p5I, x, y, srfWidth, srfHeight, scale) {
+function Surface(p, x, y, srfWidth, srfHeight, scale, visibility) {
     this.x = x
     this.y = y
 
@@ -132,119 +156,53 @@ function Surface(p5I, x, y, srfWidth, srfHeight, scale) {
     this.srfHeight = srfHeight
     this.srfRadius = 32
 
+    this.visibility = visibility
 
     this.scale = scale
     
     this.minX = - this.srfWidth / 2
     this.minY = - this.srfHeight / 2
 
-    this.aspectRatio = p5I.round(this.srfWidth / this.srfHeight, 2)
+    this.aspectRatio = p.round(this.srfWidth / this.srfHeight, 2)
     // this.gcd = gcd(this.srfWidth, this.srfHeight)
     // this.aspectRatioW = this.srfWidth / this.gcd
     // this.aspectRatioH = this.srfHeight / this.gcd
-
-    this.display = () => {
-
-
-
-
- 
-        p5I.push()
+    this.draw = () => {
+        p.background(refColor)
+        p.push()
 
         // Translate to center
-        p5I.translate(canvasCenterX, canvasCenterY)
-        p5I.scale(sceneScale)
+        p.translate(canvasCenterX, canvasCenterY)
+        p.scale(sceneScale)
 
-                // Styling
-                p5I.noStroke()
-                p5I.fill(0)
-        
-                // Drop shadow, need to happen BEFORE the shape draw
-                p5I.drawingContext.shadowOffsetX = 0;
-                p5I.drawingContext.shadowOffsetY = 16;
-                p5I.drawingContext.shadowBlur = 64
-                p5I.drawingContext.shadowColor = p5I.color(32, 64)
-        
-                // RECT
-                p5I.rect(this.minX, this.minY, this.srfWidth, this.srfHeight, this.srfRadius)
+            // Styling
+            p.noStroke()
+            p.fill(0)
+    
+            // Drop shadow, need to happen BEFORE the shape draw
+            p.drawingContext.shadowOffsetX = 0;
+            p.drawingContext.shadowOffsetY = 16;
+            p.drawingContext.shadowBlur = 64
+            p.drawingContext.shadowColor = p.color(32, 64)
+    
+            // RECT
+            p.rect(this.minX, this.minY, this.srfWidth, this.srfHeight, this.srfRadius)
 
-        p5I.pop()
+            // // Drawing reference Srf
+            // // Styling
+            // p.stroke(refColor)
+            // p.strokeWeight(3)
+    
+            // // RECT
+            // p.rect(referenceSrf.minX, referenceSrf.minY, referenceSrf.srfWidth, referenceSrf.srfHeight, referenceSrf.srfRadius)
 
-
-        // TEXT
-        p5I.push()
-        p5I.translate(canvasCenterX, canvasCenterY)
-        p5I.textSize(13.0)
-        p5I.textAlign(p5I.RIGHT, p5I.BOTTOM)
-
-        // Styling
-        p5I.fill(refColor)
-
-        p5I.text(`Aspect Ratio: ${this.aspectRatio}:1    Resolution: ${this.srfWidth} x ${this.srfHeight}`,
-        (this.minX + this.srfWidth) * sceneScale - 16, 
-        (this.minY + this.srfHeight) * sceneScale -16)
-
-        p5I.pop()
-
-
+        p.pop()
     }
-
-    this.displayRef = () => {
-
-        // p5I.push()
-
-        // // Translate to center
-        // p5I.translate(canvasCenterX, canvasCenterY)
-        // p5I.scale(sceneScale)
-
-        // // Styling
-        // p5I.stroke(refColor)
-        // p5I.fill(bgColor)
-
-
-        // // RECT
-        // p5I.rect(this.minX, this.minY, this.srfWidth, this.srfHeight, this.srfRadius)
-
-
-
-
-        // p5I.pop()
-
-
- 
-        // // TEXT
-        // p5I.push()
-        // p5I.translate(canvasCenterX, canvasCenterY)
-        // p5I.textSize(13.0)
-        // p5I.textAlign(p5I.RIGHT, p5I.TOP)
-
-        // // Styling
-        // p5I.fill(refColor)
-
-        // p5I.text(`Aspect Ratio: ${this.aspectRatio}:1    Resolution: ${this.srfWidth} x ${this.srfHeight}`,
-        // (this.minX + this.srfWidth) * sceneScale - 16, 
-        // (this.minY + this.srfHeight) * sceneScale + 8)
-
-        // p5I.pop()
-
-    }
-
 }
 
 
 
-
-
-
-
-
-
-
-
-
 const P5Sketch = () => {
-
-
     return (
         <Sketch setup={setup} draw={draw} className={`${styles.sketchFrame}`} />
     )
@@ -258,13 +216,96 @@ export default P5Sketch
 
 
 
+// this.display = () => {
+
+//     p.push()
+
+//     // Translate to center
+//     p.translate(canvasCenterX, canvasCenterY)
+//     p.scale(sceneScale)
+
+//             // Styling
+//             p.noStroke()
+//             p.fill(0)
+    
+//             // Drop shadow, need to happen BEFORE the shape draw
+//             p.drawingContext.shadowOffsetX = 0;
+//             p.drawingContext.shadowOffsetY = 16;
+//             p.drawingContext.shadowBlur = 64
+//             p.drawingContext.shadowColor = p.color(32, 64)
+    
+//             // RECT
+//             p.rect(this.minX, this.minY, this.srfWidth, this.srfHeight, this.srfRadius)
+
+//     p.pop()
+
+
+    // // TEXT
+    // p.push()
+    // p.translate(canvasCenterX, canvasCenterY)
+    // p.textSize(13.0)
+    // p.textAlign(p.RIGHT, p.BOTTOM)
+
+    // // Styling
+    // p.fill(refColor)
+
+    // p.text(`Aspect Ratio: ${this.aspectRatio}:1    Resolution: ${this.srfWidth} x ${this.srfHeight}`,
+    // (this.minX + this.srfWidth) * sceneScale - 16, 
+    // (this.minY + this.srfHeight) * sceneScale -16)
+
+    // p.pop()
+// }
+
+// this.displayRef = () => {
+
+//     p.push()
+
+//     // Translate to center
+//     p.translate(canvasCenterX, canvasCenterY)
+//     p.scale(sceneScale)
+
+//             // Styling
+//             p.stroke(refColor)
+//             p.strokeWeight(3)
+//             p.noFill()
+    
+//             // // Drop shadow, need to happen BEFORE the shape draw
+//             // p.drawingContext.shadowOffsetX = 0;
+//             // p.drawingContext.shadowOffsetY = 16;
+//             // p.drawingContext.shadowBlur = 64
+//             // p.drawingContext.shadowColor = p.color(32, 64)
+    
+//             // RECT
+//             p.rect(this.minX, this.minY, this.srfWidth, this.srfHeight, this.srfRadius)
+
+//     p.pop()
+
+
+    // // TEXT
+    // p.push()
+    // p.translate(canvasCenterX, canvasCenterY)
+    // p.textSize(13.0)
+    // p.textAlign(p.CENTER, p.BOTTOM)
+
+    // // Styling
+    // p.fill(refColor)
+
+    // p.text(`Aspect Ratio: ${this.aspectRatio}:1    Resolution: ${this.srfWidth} x ${this.srfHeight}`,
+    // 0, 
+    // p.height / 2 - 16)
+
+    // p.pop()
+
+// }
+
+
 // export const randomSrf = (w, h) => {
 
 //     let width = w
 //     let height = h
-//     refSrf = new Surface(p5I,
-//         p5I.width - width / 2, 
-//     p5I.height - height / 2, 
+//     refSrf = new Surface(p,
+//         p.width - width / 2, 
+//     p.height - height / 2, 
 //     width, 
 //     height, 1)
 
