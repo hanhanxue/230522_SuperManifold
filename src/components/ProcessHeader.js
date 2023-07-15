@@ -64,7 +64,7 @@ export default function ProcessHeader() {
           
                               <div className={`${styles.badgesFrame}`}>
                                 {/* <Badge>Utility</Badge> */}
-                                <Badge>2023</Badge>
+                                {/* <Badge>2023</Badge> */}
                               </div>
                           </div>
 

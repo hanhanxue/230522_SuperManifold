@@ -9,10 +9,15 @@ import ControlsGroup from '../../../components/ControlsGroup'
 import styles from './BottomPanel.module.scss'
 
 
+import {scaleCanvas, createSrf, createDisplaySrf, createReferenceSrf, hideDisplaySrf, showDisplaySrf, drawSrfs} from './P5Sketch'
+
 
 const BottomPanel = ({panelVisibility, onPanelVisibility}) => {
 
-
+const handleOnSliderChange = (value) => {
+    // console.log(value)
+    scaleCanvas(value)
+}
 
     return (
 
@@ -24,8 +29,8 @@ const BottomPanel = ({panelVisibility, onPanelVisibility}) => {
             {/* <Button kind='ghost' size='sm' >Clear</Button> */}
             <Toggle toggled={panelVisibility} onChange={onPanelVisibility}>Side Panel</Toggle>
             {/* <Slider >Scale</Slider> */}
-            <SliderA>Scale A</SliderA>
-            <Button kind='contained' size='sm' >Reset</Button>
+            <SliderA onChange={handleOnSliderChange} min={.25} max={1.0} defaultValue={.25}>Scale</SliderA>
+            {/* <Button kind='contained' size='sm' >Reset</Button> */}
         </ControlsGroup>
 
 

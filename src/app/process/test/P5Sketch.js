@@ -22,8 +22,7 @@ let refColor
 let bgColor
 
 let sceneScale = .25
-let sceneScaleMin = .25
-let sceneScaleMax = 1.0
+
 
 let canvasCenterX
 let canvasCenterY
@@ -68,22 +67,29 @@ export const drawSrfs = async () => {
     p.scale(sceneScale)
 
     if(displaySrf.visibility) {
+                  // Drop shadow, need to happen BEFORE the shape draw
+                  p.drawingContext.shadowOffsetX = 0;
+                  p.drawingContext.shadowOffsetY = 16 * sceneScale;
+                  p.drawingContext.shadowBlur = 64 * sceneScale
+                  p.drawingContext.shadowColor = p.color(32, 80)
+                  // p.drawingContext.shadowColor = p.color(255, 0, 0, 255)
             // Styling
             p.noStroke()
             // p.noFill()
             p.fill(0)
     
-            // Drop shadow, need to happen BEFORE the shape draw
-            p.drawingContext.shadowOffsetX = 0;
-            p.drawingContext.shadowOffsetY = 16;
-            p.drawingContext.shadowBlur = 64
-            p.drawingContext.shadowColor = p.color(32, 80)
+
     
             // RECT
             p.rect(displaySrf.minX, displaySrf.minY, displaySrf.srfWidth, displaySrf.srfHeight, displaySrf.srfRadius)
     }
 
     if(referenceSrf.visibility) {
+                  // Drop shadow, need to happen BEFORE the shape draw
+                  p.drawingContext.shadowOffsetX = 0;
+                  p.drawingContext.shadowOffsetY = 0;
+                  p.drawingContext.shadowBlur = 0
+           
     // Drawing reference Srf
         // Styling
         p.stroke(refColor)
@@ -91,19 +97,25 @@ export const drawSrfs = async () => {
 
 
 
-        p.strokeWeight(1)
+        p.strokeWeight(.25 / sceneScale)
         p.line(referenceSrf.minX, -p.height / sceneScale, referenceSrf.minX, p.height / sceneScale)
         p.line(referenceSrf.minX + referenceSrf.srfWidth, -p.height / sceneScale, referenceSrf.minX + referenceSrf.srfWidth, p.height / sceneScale)
         p.line(-p.width / sceneScale, referenceSrf.minY, p.width / sceneScale, referenceSrf.minY)
         p.line(-p.width / sceneScale, referenceSrf.minY + referenceSrf.srfHeight, p.width / sceneScale, referenceSrf.minY + referenceSrf.srfHeight)
     
             // RECT
-            p.strokeWeight(1.5)
+            p.strokeWeight(1  / sceneScale)
             p.rect(referenceSrf.minX, referenceSrf.minY, referenceSrf.srfWidth, referenceSrf.srfHeight, 0)
             // p.rect(referenceSrf.minX, referenceSrf.minY, referenceSrf.srfWidth, referenceSrf.srfHeight, 0)
     }
     
     p.pop()
+}
+
+export const scaleCanvas = (value) => {
+  sceneScale = value
+  // console.log(sceneScale)
+  drawSrfs()
 }
 
 

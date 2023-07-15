@@ -10,11 +10,13 @@ import styles from './SliderA.module.scss'
 
 
 
-const SliderA = ({startValue = 50, onChange, children}) => {
-
+const SliderA = ({min=0, max=100, defaultValue = 50, onChange, children}) => {
+    const map_range = (value, low1, high1, low2, high2) => {
+        return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+    }
     const sliderRef = useRef(null);
     const [grabbed, setGrabbed] = useState(false)
-    const [value, setValue] = useState(startValue)
+    const [value, setValue] = useState(defaultValue)
 
     const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
 
@@ -39,8 +41,11 @@ const SliderA = ({startValue = 50, onChange, children}) => {
             // pauseEvent(e)
             const offsetX = e.clientX - sliderRef.current.offsetLeft
             const newValue = clamp(offsetX, 0, 100)
+
             setValue(newValue)
-            onChange(newValue)
+
+            const mappedValue = map_range(newValue, 0, 100, min, max)
+            onChange(mappedValue)
         }
     
         const throttle_handleMouseMove = _.throttle(handleMouseMove, 15)
@@ -56,16 +61,20 @@ const SliderA = ({startValue = 50, onChange, children}) => {
 
 
 
+
     const handleMouseDown = (e) => {
         pauseEvent(e)
-        const sliderRect = e.currentTarget.getBoundingClientRect()
-        const offsetX = e.clientX - sliderRect.left
+        // const sliderRect = e.currentTarget.getBoundingClientRect()
         // console.log(sliderRect.left)
         // console.log(`${e.clientX} and ${e.offsetX}`)
-
+        const offsetX = e.clientX - sliderRef.current.offsetLeft
         const newValue = clamp(offsetX, 0, 100)
+        
         setValue(newValue)
-        onChange(newValue)
+
+        const mappedValue = map_range(newValue, 0, 100, min, max)
+        onChange(mappedValue)
+
         setGrabbed(true)
     }
 
@@ -75,13 +84,13 @@ const SliderA = ({startValue = 50, onChange, children}) => {
         <div className={`${styles.sliderFrame}`}>
 
             <label className={`text-sm ${styles.label}`}>{children}</label>
-            <span className={`text-sm ${styles.min}`}>0</span>
+            <span className={`text-sm ${styles.min}`}>{min}</span>
 
 
                 <div 
+                ref={sliderRef}
                 className={`${styles.slider}`}
                 onMouseDown={handleMouseDown}
-                ref={sliderRef}
                 >
 
                         <div className={`${styles.thumb}`} style={{left: `${value}%`}}></div>
@@ -92,7 +101,7 @@ const SliderA = ({startValue = 50, onChange, children}) => {
                 </div>
 
 
-            <span className={`text-sm ${styles.max}`}>100</span>
+            <span className={`text-sm ${styles.max}`}>{max}</span>
         </div>
 
     );

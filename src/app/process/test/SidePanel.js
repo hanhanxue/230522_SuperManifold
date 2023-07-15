@@ -27,10 +27,21 @@ import { useState , useEffect, useRef} from 'react'
 
 
 const SidePanel = ({visible}) => {
+    // Greatest Common Divisor
+    function gcd_two_numbers(x, y) {
+        if ((typeof x !== 'number') || (typeof y !== 'number')) 
+          return false;
+        x = Math.abs(x);
+        y = Math.abs(y);
+        while(y) {
+          var t = y;
+          y = x % y;
+          x = t;
+        }
+        return x;
+      }
 
-    const notInitialRender = useRef(false)
-
-    const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
+ 
 
     const displays = displayOptions
 
@@ -38,7 +49,7 @@ const SidePanel = ({visible}) => {
         standard: 'HD',
         width: 4096,
         height: 1716,
-        aspect: '2.39:1',
+        aspect: '2.39 : 1',
         visibility: true,
     })
 
@@ -46,11 +57,13 @@ const SidePanel = ({visible}) => {
         standard: 'HD',
         width: 1920,
         height: 1080,
-        aspect: '16:9',
+        aspect: '16 : 9',
         visibility: true,
     })
 
     const [toUpdate, setToUpdate] = useState(true)
+
+
 
     // DISPLAY SRF CONTROLS
     // Single event handler for multiple fields https://react.dev/learn/updating-objects-in-state
@@ -77,6 +90,7 @@ const SidePanel = ({visible}) => {
             ...displaySrf,
             width: value
         })
+
         setToUpdate(false)
      
     }
@@ -91,18 +105,26 @@ const SidePanel = ({visible}) => {
 
     // SUBMIT // SUBMIT // SUBMIT
     const handleDisplaySrfWidthSubmit = (value) => {
+        let aspect = value / displaySrf.height
+
         setDisplaySrf({
             ...displaySrf,
-            width: value
+            width: value,
+            aspect: `${Number(aspect.toFixed(2))} : 1`,
         })
+
         setToUpdate(true)
 
     }
     const handleDisplaySrfHeightSubmit = (value) => {
+        let aspect = displaySrf.width / value
+
         setDisplaySrf({
             ...displaySrf,
-            height: value
+            height: value,
+            aspect: `${Number(aspect.toFixed(2))} : 1`,
         })
+
         setToUpdate(true)
     }
 
@@ -146,29 +168,35 @@ const SidePanel = ({visible}) => {
 
     // SUBMIT // SUBMIT // SUBMIT
     const handleReferenceSrfWidthSubmit = (value) => {
+        let aspect = value / displaySrf.height
+
         setReferenceSrf({
             ...referenceSrf,
             width: value,
+            aspect: `${Number(aspect.toFixed(2))} : 1`,
         })
+        // console.log(value)
         setToUpdate(true)
 
     }
     const handleReferenceSrfHeightSubmit = (value) => {
+        let aspect = displaySrf.width / value
+
         setReferenceSrf({
             ...referenceSrf,
             height: value,
+            aspect: `${Number(aspect.toFixed(2))} : 1`,
         })
         setToUpdate(true)
     }
 
 
 
-
     useEffect(() => {
-
+        // console.log(displaySrf.height)
         if (!toUpdate) {
-            setToUpdate(true);
-            return;
+            setToUpdate(true)
+            return
           }
       
         const draw = async () => {
@@ -214,7 +242,7 @@ const SidePanel = ({visible}) => {
             </SidePanelBlockRow>
 
             <SidePanelBlockRow>
-                <RowInfo>{`Aspect Ratio ${displaySrf.aspect}`}</RowInfo>
+                <RowInfo>{`Aspect Ratio ${referenceSrf.aspect}`}</RowInfo>
             </SidePanelBlockRow>
 
         </SidePanelBlock>
@@ -262,3 +290,18 @@ action="/"
 
     
     </span></button> */}
+
+
+        // const gcd = gcd(this.srfWidth, this.srfHeight)
+    // // this.aspectRatioW = this.srfWidth / this.gcd
+    // // this.aspectRatioH = this.srfHeight / this.gcd
+    // const updateDisplaySrfAspectRatio = () => {
+    //     // let gcd = gcd_two_numbers(displaySrf.width, displaySrf.height)
+
+    //     let aspect = displaySrf.width / displaySrf.height
+    //     setDisplaySrf({
+    //         ...displaySrf,
+    //         aspect: !displaySrf.visibility,
+    //     })
+    //     // console.log( `${gcd} with width ${displaySrf.width} and height ${displaySrf.height}`)
+    // }

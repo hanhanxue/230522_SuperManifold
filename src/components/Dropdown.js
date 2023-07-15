@@ -19,6 +19,8 @@ const Dropdown = ({children, onOptionClick, options}) => {
 
 
   
+
+
     useEffect(() => {
       const handleClickOutside = event => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -51,7 +53,7 @@ const Dropdown = ({children, onOptionClick, options}) => {
 </svg>
 
                 </span>
-                
+                {/* // const [input, setInput] = useState(Number(value) ?? min); */}
                 <span className={`text-sm`}> {selectedOption || "Custom"}</span>
                 </div>
 

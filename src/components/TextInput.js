@@ -9,7 +9,22 @@ const TextInput = ({value, textLabel, onChange, setValue, onSubmit, min=360, max
     // Nullish coalescing is denoted by double question marks (??).
     // const [input, setInput] = useState(Number(value) ?? min);
 
+    const handleOnKeyDown = (e) => {
+        if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+            e.preventDefault()
+            // Handle arrow key logic here
+            let step = e.key === 'ArrowUp' ? 10 : -10;
+            let newValue = clamp(Number(value) + step, min, max);
+            onSubmit(newValue);
+            // onChange(newValue);
+            // console.log(`onArrowKey  ${e.target.value}`)
+
+          }
+    }
+
     const handleChange = (e) => {
+        // let clampedValue = clamp(e.target.value, min, max)
+        // console.log('fire onChange')
         onChange(e.target.value)
         // setInput(e.target.value)
     }
@@ -22,6 +37,12 @@ const TextInput = ({value, textLabel, onChange, setValue, onSubmit, min=360, max
         e.target.querySelector('input').blur()
     }
 
+
+    
+    const handleBlur = (e) => {
+        let clampedValue = clamp(value, min, max)
+        onSubmit(clampedValue)
+    }
     
 
     return(
@@ -33,7 +54,10 @@ const TextInput = ({value, textLabel, onChange, setValue, onSubmit, min=360, max
                 <input 
                     className={`text-sm ${styles.textInput}`}
                     type='number'
+                    // onInput={handleOnInput}
                     onChange={handleChange}
+                    onKeyDown={handleOnKeyDown}
+                    onBlur={handleBlur}
                     value={value}
                     />
 
