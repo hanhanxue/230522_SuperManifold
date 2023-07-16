@@ -107,9 +107,31 @@ export const drawSrfs = async () => {
             p.strokeWeight(1  / sceneScale)
             p.rect(referenceSrf.minX, referenceSrf.minY, referenceSrf.srfWidth, referenceSrf.srfHeight, 0)
             // p.rect(referenceSrf.minX, referenceSrf.minY, referenceSrf.srfWidth, referenceSrf.srfHeight, 0)
+
+        
+
     }
     
     p.pop()
+
+
+    if(referenceSrf.visibility) {
+      // TEXT
+      p.push()
+      p.translate(canvasCenterX, canvasCenterY)
+      p.textSize(13.0)
+      p.textAlign(p.LEFT, p.BOTTOM)
+
+      // Styling
+      p.fill(refColor)
+
+      p.text(`Resolution: ${referenceSrf.srfWidth} x ${referenceSrf.srfHeight}    Aspect Ratio: ${referenceSrf.aspectRatio} : 1    REF`,
+      referenceSrf.minX * sceneScale + 8,
+      referenceSrf.minY * sceneScale - 2,)
+
+      p.pop()
+    }
+
 }
 
 export const scaleCanvas = (value) => {
@@ -175,41 +197,42 @@ function Surface(p, x, y, srfWidth, srfHeight, scale, visibility) {
     this.minX = - this.srfWidth / 2
     this.minY = - this.srfHeight / 2
 
-    this.aspectRatio = p.round(this.srfWidth / this.srfHeight, 2)
+    // this.aspectRatio = p.round(this.srfWidth / this.srfHeight, 2)
+    this.aspectRatio = (this.srfWidth / this.srfHeight).toFixed(2)
     // this.gcd = gcd(this.srfWidth, this.srfHeight)
     // this.aspectRatioW = this.srfWidth / this.gcd
     // this.aspectRatioH = this.srfHeight / this.gcd
-    this.draw = () => {
-        p.background(refColor)
-        p.push()
+    // this.draw = () => {
+    //     p.background(refColor)
+    //     p.push()
 
-        // Translate to center
-        p.translate(canvasCenterX, canvasCenterY)
-        p.scale(sceneScale)
+    //     // Translate to center
+    //     p.translate(canvasCenterX, canvasCenterY)
+    //     p.scale(sceneScale)
 
-            // Styling
-            p.noStroke()
-            p.fill(0)
+    //         // Styling
+    //         p.noStroke()
+    //         p.fill(0)
     
-            // Drop shadow, need to happen BEFORE the shape draw
-            p.drawingContext.shadowOffsetX = 0;
-            p.drawingContext.shadowOffsetY = 16;
-            p.drawingContext.shadowBlur = 64
-            p.drawingContext.shadowColor = p.color(32, 64)
+    //         // Drop shadow, need to happen BEFORE the shape draw
+    //         p.drawingContext.shadowOffsetX = 0;
+    //         p.drawingContext.shadowOffsetY = 16;
+    //         p.drawingContext.shadowBlur = 64
+    //         p.drawingContext.shadowColor = p.color(32, 64)
     
-            // RECT
-            p.rect(this.minX, this.minY, this.srfWidth, this.srfHeight, this.srfRadius)
+    //         // RECT
+    //         p.rect(this.minX, this.minY, this.srfWidth, this.srfHeight, this.srfRadius)
 
-            // // Drawing reference Srf
-            // // Styling
-            // p.stroke(refColor)
-            // p.strokeWeight(3)
+    //         // // Drawing reference Srf
+    //         // // Styling
+    //         // p.stroke(refColor)
+    //         // p.strokeWeight(3)
     
-            // // RECT
-            // p.rect(referenceSrf.minX, referenceSrf.minY, referenceSrf.srfWidth, referenceSrf.srfHeight, referenceSrf.srfRadius)
+    //         // // RECT
+    //         // p.rect(referenceSrf.minX, referenceSrf.minY, referenceSrf.srfWidth, referenceSrf.srfHeight, referenceSrf.srfRadius)
 
-        p.pop()
-    }
+    //     p.pop()
+    // }
 }
 
 

@@ -2,23 +2,24 @@
 import styles from './Dropdown.module.scss'
 import { useState, useEffect, useRef } from 'react'
 
-const Dropdown = ({children, onOptionClick, options}) => {
+const Dropdown = ({dropdownOption, children, onOptionClick, options}) => {
 
 
     const [isOpen, setIsOpen] = useState(false)
     const toggle = () => {setIsOpen(current => !current)}
-    const [selectedOption, setSelectedOption] = useState(null);
+
+
+    // const [dropdownOption, setdropdownOption] = useState(null);
     const dropdownRef = useRef(null);
 
     const onOptionClickInternal = key => () => {
-        onOptionClick(key, options[key]);
-        setSelectedOption(key);
-        setIsOpen(false);
-        // console.log(selectedOption);
+      onOptionClick(key, options[key]);
+      setIsOpen(false);
+      // onDropdownOptionChange(key)
+        // setdropdownOption(key);
+        // console.log(dropdownOption);
     };
 
-
-  
 
 
     useEffect(() => {
@@ -29,7 +30,7 @@ const Dropdown = ({children, onOptionClick, options}) => {
       }
 
       document.addEventListener('mousedown', handleClickOutside);
-  
+
       return () => {
         document.removeEventListener('mousedown', handleClickOutside);
       }
@@ -54,7 +55,7 @@ const Dropdown = ({children, onOptionClick, options}) => {
 
                 </span>
                 {/* // const [input, setInput] = useState(Number(value) ?? min); */}
-                <span className={`text-sm`}> {selectedOption || "Custom"}</span>
+                <span className={`text-sm`}> {dropdownOption || "Custom"}</span>
                 </div>
 
 
@@ -93,7 +94,8 @@ const Dropdown = ({children, onOptionClick, options}) => {
       
                                         <span className={`text-sm ${styles.listItemCheck}`}>
             
-                                        {(key === selectedOption) ? 
+                                        {/* ADD CHECKMARK */}
+                                        {(key === dropdownOption) ? 
                                         <svg className="svg" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.207 5.207L7 11.414 3.292 7.707l1.415-1.414L7 8.586l4.793-4.793 1.414 1.414z" fillRule="nonzero" fillOpacity="1" fill="#fff" stroke="none"></path>
                                         </svg> : ''}
             

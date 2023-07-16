@@ -63,6 +63,18 @@ const SidePanel = ({visible}) => {
 
     const [toUpdate, setToUpdate] = useState(true)
 
+    const [displayDropdownOption, setDisplayDropdownOption] = useState(null)
+
+    const [referenceDropdownOption, setReferenceDropdownOption] = useState(null)
+
+    const findMatchingKey = (width, height) => {
+        for (const key in displayOptions) {
+            if(typeof displayOptions[key] === 'object' &&
+            displayOptions[key].width === width &&
+            displayOptions[key].height === height) {return key}
+        }
+        return null
+    }
 
 
     // DISPLAY SRF CONTROLS
@@ -78,10 +90,12 @@ const SidePanel = ({visible}) => {
     }
 
     const handleDisplaySrfOptionClick = (key, value) => {
+        setDisplayDropdownOption(key)
         setDisplaySrf({
             ...displaySrf,
             width: value.width,
             height: value.height,
+            aspect: value.aspect,
         })
     }
 
@@ -106,23 +120,46 @@ const SidePanel = ({visible}) => {
     // SUBMIT // SUBMIT // SUBMIT
     const handleDisplaySrfWidthSubmit = (value) => {
         let aspect = value / displaySrf.height
+        aspect = `${Number(aspect.toFixed(2))} : 1`
+
+        // CHECK is the current with and height value match displayOptions
+        const match = findMatchingKey(value, displaySrf.height)
+        if(match) {
+            setDisplayDropdownOption(match)
+            aspect = displayOptions[match].aspect
+        } else {
+            setDisplayDropdownOption(null)
+        }
 
         setDisplaySrf({
             ...displaySrf,
             width: value,
-            aspect: `${Number(aspect.toFixed(2))} : 1`,
+            aspect: aspect,
         })
+
+
 
         setToUpdate(true)
 
     }
+
     const handleDisplaySrfHeightSubmit = (value) => {
         let aspect = displaySrf.width / value
+        aspect = `${Number(aspect.toFixed(2))} : 1`
+
+        // CHECK is the current with and height value match displayOptions
+        const match = findMatchingKey(displaySrf.width, value)
+        if(match) {
+            setDisplayDropdownOption(match)
+            aspect = displayOptions[match].aspect
+        } else {
+            setDisplayDropdownOption(null)
+        }
 
         setDisplaySrf({
             ...displaySrf,
             height: value,
-            aspect: `${Number(aspect.toFixed(2))} : 1`,
+            aspect: aspect,
         })
 
         setToUpdate(true)
@@ -142,10 +179,12 @@ const SidePanel = ({visible}) => {
         // console.log(referenceSrf.visibility)
     }
     const handleReferenceSrfOptionClick = (key, value) => {
+        setReferenceDropdownOption(key)
         setReferenceSrf({
             ...referenceSrf,
             width: value.width,
             height: value.height,
+            aspect: value.aspect,
         })
     }
 
@@ -168,24 +207,44 @@ const SidePanel = ({visible}) => {
 
     // SUBMIT // SUBMIT // SUBMIT
     const handleReferenceSrfWidthSubmit = (value) => {
-        let aspect = value / displaySrf.height
+        let aspect = value / referenceSrf.height
+        aspect = `${Number(aspect.toFixed(2))} : 1`
+
+        // CHECK is the current with and height value match referenceOptions
+        const match = findMatchingKey(value, referenceSrf.height)
+        if(match) {
+            setReferenceDropdownOption(match)
+            aspect = displayOptions[match].aspect
+        } else {
+            setReferenceDropdownOption(null)
+        }
 
         setReferenceSrf({
             ...referenceSrf,
             width: value,
-            aspect: `${Number(aspect.toFixed(2))} : 1`,
+            aspect: aspect,
         })
         // console.log(value)
         setToUpdate(true)
 
     }
     const handleReferenceSrfHeightSubmit = (value) => {
-        let aspect = displaySrf.width / value
+        let aspect = referenceSrf.width / value
+        aspect = `${Number(aspect.toFixed(2))} : 1`
+
+        // CHECK is the current with and height value match referenceOptions
+        const match = findMatchingKey(referenceSrf.width, value)
+        if(match) {
+            setReferenceDropdownOption(match)
+            aspect = displayOptions[match].aspect
+        } else {
+            setReferenceDropdownOption(null)
+        }
 
         setReferenceSrf({
             ...referenceSrf,
             height: value,
-            aspect: `${Number(aspect.toFixed(2))} : 1`,
+            aspect: aspect,
         })
         setToUpdate(true)
     }
@@ -218,7 +277,12 @@ const SidePanel = ({visible}) => {
 
         <SidePanelBlock>
             <SidePanelBlockRow><RowLabel>Display</RowLabel><IconButton toggled={displaySrf.visibility} onClick={handleDisplaySrfVisibility}/></SidePanelBlockRow>
-            <SidePanelBlockRow><Dropdown options={displays} onOptionClick={handleDisplaySrfOptionClick}/></SidePanelBlockRow>
+            <SidePanelBlockRow><Dropdown 
+            options={displays} 
+            onOptionClick={handleDisplaySrfOptionClick}
+            dropdownOption={displayDropdownOption}
+            // onDropdownOptionChange={handleDisplayDOptionChange}
+            /></SidePanelBlockRow>
 
             <SidePanelBlockRow>
                 <TextInput textLabel='W' value={displaySrf.width} onChange={handleDisplaySrfWidthChange} onSubmit={handleDisplaySrfWidthSubmit} />
@@ -233,7 +297,11 @@ const SidePanel = ({visible}) => {
 
         <SidePanelBlock>
             <SidePanelBlockRow><RowLabel>Reference</RowLabel><IconButton toggled={referenceSrf.visibility} onClick={handleReferenceSrfVisibility}/></SidePanelBlockRow>
-            <SidePanelBlockRow><Dropdown options={displays} onOptionClick={handleReferenceSrfOptionClick}/></SidePanelBlockRow>
+            <SidePanelBlockRow><Dropdown 
+            options={displays} 
+            onOptionClick={handleReferenceSrfOptionClick}
+            dropdownOption={referenceDropdownOption}
+            /></SidePanelBlockRow>
 
 
             <SidePanelBlockRow>
