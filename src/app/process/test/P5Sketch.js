@@ -125,7 +125,7 @@ export const drawSrfs = async () => {
       // Styling
       p.fill(refColor)
 
-      p.text(`Resolution: ${referenceSrf.srfWidth} x ${referenceSrf.srfHeight}    Aspect Ratio: ${referenceSrf.aspectRatio} : 1    REF`,
+      p.text(`Resolution: ${referenceSrf.srfWidth} x ${referenceSrf.srfHeight}    Aspect Ratio: ${referenceSrf.aspectRatio}`,
       referenceSrf.minX * sceneScale + 8,
       referenceSrf.minY * sceneScale - 2,)
 
@@ -159,20 +159,22 @@ const waitForP5Initialization = () => {
 //     displaySrf = createSrf(width, height)
 // }
 
-export const createDisplaySrf = async (width, height, visibility) => {
-    displaySrf = await createSrf(width, height, visibility)
+export const createDisplaySrf = async (width, height, aspect, visibility) => {
+    displaySrf = await createSrf(width, height, aspect, visibility)
     // console.log(displaySrf)
   }
 
-export const createReferenceSrf = async (width, height, visibility) => {
-    referenceSrf = await createSrf(width, height, visibility)
+export const createReferenceSrf = async (width, height, aspect, visibility) => {
+    referenceSrf = await createSrf(width, height, aspect, visibility)
 }
 
-const createSrf = async(width, height, visibility) => {
+const createSrf = async(width, height, aspect, visibility) => {
     await waitForP5Initialization()
+    // console.log(aspect)
     let srf = new Surface(p, 
         p.width - width / 2, p.height - height / 2, 
         width, height, 
+        aspect,
         1,
         visibility,
     )
@@ -182,7 +184,7 @@ const createSrf = async(width, height, visibility) => {
 
 
 
-function Surface(p, x, y, srfWidth, srfHeight, scale, visibility) {
+function Surface(p, x, y, srfWidth, srfHeight, aspect, scale, visibility) {
     this.x = x
     this.y = y
 
@@ -198,7 +200,10 @@ function Surface(p, x, y, srfWidth, srfHeight, scale, visibility) {
     this.minY = - this.srfHeight / 2
 
     // this.aspectRatio = p.round(this.srfWidth / this.srfHeight, 2)
-    this.aspectRatio = (this.srfWidth / this.srfHeight).toFixed(2)
+    // if(!aspect) this.aspectRatio = (this.srfWidth / this.srfHeight).toFixed(2)
+    // else this.aspectRatio = aspect
+
+    this.aspectRatio = aspect
     // this.gcd = gcd(this.srfWidth, this.srfHeight)
     // this.aspectRatioW = this.srfWidth / this.gcd
     // this.aspectRatioH = this.srfHeight / this.gcd

@@ -259,8 +259,10 @@ const SidePanel = ({visible}) => {
           }
       
         const draw = async () => {
-            await createDisplaySrf(displaySrf.width, displaySrf.height, displaySrf.visibility)
-            await createReferenceSrf(referenceSrf.width, referenceSrf.height, referenceSrf.visibility)
+
+
+            await createDisplaySrf(displaySrf.width, displaySrf.height, displaySrf.aspect, displaySrf.visibility)
+            await createReferenceSrf(referenceSrf.width, referenceSrf.height, referenceSrf.aspect, referenceSrf.visibility)
             drawSrfs()
         }
         draw()
