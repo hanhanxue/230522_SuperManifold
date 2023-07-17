@@ -48,10 +48,10 @@ export default function Info() {
 
       <HeroText copy="Super Manifold is based in Montreal, Canada🅐" fontSize='text-3xl'/>
 
-      <Footer colorConfig={{text: 'text-jet-stream', 
+      {/* <Footer colorConfig={{text: 'text-jet-stream', 
 
 bg: 'bg-cinnabar', 
-bg2: 'bg-jet-stream'}}/>
+bg2: 'bg-jet-stream'}}/> */}
       </div>
     )
 }

@@ -28,6 +28,8 @@ const SliderA = ({min=0, max=100, defaultValue = 50, onChange, children}) => {
         // return false;
     }
 
+    
+
     useEffect(() => {
         if (!grabbed) return
 
