@@ -80,7 +80,8 @@ export default function ProcessHeader() {
  
         {/* Header RIGHT SIDE*/} 
         <div className={`${styles.right}`}>
-          <Button kind='outlined' size='lg'>Share</Button>
+        <Button kind='outlined' size='lg'>Source</Button>
+          <Button kind='contained' size='lg'>Share</Button>
         </div>
 
     

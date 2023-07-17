@@ -126,8 +126,13 @@ export const drawSrfs = async () => {
       p.fill(refColor)
 
       p.text(`Resolution: ${referenceSrf.srfWidth} x ${referenceSrf.srfHeight}    Aspect Ratio: ${referenceSrf.aspectRatio}`,
-      referenceSrf.minX * sceneScale + 8,
+      referenceSrf.minX * sceneScale - 1,
       referenceSrf.minY * sceneScale - 2,)
+
+      // p.textAlign(p.RIGHT, p.BOTTOM)
+      // p.text(`Custom`,
+      // (referenceSrf.minX + referenceSrf.srfWidth) * sceneScale + 1,
+      // referenceSrf.minY * sceneScale - 2,)
 
       p.pop()
     }

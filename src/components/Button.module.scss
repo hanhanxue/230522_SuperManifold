@@ -10,7 +10,11 @@ transition-timing-function: ease;
 display: flex;
 align-items: center;
 
-cursor: default;
+// cursor: default;
+cursor: pointer;
+span {
+    cursor: pointer;
+}
 
 // background-color: red;
 

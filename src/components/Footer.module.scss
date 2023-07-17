@@ -1,0 +1,76 @@
+@use '../styles/abstracts/' as *;
+
+
+.section {
+    // margin-top: 64px;
+    // background-color: rgb(211, 211, 211);
+    // height: 100px;
+
+
+}
+
+.xFrame {
+    @include xFrame;
+}
+
+.yFrame {
+    // @include flexCenterX;
+    // justify-content: space-between;
+    
+}
+
+.navGrid {
+    padding: rem(64) 0 ;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(8, 1fr);  // fr stands for fraction
+}
+
+.footerMenu {
+    // background-color: red;
+    // height: 24px;
+}
+
+.gridColSpan4 {
+    grid-column: span 4;
+}
+
+.gridColSpan2 {
+    grid-column: span 2;
+}
+
+.menuTitle {
+    // border-bottom: 2px solid black;
+    padding: 0 0 16px 0;
+}
+
+.menuListItem {
+    &:not(:last-child) {
+        margin: 0 0 8px 0;
+    }
+}
+
+.footerBase {
+    padding: 16px 0;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(8, 1fr);
+    align-items: center;
+    // justify-content: end;
+}
+
+.footerBaseButton{
+    border-radius: 50%;
+    justify-content: end;
+    margin-left: auto;
+    grid-column: 8;
+    // background-color: red;
+    transition: background-color .2s linear;
+    &:hover {
+        background-color: rgb(225, 225, 225);
+    }
+}
+
+.rights {
+    grid-column: 3;
+}

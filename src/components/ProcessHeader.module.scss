@@ -22,7 +22,7 @@
 .yFrame {
 
 
-    height: 128px;
+    height: 144px;
 
     @include flexCenterX;
 
@@ -73,7 +73,8 @@
     }
 
     .right {
-        // @include flexCenterX;
+        @include flexCenterX;
+        gap: 8px;
     }
 }
 
