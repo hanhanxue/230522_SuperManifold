@@ -34,7 +34,7 @@ export default async function Process() {
             {processPosts.map((post) => {
              
                 return (
-                    <Link href={`process/${post.slug}`}>
+                    <Link href={`process/${post.slug}`} key={Math.random()}>
                     <div className={`${styles.card}`}>{post.title}</div>
                 </Link>
                 )
