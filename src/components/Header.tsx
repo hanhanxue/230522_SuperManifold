@@ -20,7 +20,7 @@ interface IHeaderProps {
 
 
 const Header: React.FC<IHeaderProps> = ( {
-    hasBorder = true,
+    hasBorder = false,
 }) => {
 
 
@@ -60,7 +60,7 @@ useEffect(() => {
 
                 <div className={``}>
                     <ul className={`text-xl ${styles.rightLinks}`}>
-                        <li><Link href="/" className="">Products</Link></li>
+                        <li><Link href="/" className="">Product</Link></li>
                         <li><Link href="/process" className="">Process</Link></li>
                         <li><Link href="/info" className="">Info</Link></li>
                     </ul>
