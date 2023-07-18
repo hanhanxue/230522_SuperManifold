@@ -45,10 +45,10 @@ export default async function Process() {
 
                 if(post.isDir) {
                     return (
-                            <li>
+                            <li key={Math.random()}>
                      
                               <div className={`${styles.card}`}>
-                              <Link href={`process/${post.slug}`} key={Math.random()}>
+                              <Link href={`process/${post.slug}`} >
                                 <Image
                                   src={post.coverImage.src}
                                   width={post.coverImage.dimensions ? post.coverImage.dimensions.width : 100}
@@ -68,7 +68,7 @@ export default async function Process() {
                     )
                 } else {
                     return (
-                        <li>
+                        <li key={Math.random()}>
                         <div className={`${styles.card}`}>
                         <Image
                           src={post.coverImage.src}
@@ -162,6 +162,8 @@ const getProcessPosts = () => {
             let innerDirFileObjs = fs.readdirSync(innerDirPath, { withFileTypes: true })
 
             innerDirFileObjs.map(innerFileObj => {
+
+                if(path.parse(innerFileObj.name).name === '000') {
                 // console.log(fileObj.name)
                 imagePath = path.join(root, 'public/content/process/', fileObj.name, innerFileObj.name)
                 // console.log(imagePath)
@@ -183,6 +185,8 @@ const getProcessPosts = () => {
     
                 dimensions.width = Math.round(dimensions.width)
                 dimensions.height = Math.round(dimensions.height)
+                }
+
 
             })
 
