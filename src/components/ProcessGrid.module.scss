@@ -6,13 +6,57 @@
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
+    margin: 16px 0 ;
+    align-items: end;
 }
 
 
 
 .card {
-    width: 400px;
-    height: 500px;
-    background-color: gainsboro;
+    // width: 400px;
+    // height: 500px;
+    // background-color: rgb(154, 154, 154);
     border-radius: 16px;
+    position: relative;
+
+    overflow: hidden;
+    // box-shadow: 0 0 16px 0 rgba(0, 0, 0, .1);
+
+    // transition: box-shadow .3s;
+
+    &:hover {
+        // box-shadow: 0 0 0 0 rgba(0, 0, 0, .1);
+    }
+}
+
+.button {
+    position: absolute;
+    background-color: rgb(216, 216, 216);
+    height: 40px;
+    width: 80px;
+
+    right: 16px;
+    bottom: 16px;
+    border-radius: 100px;
+
+
+    &:hover {
+        background-color: rgb(247, 211, 36);
+    }
+    &:hover .arrow {
+        transform: translateX(40px);
+        // background-color: red;
+        opacity: 1;
+    }
+}
+
+.arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: .25s;
+
+ 
 }

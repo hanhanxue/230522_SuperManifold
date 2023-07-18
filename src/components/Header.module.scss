@@ -4,6 +4,8 @@
     background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(2rem);
 
+    z-index: 999;
+
 
 
     &Sticky {
@@ -16,7 +18,7 @@
     &Bordered {
         // background-color: black;
         border-bottom: 1px solid #e5e7eb;
-        z-index: 999;
+        
         // &:after {
         //     content: '';
         //     display: block;
