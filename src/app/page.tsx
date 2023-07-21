@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 
 import Header from '@/components/global/Header';
-import Footer from '@/components/Footer';
+// import Footer from '@/components/Footer';
 import HomeGrid from '../components/HomeGrid'
 import styles from './Home.module.scss'
 
