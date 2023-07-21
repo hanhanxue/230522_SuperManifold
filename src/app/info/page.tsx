@@ -1,7 +1,7 @@
 import Header from '@/components/global/Header'
 
 import CodePractice from '@/components/info/CodePractice'
-import HeroText from '@/components/HeroText'
+import HeroText from '@/components/info/HeroText'
 // import Footer from '@/components/Footer'
 
 
