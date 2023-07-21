@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 
-import Badge from '../components/Badge'
-import Button from '../components/Button'
+import Badge from '@/components/ui/Badge'
+import Button from '@/components/ui/Button'
 import styles from './ProcessHeader.module.scss'
 
 export default function ProcessHeader() {

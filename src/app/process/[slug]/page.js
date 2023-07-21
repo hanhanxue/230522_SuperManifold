@@ -5,7 +5,7 @@ import { notFound } from "next/navigation"
 
 import Header from "@/components/global/Header"
 
-import ProcessHeader from '@/components/ProcessHeader'
+
 
 import { getProcessPosts} from '@/lib/serverUtilities'
 
@@ -27,7 +27,6 @@ const root = process.cwd()
 export const dynamicParams = false
 
 
-import Test from '@/components/ProcessHeader'
 
 // const components = { Test }
 

@@ -9,8 +9,8 @@ const Viewers = {
 
 }
 
-import Header from '@/components/ProcessHeader'
-import ProcessHeader from '@/components/ProcessHeader';
+import Header from '@/components/process/ProcessHeader'
+
 
 
 const Viewer = ({children, id}) => {

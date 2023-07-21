@@ -1,10 +1,10 @@
 
-import Button from '@/components/Button'
-import Slider from '@/components/Slider'
-import SliderA from '@/components/SliderA'
+import Button from '@/components/ui/Button'
+import Slider from '@/components/ui/Slider'
+import SliderA from '@/components/ui/SliderA'
 
-import Toggle from '@/components/Toggle'
-import ControlsGroup from '@/components/ControlsGroup'
+import Toggle from '@/components/ui/Toggle'
+import ControlsGroup from '@/components/ui/ControlsGroup'
 
 import styles from './BottomPanel.module.scss'
 

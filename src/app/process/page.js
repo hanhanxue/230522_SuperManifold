@@ -12,7 +12,7 @@ import {getProcessPosts} from '@/lib/serverUtilities'
 
 
 
-import styles from '../../components/ProcessGrid.module.scss'
+import styles from '@/components/process/ProcessGrid.module.scss'
 
 
 

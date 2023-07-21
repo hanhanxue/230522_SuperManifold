@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import SuperManifoldLogo, {Logotypes} from '../SuperManifoldLogo'
+import SuperManifoldLogo, {Logotypes} from './SuperManifoldLogo'
 
 import styles from "./Footer.module.scss"
 

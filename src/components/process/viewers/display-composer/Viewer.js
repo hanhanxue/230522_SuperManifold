@@ -12,12 +12,12 @@ import { useState } from 'react'
 
 
 
-import Button from '@/components/Button'
-import Slider from '@/components/Slider'
-import Toggle from '@/components/Toggle'
-import ControlsGroup from '@/components/ControlsGroup'
-import Dropdown from '@/components/Dropdown'
-import DropdownA, {Option} from '@/components/DropdownA'
+import Button from '@/components/ui/Button'
+import Slider from '@/components/ui/Slider'
+import Toggle from '@/components/ui/Toggle'
+import ControlsGroup from '@/components/ui/ControlsGroup'
+import Dropdown from '@/components/ui/Dropdown'
+import DropdownA, {Option} from '@/components/ui/DropdownA'
 import BottomPanel from './BottomPanel'
 
 import P5Sketch, {randomSrf, changeSceneScale} from './P5Sketch'

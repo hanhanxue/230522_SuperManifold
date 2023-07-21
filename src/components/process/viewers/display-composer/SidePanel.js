@@ -1,19 +1,19 @@
 
 //SidePanel.js
 
-import SidePanelBlock from '@/components/SidePanelBlock'
-import SidePanelBlockRow from '@/components/SidePanelBlockRow'
+import SidePanelBlock from '@/components/process/SidePanelBlock'
+import SidePanelBlockRow from '@/components/process/SidePanelBlockRow'
 
 
 
 
-import RowLabel from '@/components/RowLabel'
-import RowInfo from '@/components/RowInfo'
+import RowLabel from '@/components/process/RowLabel'
+import RowInfo from '@/components/process/RowInfo'
 
 
-import IconButton from '@/components/IconButton'
-import Dropdown from '@/components/Dropdown'
-import TextInput from '@/components/TextInput'
+import IconButton from '@/components/ui/IconButton'
+import Dropdown from '@/components/ui/Dropdown'
+import TextInput from '@/components/ui/TextInput'
 
 import styles from './SidePanel.module.scss'
 
