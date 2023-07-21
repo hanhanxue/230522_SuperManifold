@@ -20,18 +20,18 @@ const HomeGrid = ({}) => {
         <div className={`${styles.productGrid}`}>
 
             <video autoPlay muted loop className={`${styles.product}  ${styles.gridColSpan2}`}>         
-            <source src="/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>         
+            <source src="/assets/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>         
             </video>
 
 
             <Image  className={`${styles.product}`}
-                    src="/images/supermanifold_TRRS.jpg"
+                    src="/assets/images/supermanifold_TRRS.jpg"
                             width={5120}
                             height={5120}
                     alt="Picture of the author"
             />
             <Image className={`${styles.product}`}
-                    src="/images/supermanifold_TRRS.jpg"
+                    src="/assets/images/supermanifold_TRRS.jpg"
                             width={5120}
                             height={5120}
                     alt="Picture of the author"

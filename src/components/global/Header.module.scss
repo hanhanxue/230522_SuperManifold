@@ -1,7 +1,7 @@
-@use '../styles/abstracts/' as *;
+@use '@/styles/abstracts/' as *;
 
 .header {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(2rem);
 
     z-index: 999;

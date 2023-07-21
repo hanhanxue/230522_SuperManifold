@@ -1,14 +1,15 @@
-@use '../abstracts' as *;
+@use '@/styles/abstracts' as *;
 
 
 @font-face {
   font-family: Inter;
-  src: url("../../../public/fonts/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
+  // src: url("../../../public/fonts/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
+  src: url('/assets/fonts/Inter-VariableFont_slnt\,wght.ttf') format('truetype')
 }
 
 @font-face {
     font-family: nmtl;
-    src: url("../../../public/fonts/PPNeueMontreal-Book.otf") format("opentype");
+    src: url('/assets/fonts/PPNeueMontreal-Book.otf') format('opentype');
   }
 
 

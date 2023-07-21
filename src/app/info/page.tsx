@@ -1,4 +1,4 @@
-import Header from '@/components/Header'
+import Header from '@/components/global/Header'
 
 import CodePractice from '@/components/CodePractice'
 import HeroText from '@/components/HeroText'

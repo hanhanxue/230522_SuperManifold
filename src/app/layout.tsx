@@ -1,5 +1,5 @@
 
-import Footer from '@/components/Footer';
+import Footer from '@/components/global/Footer';
 import '../styles/main.scss'
 
 
@@ -10,9 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`font-primary`}>
-      <body>{children}
+      <body>
+        
+        {children}
       <Footer />
-
       </body>
 
     </html>
