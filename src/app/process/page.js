@@ -42,6 +42,7 @@ export default async function Process() {
 // console.log(post.extraData.coverImage.dimensions ? post.extraData.coverImage.dimensions.height : 100)
                 // console.log(post)
                 // console.log(post.isDir)
+                if(post)
 
    
                     return (

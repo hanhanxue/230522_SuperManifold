@@ -31,48 +31,51 @@ export function getProcessPosts() {
     // 02 LOOPING THROUGH EVERYTHING INSIDE /content/process
     dirFileObjs = dirFileObjs.map((fileObj) => {
 
-        // Only process directory. /public/content/process/230717_P5JS_Display Composer
-        if(!fileObj.isDirectory()) return null
 
-        let dirName = fileObj.name
+        
+        // SKIP non directories
+        if(!fileObj.isDirectory()) return null
+        // SKIP underscore
+        const myRe = /^_/gm
+        if(myRe.test(fileObj.name)) return null
+
+
         const extraData = {}
 
 
-        // 03 generated from folder name /230717_P5JS_Display Composer   DATE_KIND_TITLE/slug
+        // 03
+        // 03
+        // 03 COMMON DATA
+
+        // dirName
+        let dirName = fileObj.name
+        extraData.dirName = dirName
+
+        // process folder name e.g. /230717_Display Composer_P5JS => DATE_TITLE/SLUG_KIND
         let dataFromFileName = fileObj.name.split('_')
 
-        // custom metadata publishDate
+        // publishDate
         let publishDate = `${dataFromFileName[0]}`
         const year = `20${publishDate.slice(0, 2)}`
         const month = publishDate.slice(2, 4) - 1
         const day = publishDate.slice(4, 6)
         publishDate = new Date(year, month, day)
-
-        // custom metadata kind
-        let kind = `${dataFromFileName[1]}`
-        // custom metadata title
-        let title = `${dataFromFileName[2] ? dataFromFileName[2] : null}`
-        // custom metadata slug
-        let slug = `${dataFromFileName[2] ? dataFromFileName[2].replace(/\s+/g, '-').toLowerCase() : null}`
-
-
-        extraData.dirName = dirName
-
-
         extraData.publishDate = publishDate
-        extraData.kind = kind
+
+        // title
+        let title = `${dataFromFileName[1] ? dataFromFileName[1] : null}`
         extraData.title = title
+
+        // slug
+        let slug = `${dataFromFileName[1] ? dataFromFileName[1].replace(/\s+/g, '-').toLowerCase() : null}`
         extraData.slug = slug
+        
 
-        switch(kind) {
-            case "P5JS":
-                extraData.isLink = true
-                break;
-            default:
-                extraData.isLink = false
-        }
+        // kind
+        let kind = `${dataFromFileName[2]}`
+        extraData.kind = kind
 
-        // 04 generate cover image metadata
+        // coverImage
         const MAX_WIDTH = 500 //960
         const MAX_HEIGHT = 640  //640
         let coverImage = {}
@@ -80,8 +83,6 @@ export function getProcessPosts() {
         const innerDirPath = path.join(root, 'public', '/content/process', fileObj.name)
         let innerDirFileObjs = fs.readdirSync(innerDirPath, { withFileTypes: true })
 
-
-        // 04.1 COVER IMAGE /content/process/[POST]
         let firstImage = innerDirFileObjs.find((innerFileObj) => path.parse(innerFileObj.name).name === '000')
 
         let imageAbsPath = path.join(root, 'public/content/process/', dirName, firstImage.name)
@@ -93,6 +94,18 @@ export function getProcessPosts() {
         extraData.coverImage = coverImage
 
 
+
+
+        switch(kind) {
+            case "P5JS":
+                extraData.isLink = true
+                break;
+            case "UNITY":
+                extraData.isLink = true
+                break;
+            default:
+                extraData.isLink = false
+        }
 
 
         if(!extraData.isLink) return {extraData}
@@ -109,6 +122,8 @@ export function getProcessPosts() {
         return { extraData, data, content }
 
     })
+    .filter(x => x !== null)
+
 
     // console.log(dirFileObjs)
     return dirFileObjs.reverse()
@@ -150,6 +165,17 @@ const genImageDimensions = (imageAbsPath, MAX_WIDTH, MAX_HEIGHT) => {
     return dimensions
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

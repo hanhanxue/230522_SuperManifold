@@ -1,4 +1,13 @@
 
+// 02 EXTERNAL
+
+// 03 REACT / NEXTJS
+
+// 05 SUPERMANIFOLD COMPONENTS
+
+// 07 SUPERMANIFOLD FUNCTIONS
+
+// 11 SUPERMANIFOLD STYLES
 import styles from './Template.module.scss'
 
 

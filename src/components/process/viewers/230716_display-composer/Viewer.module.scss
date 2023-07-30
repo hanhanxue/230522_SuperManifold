@@ -1,0 +1,163 @@
+
+@use '@/styles/abstracts' as *;
+
+
+.section {
+    // background-color: black;
+}
+
+.xFrame {
+    @include xFrame;
+}
+
+
+.canvasFrame {
+    // display: flex;
+    // justify-content: center;
+    // margin: 0 32px;
+    margin: auto;
+    max-width: 1440px;
+    // margin: auto;
+    position: relative;
+
+    // display: block;
+    height: 720px;
+
+    // background-color: red;
+}
+
+
+
+
+
+
+
+
+// .sidePanelContainer {
+//     position:absolute;
+//     width: 240px;
+//     height: 100%;
+//     // background-color: black;
+//     top:0px;
+//     right: 8px;
+
+//     padding: 8px 0;
+
+//     display: flex;
+//     flex-direction: column;
+//     // justify-content: center;
+
+//     // display: flex;
+//     // align-items: center;
+
+//     // background-color: rgba(255, 255, 255, 0.9);
+//     // backdrop-filter: blur(2rem);
+//     .sidePanel {
+//         border-radius: 8px;
+//         background-color: rgba(255, 255, 255, 0.9);
+//         backdrop-filter: blur(2rem);
+//         display: flex;
+//         flex-direction: column;
+
+//         .block {
+//             // margin: 8px 0;
+//             padding: 8px 0;
+//             &:not(:last-child) {
+//                 border-bottom: 1px solid #e5e7eb;
+//             }
+
+//             .row {
+//                 display: flex;
+//                 align-items: center;
+
+//                 padding: 0 8px;
+//                 height: 32px;
+
+//                 gap: 4px;
+//             }
+
+//         }
+
+//     }
+
+// }
+
+// .blockLabel {
+//     width: 196px;
+//     padding: 0 4px;
+//     display: flex;
+//     align-items: center;
+// }
+
+// .sideButton {
+//     width: 24px;
+//     height: 24px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     // background-color: red;
+//     border-radius: 4px;
+// }
+
+
+
+// .input {
+//     // background-color: red;
+//     width: 96px;
+//     height: 24px;
+//     display: flex;
+//     align-items: center;
+
+//     .inputLabel {
+//         width: 24px;
+//         height: 24px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         color: #c9c9c9;
+//     }
+
+//     .inputText {
+//         padding: 0 4px;
+//     }
+
+// }
+
+
+// .combobox {
+//     // background-color: red;
+//     width: 96px;
+//     height: 24px;
+//     display: flex;
+//     align-items: center;
+
+//     .comboboxLabel {
+//         width: 24px;
+//         height: 24px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//     }
+
+//     .comboboxCaret {
+//         width: 24px;
+//         height: 24px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+
+//         // color: red;
+
+//     }
+
+//     .comboboxText {
+//         padding: 0 4px;
+//         width: 46px;
+
+//     }
+// }
+
+// .info {
+//     color: #c9c9c9;
+//     padding: 0 4px;
+// }

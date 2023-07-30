@@ -1,0 +1,34 @@
+
+@use '@/styles/abstracts' as *;
+
+
+.section {
+    // background-color: black;
+}
+
+.xFrame {
+    @include xFrame;
+}
+
+
+.canvasFrame {
+    // display: flex;
+    // justify-content: center;
+    // margin: 0 32px;
+    margin: auto;
+    max-width: 1440px;
+    // margin: auto;
+    position: relative;
+
+    // display: block;
+    height: 720px;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    background-color: rgb(234, 234, 234);
+}
+
+
+
+

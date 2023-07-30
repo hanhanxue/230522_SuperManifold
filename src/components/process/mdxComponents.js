@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic';
 
 const Viewers = {
-    'display-composer-b': dynamic(() => import('./viewers/display-composer/Viewer')),
-    // DisplayComposerA: dynamic(() => import('./display-composer/Viewer')),
+    'display-composer':        dynamic(() => import('./viewers/230716_display-composer/Viewer')),
+    'react-unity-integration': dynamic(() => import('./viewers/230729_react-unity-integration/Viewer')),
     // DisplayComposerB: dynamic(() => import('./display-composer/Viewer')),
     // DisplayComposerC: dynamic(() => import('./display-composer/Viewer')),
     // DisplayComposerD: dynamic(() => import('./display-composer/Viewer')),

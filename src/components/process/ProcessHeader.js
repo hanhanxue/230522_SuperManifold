@@ -9,7 +9,7 @@ import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
 import styles from './ProcessHeader.module.scss'
 
-export default function ProcessHeader() {
+export default function ProcessHeader({title, kind}) {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -60,7 +60,7 @@ export default function ProcessHeader() {
                   <div className={`${styles.titles}`}>
                           {/* TOP ROW */}
                           <div className={`${styles.titlesTop}`}>
-                              <h1 className={`text-xl font-medium ${styles.title}`}>Display Composer</h1>
+                              <h1 className={`text-xl font-medium ${styles.title}`}>{title}</h1>
           
                               <div className={`${styles.badgesFrame}`}>
                                 {/* <Badge>Utility</Badge> */}
@@ -70,7 +70,7 @@ export default function ProcessHeader() {
 
                           {/* BOTTOM ROW */}
                           <div className={`${styles.titlesBottom}`}>
-                            <h2 className={`text-base ${styles.subtitle}`}>Using P5 · Published 2 years ago</h2>
+                            <h2 className={`text-base ${styles.subtitle}`}>Using Unity · Published 2 years ago</h2>
                           </div>
 
                   </div>
