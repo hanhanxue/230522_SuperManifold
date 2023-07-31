@@ -9,7 +9,9 @@ const Viewers = {
 
 }
 
-import Header from '@/components/process/ProcessHeader'
+import ProcessHeader from '@/components/process/ProcessHeader'
+
+import styles from './mdxComponents.module.scss'
 
 
 
@@ -29,17 +31,35 @@ const Viewer = ({children, id}) => {
 
 
 
+
+
+const P = (props) => (
+
+    <section className={`${styles.section}`}> {/* SECTION */}
+    <div className={`${styles.xFrame}`}> {/* X Frame */}
+    <div className={`${styles.yFrame}`}> {/* Y Frame */}
+        <div className={`${styles.container}`}>
+
+        <p {...props} className={`text-lg `} />
+        </div>
+
+    </div> {/* Y Frame */}
+    </div> {/* X Frame */}
+    </section> 
+
+
+
+)
+
+
+
 const customMDXComponents = {
     
     Viewer,
-    Header,
+    ProcessHeader,
+    p: P,
+
 }
-
-
-
-
-
-
 
 
 export default customMDXComponents 

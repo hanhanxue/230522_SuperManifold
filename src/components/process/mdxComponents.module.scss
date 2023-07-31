@@ -1,0 +1,17 @@
+@use '@/styles/abstracts/' as *;
+
+.xFrame {
+    @include xFrame;
+}
+
+.yFrame {
+
+
+}
+
+
+.container {
+    width: rem(768);
+    margin: auto;
+    padding: 0 rem(32);
+}

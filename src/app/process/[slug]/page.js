@@ -38,15 +38,15 @@ export const dynamicParams = false
   export default async function Page({ params }) {
 
 
+
     const processPosts = getProcessPosts()
     const post = processPosts.find((post) => post.extraData.slug === params.slug)
 
     if(!post) return notFound()
 
+    // console.log(post.extraData.publishDate)
 
 
-  
-  const customData = { product: 'next' };
 
 
     return (

@@ -1,15 +1,23 @@
 'use client' // This is a client component 👈🏽
 
-import { useEffect, useState } from 'react'
+// 02 EXTERNAL
+import moment from 'moment';
 
+// 03 REACT / NEXTJS
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 
-import Badge from '@/components/ui/Badge'
+// 05 SUPERMANIFOLD COMPONENTS
 import Button from '@/components/ui/Button'
+
+// 11 SUPERMANIFOLD STYLES
 import styles from './ProcessHeader.module.scss'
 
-export default function ProcessHeader({title, kind}) {
+
+export default function ProcessHeader({title, publishDate, kind}) {
+
+  // console.log(publishDate)
 
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -25,6 +33,23 @@ export default function ProcessHeader({title, kind}) {
       };
     }, []);
     
+
+    const momentObj = moment(publishDate)
+    const momentString = momentObj.format("MMM Do, YYYY")
+    const momentStringFromNow = momentObj.fromNow()
+    let using = ''
+
+    switch(kind) {
+      case 'UNITY':
+        using = 'Unity'
+        break;
+        case 'P5JS':
+          using = 'P5JS'
+          break;
+      default:
+        using = 'Unspecified'
+    }
+
     
 
     return (
@@ -46,14 +71,14 @@ export default function ProcessHeader({title, kind}) {
         {/* Header LEFT SIDE*/} 
         <div className={`${styles.left}`}>
                   {/* Header Icon Frame*/}   
-                  <span className={`${styles.iconFrame}`}>
+                  {/* <span className={`${styles.iconFrame}`}>
                   <Image
                     src={`DisplayComposer.svg`}
                     width={48}
                     height={48}
                     alt="REPLACE"
                   />
-                  </span>               
+                  </span>                */}
 
 
                   {/* Header Titles Frame*/}
@@ -70,7 +95,8 @@ export default function ProcessHeader({title, kind}) {
 
                           {/* BOTTOM ROW */}
                           <div className={`${styles.titlesBottom}`}>
-                            <h2 className={`text-base ${styles.subtitle}`}>Using Unity · Published 2 years ago</h2>
+                          <span className={`text-base ${styles.subtitle}`}>
+                            {`${momentString} (${momentStringFromNow}) · Using ${using}`}</span>
                           </div>
 
                   </div>
@@ -81,7 +107,7 @@ export default function ProcessHeader({title, kind}) {
         {/* Header RIGHT SIDE*/} 
         <div className={`${styles.right}`}>
         <Button kind='outlined' size='lg'>Source</Button>
-          <Button kind='contained' size='lg'>Share</Button>
+          {/* <Button kind='contained' size='lg'>Share</Button> */}
         </div>
 
     

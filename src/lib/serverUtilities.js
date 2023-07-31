@@ -84,6 +84,7 @@ export function getProcessPosts() {
         let innerDirFileObjs = fs.readdirSync(innerDirPath, { withFileTypes: true })
 
         let firstImage = innerDirFileObjs.find((innerFileObj) => path.parse(innerFileObj.name).name === '000')
+        // let firstImage = innerDirFileObjs.filter((innerFileObj) => )
 
         let imageAbsPath = path.join(root, 'public/content/process/', dirName, firstImage.name)
         coverImage.src = `/content/process/${dirName}/${firstImage.name}`
@@ -109,6 +110,7 @@ export function getProcessPosts() {
 
 
         if(!extraData.isLink) return {extraData}
+
 
         let mdxFile = innerDirFileObjs.find((innerFileObj) => path.extname(innerFileObj.name) === '.mdx')
 
