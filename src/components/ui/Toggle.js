@@ -16,7 +16,7 @@ const Toggle = ({toggled = false, onClick, onChange, kind, size, children}) => {
 
         <div className={`${styles.switchFrame}`}>
 
-        <label className={`text-sm`}>{children}</label>
+        <label className={`text-xs`}>{children}</label>
 
 
         <label className={`${styles.switch}`}>
@@ -62,13 +62,13 @@ const Toggle = ({toggled = false, onClick, onChange, kind, size, children}) => {
   // console.log(isToggled)
   // const styleSize = () => {
   //   switch (size) {
-  //     case 'sm':
-  //       return `type-sm ${styles.sm} `
+  //     case 'xs':
+  //       return `type-xs ${styles.xs} `
   //       case 'lg':
   //         return `type-lg ${styles.lg} `
 
   //   default:
-  //     return `type-sm ${styles.noSize} `
+  //     return `type-xs ${styles.noSize} `
   //   }
   // }
 

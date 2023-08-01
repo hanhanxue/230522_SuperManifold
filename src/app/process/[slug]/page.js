@@ -52,8 +52,8 @@ export const dynamicParams = false
     return (
         <>
 
-    <Header hasBorder={true} />
-    {/* <ProcessHeader /> */}
+    <Header hasBorder={false} />
+
     
 
         <MDXRemote 

@@ -33,6 +33,12 @@
   font-weight: 500;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
+
+
 .font-brand {
   font-family: 'nmtl';
   font-weight: 400;
@@ -46,43 +52,84 @@
 }
 
 
+// .text-2xl {
+//   font-size: rem(24);
+//   line-height: rem(32);
+//   letter-spacing: 0em;
+// }
 
 
 
-.text-2xl {
-  font-size: rem(24);
-  line-height: rem(32);
-  letter-spacing: 0em;
-}
+
+// .text-xl {
+//   font-size: rem(18);
+//   line-height: rem(24);
+//   letter-spacing: -.02em;
+// }
+
+// .text-lg {
+//   font-size: rem(14);
+//   line-height: rem(24);
+//   letter-spacing: 0em;
+// }
+
 
 .text-xl {
-  font-size: rem(18);
+  font-size: rem(24);
   line-height: rem(24);
   letter-spacing: -.02em;
 }
 
 
-
-
-
-
 .text-lg {
-  font-size: rem(14);
+  font-size: rem(20);
   line-height: rem(24);
   letter-spacing: 0em;
-
 }
+
 
 
 ///////////////////////////////////////////////// THIS IS BASE 
+// .text-base {
+//   font-size: rem(13);
+//   line-height: rem(24);
+//   letter-spacing: 0em;
+// }
+
+
+
+.text-base-plus {
+  font-size: rem(18);
+  line-height: rem(28);
+  letter-spacing: 0em;
+}
+
 .text-base {
+  font-size: rem(16);
+  line-height: rem(28);
+  letter-spacing: 0em;
+}
+
+.text-base-minus {
+  font-size: rem(14);
+  line-height: rem(24);
+  letter-spacing: 0em;
+}
+
+
+
+
+
+
+
+.text-sm {
   font-size: rem(13);
   line-height: rem(24);
   letter-spacing: 0em;
-
 }
 
-.text-sm {
+
+.text-xs {
   font-size: rem(11);
   line-height: rem(16);
   letter-spacing: 0em;

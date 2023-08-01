@@ -52,14 +52,15 @@ useEffect(() => {
         <div className={`${styles.xFrame}`}> {/* X Frame */}
         <nav className={`${styles.yFrame}`}> {/* Y Frame */}
 
-                <div className={`text-2xl font-brand`}>
+
+                <div className={`text-xl font-brand`}>
                     <Link href="/" className={``}>
                         Super Manifold®
                     </Link>
                 </div>
 
                 <div className={``}>
-                    <ul className={`text-xl ${styles.rightLinks}`}>
+                    <ul className={`text-base-plus ${styles.rightLinks}`}>
                         <li><Link href="/" className="">Product</Link></li>
                         <li><Link href="/process" className="">Process</Link></li>
                         <li><Link href="/info" className="">Info</Link></li>

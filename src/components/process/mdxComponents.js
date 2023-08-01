@@ -33,31 +33,62 @@ const Viewer = ({children, id}) => {
 
 
 
-const P = (props) => (
+const p = (props) => (
 
     <section className={`${styles.section}`}> {/* SECTION */}
     <div className={`${styles.xFrame}`}> {/* X Frame */}
     <div className={`${styles.yFrame}`}> {/* Y Frame */}
-        <div className={`${styles.container}`}>
 
-        <p {...props} className={`text-lg `} />
+        <div className={`${styles.container}`}>
+        <p {...props} className={`text-base `} />
         </div>
 
     </div> {/* Y Frame */}
     </div> {/* X Frame */}
     </section> 
 
-
-
 )
 
 
+const h2 = (props) => (
+
+    <section className={`${styles.section}`}> {/* SECTION */}
+    <div className={`${styles.xFrame}`}> {/* X Frame */}
+    <div className={`${styles.yFrame}`}> {/* Y Frame */}
+
+        <div className={`${styles.container}`}>
+        <h2 {...props} className={`text-xl font-medium`} />
+        </div>
+
+    </div> {/* Y Frame */}
+    </div> {/* X Frame */}
+    </section> 
+
+)
+
+const h3 = (props) => (
+
+    <section className={`${styles.section}`}> {/* SECTION */}
+    <div className={`${styles.xFrame}`}> {/* X Frame */}
+    <div className={`${styles.yFrame}`}> {/* Y Frame */}
+    
+        <div className={`${styles.container}`}>
+        <h3 {...props} className={`text-lg  font-medium `} />
+        </div>
+
+    </div> {/* Y Frame */}
+    </div> {/* X Frame */}
+    </section> 
+
+)
 
 const customMDXComponents = {
     
     Viewer,
     ProcessHeader,
-    p: P,
+    p,
+    h2,
+    h3,
 
 }
 

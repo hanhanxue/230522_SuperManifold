@@ -4,7 +4,7 @@ import Slider from '@/components/ui/Slider'
 import SliderA from '@/components/ui/SliderA'
 
 import Toggle from '@/components/ui/Toggle'
-import ControlsGroup from '@/components/ui/ControlsGroup'
+import ControlsGroup from '@/components/process/ControlsGroup'
 
 import styles from './BottomPanel.module.scss'
 

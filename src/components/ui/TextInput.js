@@ -48,11 +48,11 @@ const TextInput = ({value, textLabel, onChange, setValue, onSubmit, min=360, max
     return(
         <>
         <div className={`${styles.textInputFrame}`}>
-        <label className={`text-sm ${styles.textInputLabel}`}>{textLabel}</label>
+        <label className={`text-xs ${styles.textInputLabel}`}>{textLabel}</label>
         <form onSubmit={handleSubmit}>
 
                 <input 
-                    className={`text-sm ${styles.textInput}`}
+                    className={`text-xs ${styles.textInput}`}
                     type='number'
                     // onInput={handleOnInput}
                     onChange={handleChange}

@@ -55,7 +55,7 @@ const Dropdown = ({dropdownOption, children, onOptionClick, options}) => {
 
                 </span>
                 {/* // const [input, setInput] = useState(Number(value) ?? min); */}
-                <span className={`text-sm`}> {dropdownOption || "Custom"}</span>
+                <span className={`text-xs`}> {dropdownOption || "Custom"}</span>
                 </div>
 
 
@@ -85,14 +85,14 @@ const Dropdown = ({dropdownOption, children, onOptionClick, options}) => {
                             } else {
 
                               return (
-                                <li className={`text-sm ${styles.listItem}`} 
+                                <li className={`text-xs ${styles.listItem}`} 
                                 onClick={onOptionClickInternal(key)} 
                                 key={Math.random()}>
       
       
                                   <div className={`${styles.left}`}>
       
-                                        <span className={`text-sm ${styles.listItemCheck}`}>
+                                        <span className={`text-xs ${styles.listItemCheck}`}>
             
                                         {/* ADD CHECKMARK */}
                                         {(key === dropdownOption) ? 
@@ -102,11 +102,11 @@ const Dropdown = ({dropdownOption, children, onOptionClick, options}) => {
             
                                         </span>
             
-                                        <span className={`text-sm ${styles.listItemKey}`}>{key}</span>
+                                        <span className={`text-xs ${styles.listItemKey}`}>{key}</span>
                                   </div>
       
                                   <div className={`${styles.right}`}>
-                                        <span className={`text-sm ${styles.listItemValue}`}>{`${options[key].width} x ${options[key].height}`}</span>
+                                        <span className={`text-xs ${styles.listItemValue}`}>{`${options[key].width} x ${options[key].height}`}</span>
                                   </div>
       
                                 </li>
@@ -197,14 +197,14 @@ export default Dropdown
 
 
             {/* {optionsArray.map((option) => (
-  <li className={`text-sm ${styles.listItem}`} onClick={onOptionClickInternal(option.standard)} key={Math.random()}>
+  <li className={`text-xs ${styles.listItem}`} onClick={onOptionClickInternal(option.standard)} key={Math.random()}>
     <div className={`${styles.left}`}>
-    <span className={`text-sm ${styles.listItemCheck}`}></span>
-    <span className={`text-sm ${styles.listItemKey}`}>{option.standard}</span>
+    <span className={`text-xs ${styles.listItemCheck}`}></span>
+    <span className={`text-xs ${styles.listItemKey}`}>{option.standard}</span>
     </div>
 
     <div className={`${styles.right}`}>
-    <span className={`text-sm ${styles.listItemValue}`}>{`${option.width} x ${option.height}`}</span>
+    <span className={`text-xs ${styles.listItemValue}`}>{`${option.width} x ${option.height}`}</span>
     </div>
 
   </li>

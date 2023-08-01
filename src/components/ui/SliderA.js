@@ -85,8 +85,8 @@ const SliderA = ({min=0, max=100, defaultValue = 50, onChange, children}) => {
 
         <div className={`${styles.sliderFrame}`}>
 
-            <label className={`text-sm ${styles.label}`}>{children}</label>
-            <span className={`text-sm ${styles.min}`}>{min}</span>
+            <label className={`text-xs ${styles.label}`}>{children}</label>
+            <span className={`text-xs ${styles.min}`}>{min}</span>
 
 
                 <div 
@@ -103,7 +103,7 @@ const SliderA = ({min=0, max=100, defaultValue = 50, onChange, children}) => {
                 </div>
 
 
-            <span className={`text-sm ${styles.max}`}>{max}</span>
+            <span className={`text-xs ${styles.max}`}>{max}</span>
         </div>
 
     );

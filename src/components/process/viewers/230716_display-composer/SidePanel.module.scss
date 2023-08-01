@@ -1,5 +1,5 @@
 
-
+@use '@/styles/abstracts/' as *;
 
 
 .sidePanelFrame {
@@ -22,8 +22,8 @@
     // background-color: rgba(255, 255, 255, 0.9);
     // backdrop-filter: blur(2rem);
     .sidePanel {
-        border-radius: 8px;
-        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: $radius-lg;
+        background-color: $color-background-blur;
         backdrop-filter: blur(2rem);
         display: flex;
         flex-direction: column;

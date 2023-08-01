@@ -85,7 +85,7 @@ export default function ProcessHeader({title, publishDate, kind}) {
                   <div className={`${styles.titles}`}>
                           {/* TOP ROW */}
                           <div className={`${styles.titlesTop}`}>
-                              <h1 className={`text-xl font-medium ${styles.title}`}>{title}</h1>
+                              <h1 className={`text-base-plus font-medium ${styles.title}`}>{title}</h1>
           
                               <div className={`${styles.badgesFrame}`}>
                                 {/* <Badge>Utility</Badge> */}
@@ -95,8 +95,12 @@ export default function ProcessHeader({title, publishDate, kind}) {
 
                           {/* BOTTOM ROW */}
                           <div className={`${styles.titlesBottom}`}>
-                          <span className={`text-base ${styles.subtitle}`}>
-                            {`${momentString} (${momentStringFromNow}) · Using ${using}`}</span>
+                          <div className={`text-sm ${styles.subtitle}`}>
+                            <span>{momentString} </span>
+                            <span className={`${styles.gray}`}>({momentStringFromNow}) </span>
+                            <span>· </span>
+                            <span>Using {using}</span>
+                          </div>
                           </div>
 
                   </div>
@@ -106,7 +110,7 @@ export default function ProcessHeader({title, publishDate, kind}) {
  
         {/* Header RIGHT SIDE*/} 
         <div className={`${styles.right}`}>
-        <Button kind='outlined' size='lg'>Source</Button>
+        {/* <Button kind='outlined' size='lg'>Source</Button> */}
           {/* <Button kind='contained' size='lg'>Share</Button> */}
         </div>
 

@@ -12,7 +12,7 @@ const RowLabel = ({children}) => {
 
         <>
 
-<div className={`text-sm  font-medium ${styles.rowLabel}`}>{children}</div>
+<div className={`text-xs  font-medium ${styles.rowLabel}`}>{children}</div>
 
         </>
 

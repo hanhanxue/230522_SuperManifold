@@ -19,12 +19,17 @@ const HomeGrid = ({}) => {
 
         <div className={`${styles.productGrid}`}>
 
-            <video autoPlay muted loop className={`${styles.product}  ${styles.gridColSpan2}`}>         
-            <source src="/assets/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>         
+
+
+        <div  className={`${styles.productA}  ${styles.gridColSpan2}`}>
+            <video autoPlay muted loop className={`${styles.video} `}>         
+            {/* <source src="/assets/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>          */}
+            <source src="/content/home/supermanifold_breadboard_v2.mp4" type="video/mp4"/>  
             </video>
+        </div>
 
 
-            <Image  className={`${styles.product}`}
+            {/* <Image  className={`${styles.product}`}
                     src="/assets/images/supermanifold_TRRS.jpg"
                             width={5120}
                             height={5120}
@@ -35,7 +40,7 @@ const HomeGrid = ({}) => {
                             width={5120}
                             height={5120}
                     alt="Picture of the author"
-            />
+            /> */}
 
 
         </div>

@@ -23,7 +23,17 @@
 
     .product {
         border-radius: rem(16);
-        // overflow: hidden;
+        overflow: hidden;
+
+        height: 80%;
+        // width:2560px;
+        // height:60%;
+
+        // position: relative;
+  
+
+
+
     }
 
     .gridColSpan1 {
@@ -33,4 +43,28 @@
     .gridColSpan2 {
         grid-column: span 2;
     }
+}
+
+.video {
+    width: 2560px;
+    // @include absCenter;
+    // margin-top: -200px;
+
+
+}
+
+
+.productA {
+    // margin-top: -150px;
+    border-radius: rem(16);
+    overflow: hidden;
+
+    // width:2560px;
+    // height:60%;
+
+    // position: relative;
+
+
+
+
 }

@@ -9,7 +9,7 @@ const RowInfo = ({children}) => {
 
     return(
         <>
-                    <div className={`text-sm  ${styles.info}`}>{children}</div>
+                    <div className={`text-xs  ${styles.info}`}>{children}</div>
 
         </>
     )

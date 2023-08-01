@@ -9,9 +9,10 @@ const Button = ({onClick, kind, size, children}) => {
   const styleSize = () => {
     switch (size) {
       case 'sm':
-        return `text-sm ${styles.sm} `
-        case 'lg':
-          return `text-lg ${styles.lg} `
+        return `text-xs ${styles.sm} `
+
+      case 'lg':
+        return `text-base-minus ${styles.lg} `
 
     default:
       return `text-sm ${styles.noSize} `
