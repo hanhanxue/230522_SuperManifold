@@ -2,19 +2,21 @@
 
 .section {
     position:sticky;
-    top: 64px;
+    top: rem(64);
 
     background-color: white;
+    // background-color: red;
     // background-color: $color-background-blur;
     // backdrop-filter: blur(2rem);
 
     z-index: 100;
-    border-top: 1px solid $color-gray-200;
+    // border-top: 1px solid $color-gray-200;
 
     &.borderBottom {
         z-index: 50;
 
         border-bottom: 1px solid $color-gray-200;
+        border-top: 1px solid $color-gray-200;
     }
 }
 
@@ -25,7 +27,7 @@
 .yFrame {
 
 
-    height: 144px;
+    height: rem(144);
 
     @include flexCenterX;
 
@@ -33,7 +35,7 @@
     transition-timing-function: $anim-timing-ease-out;
 
     &Scrolled {
-        height: 96px;
+        height: rem(80);
         // transform: scaleY(2);
     }
 }
@@ -41,7 +43,7 @@
 
 .header {
     // background-color: red;
-    width: rem(800);
+    width: rem(820);
     margin: auto;
     // padding: 0 rem(32);
 

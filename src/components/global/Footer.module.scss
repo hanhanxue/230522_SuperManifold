@@ -5,7 +5,9 @@
     margin-top: 64px;
     // background-color: rgb(211, 211, 211);
     // height: 100px;
+
     // border-top: 1px solid $color-gray-200;
+
 
 }
 
@@ -20,10 +22,11 @@
 }
 
 .navGrid {
-    padding: rem(64) 0 ;
+    padding: rem(32) 0 ;
     display: grid;
     gap: 16px;
     grid-template-columns: repeat(8, 1fr);  // fr stands for fraction
+    // background-color: red;
 }
 
 .footerMenu {

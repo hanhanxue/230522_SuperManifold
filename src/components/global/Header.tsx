@@ -26,6 +26,20 @@ const Header: React.FC<IHeaderProps> = ( {
 
 const [isScrolled, setIsScrolled] = useState(false);
 
+const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+const handleMobileMenuToggle = () => {
+    setIsMobileMenuOpen((current) => !current)
+}
+
+const handleMenuItemClick = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    // e.preventDefault();
+    if(isMobileMenuOpen) setIsMobileMenuOpen(false)
+}
+
+
+
+// console.log(isMobileMenuOpen)
 
 useEffect(() => {
   const handleScroll = () => {
@@ -37,8 +51,7 @@ useEffect(() => {
   return () => {
     window.removeEventListener('scroll', handleScroll);
   };
-}, []);
-
+}, [])
 
 
     return (
@@ -50,27 +63,48 @@ useEffect(() => {
         ${hasBorder ? styles.headerBordered  : ''}
         `}> {/* SECTION */}
         <div className={`${styles.xFrame}`}> {/* X Frame */}
-        <nav className={`${styles.yFrame}`}> {/* Y Frame */}
+        <div className={`${styles.yFrame}`}> {/* Y Frame */}
 
 
+
+                {/* Nav Logo */}
                 <div className={`text-xl font-brand`}>
                     <Link href="/" className={``}>
                         Super Manifold®
                     </Link>
                 </div>
 
-                <div className={``}>
-                    <ul className={`text-base-plus ${styles.rightLinks}`}>
-                        <li><Link href="/" className="">Product</Link></li>
-                        <li><Link href="/process" className="">Process</Link></li>
-                        <li><Link href="/info" className="">Info</Link></li>
+                {/* Nav Links */}
+                <nav className={`${styles.defaultNav}
+                 ${isMobileMenuOpen ? styles.defaultNavOpen : ''}
+                `}>
+                    <ul className={`text-base-plus ${styles.linksList}`}>
+                        <li onClick={handleMenuItemClick}><Link href="/" className="" >Product</Link></li>
+                        <li onClick={handleMenuItemClick}><Link href="/process" className="">Process</Link></li>
+                        <li onClick={handleMenuItemClick}><Link href="/info" className="">Info</Link></li>
                     </ul>
+                </nav>
+                
+     
+                {/* Nav Burger */}
+                <div className={`${styles.burgerWrapper}`}>
+                <button onClick={handleMobileMenuToggle} className={`${styles.burger}
+                        ${isMobileMenuOpen ? styles.burgerOpen : '' }
+                        `}>
+                        <span className={`${styles.burgerLine}`}/>
+                        <span className={`${styles.burgerLine}`}/>
+                        <span className={`${styles.burgerLine}`}/>
+                </button>
                 </div>
 
+     
 
-        </nav> {/* Y Frame */}
+        </div> {/* Y Frame */}
         </div> {/* X Frame */}
         </header> {/* SECTION */}
+{/*         
+        <div className={`${styles.overlay}
+        ${isMobileMenuOpen ? styles.OverlayOpen : '' }`}></div> */}
         </>
 
     )

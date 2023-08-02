@@ -85,7 +85,9 @@ export default function ProcessHeader({title, publishDate, kind}) {
                   <div className={`${styles.titles}`}>
                           {/* TOP ROW */}
                           <div className={`${styles.titlesTop}`}>
-                              <h1 className={`text-base-plus font-medium ${styles.title}`}>{title}</h1>
+                              <h1 className={`
+                              text-base-plus
+                               font-medium ${styles.title}`}>{title}</h1>
           
                               <div className={`${styles.badgesFrame}`}>
                                 {/* <Badge>Utility</Badge> */}

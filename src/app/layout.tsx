@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`font-primary`}>
       <body>
-        
+        <div className={`tinyScreenCheck`}></div>
         {children}
       <Footer />
       </body>
