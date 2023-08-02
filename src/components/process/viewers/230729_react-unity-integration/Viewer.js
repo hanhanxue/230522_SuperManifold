@@ -6,6 +6,7 @@ import { Unity, useUnityContext } from "react-unity-webgl"
 // 05 SUPERMANIFOLD COMPONENTS
 import ControlsGroup from '@/components/process/ControlsGroup'
 import Button from "@/components/ui/Button"
+import ViewerWrapper from '@/components/process/ViewerWrapper'
 
 
 // 11 SUPERMANIFOLD STYLES
@@ -14,8 +15,6 @@ import styles from './Viewer.module.scss'
 
 
 const Viewer = () => {
-
-    
 
     const { unityProvider , sendMessage} = useUnityContext({
         loaderUrl: "/content/process/230729_React Unity Integration_UNITY/Build/230731_B.loader.js",
@@ -34,7 +33,7 @@ const Viewer = () => {
 
     return (
         <>
-        <section className={`${styles.section}`}> {/* SECTION */}
+        <ViewerWrapper>
         <div className={`${styles.xFrame}`}> {/* X Frame */}
         <div className={`${styles.yFrame}`}> {/* Y Frame */}
 
@@ -52,7 +51,7 @@ const Viewer = () => {
 
         </div> {/* Y Frame */}
         </div> {/* X Frame */}
-        </section> {/* SECTION */}
+        </ViewerWrapper>
         </>
 
     )

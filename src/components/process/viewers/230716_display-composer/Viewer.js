@@ -18,11 +18,19 @@ import SidePanel from './SidePanel'
 import P5Sketch, {randomSrf, changeSceneScale} from './P5Sketch'
 
 
+
+
+// 02 EXTERNAL
+
+// 03 REACT / NEXTJS
+
+// 05 SUPERMANIFOLD COMPONENTS
+import ViewerWrapper from '@/components/process/ViewerWrapper'
+
+// 07 SUPERMANIFOLD FUNCTIONS
+
 // 11 SUPERMANIFOLD STYLES
 import styles from './Viewer.module.scss'
-
-
-
 
 const Viewer = () => {
 
@@ -39,7 +47,7 @@ const Viewer = () => {
 
     return (
         <>
-    <section className={`${styles.section}`}> {/* SECTION */}
+    <ViewerWrapper>
     <div className={`${styles.xFrame}`}> {/* X Frame */}
     <div className={`${styles.yFrame}`}> {/* Y Frame */}  
 
@@ -56,7 +64,7 @@ const Viewer = () => {
 
     </div> {/* Y Frame */}
     </div> {/* X Frame */}
-    </section> {/* SECTION */}
+    </ViewerWrapper>
 
 
 

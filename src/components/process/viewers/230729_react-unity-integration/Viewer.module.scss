@@ -4,11 +4,11 @@
 
 .section {
     // background-color: red;
-    margin-bottom: rem(32);
+    // margin-bottom: rem(32);
 }
 
 .xFrame {
-    @include xFrame;
+    @include xFrameWide;
 }
 
 
@@ -16,11 +16,11 @@
 
     margin: auto;
     max-width: 1440px;
-    // margin: auto;
+    height: 720px;
+
     position: relative;
 
     // display: block;
-    height: 720px;
 
     border-radius: $radius-xl;
     overflow: hidden;
@@ -43,5 +43,5 @@
 
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: rem(16);
 }

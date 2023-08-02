@@ -68,7 +68,7 @@ useEffect(() => {
 
 
                 {/* Nav Logo */}
-                <div className={`text-xl font-brand`}>
+                <div className={` font-brand`}>
                     <Link href="/" className={``}>
                         Super Manifold®
                     </Link>
@@ -79,7 +79,7 @@ useEffect(() => {
                  ${isMobileMenuOpen ? styles.defaultNavOpen : ''}
                 `}>
                     <ul className={`text-base-plus ${styles.linksList}`}>
-                        <li onClick={handleMenuItemClick}><Link href="/" className="" >Product</Link></li>
+                        <li onClick={handleMenuItemClick}><Link href="/" className="" >Experiences</Link></li>
                         <li onClick={handleMenuItemClick}><Link href="/process" className="">Process</Link></li>
                         <li onClick={handleMenuItemClick}><Link href="/info" className="">Info</Link></li>
                     </ul>

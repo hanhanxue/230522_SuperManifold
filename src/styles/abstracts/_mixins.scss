@@ -16,8 +16,11 @@
     align-items: center;
 }
 
+
+
 @mixin flexCenterXY {
-    @include flexCenterX;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -28,6 +31,15 @@
     //     margin: 0 rem(16);
     // }
 }
+
+@mixin xFrameWide {
+    margin: 0 rem(16);
+
+    // @include respond(tablet-portrait) {
+    //     margin: 0 rem(16);
+    // }
+}
+
 
 
 
@@ -62,8 +74,10 @@
 
 @mixin respond($breakpoint) {
 
+
+
     @if $breakpoint == phone {
-        @media (max-width: 37.5em) {@content};     //600px
+        @media (max-width: 560px) {@content};     //600px
     }
 
     
@@ -82,8 +96,10 @@
 
 
     @if $breakpoint == big-desktop {
-        @media (min-width: 112.5em) {@content};       //1800px
+        @media (min-width: 1800px) {@content};       //1800px
     }
+
+
 }
 
 

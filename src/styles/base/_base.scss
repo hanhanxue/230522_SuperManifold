@@ -17,6 +17,7 @@ li {
 a {
     color: black;
     text-decoration: none; /* no underline */
+
 }
 
 body {
@@ -42,6 +43,7 @@ button, input[type="submit"], input[type="reset"] {
 
 svg {
     display: block;
+    margin: 0;
 }
 
 span {
