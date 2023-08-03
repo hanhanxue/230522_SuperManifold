@@ -1,10 +1,17 @@
+
+
+// 02 EXTERNAL
+
+// 03 REACT / NEXTJS
 import Link from 'next/link'
 
-import SuperManifoldLogo, {Logotypes} from './SuperManifoldLogo'
 
+// 05 SUPERMANIFOLD COMPONENTS
+
+// 07 SUPERMANIFOLD FUNCTIONS
+
+// 11 SUPERMANIFOLD STYLES
 import styles from "./Footer.module.scss"
-
-
 
 
 const Footer = (  ) => {

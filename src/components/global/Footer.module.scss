@@ -17,6 +17,11 @@
 
 
 
+
+
+
+
+
 .topSection {
     // background-color: red;
 }
@@ -34,26 +39,38 @@
     // grid-template-rows: auto;
     // background-color: red;
 
-    @include respond(tablet-portrait) {
-        grid-template-columns: repeat(4, 1fr);  // fr stands for fraction
-    }
+    // @include respond(tablet-portrait) {
+    //     grid-template-columns: repeat(4, 1fr);  // fr stands for fraction
+    // }
 
-    @include respond(phone) {
-        grid-template-columns: repeat(2, 1fr);  // fr stands for fraction
-    }
+    // @include respond(phone) {
+    //     grid-template-columns: repeat(2, 1fr);  // fr stands for fraction
+    // }
 
 }
 
 .gridColSpan4 {
     grid-column: span 4;
 
+    @include respond(tablet-portrait) {
+        grid-column: span 8;
+    }
+
     @include respond(phone) {
-        grid-column: span 2;
+        grid-column: span 8;
     }
 }
 
 .gridColSpan2 {
     grid-column: span 2;
+
+    @include respond(tablet-portrait) {
+        grid-column: span 4;
+    }
+
+        @include respond(phone) {
+        grid-column: span 8;
+    }
 
 }
 
@@ -62,6 +79,7 @@
     padding: 0 0 rem(16) 0;
 
     @include respond(phone) {
+        // grid-column: span 8;
         display: flex;
         justify-content: center;
     }
@@ -70,6 +88,7 @@
 
 .menuList {
     @include respond(phone) {
+        // grid-column: span 8;
         padding: 0 0 rem(16) 0;
     }
 }
@@ -116,24 +135,26 @@
     display: grid;
     gap: rem(16);
     grid-template-columns: repeat(8, 1fr);
+
+
     // align-items: center;
     // justify-content: end;
-    @include respond(phone) {
-        grid-template-columns: repeat(2, 1fr);
+    // @include respond(phone) {
+    //     grid-template-columns: repeat(2, 1fr);
 
-    }
+    // }
 }
 
 
 .yearSection {
     // height: rem(32);
-    grid-column: span 2;
+    grid-column: span 4;
     display: flex;
     align-items: center;
 
     @include respond(phone) {
         // margin-bottom: rem(8);
-        grid-column: span 2;
+        grid-column: span 8;
 
         justify-content: center;
 
@@ -142,13 +163,13 @@
 
 .rightsSection {
     // grid-column: 3 / 8;
-    grid-column: span 4;
+    grid-column: span 3;
     display: flex;
     align-items: center;
 
     @include respond(phone) {
 
-        grid-column: span 2;
+        grid-column: span 8;
 
         justify-content: center;
 
@@ -158,17 +179,17 @@
 
 .buttonSection {
     // grid-column: 8 / 10;
-    grid-column: span 2;
+    grid-column: span 1;
     display: flex;
     align-items: center;
 
     justify-content: right;
 
     @include respond(phone) {
-        grid-column: span 2;
+        grid-column: span 8;
 
         justify-content: center;
-        margin: rem(16) 0;
+        margin: rem(16) 0 rem(32) ;
     }
 }
 

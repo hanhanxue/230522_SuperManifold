@@ -110,11 +110,19 @@
         align-items: flex-start;
 
         li {
+            width: 100%;
+
+            // flex: 1 0 auto;
             &:not(:first-child) {
                 margin-left: 0;
             }
             &:not(:last-child) {
                 margin-bottom : rem(8);
+            }
+            a {
+                // display:inline-block;
+                // width: 100%;
+                display: block;
             }
         }
     }
