@@ -43,7 +43,6 @@ export const dynamicParams = false
     const post = processPosts.find((post) => post.extraData.slug === params.slug)
 
     if(!post) return notFound()
-
     // console.log(post.extraData.publishDate)
 
 

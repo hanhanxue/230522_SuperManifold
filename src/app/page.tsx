@@ -43,6 +43,12 @@ export const metadata: Metadata = {
 
 
 export default function Home() {
+
+
+  // let webSocket = new WebSocket('wss://supergrand.studio');
+  // webSocket.onmessage = function(e) { console.log(e)}
+  // webSocket.send("test")
+
   return (
     <>
 

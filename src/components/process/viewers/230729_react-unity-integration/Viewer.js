@@ -38,10 +38,11 @@ const Viewer = () => {
         <div className={`${styles.yFrame}`}> {/* Y Frame */}
 
         <div className={`${styles.canvasFrame}`}>
-            <Unity unityProvider={unityProvider} 
-            disabledCanvasEvents={['scroll']}
+            <Unity 
+            unityProvider={unityProvider}
             className={`${styles.unityCanvas}`}
             style={{width: '1440px', height: '810px'}}
+            disabledCanvasEvents={["scroll"]}
             />
         </div>
 
