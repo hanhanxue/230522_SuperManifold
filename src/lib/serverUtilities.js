@@ -76,7 +76,7 @@ export function getProcessPosts() {
         extraData.kind = kind
 
         // coverImage
-        const MAX_WIDTH = 500 //960
+        const MAX_WIDTH = 640 //960
         const MAX_HEIGHT = 640  //640
         let coverImage = {}
 

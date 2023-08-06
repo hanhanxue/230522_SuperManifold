@@ -15,6 +15,7 @@
 .productGrid {
     display: grid;
     gap: rem(16);
+    // grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
     grid-template-columns: repeat(2, 1fr);
 
     padding: rem(16);
