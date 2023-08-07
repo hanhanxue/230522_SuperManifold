@@ -1,4 +1,6 @@
 
+
+import {useCallback} from 'react'
 import Button from '@/components/ui/Button'
 import Slider from '@/components/ui/Slider'
 import SliderA from '@/components/ui/SliderA'
@@ -14,10 +16,15 @@ import {scaleCanvas, createSrf, createDisplaySrf, createReferenceSrf, hideDispla
 
 const BottomPanel = ({panelVisibility, onPanelVisibility}) => {
 
-const handleOnSliderChange = (value) => {
+const handleOnSliderChange = useCallback((value) => {
     // console.log(value)
     scaleCanvas(value)
-}
+})
+
+// const handleOnSliderChange = (value) => {
+//     // console.log(value)
+//     scaleCanvas(value)
+// }
 
     return (
 
