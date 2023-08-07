@@ -1,6 +1,6 @@
 {
     "functions": {
-      "src/**/*.js": {
+      "src/app/**/*.js": {
         "excludeFiles": "public/content/**"
       }
     }
