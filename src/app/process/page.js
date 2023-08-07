@@ -18,13 +18,6 @@ import {getProcessPosts} from '@/lib/serverUtilities'
 
 
 // 11 SUPERMANIFOLD STYLES
-
-
-
-
-
-
-
 import styles from '@/components/process/ProcessGrid.module.scss'
 
 

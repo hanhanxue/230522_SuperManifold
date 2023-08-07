@@ -3,7 +3,11 @@
 
 const nextConfig = {
   
-    unstable_excludeFiles: ["public/**/*", "node_modules/**/*"],
+    experimental: {
+        outputFileTracingExcludes: {
+            '*': ['./public/content/process/**/*'],
+        }
+    }
  }
  
  module.exports = nextConfig
