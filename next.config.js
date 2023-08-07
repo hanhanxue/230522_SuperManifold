@@ -5,31 +5,13 @@ const nextConfig = {
   
      experimental: {
          outputFileTracingExcludes: {
-             "/*": ["./public/content/process/**/Build/"],
-             "/**/*": ["./public/content/process/**/Build/"],
+             "/*": ["./public/content/process/**/*"],
+             "/**/*": ["./public/content/process/**/*"],
          },
      },
  };
  
- module.exports = nextConfig;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = nextConfig
-
+ module.exports = nextConfig
 
 
 
