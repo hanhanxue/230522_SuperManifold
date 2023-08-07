@@ -11,6 +11,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 
 // 03 REACT / NODE / NEXTJS
+// import {useRouter} from 'next/router'
 
 // 05 SUPERMANIFOLD COMPONENTS
 import Header from "@/components/global/Header"
@@ -53,6 +54,8 @@ export const dynamicParams = false
     if(!post) return notFound()
     // console.log(post.extraData.publishDate)
 
+    // const router = useRouter()
+    // const goToPost = () => {router.push(`/process/${post.extraData.slug}`)}
 
 
 

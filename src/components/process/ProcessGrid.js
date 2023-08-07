@@ -1,4 +1,4 @@
-
+'use client'
 
 
 // 02 EXTERNAL
@@ -7,6 +7,7 @@ import moment from 'moment';
 // 03 REACT / NEXTJS
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation';
 
 
 // 05 SUPERMANIFOLD COMPONENTS
@@ -38,6 +39,11 @@ const ProcessGrid = ({processPosts}) => {
 const momentObj = moment(post.extraData.publishDate)
 const momentString = momentObj.format("MMM Do, YYYY")
 const momentStringFromNow = momentObj.fromNow()
+
+const router = useRouter()
+const goToPost = () => {router.push(`/process/${post.extraData.slug}`)}
+
+
 
         return (
 
@@ -75,7 +81,7 @@ const momentStringFromNow = momentObj.fromNow()
 
                         </div>
                         <div className={`${styles.postInfoFrameRight}`}>
-                            <button className={`${styles.linkButton}`}>
+                            <button className={`${styles.linkButton}`} onClick={goToPost}>
                             <svg className={`${styles.arrow}`}
                             width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 12L5 12" strokeWidth="1.5"/>
