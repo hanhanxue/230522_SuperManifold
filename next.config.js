@@ -5,8 +5,9 @@ const nextConfig = {
   
      experimental: {
          outputFileTracingExcludes: {
-             "/*": ["./public/content/process/**/*"],
-             "/**/*": ["./public/content/process/**/*"],
+             "*": [
+                "public/content/process/",
+            ],
          },
      },
  };
