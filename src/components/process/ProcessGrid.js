@@ -57,6 +57,8 @@ const goToPost = () => {router.push(`/process/${post.extraData.slug}`)}
                                 
                             <Image
                             src={post.extraData.coverImage.src}
+                            width={post.extraData.coverImage.dimensions ? post.extraData.coverImage.dimensions.width : 100}
+                            height={post.extraData.coverImage.dimensions ? post.extraData.coverImage.dimensions.height : 100}
                             fill={true}
                             style={{objectFit: "cover"}}
                             alt=''

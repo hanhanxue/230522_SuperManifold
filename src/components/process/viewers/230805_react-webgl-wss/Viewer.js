@@ -17,10 +17,10 @@ import styles from './Viewer.module.scss'
 const Viewer = () => {
 
     const { unityProvider , sendMessage} = useUnityContext({
-        loaderUrl: "/content/process/230805_React WebGL WSS_UNITY/Build/230805_G_WebClient.loader.js",
-        dataUrl: "/content/process/230805_React WebGL WSS_UNITY/Build/230805_G_WebClient.data",
-        frameworkUrl: "/content/process/230805_React WebGL WSS_UNITY/Build/230805_G_WebClient.framework.js",
-        codeUrl: "/content/process/230805_React WebGL WSS_UNITY/Build/230805_G_WebClient.wasm",
+        loaderUrl: "/content/process/230805_Unity WebGL Fish-Net WSS Guide_UNITY/Build/230805_G_WebClient.loader.js",
+        dataUrl: "/content/process/230805_Unity WebGL Fish-Net WSS Guide_UNITY/Build/230805_G_WebClient.data",
+        frameworkUrl: "/content/process/230805_Unity WebGL Fish-Net WSS Guide_UNITY/Build/230805_G_WebClient.framework.js",
+        codeUrl: "/content/process/230805_Unity WebGL Fish-Net WSS Guide_UNITY/Build/230805_G_WebClient.wasm",
       });
 
       function changeColor() {
