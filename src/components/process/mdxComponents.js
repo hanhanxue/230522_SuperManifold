@@ -5,12 +5,12 @@ import dynamic from 'next/dynamic';
 
 
 
-const Viewers = {
-    'display-composer':        dynamic(() => import('./viewers/230716_display-composer/Viewer')),
-    'react-unity-integration': dynamic(() => import('./viewers/230729_react-unity-integration/Viewer')),
-    'react-webgl-wss': dynamic(() => import('./viewers/230805_react-webgl-wss/Viewer')),
+// const Viewers = {
+//     'display-composer':        dynamic(() => import('./viewers/230716_display-composer/Viewer')),
+//     'react-unity-integration': dynamic(() => import('./viewers/230729_react-unity-integration/Viewer')),
+//     'react-webgl-wss': dynamic(() => import('./viewers/230805_react-webgl-wss/Viewer')),
 
-}
+// }
 
 
 
@@ -23,18 +23,18 @@ import styles from './mdxComponents.module.scss'
 
 
 
-const Viewer = ({children, id}) => {
+// const Viewer = ({children, id}) => {
 
 
-    const Viewer = Viewers[`${id}`]
+//     const Viewer = Viewers[`${id}`]
     
-    return (
+//     return (
 
-        <Viewer />
+//         <Viewer />
           
 
-    )
-}
+//     )
+// }
 
 
 
@@ -92,7 +92,7 @@ const h3 = (props) => (
 
 const customMDXComponents = {
     
-    Viewer,
+    // Viewer,
     ProcessHeader,
     p,
     h2,
