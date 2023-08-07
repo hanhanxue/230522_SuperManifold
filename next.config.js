@@ -1,7 +1,30 @@
 /** @type {import('next').NextConfig} */
 
 
-const nextConfig = {}
+const nextConfig = {
+  
+     experimental: {
+         outputFileTracingExcludes: {
+             "/*": ["./public/content/process/**/Build/"],
+             "/**/*": ["./public/content/process/**/Build/"],
+         },
+     },
+ };
+ 
+ module.exports = nextConfig;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -12,14 +35,3 @@ module.exports = nextConfig
 
 
 
-
-
-// async redirects() {
-//     return [
-//       {
-//         source: '/work',
-//         destination: '/',
-//         permanent: true,
-//       },
-//     ]
-//   },
