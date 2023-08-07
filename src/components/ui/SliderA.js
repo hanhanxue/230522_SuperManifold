@@ -55,11 +55,13 @@ const SliderA = ({min=0, max=100, defaultValue = 50, onChange, children}) => {
 
         document.addEventListener('mouseup', handleMouseUp);
         document.addEventListener('mousemove', throttle_handleMouseMove);
+        
         return () => {
           document.removeEventListener('mouseup', handleMouseUp);
           document.removeEventListener('mousemove', throttle_handleMouseMove);
         };
-      }, [grabbed]);
+
+      }, [grabbed, min, max, onChange]);
 
 
 

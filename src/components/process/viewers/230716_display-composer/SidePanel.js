@@ -252,19 +252,21 @@ const SidePanel = ({visible}) => {
 
 
     useEffect(() => {
-        // console.log(displaySrf.height)
+        // In same cases, such as handleReferenceSrfHeightChange, when the input field is changing value as we type,
+        // we don't want the trigger a draw update everytime the number is changed
+        // so in that function we are setting the toUpdate value to false so it get skipped when
+        // displaySrf and referenceSrf changes and useEffect gets called
         if (!toUpdate) {
             setToUpdate(true)
             return
           }
       
         const draw = async () => {
-
-
             await createDisplaySrf(displaySrf.width, displaySrf.height, displaySrf.aspect, displaySrf.visibility)
             await createReferenceSrf(referenceSrf.width, referenceSrf.height, referenceSrf.aspect, referenceSrf.visibility)
             drawSrfs()
         }
+        
         draw()
 
     }, [displaySrf, referenceSrf])
