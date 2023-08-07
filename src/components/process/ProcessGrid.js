@@ -22,6 +22,7 @@ import styles from './ProcessGrid.module.scss'
 const ProcessGrid = ({processPosts}) => {
 
 
+    const router = useRouter()
 
     return (
 
@@ -40,7 +41,6 @@ const momentObj = moment(post.extraData.publishDate)
 const momentString = momentObj.format("MMM Do, YYYY")
 const momentStringFromNow = momentObj.fromNow()
 
-const router = useRouter()
 const goToPost = () => {router.push(`/process/${post.extraData.slug}`)}
 
 
