@@ -1,6 +1,5 @@
 
 
-import {useCallback} from 'react'
 import Button from '@/components/ui/Button'
 import Slider from '@/components/ui/Slider'
 import SliderA from '@/components/ui/SliderA'
@@ -11,20 +10,15 @@ import ControlsGroup from '@/components/process/ControlsGroup'
 import styles from './BottomPanel.module.scss'
 
 
-import {scaleCanvas, createSrf, createDisplaySrf, createReferenceSrf, hideDisplaySrf, showDisplaySrf, drawSrfs} from './P5Sketch'
+import {scaleCanvas, } from './P5Sketch'
 
 
 const BottomPanel = ({panelVisibility, onPanelVisibility}) => {
 
-const handleOnSliderChange = useCallback((value) => {
-    // console.log(value)
-    scaleCanvas(value)
-})
 
-// const handleOnSliderChange = (value) => {
-//     // console.log(value)
-//     scaleCanvas(value)
-// }
+const handleOnSliderChange = (value) => {
+    scaleCanvas(value)
+}
 
     return (
 
@@ -61,3 +55,8 @@ export default BottomPanel
 // onChange={handleSidePanelVisilibity}
 // toggled={sidePanelVisible}
 // onChange={changeSceneScale}
+
+// const handleOnSliderChange = useCallback((value) => {
+//     // console.log(value)
+//     scaleCanvas(value)
+// }, [])

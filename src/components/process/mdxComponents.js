@@ -6,9 +6,9 @@ import dynamic from 'next/dynamic';
 
 
 const Viewers = {
-    // 'display-composer':        dynamic(() => import('./viewers/230716_display-composer/Viewer')),
-    // 'react-unity-integration': dynamic(() => import('./viewers/230729_react-unity-integration/Viewer')),
-    // 'react-webgl-wss': dynamic(() => import('./viewers/230805_react-webgl-wss/Viewer')),
+    'display-composer':        dynamic(() => import('./viewers/230716_display-composer/Viewer')),
+    'react-unity-integration': dynamic(() => import('./viewers/230729_react-unity-integration/Viewer')),
+    'react-webgl-wss': dynamic(() => import('./viewers/230805_react-webgl-wss/Viewer')),
 
 }
 
