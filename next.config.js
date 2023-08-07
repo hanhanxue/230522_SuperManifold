@@ -2,11 +2,11 @@
 
 
 const nextConfig = {
-    // experimental: {
-    //     outputFileTracingExcludes: {
-    //         '*': ['./public/content/process/**/*'],
-    //     }
-    // }
+    experimental: {
+        outputFileTracingExcludes: {
+            '*': ['./public/content/process/**/*'],
+        }
+    }
  }
  
  module.exports = nextConfig
