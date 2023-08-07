@@ -61,6 +61,7 @@ const SidePanel = ({visible}) => {
         visibility: true,
     })
 
+    const toUpdateRef = useRef(true)
     const [toUpdate, setToUpdate] = useState(true)
 
     const [displayDropdownOption, setDisplayDropdownOption] = useState(null)
@@ -105,7 +106,8 @@ const SidePanel = ({visible}) => {
             width: value
         })
 
-        setToUpdate(false)
+        //////////////////////////////////////////////////setToUpdate(false)
+        toUpdateRef.current = false
      
     }
     const handleDisplaySrfHeightChange = (value) => {
@@ -113,7 +115,9 @@ const SidePanel = ({visible}) => {
             ...displaySrf,
             height: value
         })
-        setToUpdate(false)
+
+        //////////////////////////////////////////////////setToUpdate(false)
+        toUpdateRef.current = false
      
     }
 
@@ -139,8 +143,8 @@ const SidePanel = ({visible}) => {
 
 
 
-        setToUpdate(true)
-
+        //////////////////////////////////////////////////setToUpdate(true)
+        toUpdateRef.current = true
     }
 
     const handleDisplaySrfHeightSubmit = (value) => {
@@ -162,7 +166,8 @@ const SidePanel = ({visible}) => {
             aspect: aspect,
         })
 
-        setToUpdate(true)
+        //////////////////////////////////////////////////setToUpdate(true)
+        toUpdateRef.current = true
     }
 
 
@@ -193,7 +198,8 @@ const SidePanel = ({visible}) => {
             ...referenceSrf,
             width: value,
         })
-        setToUpdate(false)
+        //////////////////////////////////////////////////setToUpdate(false)
+        toUpdateRef.current = false
      
     }
     const handleReferenceSrfHeightChange = (value) => {
@@ -201,7 +207,8 @@ const SidePanel = ({visible}) => {
             ...referenceSrf,
             height: value,
         })
-        setToUpdate(false)
+        //////////////////////////////////////////////////setToUpdate(false)
+        toUpdateRef.current = false
      
     }
 
@@ -225,7 +232,8 @@ const SidePanel = ({visible}) => {
             aspect: aspect,
         })
         // console.log(value)
-        setToUpdate(true)
+        //////////////////////////////////////////////////setToUpdate(true)
+        toUpdateRef.current = true
 
     }
     const handleReferenceSrfHeightSubmit = (value) => {
@@ -246,7 +254,8 @@ const SidePanel = ({visible}) => {
             height: value,
             aspect: aspect,
         })
-        setToUpdate(true)
+        //////////////////////////////////////////////////setToUpdate(true)
+        toUpdateRef.current = true
     }
 
 
@@ -256,17 +265,22 @@ const SidePanel = ({visible}) => {
         // we don't want the trigger a draw update everytime the number is changed
         // so in that function we are setting the toUpdate value to false so it get skipped when
         // displaySrf and referenceSrf changes and useEffect gets called
-        if (!toUpdate) {
-            setToUpdate(true)
-            return
-          }
-      
+        // if (!toUpdate) {
+        //     //////////////////////////////////////////////////setToUpdate(true)
+        //     return
+        //   }
+      if(!toUpdateRef.current) {
+        toUpdateRef.current = true
+        return
+      }
+
+
         const draw = async () => {
             await createDisplaySrf(displaySrf.width, displaySrf.height, displaySrf.aspect, displaySrf.visibility)
             await createReferenceSrf(referenceSrf.width, referenceSrf.height, referenceSrf.aspect, referenceSrf.visibility)
             drawSrfs()
         }
-        
+
         draw()
 
     }, [displaySrf, referenceSrf])
