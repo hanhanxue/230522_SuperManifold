@@ -95,11 +95,11 @@ export const dynamicParams = false
   }
 
 
-  export async function generateStaticParams() {
-    const posts = await getProcessPosts()
-    // The params to pre-render the page with.
-    // Without this, the page will be rendered at runtime
-    return posts.map((post) => ({
-       params: { slug: post.extraData.slug } 
-      }))
-  }
+  // export async function generateStaticParams() {
+  //   const posts = await getProcessPosts()
+  //   // The params to pre-render the page with.
+  //   // Without this, the page will be rendered at runtime
+  //   return posts.map((post) => ({
+  //      params: { slug: post.extraData.slug } 
+  //     }))
+  // }
