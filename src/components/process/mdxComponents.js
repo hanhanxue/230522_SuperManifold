@@ -1,4 +1,9 @@
+
+
 import dynamic from 'next/dynamic';
+
+
+
 
 const Viewers = {
     'display-composer':        dynamic(() => import('./viewers/230716_display-composer/Viewer')),
@@ -9,6 +14,9 @@ const Viewers = {
     // DisplayComposerD: dynamic(() => import('./display-composer/Viewer')),
 
 }
+
+import { Code } from 'bright'
+
 
 import ProcessHeader from '@/components/process/ProcessHeader'
 
@@ -90,6 +98,8 @@ const customMDXComponents = {
     p,
     h2,
     h3,
+      // the `a` and `img` tags from before should remain
+    pre: Code,
 
 }
 

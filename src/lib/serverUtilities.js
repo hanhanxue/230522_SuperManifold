@@ -1,25 +1,32 @@
 
-import fs from 'fs'
-import path from 'path'
-// import {remark} from 'remark'
 
-
-import * as matter from 'gray-matter'
+// 02 EXTERNAL
 
 const sizeOf = require('image-size')
+import * as matter from 'gray-matter'
+
+
+
+// 03 REACT / NODE / NEXTJS
+import fs from 'fs'
+import path from 'path'
+import { cache } from 'react'
+
+// 05 SUPERMANIFOLD COMPONENTS
+
+// 07 SUPERMANIFOLD FUNCTIONS
+
+// 11 SUPERMANIFOLD STYLES
 
 
 
 
 
 
-
-
-
-
-
-
-export function getProcessPosts() {
+// `cache` is a React 18 feature that allows you to cache a function for the lifetime of a request.
+// this means getPosts() will only be called once per page build, even though we may call it multiple times
+// when rendering the page.
+const getProcessPosts = cache( () => {
 
     const root = process.cwd()
 
@@ -129,20 +136,8 @@ export function getProcessPosts() {
 
     // console.log(dirFileObjs)
     return dirFileObjs.reverse()
+}  )
 
-
-
-}
-
-
-
-
-
-
-
-export function getProcessPost(slug) {
-
-}
 
 
 
@@ -171,6 +166,7 @@ const genImageDimensions = (imageAbsPath, MAX_WIDTH, MAX_HEIGHT) => {
 
 
 
+export { getProcessPosts }
 
 
 
@@ -182,6 +178,11 @@ const genImageDimensions = (imageAbsPath, MAX_WIDTH, MAX_HEIGHT) => {
 
 
 
+
+
+// export function getProcessPost(slug) {
+
+// }
 
 
 

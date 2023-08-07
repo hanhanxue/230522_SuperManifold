@@ -1,34 +1,42 @@
 
-import { notFound } from "next/navigation"
 
-// import Viewers from '../_viewers/viewersIndex'
+// 02 EXTERNAL
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import remarkGfm from 'remark-gfm'
+// import remarkA11yEmoji from '@fec/remark-a11y-emoji'
+import remarkToc from 'remark-toc'
 
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+
+
+// 03 REACT / NODE / NEXTJS
+
+// 05 SUPERMANIFOLD COMPONENTS
 import Header from "@/components/global/Header"
-
-
-
-import { getProcessPosts} from '@/lib/serverUtilities'
-
 import mdxComponents from '@/components/process/mdxComponents'
 
 
-import { MDXRemote } from 'next-mdx-remote/rsc'
-
-const viewerPath = 'content/processPosts/230703_P5JS_Display Composer A/Viewer'
-
+// 07 SUPERMANIFOLD FUNCTIONS
+import { getProcessPosts} from '@/lib/serverUtilities'
 
 
+// 11 SUPERMANIFOLD STYLES
 
-import path from 'path'
+import { notFound } from "next/navigation"
 
 
-const root = process.cwd()
+// import Viewers from '../_viewers/viewersIndex'
+
+
+
+
+
+
+
+
 
 export const dynamicParams = false
-
-
-
-// const components = { Test }
 
 
 
@@ -57,7 +65,23 @@ export const dynamicParams = false
 
         <MDXRemote 
         source={post.content} 
-        options={{scope: post.extraData}}
+        options={{
+          
+            scope: post.extraData,
+            mdxOptions: {
+              remarkPlugins: [
+                // Adds support for GitHub Flavored Markdown
+                remarkGfm,
+                // Makes emojis more accessible
+                // remarkA11yEmoji,
+                // generates a table of contents based on headings
+                remarkToc,
+              ],
+              // These work together to add IDs and linkify headings
+              rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+            },
+          
+          }}
 
         components={mdxComponents} />
         

@@ -53,6 +53,7 @@ const momentStringFromNow = momentObj.fromNow()
                             src={post.extraData.coverImage.src}
                             fill={true}
                             style={{objectFit: "cover"}}
+                            alt=''
 
                         />
 
