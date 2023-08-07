@@ -62,7 +62,7 @@ const SidePanel = ({visible}) => {
     })
 
     const toUpdateRef = useRef(true)
-    const [toUpdate, setToUpdate] = useState(true)
+    // const [toUpdate, setToUpdate] = useState(true)
 
     const [displayDropdownOption, setDisplayDropdownOption] = useState(null)
 
