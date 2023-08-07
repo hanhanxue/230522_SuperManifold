@@ -1,7 +1,0 @@
-// {
-//     "functions": {
-//       "src/app/process/**/*": {
-//         "excludeFiles": "public/content/**"
-//     }
-// }
-// }
