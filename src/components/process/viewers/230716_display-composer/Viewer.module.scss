@@ -13,18 +13,18 @@
 
 
 .canvasFrame {
-    // display: flex;
-    // justify-content: center;
-    // margin: 0 32px;
     margin: auto;
     max-width: 1440px;
     height: 720px;
-    // margin: auto;
+
     position: relative;
 
     // display: block;
 
-    // background-color: red;
+    border-radius: $radius-xl;
+    overflow: hidden;
+
+    background-color: $color-gray-200;
 }
 
 
