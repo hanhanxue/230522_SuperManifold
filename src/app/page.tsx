@@ -22,10 +22,6 @@ export const metadata: Metadata = {
   description: 'Crafting spatial experiences for the digital realm.',
 
   viewport: 'initial-scale=1.0, maximum-scale=2.0, width=device-width, user-scalable=yes, minimal-ui',
-  
-  HandheldFriendly: true,
-  MobileOptimized: 320,
-
 
   openGraph: {
     title: 'Super Manifold®',

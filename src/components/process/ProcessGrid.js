@@ -63,6 +63,7 @@ const goToPost = () => {router.push(`/process/${post.extraData.slug}`)}
                             style={{objectFit: "cover"}}
                             alt=''
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            draggable={false}
 
                         />
 
