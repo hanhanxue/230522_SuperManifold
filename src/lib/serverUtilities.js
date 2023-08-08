@@ -90,7 +90,7 @@ const getProcessPosts = cache( () => {
         const innerDirPath = path.join(root, 'public', '/content/process', fileObj.name)
         let innerDirFileObjs = fs.readdirSync(innerDirPath, { withFileTypes: true })
 
-        let firstImage = innerDirFileObjs.find((innerFileObj) => path.parse(innerFileObj.name).name === '000')
+        let firstImage = innerDirFileObjs.find((innerFileObj) => path.parse(innerFileObj.name).name === 'cover')
         // let firstImage = innerDirFileObjs.filter((innerFileObj) => )
 
         let imageAbsPath = path.join(root, 'public/content/process/', dirName, firstImage.name)
