@@ -7,7 +7,7 @@ import { Unity, useUnityContext } from "react-unity-webgl"
 import ControlsGroup from '@/components/process/ControlsGroup'
 import Button from "@/components/ui/Button"
 import ViewerWrapper from '@/components/process/ViewerWrapper'
-
+import UnityProgressBar from '@/components/process/UnityProgressBar'
 
 // 11 SUPERMANIFOLD STYLES
 import styles from './Viewer.module.scss'
