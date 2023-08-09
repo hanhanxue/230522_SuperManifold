@@ -60,7 +60,6 @@ const Viewer = () => {
         </div> {/* Y Frame */}
         </div> {/* X Frame */}
         </ViewerWrapper>
-        <p>{Math.round(loadingProgression * 100)}%</p>
         </>
 
     )
