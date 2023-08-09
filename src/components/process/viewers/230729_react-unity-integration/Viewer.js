@@ -7,6 +7,7 @@ import { Unity, useUnityContext } from "react-unity-webgl"
 import ControlsGroup from '@/components/process/ControlsGroup'
 import Button from "@/components/ui/Button"
 import ViewerWrapper from '@/components/process/ViewerWrapper'
+import UnityProgressBar from '@/components/process/UnityProgressBar'
 
 
 // 11 SUPERMANIFOLD STYLES
@@ -44,9 +45,8 @@ const Viewer = () => {
             style={{width: '1440px', height: '810px'}}
             disabledCanvasEvents={["scroll"]}
             />
-            {/* Progress Bar */}
-            <div className={`${styles.progressBar}` }  
-            style={{display: isLoaded ? "none" : "block", width: `${(loadingProgression * 100)}%`}} ></div>
+          
+            <UnityProgressBar isLoaded={isLoaded} loadingProgression={loadingProgression} />
         </div>
 
         <div className={`${styles.bottomBar}`}>

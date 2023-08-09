@@ -44,9 +44,7 @@ const Viewer = () => {
             style={{width: '1440px', height: '810px'}}
             disabledCanvasEvents={["scroll"]}
             />
-            {/* Progress Bar */}
-            <div className={`${styles.progressBar}` }  
-            style={{display: isLoaded ? "none" : "block", width: `${(loadingProgression * 100)}%`}} ></div>
+            <UnityProgressBar isLoaded={isLoaded} loadingProgression={loadingProgression} />
         </div>
 
 
