@@ -17,10 +17,10 @@ import styles from './Viewer.module.scss'
 const Viewer = () => {
 
     const { unityProvider , sendMessage,  loadingProgression, isLoaded} = useUnityContext({
-        loaderUrl: "https://supermanifold.xyz/230809_D_WebClient/Build/230809_D_WebClient.loader.js",
-        dataUrl: "https://supermanifold.xyz/230809_D_WebClient/Build/230809_D_WebClient.data.br",
-        frameworkUrl: "https://supermanifold.xyz/230809_D_WebClient/Build/230809_D_WebClient.framework.js.br",
-        codeUrl: "https://supermanifold.xyz/230809_D_WebClient/Build/230809_D_WebClient.wasm.br",
+        loaderUrl: "https://supermanifold.xyz/230809_G_WebClientNone/Build/230809_G_WebClientNone.loader.js",
+        dataUrl: "https://supermanifold.xyz/230809_G_WebClientNone/Build/230809_G_WebClientNone.data",
+        frameworkUrl: "https://supermanifold.xyz/230809_G_WebClientNone/Build/230809_G_WebClientNone.framework.js",
+        codeUrl: "https://supermanifold.xyz/230809_G_WebClientNone/Build/230809_G_WebClientNone.wasm",
       });
 
       function changeColor() {
