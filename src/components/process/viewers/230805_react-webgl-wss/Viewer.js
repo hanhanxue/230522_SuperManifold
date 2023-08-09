@@ -16,7 +16,7 @@ import styles from './Viewer.module.scss'
 
 const Viewer = () => {
 
-    const { unityProvider , sendMessage} = useUnityContext({
+    const { unityProvider , sendMessage,  loadingProgression, isLoaded} = useUnityContext({
         loaderUrl: "https://supermanifold.xyz/230809_D_WebClient/Build/230809_D_WebClient.loader.js",
         dataUrl: "https://supermanifold.xyz/230809_D_WebClient/Build/230809_D_WebClient.data.br",
         frameworkUrl: "https://supermanifold.xyz/230809_D_WebClient/Build/230809_D_WebClient.framework.js.br",
@@ -44,6 +44,9 @@ const Viewer = () => {
             style={{width: '1440px', height: '810px'}}
             disabledCanvasEvents={["scroll"]}
             />
+            {/* Progress Bar */}
+            <div className={`${styles.progressBar}` }  
+            style={{display: isLoaded ? "none" : "block", width: `${(loadingProgression * 100)}%`}} ></div>
         </div>
 
 
@@ -56,6 +59,8 @@ const Viewer = () => {
 }
 
 export default Viewer
+
+
 
 
 

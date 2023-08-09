@@ -16,11 +16,11 @@ import styles from './Viewer.module.scss'
 
 const Viewer = () => {
 
-    const { unityProvider , sendMessage} = useUnityContext({
-        loaderUrl: "https://supermanifold.xyz/Build/230731_B.loader.js",
-        dataUrl: "https://supermanifold.xyz/Build/230731_B.data",
-        frameworkUrl: "https://supermanifold.xyz/Build/230731_B.framework.js",
-        codeUrl: "https://supermanifold.xyz/Build/230731_B.wasm",
+    const { unityProvider , sendMessage, loadingProgression, isLoaded } = useUnityContext({
+        loaderUrl: "https://supermanifold.xyz/230731_B/Build/230731_B.loader.js",
+        dataUrl: "https://supermanifold.xyz/230731_B/Build/230731_B.data",
+        frameworkUrl: "https://supermanifold.xyz/230731_B/Build/230731_B.framework.js",
+        codeUrl: "https://supermanifold.xyz/230731_B/Build/230731_B.wasm",
       });
 
       function changeColor() {
@@ -44,6 +44,9 @@ const Viewer = () => {
             style={{width: '1440px', height: '810px'}}
             disabledCanvasEvents={["scroll"]}
             />
+            {/* Progress Bar */}
+            <div className={`${styles.progressBar}` }  
+            style={{display: isLoaded ? "none" : "block", width: `${(loadingProgression * 100)}%`}} ></div>
         </div>
 
         <div className={`${styles.bottomBar}`}>
@@ -53,9 +56,11 @@ const Viewer = () => {
         </ControlsGroup>
         </div>
 
+
         </div> {/* Y Frame */}
         </div> {/* X Frame */}
         </ViewerWrapper>
+        <p>{Math.round(loadingProgression * 100)}%</p>
         </>
 
     )
