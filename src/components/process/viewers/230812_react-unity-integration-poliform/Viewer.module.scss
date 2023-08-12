@@ -1,0 +1,49 @@
+
+@use '@/styles/abstracts' as *;
+
+
+.section {
+    // background-color: red;
+    // margin-bottom: rem(32);
+}
+
+.xFrame {
+    @include xFrameWide;
+}
+
+
+.canvasFrame {
+
+    margin: auto;
+    max-width: 1440px;
+    height: 720px;
+
+    position: relative;
+
+    // display: block;
+
+    border-radius: $radius-xl;
+    overflow: hidden;
+
+    background-color: $color-gray-900;
+
+
+}
+
+.unityCanvas {
+    @include absCenter;
+
+}
+
+
+    // display: flex;
+    // justify-content: center;
+    // margin: 0 32px;
+
+.bottomBar {
+    margin: rem(16) auto;
+
+    display: flex;
+    justify-content: center;
+    gap: rem(16);
+}

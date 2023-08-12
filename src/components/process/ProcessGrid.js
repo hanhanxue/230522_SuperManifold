@@ -79,13 +79,22 @@ const goToPost = () => {router.push(`/process/${post.extraData.slug}`)}
                         <div className={`text-sm ${styles.postDate}`}>
                             {momentString}
                             </div>
+
+                            
                             <div className={`text-base-plus font-medium ${styles.postTitle}`}>
-                            {post.extraData.title}
+                            <Link href={`process/${post.extraData.slug}`} className="" ><span>{post.extraData.title}</span></Link>  
                             </div>
+                            
+
 
                         </div>
                         <div className={`${styles.postInfoFrameRight}`}>
                             <button className={`${styles.linkButton}`} onClick={goToPost}>
+                            <svg className={`${styles.arrow2}`}
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 12L5 12" strokeWidth="1.5"/>
+                            <path d="M13 6L19 12L13 18" strokeWidth="1.5"/>
+                            </svg>
                             <svg className={`${styles.arrow}`}
                             width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 12L5 12" strokeWidth="1.5"/>

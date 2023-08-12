@@ -1,0 +1,22 @@
+{
+    "headers": [
+        {
+            "source": "https://supermanifold.xyz/(.*)/Build/(.*\\.br)",
+            "headers" : [
+              {
+                "key" : "Content-Encoding",
+                "value" : "br"
+              }
+            ]
+          },
+          {
+            "source": "https://supermanifold.xyz/(.*)/Build/(.*\\.wasm\\.br)",
+            "headers" : [
+              {
+                "key" : "Content-Type",
+                "value" : "application/wasm"
+              }
+            ]
+          }
+    ]
+}

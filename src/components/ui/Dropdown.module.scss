@@ -1,5 +1,21 @@
 @use '@/styles/abstracts/' as *;
 
+.dropdownListContainer {
+    
+    margin-top: 4px;
+background-color: black;
+border-radius: $radius-md;
+position: absolute;
+z-index: 99999;
+// overflow: hidden;
+
+// padding: 0 4px;
+
+// border: solid 1px rgb(50, 50, 50);
+// box-shadow: 0 0 12px 0 rgba(0, 0, 0, .2);
+box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 16px 0 rgba(0, 0, 0, .2);
+
+}
 
 .dropdownContainer {
     // width: 10.5em;
@@ -42,21 +58,6 @@ position: relative;
 }
 
 
-.dropdownListContainer {
-    
-        margin-top: 4px;
-    background-color: black;
-    border-radius: 8px;
-    position: absolute;
-    z-index: 99999;
-
-    // padding: 0 4px;
-
-    // border: solid 1px rgb(50, 50, 50);
-    // box-shadow: 0 0 12px 0 rgba(0, 0, 0, .2);
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 16px 0 rgba(0, 0, 0, .2);
-
-}
 
 .dropdownList {
 padding: 8px 0;
