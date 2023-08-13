@@ -26,6 +26,10 @@ const Viewer = () => {
         dataUrl: `${URL}/${ID}/Build/${ID}.data${Compression}`,
         frameworkUrl: `${URL}/${ID}/Build/${ID}.framework.js${Compression}`,
         codeUrl: `${URL}/${ID}/Build/${ID}.wasm${Compression}`,
+        // loaderUrl: `/230812_poliformInit/Build/230812_poliformInit.loader.js`,
+        // dataUrl: `/230812_poliformInit/Build/230812_poliformInit.data.br`,
+        // frameworkUrl: `/230812_poliformInit/Build/230812_poliformInit.framework.js.br`,
+        // codeUrl: `/230812_poliformInit/Build/230812_poliformInit.wasm.br`,
       });
 
       function changeColor() {

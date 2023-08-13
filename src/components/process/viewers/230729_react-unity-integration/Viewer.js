@@ -27,6 +27,10 @@ const Viewer = () => {
           dataUrl: `${URL}/${ID}/Build/${ID}.data${Compression}`,
           frameworkUrl: `${URL}/${ID}/Build/${ID}.framework.js${Compression}`,
           codeUrl: `${URL}/${ID}/Build/${ID}.wasm${Compression}`,
+          // loaderUrl: `/230731_B/Build/230731_B.loader.js`,
+          // dataUrl: `/230731_B/Build/230731_B.data`,
+          // frameworkUrl: `/230731_B/Build/230731_B.framework.js`,
+          // codeUrl: `/230731_B/Build/230731_B.wasm`,
         });
 
       function changeColor() {
