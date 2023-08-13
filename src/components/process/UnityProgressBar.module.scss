@@ -1,11 +1,25 @@
 @use '@/styles/abstracts/' as *;
 
-.progressBar {
+
+
+.progressBarContainer {
+
     position: absolute;
+    // background-color: red;
+    height: rem(4);
+
+    left: $radius-xl;
+    right: $radius-xl;
+
+
+}
+.progressBar {
+    // position: absolute;
 
     background-color: $color-primary;
-    height: rem(6);
-    // width: 100%;
-    left: 0;
-    top: 0;
+    height: 100%;
+    // // width: 100%;
+    // left: $radius-xl;
+    // right: -60px;
+    // top: 0;
 }

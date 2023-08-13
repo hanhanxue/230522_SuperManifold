@@ -77,22 +77,25 @@
 }
 
 .postInfoFrameLeft {
+
+    flex: 1 1 auto;
     margin-right: rem(16);
-}
 
-.postTitle {
-    height: rem(56);
-
-
+    .postTitle {
+        height: rem(56);
+    
+        // max-width: 200px;
         display: -webkit-box;
-        max-width: 200px;
         -webkit-line-clamp: 2;
-   
         -webkit-box-orient: vertical;
         overflow: hidden;
 
-  
+
+    }
 }
+
+
+
 
 .postDate {
     color: $color-gray-500;

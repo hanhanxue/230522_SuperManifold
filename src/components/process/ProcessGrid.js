@@ -82,7 +82,9 @@ const goToPost = () => {router.push(`/process/${post.extraData.slug}`)}
 
                             
                             <div className={`text-base-plus font-medium ${styles.postTitle}`}>
-                            <Link href={`process/${post.extraData.slug}`} className="" ><span>{post.extraData.title}</span></Link>  
+                            <Link href={`process/${post.extraData.slug}`} className="" >
+                                <span className={`${styles.postTitleSpan}`}>{post.extraData.title}</span>                               
+                                </Link>  
                             </div>
                             
 

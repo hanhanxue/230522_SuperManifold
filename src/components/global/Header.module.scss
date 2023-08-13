@@ -1,14 +1,18 @@
 @use '@/styles/abstracts/' as *;
 
 .header {
-    background-color: white;
+    // background-color: white;
     // background-color: blue;
     // background-color: $color-background-blur;
     // backdrop-filter: blur(2rem);
+    // background-color: rgba(234, 30, 30, 0.132);
+  
+    // mix-blend-mode: difference;
 
 
     &Sticky {
         position: sticky;
+        position: fixed;
         top: 0;
         width: 100%;
      

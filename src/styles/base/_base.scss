@@ -1,3 +1,5 @@
+@use '@/styles/abstracts' as *;
+
 *,
 *::before,
 *::after {
@@ -22,6 +24,7 @@ a {
 
 body {
     box-sizing: border-box;
+    background-color: blue;
 }
 
 img, video {
@@ -79,3 +82,12 @@ input[type=number] {
     }
 }
 
+::-moz-selection { /* Code for Firefox */
+    // color: red;
+    background: $color-primary;
+  }
+  
+  ::selection {
+    // color: red;
+    background: $color-primary;
+  }

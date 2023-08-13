@@ -1,0 +1,115 @@
+@use '@/styles/abstracts/' as *;
+
+
+.heroSection {
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+
+// height: calc(min(var(--vh, 1vh) * 100, 80vw));
+// clip-path:polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+
+// position: relative;
+.heroContent {
+    z-index: 55;
+    // mix-blend-mode: difference;
+}
+
+    .heroVideo{
+        &  > * {
+            position: absolute;
+            top: 0;
+        }
+
+        .heroVideoMedia {
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .heroImageMedia {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+    
+    .heroContent {
+        position: relative;
+    }
+}
+
+.container {
+
+    .oScroll {
+        background-color: red;
+        min-height: 100vh;
+
+        .main {
+            // display: block;
+            // height: 100vh;
+
+            .cHomeHero {
+                position:relative;
+                width:100%;
+                height: calc(min(var(--vh, 1vh) * 100, 80vw));
+                // height: 1vh * 100;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                // color: white;
+                background-color: yellow;
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+
+                .cHomeHeroContent {
+                    // mix-blend-mode: difference;
+                    // background-color: red;
+                    // width: 100%;
+                    padding: 0 rem(32);
+                    z-index: 100;
+
+                    .cHeading {
+                        margin-bottom: rem(32);
+                    }
+                }
+
+                .cHomeHeroBackground {
+                    background-color: aqua;
+
+                    position: fixed;
+                    inset: 0;
+                    z-index: 5;
+                 
+                    .cHomeHeroVideo {
+                        background-color: violet;
+                        position: absolute;
+                        inset: 0;
+
+                        .cImage {
+                            background-color: burlywood;
+                            position: absolute;
+                            inset: 0;
+
+                            .cImageImage {
+                                object-fit: cover;
+                            }
+                        }
+
+                        .cVideo {
+
+                        }
+                    }
+                    // width: 100px;
+                    // height: 100px;
+                }
+            }
+    
+        }
+
+
+    }
+    
+}

@@ -20,9 +20,14 @@ const UnityProgressBar = ({isLoaded, loadingProgression}) => {
 
         <>
 {/* Progress Bar */}
-<div className={`${styles.progressBar}` }  
- style={{display: isLoaded ? "none" : "block", width: `${(loadingProgression * 100)}%`}} 
+<div className={`${styles.progressBarContainer}`}
+style={{display: isLoaded ? "none" : "block"}} >
+    <div className={`${styles.progressBar}` }  
+    style={{width: `${(loadingProgression * 100)}%`}} 
            ></div>
+
+</div>
+
         </>
 
     )

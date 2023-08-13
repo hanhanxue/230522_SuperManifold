@@ -17,12 +17,17 @@ import styles from './Viewer.module.scss'
 
 const Viewer = () => {
 
-    const { unityProvider , sendMessage, loadingProgression, isLoaded } = useUnityContext({
-        loaderUrl: "https://supermanifold.xyz/230731_B/Build/230731_B.loader.js",
-        dataUrl: "https://supermanifold.xyz/230731_B/Build/230731_B.data",
-        frameworkUrl: "https://supermanifold.xyz/230731_B/Build/230731_B.framework.js",
-        codeUrl: "https://supermanifold.xyz/230731_B/Build/230731_B.wasm",
-      });
+
+      const URL = 'https://supermanifold.xyz'
+      const ID = '230731_B'
+      const Compression = ''
+  
+      const { unityProvider , sendMessage, loadingProgression, isLoaded } = useUnityContext({
+          loaderUrl: `${URL}/${ID}/Build/${ID}.loader.js`,
+          dataUrl: `${URL}/${ID}/Build/${ID}.data${Compression}`,
+          frameworkUrl: `${URL}/${ID}/Build/${ID}.framework.js${Compression}`,
+          codeUrl: `${URL}/${ID}/Build/${ID}.wasm${Compression}`,
+        });
 
       function changeColor() {
         sendMessage("MANAGER", "ChangeColor");
