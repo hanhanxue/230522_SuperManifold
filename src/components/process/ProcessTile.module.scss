@@ -1,0 +1,155 @@
+@use '@/styles/abstracts/' as *;
+
+
+.gridItem {
+    // background-color: blue;
+    padding-top: 133%;
+
+    position: relative;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.postImageFrame {
+    flex: 1 0 auto;
+    border-radius: $radius-xl;
+    overflow: hidden;
+
+    // background-color: orange;
+}
+
+
+
+
+.nextImageContainer {
+    position: relative;
+    // background-color: red;
+    width: 100%;
+    height: 100%;
+
+    .postImage {
+        object-fit: cover;
+    }
+}
+
+
+
+
+.postInfoFrame {
+    display: flex;
+    justify-content: space-between;
+
+    // background-color: orange;
+    // margin-top: rem(16);
+    padding: rem(16);
+}
+
+.postInfoFrameLeft {
+
+    flex: 1 1 auto;
+    // margin-right: rem(16);
+    padding-right: rem(24);
+
+    .postTitle {
+        height: rem(56);
+    
+        // max-width: 200px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        // .postTitleSpan {
+        //     display: block;
+        // }
+    }
+
+    &:hover + .postInfoFrameRight{
+        .linkButton {
+            background-color: $color-primary;
+        }
+    }
+
+}
+
+
+
+
+.postDate {
+    color: $color-gray-500;
+    padding-bottom: rem(4);
+}
+
+
+
+
+
+.postInfoFrameRight {
+    display:flex;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+.linkButton {
+    border-radius: rem(99);
+
+    width: rem(64);
+    height: rem(40);
+
+    padding: rem(8);
+
+    border: 1px solid $color-primary;
+    box-shadow: 0 0 1px 0 $color-primary inset, 0 0 1px 0 $color-primary;
+
+    transition: background-color $transition-duration-default;
+
+    &:hover {
+        background-color: $color-primary;
+        .arrow {
+            transform: translate(125%, -50%);
+            stroke-opacity: 0;
+            transition: transform $transition-duration-default, stroke-opacity $transition-duration-default;
+        }
+        .arrow2 {
+            transform: translate(50%, -50%);
+            stroke-opacity: 1;
+            transition: transform $transition-duration-default, stroke-opacity $transition-duration-default;
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        transform: translate(50%, -50%);
+        display: block;
+        stroke: black;
+        stroke-opacity: 1;
+
+       
+    }
+    .arrow2 {
+        position: absolute;
+        transform: translate(-25%, -50%);
+        display: block;
+        stroke: black;
+        stroke-opacity: 0;
+    }
+    
+    
+}
+
+

@@ -1,12 +1,22 @@
+'use client'
+
+import {useState} from 'react'
 
 
+  export default function Test() {
 
-  export default function Page() {
+    const [isHover, setIsHover] = useState(false)
 
 
     return (
         <>
-    
+          <button 
+            onMouseEnter={() => console.log('enter')}
+            onMouseLeave={() => console.log('leave')}
+            style={{width: "50px", height: "50px", backgroundColor: "red"}}
+          >
+
+          </button>
         </>
     )
 

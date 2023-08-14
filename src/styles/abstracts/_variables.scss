@@ -27,6 +27,10 @@ $anim-duration-default: .382s;
 
 $anim-timing-ease-out: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 
+$transition-duration-fast: .2s;
+$transition-duration-default: .382s;
+$transition-timing-ease-out: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
 
 $radius-md: rem(8);
 $radius-lg: rem(16);
