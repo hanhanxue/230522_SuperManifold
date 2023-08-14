@@ -36,10 +36,10 @@ const ProcessGrid = ({processPosts}) => {
         
         <ul className={`${styles.processGrid}`}>
 
-        {processPosts.map((post) => {
+        {processPosts.map((post, index) => {
 
         return (
-          <ProcessTile post={post} />
+          <ProcessTile post={post} key={index}/>
         )
         }
         )}
