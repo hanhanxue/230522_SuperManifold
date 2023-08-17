@@ -175,15 +175,19 @@
         bottom: 0;
         height:rem(64);
         // background-color: blue;
-        @include flexCenterXY;
+        @include flexCenterX;
+        padding: 0 rem(32);
+
+        justify-content: right;
         // display: flex;
         // align-items: center;
         // justify-content: right;
 
         .scrollIconFrame {
-            width: 80px;
+            width: 60px;
             height: 40px;
-            // background-color: blue;
+            padding: 0 rem(8);
+            // background-color: yellow;
 
             @include flexCenterXY;
 

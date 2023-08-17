@@ -64,11 +64,11 @@ const InfoCover = ({}) => {
         <div className={`${styles.rowBottom}`}>
                 <div className={`${styles.rowBottomTopFrame}`}>
                 <h2 className={`text-xl ${styles.subTextBottom}`}>
-                        Operating from Montreal, <br />
+                        Based in Montreal, <br />
                         Canada
                 </h2>
                 <h2 className={`text-xl ${styles.subTextBottomSmall}`}>
-                        Operating from Montreal, Canada
+                        Based in Montreal, Canada
                 </h2>
 
 

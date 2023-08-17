@@ -153,14 +153,20 @@
 
 
 .burgerWrapper{
+    width: rem(40);
+    height: rem(40);
+
     display: none;
     @include respond(tablet-portrait) {
         display: block;
+        padding: rem(4);
+
     }
 }
 
 .burger {
     // background-color: red;
+    //!!! this work better
     width: rem(32);
     height: rem(32);
 

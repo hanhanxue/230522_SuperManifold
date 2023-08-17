@@ -84,15 +84,28 @@ const ProcessTile = ({  post  }) => {
                         className={`${styles.linkButton} `}  
                         // className={`processButton1 ${isActivated ? 'processButton2' : ''}` } 
                         onClick={goToPost}>
+                            {/* <svg className={`${styles.arrow2}`}
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 12L5 12" strokeWidth="1.5"/>
+                            <path d="M13 6L19 12L13 18" strokeWidth="1.5"/>
+                            </svg> */}
+
                             <svg className={`${styles.arrow2}`}
                             width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 12L5 12" strokeWidth="1.5"/>
-                            <path d="M13 6L19 12L13 18" strokeWidth="1.5"/>
+                            <path d="M21 12L3 12" stroke="black" strokWidth="1.5"/>
+                            <path d="M16 7L21 12L16 17" stroke="black" strokWidth="1.5"/>
                             </svg>
-                            <svg className={`${styles.arrow}`}
+
+                            {/* <svg className={`${styles.arrow}`}
                             width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 12L5 12" strokeWidth="1.5"/>
                             <path d="M13 6L19 12L13 18" strokeWidth="1.5"/>
+                            </svg> */}
+
+                            <svg className={`${styles.arrow}`}
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 12L3 12" stroke="black" strokWidth="1.5"/>
+                            <path d="M16 7L21 12L16 17" stroke="black" strokWidth="1.5"/>
                             </svg>
                     </button>
 

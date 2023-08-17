@@ -3,6 +3,7 @@
 
 .section {
     margin-top: rem(64);
+    // height: rem(64);
 }
 
 .xFrame {
@@ -123,8 +124,12 @@
 .bottomSection {
     // background-color: blue;
 }
+
 .yFrameBottom {
     padding: rem(12) 0;
+    // height: rem(64);
+    // @include flexCenterX;
+
     @include respond(phone) {
         padding: rem(16) 0;
     }
