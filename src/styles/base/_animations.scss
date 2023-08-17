@@ -1,0 +1,23 @@
+
+
+@keyframes scrollBarAnim {
+    0% {transform: translate(0, 12px); opacity: 0;}
+    // 20% {opacity: 1;}
+    25% {transform: translate(0, 12px);}
+    40% { opacity: 1; }
+    80% {transform: translate(0, -12px); }
+    100% {transform: translate(0, -12px); opacity: 0;}
+}
+
+
+$anim-duration-fast: .2s;
+$anim-duration-default: .382s;
+
+$anim-timing-ease-out: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
+$transition-duration-fast: .2s;
+$transition-duration-default: .382s;
+$transition-timing-ease-out: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
+
+$easeOutQuart: cubic-bezier(0.25, 1, 0.5, 1);

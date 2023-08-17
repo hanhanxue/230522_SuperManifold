@@ -1,0 +1,211 @@
+
+
+@use '@/styles/abstracts/' as *;
+
+
+
+.section {
+
+    // background-color: blue;
+    background-color: red;
+
+    color: white;
+    // mix-blend-mode: difference;
+
+    position: relative;
+    .heroBackground {
+        position: absolute;
+        inset: 0;
+
+        .heroBackgroundImage {
+            object-fit: cover;
+
+        }
+    }
+
+}
+
+.xFrame {
+
+    
+}
+
+.yFrame {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+
+
+    .rowTop {
+
+        padding: rem(64) rem(32) 0;
+
+        flex: 1 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+    }
+
+    .rowMiddle {
+        // background-color: red;
+        padding: rem(32);
+        z-index: 5;
+        flex: 0 0 auto;
+    }
+
+    .rowBottom {
+        padding: 0 rem(32) rem(64) ;
+
+        flex: 1 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .topBar {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+
+        gap: rem(16);
+
+
+    }
+
+    .subText {
+
+        &Top {
+        // grid-column: 3 / 8;
+        grid-column: 5 / 9;
+
+        @include respond(tablet-portrait) {
+            grid-column: 1 / 9;
+        }
+
+        @include respond(phone) {
+            text-align: center;
+        }
+        @include respond(phone-sm) {
+            display: none;
+        }
+
+        &Small {
+            display: none;
+            text-align: center;
+            grid-column: 1 / 9;
+            @include respond(phone-sm) {
+                display: block;
+                // text-lg
+                font-size: rem(22);
+                line-height: rem(26);
+            }
+        }
+        }
+
+
+
+
+        &Bottom {
+            grid-column: 1 / 9;
+
+        @include respond(phone) {
+            text-align: center;
+        }
+        @include respond(phone-sm) {
+            display: none;
+        }
+
+        &Small {
+
+            display: none;
+            text-align: center;
+            grid-column: 1 / 9;
+
+            @include respond(phone-sm) {
+                display: block;
+                //text-lg
+                font-size: rem(22);
+                line-height: rem(26);
+            }
+        }
+
+        }
+
+
+
+    }
+    .heroText {
+        // display: block;
+        @include respond(tablet-portrait) {
+            display: none;
+        }
+
+        &Small {
+            display: none;
+            @include respond(tablet-portrait) {
+                display: block;
+            }
+            @include respond(phone) {
+                text-align: center;
+            }
+        }
+        // mix-blend-mode: difference;
+    }
+
+    .rowBottomTopFrame {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: rem(16);
+
+    }
+
+    .rowBottomBottomFrame {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height:rem(64);
+        // background-color: blue;
+        @include flexCenterXY;
+        // display: flex;
+        // align-items: center;
+        // justify-content: right;
+
+        .scrollIconFrame {
+            width: 80px;
+            height: 40px;
+            // background-color: blue;
+
+            @include flexCenterXY;
+
+            
+        }
+
+
+
+        .scrollBar {
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+
+            animation: scrollBarAnim 2s $easeOutQuart infinite forwards;
+
+        }
+    }
+
+
+
+
+    
+}
+

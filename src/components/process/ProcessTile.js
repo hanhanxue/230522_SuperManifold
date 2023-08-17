@@ -9,11 +9,10 @@ import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import {useState} from 'react'
 
 
 // 05 SUPERMANIFOLD COMPONENTS
-import ProcessButton from '@/components/process/ProcessButton'
+
 
 // 07 SUPERMANIFOLD FUNCTIONS
 
@@ -30,8 +29,6 @@ const ProcessTile = ({  post  }) => {
 
     const router = useRouter()
     const goToPost = () => {router.push(`/process/${post.extraData.slug}`)}
-
-    const [isButtonActivated, setIsButtonActivated] = useState(false)
 
 
     return (

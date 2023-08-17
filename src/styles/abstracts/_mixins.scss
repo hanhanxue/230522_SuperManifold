@@ -73,16 +73,18 @@
 // ORDER: Base + typography > general layout + grid > page layout > components
 
 @mixin respond($breakpoint) {
-
+    @if $breakpoint == phone-sm {
+        @media (max-width: 436px) {@content};     //600px
+    }
 
 
     @if $breakpoint == phone {
-        @media (max-width: 560px) {@content};     //600px
+        @media (max-width: 600px) {@content};     //600px
     }
 
     
     @if $breakpoint == tablet-portrait {
-        @media (max-width: 768px) {@content};    //900px
+        @media (max-width: 798px) {@content};    //768px
     }
 
 
@@ -95,7 +97,7 @@
 
 
 
-    @if $breakpoint == big-desktop {
+    @if $breakpoint == desktop-lg {
         @media (min-width: 1800px) {@content};       //1800px
     }
 

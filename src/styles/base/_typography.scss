@@ -63,38 +63,38 @@
   letter-spacing: -.02em;
 }
 
-// .text-2xl {
-//   font-size: rem(24);
-//   line-height: rem(32);
-//   letter-spacing: -.02em;
-// }
+
+.text-4xl {
+  font-size: rem(144);
+  line-height: rem(160);
+  letter-spacing: -.04em;
+}
+
+@mixin text-3xl {
+  font-size: rem(40);
+  line-height: rem(60);
+  letter-spacing: -.02em;
+}
 
 
 
-
-// .text-xl {
-//   font-size: rem(18);
-//   line-height: rem(24);
-//   letter-spacing: -.02em;
-// }
-
-// .text-lg {
-//   font-size: rem(14);
-//   line-height: rem(24);
-//   letter-spacing: -.02em;
-// }
-.text-2xl {
+@mixin text-2xl {
   font-size: rem(30);
   line-height: rem(44);
   letter-spacing: -.02em;
 }
 
-
-.text-xl {
-  font-size: rem(24);
-  line-height: rem(24);
-  letter-spacing: -.02em;
+.text-2xl {
+  @include text-2xl;
 }
+
+
+
+  .text-xl {
+    font-size: rem(24);
+    line-height: rem(32);
+    letter-spacing: -.02em;
+  }
 
 
 .text-lg {
@@ -147,4 +147,43 @@
   font-size: rem(11);
   line-height: rem(16);
   letter-spacing: -.02em;
+}
+
+
+
+
+
+
+
+
+
+.text-hero {
+  font-size: rem(144);
+  line-height: rem(172);
+  letter-spacing: -.02em;
+
+  @media (max-width: 1504px) {
+    font-size: rem(112);
+    line-height: rem(134);
+  }
+
+  @media (max-width: 1164px) {
+    font-size: rem(88);
+    line-height: rem(106);
+  }
+
+  @media (max-width: 940px) {
+    font-size: rem(70);
+    line-height: rem(84);
+  }
+
+  @include respond(phone) {
+    font-size: rem(60);
+    line-height: rem(72);
+  }
+
+  @include respond(phone-sm) {
+    font-size: rem(48);
+    line-height: rem(58);
+  }
 }

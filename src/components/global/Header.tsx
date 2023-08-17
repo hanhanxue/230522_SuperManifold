@@ -16,13 +16,24 @@ interface IHeaderProps {
     }
     isFixed?: boolean
     hasBorder?: boolean
+    kind?: string
 }
 
 
 const Header: React.FC<IHeaderProps> = ( {
     hasBorder = false,
+    kind='default'
 }) => {
 
+
+    const styleKind = () => {
+        switch (kind) {
+            case 'info':
+                return `${styles.headerInfo}`
+            default:
+                return `${styles.header}`
+        }
+    }
 
 const [isScrolled, setIsScrolled] = useState(false);
 
@@ -58,9 +69,10 @@ useEffect(() => {
 
         <>
 
-        <header className={`${styles.header} ${styles.headerSticky} 
+        <header className={`${styleKind()}
         ${isScrolled ? styles.headerScrolled  : ''}
         ${hasBorder ? styles.headerBordered  : ''}
+        ${isMobileMenuOpen ? styles.headerNavOpen : ''}
         `}> {/* SECTION */}
         <div className={`${styles.xFrame}`}> {/* X Frame */}
         <div className={`${styles.yFrame}`}> {/* Y Frame */}
@@ -83,6 +95,7 @@ useEffect(() => {
                         <li onClick={handleMenuItemClick}><Link href="/process" className="">Process</Link></li>
                         <li onClick={handleMenuItemClick}><Link href="/info" className="">Info</Link></li>
                     </ul>
+                    <div className={`text-base-plus ${styles.defaultNavBottom}`}>©2023</div>
                 </nav>
                 
      

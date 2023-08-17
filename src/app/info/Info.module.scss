@@ -54,7 +54,8 @@ justify-content: flex-end;
             .cHomeHero {
                 position:relative;
                 width:100%;
-                height: calc(min(var(--vh, 1vh) * 100, 80vw));
+                // height: calc(min(var(--vh, 1vh) * 100, 80vw));
+                height: 1vh * 100;
                 // height: 1vh * 100;
 
                 display: flex;
@@ -79,19 +80,19 @@ justify-content: flex-end;
                 .cHomeHeroBackground {
                     background-color: aqua;
 
-                    position: fixed;
-                    inset: 0;
+                    // position: fixed;
+                    // inset: 0;
                     z-index: 5;
                  
                     .cHomeHeroVideo {
                         background-color: violet;
-                        position: absolute;
-                        inset: 0;
+                        // position: absolute;
+                        // inset: 0;
 
                         .cImage {
                             background-color: burlywood;
-                            position: absolute;
-                            inset: 0;
+                            // position: absolute;
+                            // inset: 0;
 
                             .cImageImage {
                                 object-fit: cover;

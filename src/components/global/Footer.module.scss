@@ -217,12 +217,13 @@
     // justify-content: end;
     // margin-left: auto;
 
+    transition: background-color $anim-duration-fast linear;
+
     .buttonIcon {
         // transition: stroke $anim-duration-fast linear;
-        // stroke: black;
+        stroke: black;
     }
 
-    transition: background-color $anim-duration-fast linear;
     &:hover {
         background-color: $color-primary;
 

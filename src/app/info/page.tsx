@@ -8,6 +8,7 @@ import Image from 'next/image'
 import Header from '@/components/global/Header'
 import CodePractice from '@/components/info/CodePractice'
 import HeroText from '@/components/info/HeroText'
+import InfoCover from '@/components/info/InfoCover'
 
 
 // 07 SUPERMANIFOLD FUNCTIONS
@@ -15,7 +16,7 @@ import HeroText from '@/components/info/HeroText'
 
 
 // 11 SUPERMANIFOLD STYLES
-import styles from './Info.module.scss'
+// import styles from './Info.module.scss'
 
 
 
@@ -30,38 +31,10 @@ export default function Info() {
     return (
  <>
 
+<Header hasBorder={false} kind='info'/>
+<InfoCover />
 
-<div className={`${styles.container}`}>
-  
-  <Header hasBorder={false} />
-
-  <div className={`${styles.oScroll}`}> 
-      <main className={`${styles.main}`}>
-        <div className={`${styles.cHomeHero}`}>
-
-          <div className={`${styles.cHomeHeroContent}`}>
-            <h1 className={`text-xl ${styles.cHeading}`}>We craft immersive spatial experiences for the digital realm.</h1>
-          </div>
-          <div className={`${styles.cHomeHeroBackground}`}>
-            <div className={`${styles.cHomeHeroVideo}`}>
-              <div className={`${styles.cImage}`}>
-              <Image 
-              className={`${styles.cImageImage}`}
-                        src={`/assets/images/image2.jpg`}
-                        fill={true}
-
-                        alt=''
-                        />
-              </div>
-              <div className={`${styles.cVideo}`}></div>
-            </div>
-          
-          </div>
-
-        </div>
-        <div className={`${styles.oContainer}`}>
-
-   <CodePractice 
+{/* <CodePractice 
           listName="Code of Practice"
           listItems ={[
           'Focus on doing good work, the rest will follow.', 
@@ -84,18 +57,7 @@ export default function Info() {
           'Remember that in the end it’s all luck.',
 
 
-      ]} />
-
-        </div>
-        <div className={`${styles.cFooter}`}></div>
-
-      </main>
-    
-  </div>
-
-  <div className={`${styles.cVideoModal}`}></div>
-
-</div>
+      ]} /> */}
 
 
 
@@ -105,14 +67,6 @@ export default function Info() {
 
 
 
-{/* 
-
-      <HeroText copy="Super Manifold is based in Montreal, Canada🅐" fontSize='text-3xl'/>
-
-      {/* <Footer colorConfig={{text: 'text-jet-stream', 
-
-bg: 'bg-cinnabar', 
-bg2: 'bg-jet-stream'}}/> */}
    </>
     )
 }
@@ -128,7 +82,14 @@ bg2: 'bg-jet-stream'}}/> */}
 
 
 
+{/* 
 
+      <HeroText copy="Super Manifold is based in Montreal, Canada🅐" fontSize='text-3xl'/>
+
+      {/* <Footer colorConfig={{text: 'text-jet-stream', 
+
+bg: 'bg-cinnabar', 
+bg2: 'bg-jet-stream'}}/> */}
 
 
 
@@ -198,3 +159,51 @@ bg2: 'bg-jet-stream'}}/> */}
 
 //       ]}
 //       />
+
+
+
+
+// <div className={`${styles.container}`}>
+  
+
+
+//   <div className={`${styles.oScroll}`}> 
+//       <main className={`${styles.main}`}>
+//         <div className={`${styles.cHomeHero}`}>
+
+//           <div className={`${styles.cHomeHeroContent}`}>
+//             <h1 className={`text-xl ${styles.cHeading}`}>We craft immersive spatial experiences for the digital realm.</h1>
+//           </div>
+//           <div className={`${styles.cHomeHeroBackground}`}>
+//             <div className={`${styles.cHomeHeroVideo}`}>
+//               <div className={`${styles.cImage}`}>
+//               <Image 
+//               className={`${styles.cImageImage}`}
+//                         src={`/assets/images/image2.jpg`}
+//                         fill={true}
+
+//                         alt=''
+//                         />
+//               </div>
+//               <div className={`${styles.cVideo}`}></div>
+//             </div>
+          
+//           </div>
+
+//         </div>
+//         <div className={`${styles.oContainer}`}>
+
+
+
+//         </div>
+//         <div className={`${styles.cFooter}`}></div>
+
+//       </main>
+    
+//   </div>
+
+//   <div className={`${styles.cVideoModal}`}></div>
+
+// </div>
+
+

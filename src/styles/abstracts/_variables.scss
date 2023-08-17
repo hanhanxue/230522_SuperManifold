@@ -5,6 +5,8 @@
 
 // $color-primary: #ffa800;
 $color-primary: #ffb218;
+// $color-primary: rgb(255, 53, 53);
+// $color-primary: blue;
 
 
 $color-background-blur: rgba(255, 255, 255, 0.9);
@@ -20,18 +22,8 @@ $color-gray-700: #374151;
 $color-gray-900: #111827;
 
 
-
-
-$anim-duration-fast: .2s;
-$anim-duration-default: .382s;
-
-$anim-timing-ease-out: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-
-$transition-duration-fast: .2s;
-$transition-duration-default: .382s;
-$transition-timing-ease-out: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-
-
 $radius-md: rem(8);
 $radius-lg: rem(16);
 $radius-xl: rem(24);
+
+
