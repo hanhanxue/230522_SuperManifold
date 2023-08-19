@@ -64,12 +64,6 @@
 }
 
 
-.text-4xl {
-  font-size: rem(144);
-  line-height: rem(160);
-  letter-spacing: -.04em;
-}
-
 @mixin text-3xl {
   font-size: rem(40);
   line-height: rem(60);
@@ -90,11 +84,11 @@
 
 
 
-  .text-xl {
-    font-size: rem(24);
-    line-height: rem(32);
-    letter-spacing: -.02em;
-  }
+.text-xl {
+  font-size: rem(24);
+  line-height: rem(32);
+  letter-spacing: -.02em;
+}
 
 
 .text-lg {
@@ -116,19 +110,19 @@
 
 .text-base-plus {
   font-size: rem(18);
-  line-height: rem(28);
+  line-height: 1.5;
   letter-spacing: -.02em;
 }
 
 .text-base {
   font-size: rem(16);
-  line-height: rem(28);
+  line-height: 1.5;
   letter-spacing: -.02em;
 }
 
 .text-base-minus {
   font-size: rem(14);
-  line-height: rem(24);
+  line-height: 1.5;
   letter-spacing: -.02em;
 }
 
@@ -158,32 +152,33 @@
 
 
 .text-hero {
-  font-size: rem(144);
-  line-height: rem(172);
+  // font-size: rem(144);
+  font-size: min(9vw, rem(160));
+  line-height: 1.25;
   letter-spacing: -.02em;
 
-  @media (max-width: 1504px) {
-    font-size: rem(112);
-    line-height: rem(134);
-  }
+  // @media (max-width: 1504px) {
+  //   font-size: rem(112);
+  //   line-height: rem(134);
+  // }
 
-  @media (max-width: 1164px) {
-    font-size: rem(88);
-    line-height: rem(106);
-  }
+  // @media (max-width: 1164px) {
+  //   font-size: rem(88);
+  //   line-height: rem(106);
+  // }
 
-  @media (max-width: 940px) {
-    font-size: rem(70);
-    line-height: rem(84);
-  }
+  // @media (max-width: 940px) {
+  //   font-size: rem(70);
+  //   line-height: rem(84);
+  // }
 
-  @include respond(phone) {
-    font-size: rem(60);
-    line-height: rem(72);
-  }
+  // @include respond(phone) {
+  //   font-size: rem(60);
+  //   line-height: rem(72);
+  // }
 
-  @include respond(phone-sm) {
-    font-size: rem(48);
-    line-height: rem(58);
-  }
+  // @include respond(phone-sm) {
+  //   font-size: rem(48);
+  //   line-height: rem(58);
+  // }
 }

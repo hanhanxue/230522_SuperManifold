@@ -15,7 +15,7 @@
     // background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(255, 255, 255, 0.85));
 
 
-    // mix-blend-mode: difference;
+    // 
 
     // &NavOpen {
     //     color: white;
@@ -31,9 +31,12 @@
     width:100%;
     z-index: 999;
 
-    color: white;
-    background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(255,0,0,.85));
+    // color: white;
+    color:black;
+    background-color: white;
 
+    // mix-blend-mode: difference;
+    // background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(255,0,0,.85));
 }
 
 .xFrame {
@@ -94,17 +97,19 @@
 
         
     .defaultNavBottom {
+        margin-top: rem(128);
         display: block;
         // background-color: red;
         height: rem(64);
         padding: 0 rem(32);
 
-        margin-top: rem(64);
+        // margin-top: rem(64);
 
         @include flexCenterX;
     }
 
     .linksList {
+        margin-top: rem(128);
         padding: 0 rem(32);
         display: flex;
         flex-direction: column;
@@ -134,7 +139,7 @@
     &.defaultNavOpen {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-between;
     }
 
 }
@@ -153,13 +158,13 @@
 
 
 .burgerWrapper{
-    width: rem(40);
-    height: rem(40);
+    // width: rem(40);
+    // height: rem(40);
 
     display: none;
     @include respond(tablet-portrait) {
         display: block;
-        padding: rem(4);
+        // padding: rem(4);
 
     }
 }
@@ -167,10 +172,10 @@
 .burger {
     // background-color: red;
     //!!! this work better
-    width: rem(32);
-    height: rem(32);
+    width: rem(40);
+    height: rem(40);
 
-    padding: rem(8) rem(6);
+    padding: rem(12) rem(10);
 
     display: grid;
     grid-template-columns: 1fr;
@@ -207,6 +212,15 @@
 
 }
 
+.headerInfo {
+    .burgerLine {
+        // background-color: white;
+        background-color: black;
+    }
+}
+
+
+
 .header {
     .burgerLine {
         background-color: black;
@@ -217,6 +231,7 @@
 
         &NavOpen {
             color: white;
+
             .burgerLine {
                 background-color: white;
             }
@@ -227,11 +242,8 @@
 
 
 
-.headerInfo {
-    .burgerLine {
-        background-color: white;
-    }
-}
+
+
 
 
 

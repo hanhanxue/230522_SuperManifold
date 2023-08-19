@@ -2,8 +2,9 @@
 
 
 .section {
-    margin-top: rem(64);
+    padding-top: rem(64);
     // height: rem(64);
+    background-color: white;
 }
 
 .xFrame {
@@ -12,13 +13,6 @@
 
 .yFrame {
 }
-
-
-
-
-
-
-
 
 
 
@@ -226,7 +220,8 @@
 
     .buttonIcon {
         // transition: stroke $anim-duration-fast linear;
-        stroke: black;
+        // stroke: black;
+        fill: black;
     }
 
     &:hover {

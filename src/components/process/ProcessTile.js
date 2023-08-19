@@ -84,29 +84,37 @@ const ProcessTile = ({  post  }) => {
                         className={`${styles.linkButton} `}  
                         // className={`processButton1 ${isActivated ? 'processButton2' : ''}` } 
                         onClick={goToPost}>
+
                             {/* <svg className={`${styles.arrow2}`}
                             width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 12L5 12" strokeWidth="1.5"/>
                             <path d="M13 6L19 12L13 18" strokeWidth="1.5"/>
-                            </svg> */}
-
-                            <svg className={`${styles.arrow2}`}
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 12L3 12" stroke="black" strokWidth="1.5"/>
-                            <path d="M16 7L21 12L16 17" stroke="black" strokWidth="1.5"/>
                             </svg>
 
-                            {/* <svg className={`${styles.arrow}`}
+
+
+                            <svg className={`${styles.arrow}`}
                             width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 12L5 12" strokeWidth="1.5"/>
                             <path d="M13 6L19 12L13 18" strokeWidth="1.5"/>
                             </svg> */}
-
-                            <svg className={`${styles.arrow}`}
+                                                        <svg 
+                            className={`${styles.arrow2}`}
                             width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 12L3 12" stroke="black" strokWidth="1.5"/>
-                            <path d="M16 7L21 12L16 17" stroke="black" strokWidth="1.5"/>
-                            </svg>
+<path fillRule="evenodd" clipRule="evenodd" d="M2 12C2 11.4477 2.44772 11 3 11L19 11C19.5523 11 20 11.4477 20 12V12C20 12.5523 19.5523 13 19 13L3 13C2.44772 13 2 12.5523 2 12V12Z" fill="black"/>
+<path fillRule="evenodd" clipRule="evenodd" d="M21.7071 11.2929C22.0976 11.6834 22.0976 12.3166 21.7071 12.7071L14.4142 20C14.0237 20.3905 13.3905 20.3905 13 20V20C12.6095 19.6095 12.6095 18.9763 13 18.5858L18.8787 12.7071C19.2692 12.3166 19.2692 11.6834 18.8787 11.2929L13 5.41421C12.6095 5.02369 12.6095 4.39052 13 4V4C13.3905 3.60947 14.0237 3.60947 14.4142 4L21.7071 11.2929Z" fill="black"/>
+</svg>
+
+                            <svg 
+                            className={`${styles.arrow}`}
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fillRule="evenodd" clipRule="evenodd" d="M2 12C2 11.4477 2.44772 11 3 11L19 11C19.5523 11 20 11.4477 20 12V12C20 12.5523 19.5523 13 19 13L3 13C2.44772 13 2 12.5523 2 12V12Z" fill="black"/>
+<path fillRule="evenodd" clipRule="evenodd" d="M21.7071 11.2929C22.0976 11.6834 22.0976 12.3166 21.7071 12.7071L14.4142 20C14.0237 20.3905 13.3905 20.3905 13 20V20C12.6095 19.6095 12.6095 18.9763 13 18.5858L18.8787 12.7071C19.2692 12.3166 19.2692 11.6834 18.8787 11.2929L13 5.41421C12.6095 5.02369 12.6095 4.39052 13 4V4C13.3905 3.60947 14.0237 3.60947 14.4142 4L21.7071 11.2929Z" fill="black"/>
+</svg>
+
+
+
+
                     </button>
 
 

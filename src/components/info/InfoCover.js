@@ -30,6 +30,7 @@ const InfoCover = ({}) => {
                 alt=''
                 />
             </div> */}
+            <div className={`${styles.headerBackground}`}></div>
         <div className={`${styles.xFrame}`}> {/* X Frame */}
         <div className={`${styles.yFrame}`}> {/* Y Frame */}
 
