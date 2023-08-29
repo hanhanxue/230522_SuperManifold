@@ -27,9 +27,9 @@ export default function HeaderA() {
 
         <header className={`${styles.defaultHeader}`}>
             <div className={`${styles.tile} ${styles.logo}`}>   
-                <Link href="/"><h2 className={`brand-base ${styles.logotype}`}>
+                <Link href="/"><p className={`brand-base ${styles.logotype}`}>
                     Super Manifold®
-                </h2></Link>
+                </p></Link>
             </div>
             <div className={`${styles.tile} ${styles.menu}`}>
                 <Burger isOpen={isMenuOpen} onMenuClick={handleMenuClick}/>
@@ -89,7 +89,7 @@ export default function HeaderA() {
                     <h2 className={`brand-xl ${styles.tileLabel} `}>Process</h2>
                 </div>
                 <div className={`${styles.tile} ${styles.tile_1c_1r}`} style={{transitionDelay: '.3s'}}>
-                    <h2 className={`brand-xl ${styles.tileLabel} `}>Let's chat</h2>
+                    <h2 className={`brand-xl ${styles.tileLabel} `}>{`Let's chat`}</h2>
                 </div>
             </nav>
 
