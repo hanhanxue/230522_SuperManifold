@@ -17,9 +17,35 @@ import styles from './HeaderA.module.scss'
 export default function HeaderA() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [delayDurations, setDelayDurations] = useState([])
+
+    const maxDuration = 500
+
+    // When menu is closed / opened, we set the delays to 0 after maxDuration
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setDelayDurations(new Array(10).fill(0))
+        }, maxDuration)
+
+        return () => clearTimeout(timeout)
+    }, [isMenuOpen])
+
+    // When menu is clicked, we set delays to random between 0 and maxDuration
     const handleMenuClick = () => {
         setIsMenuOpen((current) => !current)
+
+        let newDelayDurations = [];
+        for (let i = 0; i <= 9; i++) {
+            newDelayDurations.push(Math.random())
+        }
+        // remap to curve and range
+        newDelayDurations = newDelayDurations.map(num => {
+            return num * num * maxDuration
+        })
+        setDelayDurations(newDelayDurations)
     }
+
+
 
     return (
         <>
@@ -47,32 +73,52 @@ export default function HeaderA() {
             ${styles.navModal}
             ${isMenuOpen ? styles.navModalOpen : ''}
         `}>
-            <header className={`${styles.headerGrid}`}>
-                <div className={`${styles.tile} ${styles.logo}`} style={{transitionDelay: '.2s'}}>   
+            <header className={`${styles.headerGrid} `}>
+                <div className={`${styles.tile} ${styles.logo}`} style={{transitionDelay: `${delayDurations[0]}ms`}}>   
                     <Link href="/"><p className={`brand-base ${styles.logotype}`}>
                         Super Manifold®
                     </p></Link>
                 </div>
-                <div className={`${styles.tile} ${styles.menu} `} style={{transitionDelay: '.1s'}}>
+                <div className={`${styles.tile} ${styles.menu} `} style={{transitionDelay: `${delayDurations[1]}ms`}}>
+                    <Burger isOpen={isMenuOpen} onMenuClick={handleMenuClick}/>
+                </div >
+            </header>
+
+            <header className={`${styles.headerGridSmall} ${styles.tile} `} style={{transitionDelay: `${delayDurations[8]}ms`}}>
+                <div className={`${styles.logo}`}>   
+                    <Link href="/"><p className={`brand-base ${styles.logotype}`}>
+                        Super Manifold®
+                    </p></Link>
+                </div>
+                <div className={`${styles.menu} `}>
                     <Burger isOpen={isMenuOpen} onMenuClick={handleMenuClick}/>
                 </div >
             </header>
 
 
             <nav className={`${styles.navGrid}`}>
-                <div className={`${styles.tile} ${styles.tile_2c_1r}`} style={{transitionDelay: '.23s'}}>
+                <div className={`${styles.tile} ${styles.tile_2c_1r}`} style={{transitionDelay: `${delayDurations[2]}ms`}}>
                     <h2 className={`brand-xl ${styles.tileLabel} `}>Work</h2>
+                </div> 
+
+                <div className={`${styles.tile} ${styles.tile_2c_1r}`} style={{transitionDelay: `${delayDurations[5]}ms`}}>
+                    <h2 className={`brand-xl ${styles.tileLabel} `}>Process</h2>
                 </div>
-                <div className={`${styles.tile} ${styles.tile_1c_1r}`} style={{transitionDelay: '..8s'}}>  
+
+                <div className={`${styles.tile} ${styles.tile_1c_1r}`} style={{transitionDelay: `${delayDurations[3]}ms`}}>  
                     <h2 className={`brand-xl ${styles.tileLabel} `}>Studio</h2>
                 </div>
 
-                <div className={`${styles.tile} ${styles.tile_1c_2r}`} style={{transitionDelay: '..5s'}}>
+                <div className={`${styles.tile} ${styles.tile_1c_1r}`} style={{transitionDelay: `${delayDurations[6]}ms`}}>
+                    <h2 className={`brand-xl ${styles.tileLabel} `}>{`Let's chat`}</h2>
+                </div>
+
+                <div className={`${styles.tile} ${styles.tile_1c_2r}`} style={{transitionDelay: `${delayDurations[4]}ms`}}>
                     <h2 className={`brand-xl ${styles.tileLabel} `}>Contact</h2>
                     <div className={`${styles.tileCopy} `}>
                         <ul className={`brand-base `}>
                             <li>
-                                hello@supermanifold.com<br/>
+                                hello@supermnf<br/>
                                 +1 628 523 5241
                             </li>
                             <li>
@@ -84,19 +130,12 @@ export default function HeaderA() {
                         </ul>
                     </div>
                 </div>
-
-                <div className={`${styles.tile} ${styles.tile_2c_1r}`} style={{transitionDelay: '.12s'}}>
-                    <h2 className={`brand-xl ${styles.tileLabel} `}>Process</h2>
-                </div>
-                <div className={`${styles.tile} ${styles.tile_1c_1r}`} style={{transitionDelay: '.3s'}}>
-                    <h2 className={`brand-xl ${styles.tileLabel} `}>{`Let's chat`}</h2>
-                </div>
             </nav>
 
 
 
 
-            <div className={`${styles.footerGrid} ${styles.tile}`} style={{transitionDelay: '.18s'}}>
+            <div className={`${styles.footerGrid} ${styles.tile}`} style={{transitionDelay: `${delayDurations[7]}ms`}}>
                 <div className={`${styles.copyright}`}>
                     <p className={`brand-base`}>©2023</p>
                 </div>
