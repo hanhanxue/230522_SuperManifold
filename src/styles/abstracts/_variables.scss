@@ -3,16 +3,11 @@
 @use './functions' as *;
 
 
-// $color-primary: #ffa800;
+
+
+
+// Colors
 $color-primary: #ffb218;
-// $color-primary: rgb(255, 53, 53);
-// $color-primary: blue;
-
-
-$color-background-blur: rgba(255, 255, 255, 0.9);
-
-
-// $color-gray-200: #e5e7eb;
 $color-gray-200: #e5e7eb;
 
 $color-gray-500: #6b7280;
@@ -22,8 +17,33 @@ $color-gray-700: #374151;
 $color-gray-900: #111827;
 
 
+
+
+$color-background-blur: rgba(255, 255, 255, 0.9);
+
+
+
+
+
+// Border Radius
 $radius-md: rem(8);
 $radius-lg: rem(16);
 $radius-xl: rem(24);
 
 
+
+// Transition Duration
+$duration-200: 200ms; 
+
+// Transition Timing Function
+$bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+
+// Media Query
+$tablet-portrait: rem(798);
+
+$screen-lg: rem(1024);
+$screen-xl: rem(1280);
+$screen-2xl: rem(1536);
+
+$screen-4xl: rem(2560);

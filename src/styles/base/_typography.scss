@@ -12,6 +12,16 @@
     src: url('/assets/fonts/PPNeueMontreal-Book.otf') format('opentype');
   }
 
+@font-face {
+  font-family: Torsos;
+  src: url('/assets/fonts/BBTorsosPro-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: UniversalSans;
+  src: url('/assets/fonts/SuperManifold-Sans-Display-350.ttf') format('truetype');
+}
+
 
 
 // 100 Thin (Hairline)
@@ -28,6 +38,23 @@
 // 900 Black (Heavy)
 // 950 Extra Black (Ultra Black) 
 
+.brand-xl {
+  font-family: Torsos;
+  // font-size: max(rem(22), 1vw);
+  font-size: rem(38);
+  line-height: 1.5;
+  // letter-spacing: -.00em;
+}
+
+.brand-base {
+  font-family: Torsos;
+  // font-size: max(rem(22), 1vw);
+  font-size: rem(20);
+
+  line-height: 1.5;
+  // letter-spacing: -.00em;
+}
+
 
 .font-medium {
   font-weight: 500;
@@ -40,7 +67,7 @@
 
 
 .font-brand {
-  font-family: 'nmtl';
+  font-family: nmtl;
   font-weight: 400;
   font-style: normal;
 
@@ -50,7 +77,7 @@
 }
 
 .font-primary {
-  font-family: 'Inter';
+  font-family: Inter;
   font-weight: 400;
   font-style: normal;
 }
@@ -157,28 +184,4 @@
   line-height: 1.25;
   letter-spacing: -.02em;
 
-  // @media (max-width: 1504px) {
-  //   font-size: rem(112);
-  //   line-height: rem(134);
-  // }
-
-  // @media (max-width: 1164px) {
-  //   font-size: rem(88);
-  //   line-height: rem(106);
-  // }
-
-  // @media (max-width: 940px) {
-  //   font-size: rem(70);
-  //   line-height: rem(84);
-  // }
-
-  // @include respond(phone) {
-  //   font-size: rem(60);
-  //   line-height: rem(72);
-  // }
-
-  // @include respond(phone-sm) {
-  //   font-size: rem(48);
-  //   line-height: rem(58);
-  // }
 }

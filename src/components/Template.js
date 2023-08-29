@@ -12,7 +12,7 @@ import styles from './Template.module.scss'
 
 
 
-const Template = ({}) => {
+export default function Template() {
 
 
 
@@ -32,7 +32,3 @@ const Template = ({}) => {
 
     )
 }
-
-export default Template
-
-

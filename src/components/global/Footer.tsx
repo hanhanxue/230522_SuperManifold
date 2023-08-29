@@ -7,6 +7,7 @@ import Link from 'next/link'
 
 
 // 05 SUPERMANIFOLD COMPONENTS
+import Burger from '@/components/global/Burger'
 
 // 07 SUPERMANIFOLD FUNCTIONS
 

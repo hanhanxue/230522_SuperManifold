@@ -1,0 +1,78 @@
+
+
+@use '@/styles/abstracts/' as *;
+
+.menuButton {
+    // background-color: red;
+    // margin-left: rem(32);
+
+    width: rem(30);
+    height: rem(30);
+
+
+    // display: none;
+
+    @include flexCenterXY;
+    
+    // // @include respond(tablet-portrait) {
+    // //     display: block;
+    // // }
+
+    // @media (max-width: $tablet-portrait) {
+    //     @include flexCenterXY
+    // }
+}
+
+.iconFrame {
+    // background-color: blue;
+
+    width: rem(24);
+    height: rem(24);
+
+
+    @include flexCenterXY;
+    
+    .icon {
+        width: rem(20);
+        height: rem(16);
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: rem(5);
+        mix-blend-mode: difference;
+
+        .iconStroke {
+            // background-color: black;
+            background-color: white;
+
+
+            width: 100%;
+            height: rem(2);
+
+            transform-origin: 0% 50%;
+
+            transition: transform 
+            $duration-200
+            $bouncy;
+        }
+
+
+    
+    }
+}
+
+.menuButtonOpen {
+    .iconStroke:nth-child(1) {
+        // transform: translateX(5px);
+        transform: translateX(3px) rotate(45deg);
+    }
+    .iconStroke:nth-child(2) {
+        width: 0;
+        opacity: 0;
+    }
+    .iconStroke:nth-child(3) {
+        // transform: translateX(5px);
+        transform: translateX(3px) rotate(-45deg);
+    }
+}

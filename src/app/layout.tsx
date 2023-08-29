@@ -9,9 +9,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`font-primary`}>
+    <html lang="en" >
       <body>
-        <div className={`tinyScreenCheck`}></div>
+        {/* <div className={`tinyScreenCheck`}></div> */}
         {children}
       <Footer />
       </body>
