@@ -23,12 +23,107 @@ export default function Home() {
 
   return (
     <>
+    <div className={`brand-xl`} style={{padding: '32px'}}> 
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
 
-    {/* <Header hasBorder={false} /> */}
-    
-    <HeaderA />
-    <HomeGrid />
+    </div>
+    <div className={`brand-xl`} style={{padding: '32px'}}> 
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
 
+    </div>
+
+    <div className={`brand-xl`} style={{padding: '32px'}}> 
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+
+    </div>
+    <div className={`brand-xl`} style={{padding: '32px'}}> 
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+
+    </div>
+
+    <div className={`brand-xl`} style={{padding: '32px'}}> 
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+
+    </div>
+
+    <div className={`brand-xl`} style={{padding: '32px'}}> 
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+
+    </div>
+
+    <div className={`brand-xl`} style={{padding: '32px'}}> 
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+
+    </div>
+
+    <div className={`brand-xl`} style={{padding: '32px'}}> 
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+    aefasdfasdfasdf<br />
+
+    </div>
 
     </>
   )

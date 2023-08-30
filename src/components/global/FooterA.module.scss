@@ -1,0 +1,56 @@
+@use '@/styles/abstracts/' as *;
+
+
+.footerSpacer {
+    // position: relative;
+    height: 90vh;
+}
+
+
+.tile {
+    flex: 1 0 auto;
+    padding: rem(32);
+}
+
+.footerGrid {
+    h2, ul, p {
+        color: white;
+        mix-blend-mode: difference;
+    }
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+            &:not(:first-child) {
+                margin : 0 0 0 rem(32);
+            }
+        }
+    }
+
+    @media (max-width: $screen-sm) {
+        text-align: center;
+        flex-direction: column-reverse;
+       .copyright {
+        margin: rem(32) 0 0 0;
+       } 
+
+        ul {
+            flex-direction: column;
+            li {
+                &:not(:first-child) {
+                    margin : rem(32) 0 0 0;
+                }
+            }
+        }
+    }
+}

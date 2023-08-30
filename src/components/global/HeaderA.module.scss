@@ -2,8 +2,9 @@
 @use '@/styles/abstracts/' as *;
 
 .defaultHeader {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     padding: rem(32);
 
     display: flex;
@@ -11,6 +12,8 @@
 
     color: white;
     mix-blend-mode: difference;
+
+    z-index: 5;
     
 }
 
@@ -19,7 +22,7 @@
 }
 
 .navModal {
-    overflow: auto;
+    overflow: hidden;
 
     pointer-events: none;
     // background-color: red;
@@ -221,7 +224,7 @@
 
     &Open {
         pointer-events: all;
-
+        overflow: auto;
         .tile {
             opacity: 1;
         }

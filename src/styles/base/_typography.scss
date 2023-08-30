@@ -39,21 +39,39 @@
 // 950 Extra Black (Ultra Black) 
 
 .brand-xl {
-  font-family: Torsos;
-  // font-size: max(rem(22), 1vw);
+  font-family: UniversalSans;
   font-size: rem(38);
   line-height: 1.5;
+  // font-size: max(rem(22), 1vw);
   // letter-spacing: -.00em;
 }
 
 .brand-base {
-  font-family: Torsos;
-  // font-size: max(rem(22), 1vw);
+  // font-family: nmtl;
+  font-family: UniversalSans;
   font-size: rem(20);
-
+  
   line-height: 1.5;
+  // font-size: max(rem(22), 1vw);
   // letter-spacing: -.00em;
 }
+
+
+.logotype {
+  // font-family: nmtl;
+  font-family: UniversalSans;
+  font-size: rem(20);
+  line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
 
 
 .font-medium {

@@ -9,20 +9,25 @@ import Link from 'next/link'
 import Burger from '@/components/global/Burger'
 
 // 07 SUPERMANIFOLD FUNCTIONS
+import useScrollProgress from '@/lib/useScrollProgress'
 
 // 11 SUPERMANIFOLD STYLES
 import styles from './HeaderA.module.scss'
 
 
 export default function HeaderA() {
+    const maxDuration = 500
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [delayDurations, setDelayDurations] = useState([])
-
-    const maxDuration = 500
-
+    
+    // const scrollProgress = useScrollProgress()
+    // console.log(scrollProgress)
     // When menu is closed / opened, we set the delays to 0 after maxDuration
     useEffect(() => {
+
+        // document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
+
         const timeout = setTimeout(() => {
             setDelayDurations(new Array(10).fill(0))
         }, maxDuration)
@@ -53,7 +58,7 @@ export default function HeaderA() {
 
         <header className={`${styles.defaultHeader}`}>
             <div className={`${styles.tile} ${styles.logo}`}>   
-                <Link href="/"><p className={`brand-base ${styles.logotype}`}>
+                <Link href="/"><p className={`logotype ${styles.logotype}`}>
                     Super Manifold®
                 </p></Link>
             </div>
@@ -76,7 +81,7 @@ export default function HeaderA() {
                 {/* 01A Default Header */}
                 <header className={`${styles.headerGrid} `}>
                     <div className={`${styles.tile} ${styles.logo}`} style={{transitionDelay: `${delayDurations[0]}ms`}}>   
-                        <Link href="/"><p className={`brand-base ${styles.logotype}`}>
+                        <Link href="/"><p className={`logotype ${styles.logotype}`}>
                             Super Manifold®
                         </p></Link>
                     </div>
@@ -87,7 +92,7 @@ export default function HeaderA() {
                 {/* 01B Small Screen Header */}
                 <header className={`${styles.headerGridSmall} ${styles.tile} `} style={{transitionDelay: `${delayDurations[8]}ms`}}>
                     <div className={`${styles.logo}`}>   
-                        <Link href="/"><p className={`brand-base ${styles.logotype}`}>
+                        <Link href="/"><p className={`logotype ${styles.logotype}`}>
                             Super Manifold®
                         </p></Link>
                     </div>
@@ -110,7 +115,7 @@ export default function HeaderA() {
                     </div>
 
                     <div className={`${styles.tile} ${styles.tile_1c_1r}`} style={{transitionDelay: `${delayDurations[6]}ms`}}>
-                        <h2 className={`brand-xl ${styles.tileLabel} `}>{`Let's chat`}</h2>
+                        <h2 className={`brand-xl ${styles.tileLabel} `}>{`Let’s chat`}</h2>
                     </div>
 
                     <div className={`${styles.tile} ${styles.tile_1c_2r}`} style={{transitionDelay: `${delayDurations[4]}ms`}}>
@@ -118,7 +123,7 @@ export default function HeaderA() {
                         <div className={`${styles.tileCopy} `}>
                             <ul className={`brand-base `}>
                                 <li>
-                                    hello@supermnf<br/>
+                                    hello@supermanifold<br/>
                                     +1 628 523 5241
                                 </li>
                                 <li>
@@ -144,9 +149,6 @@ export default function HeaderA() {
                         </ul>
                     </div>
                 </div>
-            {/* <div className={`${styles.scrollable}`}>
-
-            </div> */}
 
         </div>
 
