@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    padding: rem(32);
+    padding: $spacing-5;
 
     display: flex;
     justify-content: space-between;
@@ -36,7 +36,7 @@
     display: flex;
     flex-direction: column;
 
-    h2, ul, p {
+    h2, ul, p, span {
         color: white;
         mix-blend-mode: difference;
     }
@@ -44,7 +44,7 @@
     .tile {
         opacity: 0; // THIS IS THE IMPORTANT
 
-        padding: rem(32);
+        padding: $spacing-5;
         transition-property: background-color, opacity;
         transition-duration: .3s;
         // transition-timing-function: ease-out;
@@ -168,18 +168,25 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            gap: $spacing-5;
 
 
             ul {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-5;
+
                 text-align: right;
-                li {
-                    // word-wrap: break-word;
-                    // word-break: break-all;
-                    // &:not(:first-child) {
-                    //     margin-top: rem(32);
-                    // }
-                    margin-top: rem(32);
-                }
+                // justify-items: center;
+                // align-items: center;
+                // li {
+                //     // word-wrap: break-word;
+                //     // word-break: break-all;
+                //     // &:not(:first-child) {
+                //     //     margin-top: $spacing-5;
+                //     // }
+                //     margin-top: $spacing-5;
+                // }
             }
         }
     }
@@ -188,35 +195,48 @@
     .footerGrid {
         display: flex;
         justify-content: space-between;
+        gap: $spacing-5;
 
         .tile {
             flex: 1 0 auto;
+        }
+        .copyright {
+            display: flex;
+            align-items: center;
         }
 
         ul {
             display: flex;
             justify-content: flex-end;
+            align-items: center;
+            gap: $spacing-5;
 
-            li {
-                &:not(:first-child) {
-                    margin : 0 0 0 rem(32);
-                }
-            }
+            // li {
+            //     &:not(:first-child) {
+            //         margin : 0 0 0 $spacing-5;
+            //     }
+            // }
         }
+
+
+
         @media (max-width: $screen-sm) {
-            text-align: center;
+            // text-align: center;
             flex-direction: column-reverse;
-           .copyright {
-            margin: rem(32) 0 0 0;
-           } 
+        //    .copyright {
+        //     margin: $spacing-5 0 0 0;
+        //    } 
+        .copyright {
+            flex-direction: column;
+        }
 
             ul {
                 flex-direction: column;
-                li {
-                    &:not(:first-child) {
-                        margin : rem(32) 0 0 0;
-                    }
-                }
+                // li {
+                //     &:not(:first-child) {
+                //         margin : $spacing-5 0 0 0;
+                //     }
+                // }
             }
         }
     }
@@ -246,7 +266,7 @@
 
 
 // // .tile {
-// //     padding: rem(32);
+// //     padding: $spacing-5;
 
 // //     transition: background-color $duration-200;
 // //     transition-delay: 250ms;
@@ -295,7 +315,7 @@
     
 //             li {
 //                 &:not(:first-child) {
-//                     margin-left: rem(32);
+//                     margin-left: $spacing-5;
 //                 }
 //             }
 //         }
@@ -364,7 +384,7 @@
 // //         &Copy {
 // //             text-align: right;
 // //             li {
-// //                 margin-top: rem(32);
+// //                 margin-top: $spacing-5;
 // //             }
 // //         }
 
@@ -401,7 +421,7 @@
     
 // //             li {
 // //                 &:not(:first-child) {
-// //                     margin-left: rem(32);
+// //                     margin-left: $spacing-5;
 // //                 }
 // //             }
 // //         }

@@ -40,12 +40,13 @@
         grid-template-columns: 1fr;
 
         gap: rem(5);
-        mix-blend-mode: difference;
+        // mix-blend-mode: difference;
+        
 
         .iconStroke {
             // background-color: black;
             background-color: white;
-
+            mix-blend-mode: normal;
 
             width: 100%;
             height: rem(2);

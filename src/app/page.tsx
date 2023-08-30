@@ -2,7 +2,8 @@
 // 02 EXTERNAL
 
 // 03 REACT / NODE / NEXTJS
-import { Metadata } from 'next';
+import { Metadata } from 'next'
+import Image from 'next/image'
 
 // 05 SUPERMANIFOLD COMPONENTS
 import Header from '@/components/global/Header';
@@ -13,7 +14,7 @@ import HomeGrid from '../components/home/HomeGrid'
 
 // 11 SUPERMANIFOLD STYLES
 
-
+import styles from '@/components/home/HomeGrid.module.scss'
 
 
 
@@ -23,108 +24,54 @@ export default function Home() {
 
   return (
     <>
-    <div className={`brand-xl`} style={{padding: '32px'}}> 
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
+    <section className={`brand-4xl ${styles.heroSection}` } > 
+      <h1>Spatial experience design studio</h1>
+    </section>
 
-    </div>
-    <div className={`brand-xl`} style={{padding: '32px'}}> 
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
+    <section  className={`${styles.coverSection}  ${styles.gridColSpan2}`}>
 
-    </div>
 
-    <div className={`brand-xl`} style={{padding: '32px'}}> 
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
+        <div className={`${styles.gridItem}`}>
+        <div className={`${styles.card}`}>
+        <div className={`${styles.postImageFrame}`}>
+        <div className={`${styles.nextImageContainer}`}>
+        <Image
+                        className={`${styles.postImage}`}
+                        src={`/assets/images/printworks-adambeyer.jpg`}
+                        fill={true}
+                        
+                        alt=''
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        draggable={false}
+                    />
+          </div>
+        </div>
 
-    </div>
-    <div className={`brand-xl`} style={{padding: '32px'}}> 
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
+        </div>
+        </div>
 
-    </div>
+        <video autoPlay muted loop className={`${styles.video} `}>         
+        {/* <source src="/assets/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>          */}
+        <source src="/content/home/supermanifold_breadboard_v2.mp4" type="video/mp4"/>  
+        </video>
 
-    <div className={`brand-xl`} style={{padding: '32px'}}> 
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
+    </section>
 
-    </div>
+    <section className={`brand-2xl ${styles.introSection}` }>
+      <h2>
+      Super Manifold is an independent interface & experience design studio specialized in crafting meaningful spatial experiences.
+      </h2>
+    </section>
+    <section className={`brand-xl ${styles.workSection}` }>
 
-    <div className={`brand-xl`} style={{padding: '32px'}}> 
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
+    </section>
 
-    </div>
 
-    <div className={`brand-xl`} style={{padding: '32px'}}> 
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
+    {/* Established in 2010, Broadwick Live is from London, UK. With a strong focus on creating impact through electronic music and electronic arts, we are driven to create pure yet powerful live experiences in our unique spaces.  */}
 
-    </div>
+    {/* Our aim is to create experiences that stick with people on an emotional level */}
 
-    <div className={`brand-xl`} style={{padding: '32px'}}> 
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-    aefasdfasdfasdf<br />
-
-    </div>
-
+    {/* Signal-A is an award-winning interface & experience design studio specialized in creating meaningful digital products. */}
     </>
   )
   

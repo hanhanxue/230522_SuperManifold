@@ -25,28 +25,37 @@ export default function RootLayout({
 }) {
 
 
-  const [scaleFactor, setScaleFactor] = useState(1)
+  const [progressFactor, setProgressFactor] = useState(0)
   // const progress = useScrollProgress()
   
   // console.log(progress)
-  // let scaleFactor = .98
+  // let progressFactor = .98
   function remap(value: number, fromLow: number, fromHigh: number, toLow: number, toHigh: number): number {
     const normalizedValue = (value - fromLow) / (fromHigh - fromLow);
     const remappedValue = normalizedValue * (toHigh - toLow) + toLow;
     return Math.max(Math.min(remappedValue, Math.max(toLow, toHigh)), Math.min(toLow, toHigh));
   }
   
-
+  function remap01(value: number, toLow: number, toHigh: number): number {
+    const remappedValue = value * (toHigh - toLow) + toLow;
+    return Math.max(Math.min(remappedValue, Math.max(toLow, toHigh)), Math.min(toLow, toHigh));
+  }
 
 
   useEffect(() => {
 
     const handleScroll = () => {
-      const lowerLimit = Math.max((document.body.scrollHeight - (window.innerHeight * 1.9)), 0)
-      const upperLimit = (document.body.scrollHeight - (window.innerHeight * 0.9))
-      const remappedProgress = remap(window.scrollY, lowerLimit, upperLimit, 1, .98)
-      // console.log(remappedProgress)
-      setScaleFactor(remappedProgress)
+      // this is the footer spacer height
+      const footerMaskHeight = window.innerHeight * .8;
+      // this is the starting position of the factor
+      let start = document.body.scrollHeight - (window.innerHeight + footerMaskHeight)
+      start = Math.max(start, 0)
+      // this is the ending position of the factor
+      const end = document.body.scrollHeight - (window.innerHeight)
+
+      const normalizedProgress = remap(window.scrollY, start, end, 0, 1)
+      // console.log(normalizedProgress)
+      setProgressFactor(normalizedProgress)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -68,19 +77,18 @@ export default function RootLayout({
           transformOrigin: 'bottom center',
           transform:
           `translate3d(0px, 0px, 0px) 
-          scale3d(${scaleFactor}, ${scaleFactor}, 1) 
+          scale3d(${remap01(progressFactor, 1, .98)}, ${remap01(progressFactor, 1, .98)}, 1) 
           rotateX(0deg) 
           rotateY(0deg) 
           rotateZ(0deg) 
           skew(0deg)`,
           transformStyle: 'preserve-3d',
-          borderRadius: '0 0 16px 16px'
-
+          borderRadius: '0 0 24px 24px',
         }}>
           {children}
         </div>
 
-      <FooterA />
+      <FooterA opacity={remap01(progressFactor, 0, 1)}/>
       </body>
 
     </html>

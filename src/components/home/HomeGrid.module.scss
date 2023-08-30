@@ -1,5 +1,67 @@
 @use '@/styles/abstracts/' as *;
 
+
+.heroSection {
+    
+    padding: $spacing-5;
+    padding-top: rem(96);
+    text-align: justify;
+}
+
+.coverSection {
+
+    display: grid;
+    padding: $spacing-3;
+
+    .video {
+        border-radius: $radius-lg;
+    }
+
+    .gridItem {
+        padding-top: 56.25%;
+        position: relative;
+        margin-bottom: rem(16);
+
+        .card {
+
+            .postImageFrame {
+                border-radius: $radius-lg;
+                overflow: hidden;
+        
+                .nextImageContainer {
+                    // position: relative;
+                    // width: 100%;
+                    // height: 100%;
+
+        
+                    .postImage {
+                        border-radius: $radius-lg;
+                        overflow: hidden;
+                        object-fit: cover;
+                    }
+        
+                }
+            }
+        }
+    }
+
+
+}
+
+.introSection {
+    padding: $spacing-5;
+}
+
+
+
+
+
+
+
+
+
+
+
 .section {
 
 }

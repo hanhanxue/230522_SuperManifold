@@ -55,12 +55,12 @@ export default function HeaderA() {
     return (
         <>
 
-
+        {/* 00 Default Header */}   {/* 1X */}
         <header className={`${styles.defaultHeader}`}>
             <div className={`${styles.tile} ${styles.logo}`}>   
-                <Link href="/"><p className={`logotype ${styles.logotype}`}>
+                <Link href="/"><span className={`logotype ${styles.logotype}`}>
                     Super Manifold®
-                </p></Link>
+                </span></Link>
             </div>
             <div className={`${styles.tile} ${styles.menu}`}>
                 <Burger isOpen={isMenuOpen} onMenuClick={handleMenuClick}/>
@@ -78,23 +78,23 @@ export default function HeaderA() {
             ${styles.navModal}
             ${isMenuOpen ? styles.navModalOpen : ''}
         `}>
-                {/* 01A Default Header */}
+                {/* 01A Default Header */}   {/* 2X */}
                 <header className={`${styles.headerGrid} `}>
                     <div className={`${styles.tile} ${styles.logo}`} style={{transitionDelay: `${delayDurations[0]}ms`}}>   
-                        <Link href="/"><p className={`logotype ${styles.logotype}`}>
+                        <Link href="/"><span className={`logotype ${styles.logotype}`}>
                             Super Manifold®
-                        </p></Link>
+                        </span></Link>
                     </div>
                     <div className={`${styles.tile} ${styles.menu} `} style={{transitionDelay: `${delayDurations[1]}ms`}}>
                         <Burger isOpen={isMenuOpen} onMenuClick={handleMenuClick}/>
                     </div >
                 </header>
-                {/* 01B Small Screen Header */}
+                {/* 01B Small Screen Header */}   {/* 3X */}
                 <header className={`${styles.headerGridSmall} ${styles.tile} `} style={{transitionDelay: `${delayDurations[8]}ms`}}>
                     <div className={`${styles.logo}`}>   
-                        <Link href="/"><p className={`logotype ${styles.logotype}`}>
+                        <Link href="/"><span className={`logotype ${styles.logotype}`}>
                             Super Manifold®
-                        </p></Link>
+                        </span></Link>
                     </div>
                     <div className={`${styles.menu} `}>
                         <Burger isOpen={isMenuOpen} onMenuClick={handleMenuClick}/>
@@ -129,14 +129,14 @@ export default function HeaderA() {
                                 <li>
                                     Super Manifold Inc.<br/>
                                     5335 Saint-Laurent<br/>
-                                    Montreal QC H2T 1S1<br/>
+                                    Montreal, QC, H2T 1S1<br/>
                                     Canada
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-                {/* 03 Copyright Section */}
+                {/* 03 Copyright Section */}   {/* 1X */}
                 <div className={`${styles.footerGrid} ${styles.tile}`} style={{transitionDelay: `${delayDurations[7]}ms`}}>
                     <div className={`${styles.copyright}`}>
                         <p className={`brand-base`}>©2023</p>

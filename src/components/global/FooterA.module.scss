@@ -3,53 +3,119 @@
 
 .footerSpacer {
     // position: relative;
-    height: 90vh;
+    height: 80vh;  // THIS IS REALLY IMPORTANT!! Adds 90vh to the document.body.scrollHeight
+
 }
 
+.footer {
+    
 
-.tile {
-    flex: 1 0 auto;
-    padding: rem(32);
-}
+    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 
-.footerGrid {
-    h2, ul, p {
+    z-index: -5;
+
+    h2, ul, p, span {
         color: white;
         mix-blend-mode: difference;
     }
 
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    
-    display: flex;
-    justify-content: space-between;
+    .tile {
+        flex: 1 0 auto;
+        padding: $spacing-5;
+    }
 
-    ul {
+    .logotypeGrid {
 
-        display: flex;
-        justify-content: flex-end;
+    }
 
-        li {
-            &:not(:first-child) {
-                margin : 0 0 0 rem(32);
+    .menuGrid {
+        display: grid;
+        grid-template-columns: repeat(1fr, 4);
+        // justify-items: end;
+        .menu {
+            grid-column: 1 / 5;
+            // text-align: right;
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                
+                // align-items: center;
+                gap: $spacing-5;
+                justify-content: flex-end;
+            }
+
+            .letsChatButton {
+                display: flex;
+                align-items: center;
+                gap: rem(4);
             }
         }
     }
 
-    @media (max-width: $screen-sm) {
-        text-align: center;
-        flex-direction: column-reverse;
-       .copyright {
-        margin: rem(32) 0 0 0;
-       } 
+    .contactGrid {
+        display: grid;
+        grid-template-columns: repeat(1fr, 4);
+        .contact {
+            grid-column: 1 / 5;
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-5;
+            }
+        }
+    }
 
+
+
+    
+    .footerGrid {
+
+        
+        display: flex;
+        justify-content: space-between;
+        gap: $spacing-5;
+    
         ul {
-            flex-direction: column;
-            li {
-                &:not(:first-child) {
-                    margin : rem(32) 0 0 0;
-                }
+    
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: $spacing-5;
+        }
+    
+        .copyright {
+            display: flex;
+            align-items: center;
+            gap: $spacing-5;
+
+            .backToTopButton {
+                color: white;
+        
+                display: flex;
+                align-items: center;
+                gap: rem(4);
+            }
+        }
+    
+        @media (max-width: $screen-sm) {
+            // text-align: center;
+            flex-direction: column-reverse;
+           .copyright {
+                // margin: $spacing-5 0 0 0;
+                flex-direction: column;
+           } 
+    
+            ul {
+                flex-direction: column;
+                // li {
+                //     &:not(:first-child) {
+                //         margin : $spacing-5 0 0 0;
+                //     }
+                // }
             }
         }
     }

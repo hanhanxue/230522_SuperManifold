@@ -44,12 +44,10 @@ const ProcessTile = ({  post  }) => {
                         <Image
                         className={`${styles.postImage}`}
                         src={post.extraData.coverImage.src}
-                        // width={post.extraData.coverImage.dimensions ? post.extraData.coverImage.dimensions.width : 100}
-                        // height={post.extraData.coverImage.dimensions ? post.extraData.coverImage.dimensions.height : 100}
                         fill={true}
                         
                         alt=''
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        
                         draggable={false}
 
                     />
