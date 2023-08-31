@@ -24,14 +24,22 @@ export default function Home() {
 
   return (
     <>
-    <section className={`brand-4xl ${styles.heroSection}` } > 
+    <section className={`display-4xl ${styles.heroSection}` } > 
       <h1>Spatial experience design studio</h1>
     </section>
-
+    
+    <div className={`body-sm ${styles.seperator}` }>
+      <p>Based in<br />
+        Montreal, Canada
+      </p>
+      <p>Working<br />
+        internationally
+      </p>
+      </div>
     <section  className={`${styles.coverSection}  ${styles.gridColSpan2}`}>
 
 
-        <div className={`${styles.gridItem}`}>
+        {/* <div className={`${styles.gridItem}`}>
         <div className={`${styles.card}`}>
         <div className={`${styles.postImageFrame}`}>
         <div className={`${styles.nextImageContainer}`}>
@@ -48,21 +56,42 @@ export default function Home() {
         </div>
 
         </div>
-        </div>
+        </div> */}
 
-        <video autoPlay muted loop className={`${styles.video} `}>         
+        
+        {/* <video 
+        class="c-video_media is-inview" 
+        poster="uploads/home/posterhome-2000w.jpg" 
+        playsinline="" 
+        muted="true" 
+        loop="true" 
+        src="https://player.vimeo.com/progressive_redirect/playback/792718372/rendition/720p/file.mp4?loc=external&amp;signature=b0c78c25f2f55ae3f00dca4e07238b15d319799aae345f3fbfce5a8d56c6692e"
+        data-module-video-inview="m5" 
+        data-scroll="" 
+        data-scroll-repeat="" 
+        data-scroll-call="toggle, VideoInview" 
+        data-src="https://player.vimeo.com/progressive_redirect/playback/792718372/rendition/720p/file.mp4?loc=external&amp;signature=b0c78c25f2f55ae3f00dca4e07238b15d319799aae345f3fbfce5a8d56c6692e" data-src-mobile="https://player.vimeo.com/progressive_redirect/playback/793443646/rendition/540p/file.mp4?loc=external&amp;signature=242657e35d3787e2cb90fb59a5eed30aae9a604953d7db175f6c1d25ed0d887a" ></video> */}
+        
+        <video
+        className={`${styles.video} `}
+         autoPlay 
+         muted 
+         loop >         
         {/* <source src="/assets/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>          */}
-        <source src="/content/home/supermanifold_breadboard_v2.mp4" type="video/mp4"/>  
+        <source 
+        src="https://www.dropbox.com/scl/fi/mxgg5zb8z2kr40icwk7dr/supermanifold_breadboard_v2.mp4?rlkey=ha6nxqn1hsn8tqpv2xfaapqgm&raw=1" 
+        type="video/mp4"/>  
         </video>
 
     </section>
 
-    <section className={`brand-2xl ${styles.introSection}` }>
+    <section className={`display-2xl ${styles.introSection}` }>
       <h2>
-      Super Manifold is an independent interface & experience design studio specialized in crafting meaningful spatial experiences.
+      Super Manifold is an independent interface & experience design studio. We craft immersive spatial experiences in the digital realm.
       </h2>
     </section>
-    <section className={`brand-xl ${styles.workSection}` }>
+
+    <section className={`display-xl ${styles.workSection}` }>
 
     </section>
 

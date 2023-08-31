@@ -18,7 +18,7 @@
     z-index: -5;
 
     h2, ul, p, span {
-        color: white;
+        color: rgb(184, 184, 184);
         mix-blend-mode: difference;
     }
 
@@ -52,6 +52,10 @@
                 display: flex;
                 align-items: center;
                 gap: rem(4);
+
+                &Icon {
+                    stroke: rgb(184, 184, 184);
+                }
             }
         }
     }
@@ -68,13 +72,8 @@
             }
         }
     }
-
-
-
     
-    .footerGrid {
-
-        
+    .footerGrid { 
         display: flex;
         justify-content: space-between;
         gap: $spacing-5;
@@ -88,16 +87,21 @@
         }
     
         .copyright {
+            color: rgb(184, 184, 184);
+        
             display: flex;
             align-items: center;
             gap: $spacing-5;
 
             .backToTopButton {
-                color: white;
-        
+
                 display: flex;
                 align-items: center;
                 gap: rem(4);
+
+                &Icon {
+                    stroke: rgb(184, 184, 184);
+                }
             }
         }
     

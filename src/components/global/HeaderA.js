@@ -105,25 +105,25 @@ export default function HeaderA() {
                 {/* 02 Nav Section */}
                 <nav className={`${styles.navGrid}`}>
                     <div className={`${styles.tile} ${styles.tile_2c_1r}`} style={{transitionDelay: `${delayDurations[2]}ms`}}>
-                        <h2 className={`brand-xl ${styles.tileLabel} `}>Work</h2>
+                        <h2 className={`body-xl ${styles.tileLabel} `}>Work</h2>
                     </div> 
 
                     <div className={`${styles.tile} ${styles.tile_2c_1r}`} style={{transitionDelay: `${delayDurations[5]}ms`}}>
-                        <h2 className={`brand-xl ${styles.tileLabel} `}>Process</h2>
+                        <h2 className={`body-xl ${styles.tileLabel} `}>Process</h2>
                     </div>
 
                     <div className={`${styles.tile} ${styles.tile_1c_1r}`} style={{transitionDelay: `${delayDurations[3]}ms`}}>  
-                        <h2 className={`brand-xl ${styles.tileLabel} `}>Studio</h2>
+                        <h2 className={`body-xl ${styles.tileLabel} `}>Studio</h2>
                     </div>
 
                     <div className={`${styles.tile} ${styles.tile_1c_1r}`} style={{transitionDelay: `${delayDurations[6]}ms`}}>
-                        <h2 className={`brand-xl ${styles.tileLabel} `}>{`Let’s chat`}</h2>
+                        <h2 className={`body-xl ${styles.tileLabel} `}>{`Let’s chat`}</h2>
                     </div>
 
                     <div className={`${styles.tile} ${styles.tile_1c_2r}`} style={{transitionDelay: `${delayDurations[4]}ms`}}>
-                        <h2 className={`brand-xl ${styles.tileLabel} `}>Contact</h2>
+                        <h2 className={`body-xl ${styles.tileLabel} `}>Contact</h2>
                         <div className={`${styles.tileCopy} `}>
-                            <ul className={`brand-base `}>
+                            <ul className={`body-base `}>
                                 <li>
                                     hello@supermanifold<br/>
                                     +1 628 523 5241
@@ -141,10 +141,10 @@ export default function HeaderA() {
                 {/* 03 Copyright Section */}   {/* 1X */}
                 <div className={`${styles.footerGrid} ${styles.tile}`} style={{transitionDelay: `${delayDurations[7]}ms`}}>
                     <div className={`${styles.copyright}`}>
-                        <p className={`brand-base`}>©2023</p>
+                        <p className={`body-base`}>©2023</p>
                     </div>
                     <div className={`${styles.social}`}>
-                        <ul className={`brand-base `}>
+                        <ul className={`body-base `}>
                             <li>Github</li>
                             <li>Instagram</li>
                             <li>LinkedIn</li>

@@ -66,12 +66,12 @@ input[type=number] {
 
 
 ::-moz-selection { /* Code for Firefox */
-    // color: red;
+    color: white;
     background: $color-primary;
   }
   
   ::selection {
-    // color: red;
+    color: white;
     background: $color-primary;
   }
 

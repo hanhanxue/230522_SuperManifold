@@ -24,6 +24,7 @@
 
 
 
+
 // 100 Thin (Hairline)
 // 200 Extra Light (Ultra Light)
 // 300 Light
@@ -38,20 +39,27 @@
 // 900 Black (Heavy)
 // 950 Extra Black (Ultra Black) 
 
-.brand-4xl {
+.logotype {
+  // font-family: nmtl;
+  font-family: UniversalSans;
+  font-size: rem(20);
+  line-height: 1.5;
+}
+
+.display-4xl {
   font-family: Torsos;
   font-size: 10vw;
   line-height: 1;
 }
 
-.brand-2xl {
+.display-2xl {
   font-family: Torsos;
   font-size: 4vw;
   line-height: 1.2;
 }
 
 
-.brand-xl {
+.body-xl {
   font-family: UniversalSans;
   font-size: rem(38);
   line-height: 1.5;
@@ -59,7 +67,7 @@
   // letter-spacing: -.00em;
 }
 
-.brand-base {
+.body-base {
   // font-family: nmtl;
   font-family: UniversalSans;
   font-size: rem(20);
@@ -69,15 +77,12 @@
   // letter-spacing: -.00em;
 }
 
-
-.logotype {
-  // font-family: nmtl;
+.body-sm {
   font-family: UniversalSans;
-  font-size: rem(20);
+  font-size: rem(16);
+  
   line-height: 1.5;
 }
-
-
 
 
 
