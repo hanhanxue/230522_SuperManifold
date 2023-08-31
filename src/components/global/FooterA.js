@@ -40,7 +40,7 @@ export default function FooterA({opacity}) {
                             <button className={`${styles.letsChatButton}`}>{`Let’s chat`}
                             <div className={`${styles.letsChatButtonIcon}`}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <g clip-path="url(#clip0_540_45)">
+                            <g clipPath="url(#clip0_540_45)">
                             <path d="M5 19L19 5" strokeWidth="2"/>
                             <path d="M7 6H18V17" strokeWidth="2"/>
                             </g>
