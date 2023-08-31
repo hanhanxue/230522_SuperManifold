@@ -39,7 +39,7 @@ export default function Home() {
     <section  className={`${styles.coverSection}  ${styles.gridColSpan2}`}>
 
 
-        {/* <div className={`${styles.gridItem}`}>
+        <div className={`${styles.gridItem}`}>
         <div className={`${styles.card}`}>
         <div className={`${styles.postImageFrame}`}>
         <div className={`${styles.nextImageContainer}`}>
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
 
         </div>
-        </div> */}
+        </div>
 
         
         {/* <video 
@@ -71,17 +71,18 @@ export default function Home() {
         data-scroll-repeat="" 
         data-scroll-call="toggle, VideoInview" 
         data-src="https://player.vimeo.com/progressive_redirect/playback/792718372/rendition/720p/file.mp4?loc=external&amp;signature=b0c78c25f2f55ae3f00dca4e07238b15d319799aae345f3fbfce5a8d56c6692e" data-src-mobile="https://player.vimeo.com/progressive_redirect/playback/793443646/rendition/540p/file.mp4?loc=external&amp;signature=242657e35d3787e2cb90fb59a5eed30aae9a604953d7db175f6c1d25ed0d887a" ></video> */}
-        
+{/*         
         <video
         className={`${styles.video} `}
          autoPlay 
          muted 
          loop >         
-        {/* <source src="/assets/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>          */}
+        <source src="/assets/videos/supermanifold_breadboard_v2.mp4" type="video/mp4"/>    
         <source 
         src="https://www.dropbox.com/scl/fi/mxgg5zb8z2kr40icwk7dr/supermanifold_breadboard_v2.mp4?rlkey=ha6nxqn1hsn8tqpv2xfaapqgm&raw=1" 
         type="video/mp4"/>  
         </video>
+         */}
 
     </section>
 
