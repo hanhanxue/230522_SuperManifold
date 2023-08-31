@@ -19,7 +19,8 @@ export default function HeaderA() {
     const maxDuration = 500
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [delayDurations, setDelayDurations] = useState([])
+    const initArray = new Array(10).fill(0)
+    const [delayDurations, setDelayDurations] = useState(initArray)
     
     // const scrollProgress = useScrollProgress()
     // console.log(scrollProgress)
@@ -34,6 +35,7 @@ export default function HeaderA() {
 
         return () => clearTimeout(timeout)
     }, [isMenuOpen])
+
 
     // When menu is clicked, we set delays to random between 0 and maxDuration
     const handleMenuClick = () => {
