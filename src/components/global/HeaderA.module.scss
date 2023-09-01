@@ -2,9 +2,15 @@
 @use '@/styles/abstracts/' as *;
 
 .defaultHeader {
-    position: fixed;
+    // position: fixed;
+    // top: 0;
+    // width: 100%;
+
+    position: absolute;
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
+
     padding: $spacing-5;
 
     display: flex;
@@ -14,17 +20,19 @@
     mix-blend-mode: difference;
 
     z-index: 5;
-    
+
 }
 
 
 
 
-.scrollable {
-    height: 100vh;
-}
+// .scrollable {
+//     height: 100vh;
+// }
 
 .navModal {
+
+    
     
     overflow: hidden;
     pointer-events: none;
@@ -34,10 +42,17 @@
     top: 0;
     height: 100vh;
     width: 100%;
+    
+    // position: absolute;
+    // inset: 0;
+
+    
+
     z-index: 10;
 
     display: flex;
     flex-direction: column;
+
 
     h2, ul, p, span {
         color: white;

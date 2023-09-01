@@ -68,10 +68,11 @@ export default function RootLayout({
 
   return (
     <html lang="en" >
-      <body >
+      <body>
+
       <HeaderA />
 
-        <div
+      <div
         style={{
           backgroundColor: 'white',
           transformOrigin: 'bottom center',
@@ -87,6 +88,7 @@ export default function RootLayout({
         }}>
           {children}
         </div>
+
 
       <FooterA opacity={remap01(progressFactor, 0, 1)}/>
       </body>

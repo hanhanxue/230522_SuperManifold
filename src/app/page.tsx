@@ -24,8 +24,10 @@ export default function Home() {
 
   return (
     <>
-    <section className={`display-4xl ${styles.heroSection}` } > 
-      <h1>Spatial experience design studio</h1>
+
+<section className={`display-4xl ${styles.heroSection}` } > 
+      <h1>Spatial experience<br /> 
+        design studio</h1>
     </section>
     
     <div className={`body-sm ${styles.seperator}` }>
@@ -74,13 +76,13 @@ export default function Home() {
         
 
 
-        <video
+        {/* <video
         className={`${styles.video} `}
          autoPlay 
          muted 
          loop >         
         <source src="/assets/videos/breadboard.mp4" type="video/mp4"/>    
-        </video>
+        </video> */}
         <video
         className={`${styles.video} `}
          autoPlay 
@@ -108,6 +110,8 @@ export default function Home() {
     {/* Our aim is to create experiences that stick with people on an emotional level */}
 
     {/* Signal-A is an award-winning interface & experience design studio specialized in creating meaningful digital products. */}
+    
+    
     </>
   )
   
