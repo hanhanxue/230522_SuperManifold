@@ -23,6 +23,8 @@ export default function HeaderA() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+
+    // 
     const generateDelayDurations = (size) => {
         let newDelayDurations = [];
         for (let i = 1; i <= size; i++) {
@@ -30,8 +32,9 @@ export default function HeaderA() {
         }
         // remap to curve and range
         newDelayDurations = newDelayDurations.map(num => {
-            return num * num * maxDuration
+            return Math.round(num * num * maxDuration)
         })
+    
         return newDelayDurations
     }
     // const initArray = new Array(10).fill(5000)

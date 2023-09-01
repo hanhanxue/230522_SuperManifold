@@ -26,8 +26,7 @@ export default function Home() {
     <>
 
 <section className={`display-4xl ${styles.heroSection}` } > 
-      <h1>Spatial experience<br /> 
-        design studio</h1>
+      <h1>Spatial experience design studio</h1>
     </section>
     
     <div className={`body-sm ${styles.seperator}` }>
