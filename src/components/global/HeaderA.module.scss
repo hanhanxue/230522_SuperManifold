@@ -2,14 +2,8 @@
 @use '@/styles/abstracts/' as *;
 
 .defaultHeader {
-    // position: fixed;
-    // top: 0;
-    // width: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: fixed;
+    inset: 0 0 auto 0;
 
     padding: $spacing-5;
 
@@ -42,10 +36,6 @@
     top: 0;
     height: 100vh;
     width: 100%;
-    
-    // position: absolute;
-    // inset: 0;
-
     
 
     z-index: 10;

@@ -130,7 +130,7 @@ export const metadata: Metadata = {
   title: 'Super Manifold®',
   description: 'Crafting spatial experiences for the digital realm.',
 
-  viewport: 'initial-scale=1.0, maximum-scale=2.0, width=device-width, user-scalable=yes, minimal-ui',
+  viewport: 'initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0, width=device-width, user-scalable=yes, minimal-ui',
 
   openGraph: {
     title: 'Super Manifold®',

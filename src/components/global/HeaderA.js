@@ -23,8 +23,19 @@ export default function HeaderA() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    const initArray = new Array(10).fill(5000)
-    const [delayDurations, setDelayDurations] = useState(initArray)
+    const generateDelayDurations = (size) => {
+        let newDelayDurations = [];
+        for (let i = 1; i <= size; i++) {
+            newDelayDurations.push(Math.random())
+        }
+        // remap to curve and range
+        newDelayDurations = newDelayDurations.map(num => {
+            return num * num * maxDuration
+        })
+        return newDelayDurations
+    }
+    // const initArray = new Array(10).fill(5000)
+    const [delayDurations, setDelayDurations] = useState(generateDelayDurations(10))
     
     const firstRender = useFirstRender()
     // const scrollProgress = useScrollProgress()
@@ -44,19 +55,11 @@ export default function HeaderA() {
     }, [isMenuOpen])
 
 
+
     // When menu is clicked, we set delays to random between 0 and maxDuration
     const handleMenuClick = () => {
         setIsMenuOpen((current) => !current)
-
-        let newDelayDurations = [];
-        for (let i = 0; i <= 9; i++) {
-            newDelayDurations.push(Math.random())
-        }
-        // remap to curve and range
-        newDelayDurations = newDelayDurations.map(num => {
-            return num * num * maxDuration
-        })
-        setDelayDurations(newDelayDurations)
+        setDelayDurations(generateDelayDurations(10))
     }
 
 
@@ -81,10 +84,7 @@ export default function HeaderA() {
 
 
 
-        <div className={`
-            ${styles.navModal}
-            ${isMenuOpen ? styles.navModalOpen : ''}
-        `}>
+        <div className={`${styles.navModal} ${isMenuOpen ? styles.navModalOpen : ''}`}>
                 {/* 01A Default Header */}   {/* 2X */}
                 <header className={`${styles.headerGrid} `}>
                     <div className={`${styles.tile} ${styles.logo}`} style={{opacity: `${isMenuOpen ? '1' : '0'}`, transitionDelay: `${delayDurations[0]}ms`}}>   
