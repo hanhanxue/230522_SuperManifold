@@ -72,7 +72,7 @@ export default function RootLayout({
 
       <HeaderA />
 
-      <div
+      <main
         style={{
           backgroundColor: 'white',
           transformOrigin: 'bottom center',
@@ -87,7 +87,7 @@ export default function RootLayout({
           borderRadius: '0 0 24px 24px',
         }}>
           {children}
-        </div>
+        </main>
 
 
       <FooterA opacity={remap01(progressFactor, 0, 1)}/>
