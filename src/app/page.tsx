@@ -95,7 +95,7 @@ export default function Home() {
 
     <section className={`display-2xl ${styles.introSection}` }>
       <h2>
-      Super Manifold is an independent interface & experience design studio. We specialize in crafting life-affiming spatial experiences.
+      Super Manifold is an independent interface & experience design studio specializing in crafting immersive spatial experiences.
       </h2>
     </section>
 
