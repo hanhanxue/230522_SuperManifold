@@ -3,27 +3,31 @@
 
 .heroSection {
     
-    padding: rem(96) $spacing-5 0;
+    padding: rem(128) $spacing-5 0;
     text-align: justify;
 
 
 }
 
 .seperator {
+    // background-color: red;
     display: flex;
     justify-content: space-between;
 
     margin: $spacing-5;
 
-    padding-bottom: $spacing-1;
+    padding: $spacing-1 $spacing-2;
 
+    border-radius: $radius-md;
+    
     // &::after{
-    //     // display: block;
-    //     content: '';
-    //     width: 100%;
+        //     // display: block;
+        //     content: '';
+        //     width: 100%;
         
-    // }
-    border-bottom: solid 1px;
+        // }
+        // border: solid 1px #d7d7d7;
+        // box-shadow: 0 0 8px 0 rgba(0,0,0,.08);
 
     p {
         &:nth-child(2) {

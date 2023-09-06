@@ -12,6 +12,7 @@ import FooterA from '@/components/global/FooterA';
 
 // 07 SUPERMANIFOLD FUNCTIONS
 import useScrollProgress from '@/lib/useScrollProgress';
+import useFirstRender from '@/lib/useFirstRender'
 
 // 11 SUPERMANIFOLD STYLES
 import '@/styles/main.scss'
@@ -25,11 +26,12 @@ export default function RootLayout({
 }) {
 
 
-  const [progressFactor, setProgressFactor] = useState(0)
+  const [transformAnimFactor, setTransformAnimFactor] = useState(0)
+  const [opacityAnimFactor, setOpacityAnimFactor] = useState(0)
   // const progress = useScrollProgress()
   
   // console.log(progress)
-  // let progressFactor = .98
+  // let transformAnimFactor = .98
   function remap(value: number, fromLow: number, fromHigh: number, toLow: number, toHigh: number): number {
     const normalizedValue = (value - fromLow) / (fromHigh - fromLow);
     const remappedValue = normalizedValue * (toHigh - toLow) + toLow;
@@ -44,24 +46,33 @@ export default function RootLayout({
 
   useEffect(() => {
 
-    const handleScroll = () => {
-      // this is the footer spacer height
-      const footerMaskHeight = window.innerHeight * .8;
-      // this is the starting position of the factor
-      let start = document.body.scrollHeight - (window.innerHeight + footerMaskHeight)
-      start = Math.max(start, 0)
-      // this is the ending position of the factor
-      const end = document.body.scrollHeight - (window.innerHeight)
+    const handlePageAnim = () => {
 
-      const normalizedProgress = remap(window.scrollY, start, end, 0, 1)
-      // console.log(normalizedProgress)
-      setProgressFactor(normalizedProgress)
+      const windowBottom = window.scrollY + window.innerHeight
+
+      const footerSpacerHeight = (window.innerHeight - 240)
+
+      const mainPageBottom = document.body.scrollHeight - footerSpacerHeight
+      const distanceFromWindowBottom = windowBottom - mainPageBottom
+
+      const lowerLimit = Math.max((window.innerHeight - mainPageBottom), 0)
+
+
+      const fullSpacer = remap(distanceFromWindowBottom, 0, footerSpacerHeight, 0, 1)
+      const clampedSpacer = remap(distanceFromWindowBottom, lowerLimit, footerSpacerHeight, 0, 1)
+
+      setOpacityAnimFactor(fullSpacer)
+      setTransformAnimFactor(clampedSpacer * clampedSpacer) // Power to get curved values
+
     }
 
-    window.addEventListener('scroll', handleScroll)
+    handlePageAnim()
 
+    window.addEventListener('scroll', handlePageAnim)
+    window.addEventListener('resize', handlePageAnim)
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', handlePageAnim)
+      window.removeEventListener('resize', handlePageAnim)
     }
   }, [])
 
@@ -78,19 +89,42 @@ export default function RootLayout({
           transformOrigin: 'bottom center',
           transform:
           `translate3d(0px, 0px, 0px) 
-          scale3d(${remap01(progressFactor, 1, .98)}, ${remap01(progressFactor, 1, .98)}, 1) 
+          scale3d(${remap01(transformAnimFactor, 1, .98)}, ${remap01(transformAnimFactor, 1, .98)}, 1) 
           rotateX(0deg) 
           rotateY(0deg) 
           rotateZ(0deg) 
           skew(0deg)`,
           transformStyle: 'preserve-3d',
           borderRadius: '0 0 24px 24px',
+          zIndex: 50,
+          position: 'relative',
         }}>
+ 
+
           {children}
         </main>
+        <div 
+            style={{
+              background: 'linear-gradient(180deg, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.31) 50%, rgba(255,255,255,0) 100%)',
 
+              height: '94px',
+              position: 'fixed',
+              inset: '0 0 auto 0',
 
-      <FooterA opacity={remap01(progressFactor, 0, 1)}/>
+              transformOrigin: 'top center',
+              transform:
+              `translate3d(0px, 0px, 0px) 
+              scale3d(${remap01(transformAnimFactor, 1, .98)}, 1, 1) 
+              rotateX(0deg) 
+              rotateY(0deg) 
+              rotateZ(0deg) 
+              skew(0deg)`,
+              transformStyle: 'preserve-3d',
+              zIndex: 51,
+
+            }}>
+         </div>
+      <FooterA opacity={remap01(opacityAnimFactor, 0, 1)}/>
       </body>
 
     </html>

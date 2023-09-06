@@ -29,7 +29,8 @@ export default function Home() {
       <h1>Spatial experience design studio</h1>
     </section>
     
-    <div className={`body-sm ${styles.seperator}` }>
+    
+    <div className={`body-base ${styles.seperator}` }>
       <p>Based in<br />
         Montreal, Canada
       </p>
@@ -40,24 +41,7 @@ export default function Home() {
     <section  className={`${styles.coverSection}  ${styles.gridColSpan2}`}>
 
 
-        {/* <div className={`${styles.gridItem}`}>
-        <div className={`${styles.card}`}>
-        <div className={`${styles.postImageFrame}`}>
-        <div className={`${styles.nextImageContainer}`}>
-        <Image
-                        className={`${styles.postImage}`}
-                        src={`/assets/images/printworks-adambeyer.jpg`}
-                        fill={true}
-                        
-                        alt=''
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        draggable={false}
-                    />
-          </div>
-        </div>
 
-        </div>
-        </div> */}
 
         
         {/* <video 
@@ -82,6 +66,11 @@ export default function Home() {
          loop >         
         <source src="/assets/videos/breadboard.mp4" type="video/mp4"/>    
         </video> */}
+
+
+
+
+
         <video
         className={`${styles.video} `}
          autoPlay 
@@ -95,13 +84,32 @@ export default function Home() {
 
     <section className={`display-2xl ${styles.introSection}` }>
       <h2>
-      Super Manifold is an independent interface & experience design studio specializing in crafting immersive spatial experiences.
+      Super Manifold is an independent interface & experience design studio specialized in crafting immersive digital products.
       </h2>
     </section>
 
-    <section className={`display-xl ${styles.workSection}` }>
 
-    </section>
+
+    {/* <section className={`display-xl ${styles.workSection}` }>
+            <div className={`${styles.gridItem}`}>
+        <div className={`${styles.card}`}>
+        <div className={`${styles.postImageFrame}`}>
+        <div className={`${styles.nextImageContainer}`}>
+        <Image
+                        className={`${styles.postImage}`}
+                        src={`/assets/images/printworks-adambeyer.jpg`}
+                        fill={true}
+                        
+                        alt=''
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        draggable={false}
+                    />
+          </div>
+        </div>
+
+        </div>
+        </div>
+    </section> */}
 
 
     {/* Established in 2010, Broadwick Live is from London, UK. With a strong focus on creating impact through electronic music and electronic arts, we are driven to create pure yet powerful live experiences in our unique spaces.  */}

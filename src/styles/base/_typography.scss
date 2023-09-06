@@ -1,29 +1,6 @@
 @use '@/styles/abstracts' as *;
 
 
-@font-face {
-  font-family: Inter;
-  // src: url("../../../public/fonts/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
-  src: url('/assets/fonts/Inter-VariableFont_slnt\,wght.ttf') format('truetype')
-}
-
-@font-face {
-    font-family: nmtl;
-    src: url('/assets/fonts/PPNeueMontreal-Book.otf') format('opentype');
-  }
-
-@font-face {
-  font-family: Torsos;
-  src: url('/assets/fonts/BBTorsosPro-Regular.otf') format('opentype');
-}
-
-@font-face {
-  font-family: UniversalSans;
-  src: url('/assets/fonts/SuperManifold-Sans-Display-350.ttf') format('truetype');
-}
-
-
-
 
 // 100 Thin (Hairline)
 // 200 Extra Light (Ultra Light)
@@ -39,17 +16,52 @@
 // 900 Black (Heavy)
 // 950 Extra Black (Ultra Black) 
 
-.logotype {
-  // font-family: nmtl;
+
+
+@font-face {
   font-family: UniversalSans;
+  src: url('/assets/fonts/UniversalSans/Universal-Sans-Display-350-Trial.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: nmtl;
+  src: url('/assets/fonts/PPNeueMontreal-Book.otf') format('opentype');
+}
+
+
+
+@font-face {
+  font-family: Inter;
+  // src: url("../../../public/fonts/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
+  src: url('/assets/fonts/Inter-VariableFont_slnt\,wght.ttf') format('truetype')
+}
+
+@font-face {
+font-family: torsos;
+src: url('/assets/fonts/Torsos/BBTorsosPro-Regular.otf') format('opentype');
+font-weight: 400;
+font-style: normal;
+}
+
+// @font-face {
+//   font-family: torsos;
+//   src: url('/assets/fonts/Torsos/BBTorsosPro-Medium.otf') format('opentype');
+//   font-weight: 500;
+//   font-style: normal;
+//   }
+
+
+.logotype {
+  font-family: Torsos;
   font-size: rem(20);
   line-height: 1.5;
 }
 
 .display-4xl {
   font-family: Torsos;
-  font-size: max(rem(40), 10vw);
+  font-size: max(rem(40), 11vw);
   line-height: 1;
+
 }
 
 .display-2xl {
@@ -59,33 +71,28 @@
 }
 
 
-
-
-
-.body-xl {
-  font-family: UniversalSans;
+.body-4xl {
+  font-family: Torsos;
   font-size: rem(38);
   line-height: 1.5;
-  // font-size: max(rem(22), 1vw);
-  // letter-spacing: -.00em;
+}
+
+.body-xl {
+  font-family: Inter;
+  font-size: rem(20);
+  line-height: 1.5;
 }
 
 .body-base {
-  // font-family: nmtl;
-  font-family: UniversalSans;
-  font-size: rem(20);
-  
-  line-height: 1.5;
-  // font-size: max(rem(22), 1vw);
-  // letter-spacing: -.00em;
-}
-
-.body-sm {
-  font-family: UniversalSans;
+  font-family: Inter;
   font-size: rem(16);
-  
   line-height: 1.33;
 }
+
+
+
+
+
 
 
 

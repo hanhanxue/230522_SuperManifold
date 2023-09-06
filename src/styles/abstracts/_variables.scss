@@ -53,7 +53,8 @@ $bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
 
 // Media Query
 
-$screen-sm: rem(640); // From Tailwind
+// $screen-sm: rem(640); // From Tailwind
+$screen-sm: rem(660); // From Tailwind
 $screen-md: rem(768); // From Tailwind
 $screen-lg: rem(1024); // From Tailwind // Base
 $screen-xl: rem(1280); // From Tailwind
