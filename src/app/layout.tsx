@@ -105,8 +105,7 @@ export default function RootLayout({
         </main>
         <div 
             style={{
-              background: 'linear-gradient(180deg, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.31) 50%, rgba(255,255,255,0) 100%)',
-
+              backgroundColor: 'white',
               height: '94px',
               position: 'fixed',
               inset: '0 0 auto 0',
