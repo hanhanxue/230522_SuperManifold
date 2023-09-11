@@ -74,24 +74,22 @@ export default function HeaderA() {
         <header className={`${styles.defaultHeader}`}>
 
             <div className={`${styles.tile}  ${styles.ident}`}>
-                <Link href="/" className={ `${styles.logoLockup}`}>
-          
+                <div className={ `${styles.logoLockup}`}>
+                    <span className={`logotype ${styles.logotype}`}>
+                        Super Manifold®
+                    </span>
+            
                     <svg  className={`${styles.logo}`} xmlns="http://www.w3.org/2000/svg" width="63" height="30" viewBox="0 0 63 30" fill="none">
                         <path d="M33 0V30H63V0H33ZM57 18H51V24H45V18H39V12H45V6H51V12H57V18ZM45 12V18H51V12H45Z"/>
                         <path d="M15 18C16.6569 18 18 16.6569 18 15C18 13.3431 16.6569 12 15 12C13.3431 12 12 13.3431 12 15C12 16.6569 13.3431 18 15 18Z"/>
                         <path d="M0 0V30H30V0H0ZM15 24C13.22 24 11.4799 23.4722 9.99987 22.4832C8.51983 21.4943 7.36627 20.0887 6.68508 18.4442C6.0039 16.7996 5.82567 14.99 6.17293 13.2442C6.5202 11.4984 7.37737 9.89471 8.63604 8.63604C9.89471 7.37737 11.4984 6.5202 13.2442 6.17293C14.99 5.82567 16.7996 6.0039 18.4442 6.68508C20.0887 7.36627 21.4943 8.51983 22.4832 9.99987C23.4722 11.4799 24 13.22 24 15C23.9994 17.3868 23.051 19.6756 21.3633 21.3633C19.6756 23.051 17.3868 23.9994 15 24Z"/>
                     </svg>
-         
-                <span className={`logotype ${styles.logotype}`}>
-                    Super Manifold®
-                </span>
-                </Link>
+                </div>
             </div>
 
             <div className={`${styles.tile} ${styles.menu}`}>
                 <Burger isOpen={isMenuOpen} onMenuClick={handleMenuClick}/>
             </div >
-
 
         </header>
 
@@ -101,18 +99,19 @@ export default function HeaderA() {
                 <header className={`${styles.headerGrid} `}>
 
                     <div className={`${styles.tile} ${styles.ident}`} style={{opacity: `${isMenuOpen ? '1' : '0'}`, transitionDelay: `${delayDurations[0]}ms`}}> 
-                    <Link href="/" className={ `${styles.logoLockup}`}>
-              
+                    <div className={ `${styles.logoLockup}`}>
+
+                        <span className={`logotype ${styles.logotype}`}>
+                            Super Manifold®
+                        </span>
+
                         <svg  className={`${styles.logo}`} xmlns="http://www.w3.org/2000/svg" width="63" height="30" viewBox="0 0 63 30" fill="none">
                             <path d="M33 0V30H63V0H33ZM57 18H51V24H45V18H39V12H45V6H51V12H57V18ZM45 12V18H51V12H45Z"/>
                             <path d="M15 18C16.6569 18 18 16.6569 18 15C18 13.3431 16.6569 12 15 12C13.3431 12 12 13.3431 12 15C12 16.6569 13.3431 18 15 18Z"/>
                             <path d="M0 0V30H30V0H0ZM15 24C13.22 24 11.4799 23.4722 9.99987 22.4832C8.51983 21.4943 7.36627 20.0887 6.68508 18.4442C6.0039 16.7996 5.82567 14.99 6.17293 13.2442C6.5202 11.4984 7.37737 9.89471 8.63604 8.63604C9.89471 7.37737 11.4984 6.5202 13.2442 6.17293C14.99 5.82567 16.7996 6.0039 18.4442 6.68508C20.0887 7.36627 21.4943 8.51983 22.4832 9.99987C23.4722 11.4799 24 13.22 24 15C23.9994 17.3868 23.051 19.6756 21.3633 21.3633C19.6756 23.051 17.3868 23.9994 15 24Z"/>
                         </svg>
-              
-                    <span className={`logotype ${styles.logotype}`}>
-                        Super Manifold®
-                    </span>
-                    </Link>
+
+                    </div>
                     </div>
 
                     <div className={`${styles.tile} ${styles.menu} `} style={{opacity: `${isMenuOpen ? '1' : '0'}`, transitionDelay: `${delayDurations[1]}ms`}}>
@@ -125,18 +124,19 @@ export default function HeaderA() {
                 <header className={`${styles.headerGridSmall} ${styles.tile} `} style={{opacity: `${isMenuOpen ? '1' : '0'}`, transitionDelay: `${delayDurations[8]}ms`}}>
 
                     <div className={`${styles.ident}`}>   
-                    <Link href="/" className={ `${styles.logoLockup}`}>
-              
+                    <div href="/" className={ `${styles.logoLockup}`}>
+
+                        <span className={`logotype ${styles.logotype}`}>
+                            Super Manifold®
+                        </span>
+
                         <svg  className={`${styles.logo}`} xmlns="http://www.w3.org/2000/svg" width="63" height="30" viewBox="0 0 63 30" fill="none">
                             <path d="M33 0V30H63V0H33ZM57 18H51V24H45V18H39V12H45V6H51V12H57V18ZM45 12V18H51V12H45Z"/>
                             <path d="M15 18C16.6569 18 18 16.6569 18 15C18 13.3431 16.6569 12 15 12C13.3431 12 12 13.3431 12 15C12 16.6569 13.3431 18 15 18Z"/>
                             <path d="M0 0V30H30V0H0ZM15 24C13.22 24 11.4799 23.4722 9.99987 22.4832C8.51983 21.4943 7.36627 20.0887 6.68508 18.4442C6.0039 16.7996 5.82567 14.99 6.17293 13.2442C6.5202 11.4984 7.37737 9.89471 8.63604 8.63604C9.89471 7.37737 11.4984 6.5202 13.2442 6.17293C14.99 5.82567 16.7996 6.0039 18.4442 6.68508C20.0887 7.36627 21.4943 8.51983 22.4832 9.99987C23.4722 11.4799 24 13.22 24 15C23.9994 17.3868 23.051 19.6756 21.3633 21.3633C19.6756 23.051 17.3868 23.9994 15 24Z"/>
                         </svg>
-           
-                    <span className={`logotype ${styles.logotype}`}>
-                        Super Manifold®
-                    </span>
-                    </Link>
+
+                    </div>
                     </div>
 
                     <div className={`${styles.menu} `}>

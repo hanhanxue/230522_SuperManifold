@@ -12,10 +12,15 @@
     inset: 0 0 auto 0;
     z-index: 100;
 
-    padding: $spacing-5;
-
     display: flex;
     justify-content: space-between;
+
+    .tile {
+        // background-color: red;
+        flex: 1;
+            padding: $spacing-5;
+
+    }
 
     // color: black;
     // mix-blend-mode: difference;
@@ -24,14 +29,30 @@
     user-select: none;
 
     .logoLockup {
-        display: flex;
-        gap: $spacing-1;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+
+
+        .logotype {
+            grid-column: 1 / 5;
+            grid-row: 1;
+
+        }
         .logo{
+            grid-column: 4 / 5;
+            grid-row: 1;
             fill: black;
+
+            @media (max-width: $screen-sm) {
+                display: none;
+            }
         }
     }
 
     .menu {
+        display: flex;
+        justify-content: flex-end;
         span {
             background-color: black;
         }
@@ -49,13 +70,24 @@
 
 .navModal {
 
-
+    // background-color: white;
     .logoLockup {
-        display: flex;
-        gap: $spacing-1;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        .logotype {
+            grid-column: 1 / 5;
+            grid-row: 1;
+
+        }
         .logo{
+            grid-column: 4 / 5;
+            grid-row: 1;
             fill: white;
             mix-blend-mode: difference;
+            @media (max-width: $screen-sm) {
+                display: none;
+            }
         }
     }
 
@@ -96,6 +128,7 @@
 
 
         background-color: rgb(35, 35, 35);
+        // background-color: rbg(232,232,232);
         // background-color: black;
 
         border-width: 0px 1px 1px 0px;
