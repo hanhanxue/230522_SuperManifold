@@ -13,18 +13,16 @@
     z-index: 100;
 
     display: flex;
-    justify-content: space-between;
+
 
     .tile {
-        // background-color: red;
         flex: 1;
+        // background-color: red;
             padding: $spacing-5;
-
+            @media (max-width: $screen-sm) {
+                flex: 1 0 auto;
+            }
     }
-
-    // color: black;
-    // mix-blend-mode: difference;
-
 
     user-select: none;
 
